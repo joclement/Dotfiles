@@ -13,3 +13,5 @@
 [user]
 	name = Joris Clement
 	email = JorisClement@posteo.de
+[push]
+	default = simple
