@@ -1,0 +1,15 @@
+[alias]
+	co = checkout
+	st = status
+	amend = commit -a --amend
+	ci = commit
+	br = branch
+	wipe = !git add -A && git commit -qm WIPE
+	last = log -1 HEAD
+	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+	glog = log --pretty=format:\"%h %s\" --graph
+	ciam = !git add -A && git commit -m
+	cia = !git add -A && git commit
+[user]
+	name = Joris Clement
+	email = JorisClement@posteo.de
