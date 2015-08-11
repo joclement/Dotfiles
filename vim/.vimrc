@@ -211,3 +211,6 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+"activates the use of local .vimrc files, but limites the commands, which can be used for more security
+set exrc
+set secure
