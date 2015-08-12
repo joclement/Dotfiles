@@ -28,6 +28,9 @@ Plugin 'Valloric/YouCompleteMe'
 "GitHub repo for working with filesystem plugin
 Plugin 'scrooloose/nerdtree'
 
+"GitHub repo for having git flags in nerdtree
+Plugin 'scrooloose/nerdtree-git-plugin'
+
 "Git repo for latex support
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' 
 
