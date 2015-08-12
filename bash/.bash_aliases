@@ -9,6 +9,7 @@ alias py='python'
 alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
+alias juliaNew = '~/juliaNew/bin/julia'
 
 #my alias functions
 
