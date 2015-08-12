@@ -211,3 +211,9 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+"set shortcut to toggle display of nerdtree
+map <C-e> :NERDTreeToggle<CR>
+
+"display nerdtree, if vim is started without file argument
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
