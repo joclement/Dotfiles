@@ -154,9 +154,6 @@ set number
 "delete to black hole
 nnoremap <silent> <C-A> "_d
 
-set exrc
-set secure
-
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
 
