@@ -29,7 +29,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/nerdtree'
 
 "GitHub repo for having git flags in nerdtree
-Plugin 'scrooloose/nerdtree-git-plugin'
+"TODO get it to work
+"Plugin 'scrooloose/nerdtree-git-plugin'
 
 "Git repo for latex support
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' 
@@ -220,3 +221,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "set tab settings for specific project
 autocmd BufNewFile,BufRead ~/Oq/* set tabstop=2 shiftwidth=2 expandtab
+autocmd BufNewFile,BufRead ~/workspace/optimal-quantization/* set tabstop=2 shiftwidth=2 expandtab
