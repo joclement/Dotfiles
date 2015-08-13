@@ -10,6 +10,7 @@
 	glog = log --pretty=format:\"%h %s\" --graph
 	ciam = !git add -A && git commit -m
 	cia = !git add -A && git commit
+	unpushed = log @{u}.. --pretty=format:'%h %an %s'
 [user]
 	name = Joris Clement
 	email = JorisClement@posteo.de
