@@ -145,6 +145,8 @@ highlight ColorColumn ctermbg=darkgray
 "set end of columns to 110
 execute "set tw=".myEndColumn
 
+"change color of linenumbers to grey
+highlight LineNr ctermfg=darkgray
 "to search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
