@@ -4,7 +4,6 @@ alias la='ls -al'
 alias l='ls -F1'
 alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
-alias py='python'
 alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
@@ -15,6 +14,11 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
+#shortcuts for programs
+alias py='python'
+alias v='vim'
+alias g='git'
 
 ###my alias functions
 
