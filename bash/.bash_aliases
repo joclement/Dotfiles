@@ -1,7 +1,6 @@
-#my bash aliases
+###my bash aliases
 alias ll='ls -l'
 alias la='ls -al'
-alias ..='cd ..'
 alias l='ls -F1'
 alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
@@ -11,7 +10,13 @@ alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
 alias juliaNew='~/juliaNew/bin/julia'
 
-#my alias functions
+#for cd into ancestor directories
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
+###my alias functions
 
 #opens a file the standard way and leads the output to null
 function op {
