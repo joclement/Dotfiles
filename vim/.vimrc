@@ -138,7 +138,7 @@ function! ChangePaste(type, ...)
 endfunction
 
 "define variable for end column
-let myEndColumn=120
+let myEndColumn=90
 "set color for particular column
 execute "set colorcolumn=".myEndColumn
 highlight ColorColumn ctermbg=233
@@ -224,3 +224,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "set tab settings for specific project
 autocmd BufNewFile,BufRead ~/Oq/* set tabstop=2 shiftwidth=2 expandtab
 autocmd BufNewFile,BufRead ~/workspace/optimal-quantization/* set tabstop=2 shiftwidth=2 expandtab
+
+"activate matchit plugin, is included in normal vim distribution
+"the plugin is for matching, f.x. if or function blocks with %
+runtime macros/matchit.vim
