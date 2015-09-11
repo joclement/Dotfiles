@@ -35,8 +35,8 @@ Plugin 'scrooloose/nerdtree'
 "Git repo for latex support
 Plugin 'git://git.code.sf.net/p/vim-latex/vim-latex' 
 
-"plugin for a cool headerline
-Plugin 'bling/vim-airline'
+"plugin for a cool headerline, now using powerline instead
+"Plugin 'bling/vim-airline'
 
 "plugin for using multiple cursors
 "Plugin 'terryma/vim-multiple-cursors'
@@ -91,6 +91,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"setup powerline for vim
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+"so that vim-powerline appears all the time
+set laststatus=2
+
 " If using a dark background within the editing area and syntax highlighting                                  
 " turn on this option as well                                                                                 
 "set background=dark                                                                                          
@@ -113,6 +120,9 @@ endif
 "set autowrite          " Automatically save before commands like :next and :make                             
 "set hidden             " Hide buffers when they are abandoned                                                
 "set mouse=a            " Enable mouse usage (all modes) 
+
+"for support 256 colors
+set t_Co=256
 
 "for moving cursor by lines
 noremap <buffer> <silent> k gk
@@ -163,12 +173,6 @@ autocmd CompleteDone * pclose
 "set default .ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-"so that vim-powerline appears all the time
-set laststatus=2
-
-"for support 256 colors
-set t_Co=256
-
 """mappings for svndiff
 "mapping for previous diff
 noremap <F3> :call Svndiff("prev")<CR>
@@ -197,13 +201,12 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
 
 "beginner settings for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 
 "Disable error line length with pylin python checker
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
