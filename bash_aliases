@@ -1,4 +1,9 @@
-###my bash aliases
+################################### My aliases ##########################################
+
+###git aliases
+
+
+###miscellaneous aliases
 alias ll='ls -l'
 alias la='ls -al'
 alias l='ls -F1'
@@ -9,18 +14,27 @@ alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
 alias juliaNew='~/juliaNew/bin/julia'
 
-#for cd into ancestor directories
+
+###for cd into ancestor directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-#shortcuts for programs
+
+###shortcuts for programs
 alias py='python'
 alias v='vim'
 alias g='git'
 
-###my alias functions
+
+
+
+
+
+
+
+################################ My alias functions #####################################
 
 #opens a file the standard way and leads the output to null
 function op {
@@ -29,6 +43,7 @@ function op {
 	:
 }
 
+#updates and upgrades the system via apt-get
 function up () {
 	sudo apt-get update;
 	echo "Do you wish to upgrade?";
@@ -39,6 +54,7 @@ function up () {
 	fi;
 }
 
+#function to wait for a valid answer from the user in a loop
 function confirmLoop () {
 	varConfirm=$(confirm);
 	compare=2;
@@ -55,6 +71,7 @@ function confirmLoop () {
 	echo $varConfirm;
 }
 
+#function to let the user confirm his previos decision
 function confirm () {
 
 	read -p "" choice;
