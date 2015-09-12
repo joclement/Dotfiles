@@ -9,9 +9,9 @@
 #automatic quit, if error
 set -e
 
-dir=~/Dotfiles                    	# dotfiles directory
-olddir=~/Dotfiles_old             	# old dotfiles backup directory
-files="bashrc vimrc"			# list of files/folders to symlink in homedir
+dir=~/Dotfiles                    			# dotfiles directory
+olddir=~/Dotfiles_old             			# old dotfiles backup directory
+files="bashrc vimrc gitconfig bash_aliases"		# list of files/folders to symlink in homedir
 
 ##########
 
