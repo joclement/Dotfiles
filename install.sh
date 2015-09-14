@@ -90,7 +90,7 @@ symlink_files() {
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
-		mv $my_home/.$file $my_home/dotfiles_old/
+		mv $my_home/.$file $olddir
 		fi
 		echo "done"
 		echo "Creating symlink to $file in $my_home directory."
