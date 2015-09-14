@@ -23,13 +23,15 @@ function HELP {
 echo -e \\n"Help documentation for ${script}"\\n
 echo "Installs the dotfiles of this git Dotfiles repository. You may need to give your passport
 to install needed sytem wide software packages, f.x. cmake"
-echo -e "Basic usage: bash $script "\\n
-echo "-d    option to give base directory to where to link files, make and look for files
-and folders. Folder needs to exist. Normally this folder is the home directory, f.x.
-.vimrc is normally stored in $HOME/.vimrc. Default value is $my_home"
-echo "-s    Install some parts system wide. Default is $system_wide"
+echo -e "Basic usage: ./$script "\\n
+echo -e "-d    option to give base directory to where to link files, make and look for files and folders. 
+      Folder needs to exist. 
+      Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc. 
+      Default value is $my_home . 
+      Folder must not have a ending /"\\n
+echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
-echo -e "Example: $script -s "\\n
+echo -e "Example: $script -s -d $my_home/example_folder "\\n
 exit 1
 }
 
