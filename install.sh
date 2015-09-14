@@ -25,10 +25,10 @@ echo "Installs the dotfiles of this git Dotfiles repository. You may need to giv
 to install needed sytem wide software packages, f.x. cmake"
 echo -e "Basic usage: ./$script "\\n
 echo -e "-d    option to give base directory to where to link files, make and look for files and folders. 
-      Folder needs to exist. 
-      Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc. 
-      Default value is $my_home . 
-      Folder must not have a ending /"\\n
+Folder needs to exist. 
+Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc. 
+Default value is $my_home . 
+Folder must not have a ending /"\\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
 echo -e "Example: $script -s -d $my_home/example_folder "\\n
@@ -90,7 +90,7 @@ symlink_files() {
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
-		mv $my_home/.$file $olddir
+			mv $my_home/.$file $olddir
 		fi
 		echo "done"
 		echo "Creating symlink to $file in $my_home directory."
@@ -248,6 +248,7 @@ install_vim() {
 
 	echo "install vim add ons"
 	vim +PluginInstall +qall
+	vim +PluginUpdate +qall
 	echo "done"
 
 	echo "install YouCompleteMe if it is a addon"
