@@ -13,7 +13,7 @@ script=`basename $0`
 my_home=$HOME 						# alternative home folder for installation
 dir=$my_home/Dotfiles                  			# dotfiles directory
 olddir=$my_home/Dotfiles_old           			# old dotfiles backup directory
-files="bashrc vimrc gitconfig bash_aliases"		# list of files/folders to symlink in homedir
+files="bashrc vimrc gitconfig bash_aliases zshrc"	# list of files/folders to symlink in homedir
 system_wide=false 					# whether to install system wide or for user
 
 ##########
