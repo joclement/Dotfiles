@@ -11,8 +11,9 @@ set -e
 
 script=`basename $0`
 my_home=$HOME 						# alternative home folder for installation
-dir=$my_home/Dotfiles                  			# dotfiles directory
-olddir=$my_home/Dotfiles_old           			# old dotfiles backup directory
+to_dots=$HOME 						# alternative home folder for installation
+dir=$to_dots/Dotfiles                  			# dotfiles directory
+olddir=$to_dots/Dotfiles_old           			# old dotfiles backup directory
 files="bashrc vimrc gitconfig shared_aliases zshrc"	# list of files/folders to symlink in homedir
 system_wide=false 					# whether to install system wide or for user
 
@@ -24,10 +25,10 @@ echo -e \\n"Help documentation for ${script}"\\n
 echo "Installs the dotfiles of this git Dotfiles repository. You may need to give your passport
 to install needed sytem wide software packages, f.x. cmake"
 echo -e "Basic usage: ./$script "\\n
-echo -e "-d    option to give base directory to where to link files, make and look for files and folders. 
+echo -e "-d    specify parent dir of Dotfiles git repo. Dotfiles has to be in that dir. 
 Folder needs to exist. 
 Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc. 
-Default value is $my_home . 
+Default value is $to_dots . 
 Folder must not have a ending /"\\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
@@ -52,7 +53,7 @@ while getopts ":d:s h" opt; do
 					echo "specified directory is a link. EXIT!"
 					exit 1
 				else
-					my_home=$OPTARG
+					to_dots=$OPTARG
 				fi
 			else
 				echo "specified directory does not exist. EXIT!"
