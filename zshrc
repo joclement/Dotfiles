@@ -55,6 +55,7 @@ plugins=(git pip)
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
+export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
 
 source $ZSH/oh-my-zsh.sh
 
