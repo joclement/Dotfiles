@@ -54,6 +54,12 @@ plugins=(git pip colored-man colorize)
 # User configuration
 
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
 
