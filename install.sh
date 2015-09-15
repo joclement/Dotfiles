@@ -270,4 +270,4 @@ create_olddir
 symlink_files
 install_powerline
 install_vim
-echo "Everythin was installed just fine. Dofiles are updated :)"
+echo "Everything was installed just fine. Dofiles are updated :)"
