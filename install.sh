@@ -173,7 +173,9 @@ install_zsh () {
 		fi
 		# Set the default shell to zsh if it isn't currently set to zsh
 		if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+			echo "change default shell to zsh..."
 			chsh -s $(which zsh)
+			echo "done"
 		fi
 	else
 		# If zsh isn't installed, get the platform of the current machine
