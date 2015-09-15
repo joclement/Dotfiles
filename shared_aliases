@@ -12,7 +12,6 @@ alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
-alias juliaNew='~/juliaNew/bin/julia'
 
 
 ###for cd into ancestor directories
