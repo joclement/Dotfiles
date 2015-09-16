@@ -225,8 +225,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "set tab settings for specific project
-autocmd BufNewFile,BufRead ~/Oq/* set tabstop=2 shiftwidth=2 expandtab
-autocmd BufNewFile,BufRead ~/workspace/optimal-quantization/* set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
 "activate matchit plugin, is included in normal vim distribution
 "the plugin is for matching, f.x. if or function blocks with %
