@@ -61,19 +61,12 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-#Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='vim'
-fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -90,13 +83,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
-if [ -f $HOME/.shared_aliases ]; then
-	source $HOME/.shared_aliases
-fi
-# Put any proprietary or private functions/values in ~/.private, and this will source them
-if [ -f $HOME/.private ]; then
-	source $HOME/.private
+#to include the shared shell settings, if they exist
+if [ -f $HOME/.shared_shell ]; then
+	source $HOME/.shared_shell
 fi
 
 #use vim mode for zsh

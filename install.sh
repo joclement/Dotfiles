@@ -9,13 +9,26 @@
 #automatic quit, if error
 set -e
 
+# the name of the script
 script=`basename $0`
-my_home=$HOME 						# alternative home folder for installation
-to_dots=$HOME 						# alternative home folder for installation
-dir=$to_dots/Dotfiles                  			# dotfiles directory
-olddir=$to_dots/Dotfiles_old           			# old dotfiles backup directory
-files="bashrc vimrc gitconfig shared_aliases zshrc"	# list of files/folders to symlink in homedir
-system_wide=false 					# whether to install system wide or for user
+
+# alternative home folder for installation
+my_home=$HOME
+
+# alternative home folder for installation
+to_dots=$HOME
+
+# dotfiles directory
+dir=$to_dots/Dotfiles
+
+# old dotfiles backup directory
+olddir=$to_dots/Dotfiles_old
+
+# list of files/folders to symlink in homedir
+files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell"
+
+# whether to install system wide or for user
+system_wide=false
 
 ##########
 
