@@ -93,13 +93,16 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+#to include the shared shell settings, if they exist
+if [ -f $HOME/.shared_shell ]; then
+	source $HOME/.shared_shell
+fi
+
+#to include the particular bash aliases, if they exist
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-if [ -f ~/.shared_aliases ]; then
-    . ~/.shared_aliases
-fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -114,6 +117,3 @@ fi
 #enable vim mode for bash
 set -o vi
 
-#set vim as standard editor, also for visual
-export VISUAL=vim
-export EDITOR="$VISUAL"
