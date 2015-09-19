@@ -164,14 +164,16 @@ highlight ColorColumn ctermbg=233
 "set end of columns to 110
 execute "set tw=".myEndColumn
 
+"""presentation settings
 "change color of linenumbers to grey
 "highlight LineNr ctermfg=darkgray
 "to search for visually selected text
 vnoremap // y/<C-R>"<CR>
-
 "show relative line numbers and line number for current line
 set relativenumber
 set number
+" use visual bell instead of beeping
+set visualbell
 
 "delete to black hole
 nnoremap <silent> <C-A> "_d
