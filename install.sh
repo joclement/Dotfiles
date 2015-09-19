@@ -105,6 +105,8 @@ symlink_files() {
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
 			mv $my_home/.$file $olddir
+		elif [ -d "$my_home/.$file" ]; then 
+			rm $my_home/.$file
 		fi
 		echo "done"
 		echo "Creating symlink to $file in $my_home directory."
@@ -158,6 +160,13 @@ install_dependencies() {
 			if [ $(dpkg-query -l | grep git | wc -l) == 0 ];
 			then
 				sudo apt-get install git;
+			fi
+			echo "done"
+
+			echo "check if dconf-cli is installed, if not install"
+			if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
+			then
+				sudo apt-get install dconf-cli;
 			fi
 			echo "done"
 		fi
@@ -276,11 +285,17 @@ install_vim() {
 	echo "done"
 }
 
+install_solarized() {
+	cd $dir/gnome-terminal-colors-solarized/
+	. install.sh
+	cd
+}
 
 install_dependencies
 install_zsh
 create_olddir
 symlink_files
+install_solarized
 install_powerline
 install_vim
 echo "Everything was installed just fine. Dofiles are updated :)"
