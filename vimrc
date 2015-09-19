@@ -239,3 +239,7 @@ autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 "activate matchit plugin, is included in normal vim distribution
 "the plugin is for matching, f.x. if or function blocks with %
 runtime macros/matchit.vim
+
+"""search settings
+"highlight search matches 
+set hlsearch
