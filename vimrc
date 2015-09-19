@@ -243,3 +243,8 @@ runtime macros/matchit.vim
 """search settings
 "highlight search matches 
 set hlsearch
+
+
+"""behavior settings
+"automatically read file that has been changed on disk and doesn't have changes in vim
+set autoread
