@@ -25,7 +25,8 @@ dir=$to_dots/Dotfiles
 olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell dircolors-solarized"
+files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
+	dircolors-solarized oh-my-zsh"
 
 # whether to install system wide or for user
 system_wide=false
@@ -183,16 +184,7 @@ install_dependencies() {
 install_zsh () {
 	# Test to see if zshell is installed.  If it is:
 	if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
-		# Clone my oh-my-zsh repository from GitHub only if it isn't already present
-		if [[ ! -d $my_home/.oh-my-zsh/ ]]; then
-			echo "go into home folder"
-			cd $my_home
-			echo "done"
 
-			echo "clone oh-my-zsh"
-			git clone http://github.com/robbyrussell/oh-my-zsh.git $my_home/.oh-my-zsh/
-			echo "done"
-		fi
 		# Set the default shell to zsh if it isn't currently set to zsh
 		if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
 			echo "change default shell to zsh..."
@@ -212,7 +204,7 @@ install_zsh () {
 				sudo apt-get install zsh
 				install_zsh
 			fi
-			echo "Please re-run this script for complete installation!"
+
 			# If the platform is OS X, tell the user to install zsh :)
 		elif [[ $platform == 'Darwin' ]]; then
 			echo "Please install zsh, then re-run this script!"
