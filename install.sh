@@ -26,7 +26,7 @@ olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
-	dircolors-solarized oh-my-zsh"
+	dircolors-solarized oh-my-zsh vim/bundle/Vundle.vim"
 
 # whether to install system wide or for user
 system_wide=false
@@ -102,6 +102,8 @@ symlink_files() {
 
 	# move any existing dotfiles in homedir to dotfiles_old directory, 
 	#then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
+
+	mkdir -p ~/.vim/bundle
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
