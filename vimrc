@@ -22,6 +22,9 @@ Plugin 'scrooloose/nerdcommenter'
 "GitHub repo for Auto completion plugin
 Plugin 'Valloric/YouCompleteMe'
 
+"Plugin for solarized color theme
+Plugin 'altercation/vim-colors-solarized'
+
 "GitHub repo for automatically generating a file for semantic autocompletion plugin
 "Plugin 'rdnetto/YCM-Generator'
 
@@ -91,6 +94,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"for support 256 colors
+syntax enable
+set t_Co=256
+set background=dark
+if !has('gui_running')
+	let g:solarized_termcolors=&t_Co
+	let g:solarized_termtrans=1
+endif
+colorscheme solarized
+
 "setup powerline for vim
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -100,8 +113,6 @@ set laststatus=2
 
 " If using a dark background within the editing area and syntax highlighting                                  
 " turn on this option as well                                                                                 
-"set background=dark                                                                                          
-syntax on
 hi Visual term=reverse cterm=reverse guibg=Grey
 
 " Uncomment the following to have Vim jump to the last position when                                          
@@ -121,8 +132,6 @@ endif
 "set hidden             " Hide buffers when they are abandoned                                                
 "set mouse=a            " Enable mouse usage (all modes) 
 
-"for support 256 colors
-set t_Co=256
 
 "for moving cursor by lines
 noremap <buffer> <silent> k gk
@@ -156,7 +165,7 @@ highlight ColorColumn ctermbg=233
 execute "set tw=".myEndColumn
 
 "change color of linenumbers to grey
-highlight LineNr ctermfg=darkgray
+"highlight LineNr ctermfg=darkgray
 "to search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
