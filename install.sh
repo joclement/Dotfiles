@@ -258,13 +258,6 @@ install_powerline() {
 
 install_vim() {
 
-	# Clone my oh-my-zsh repository from GitHub only if it isn't already present
-	if [[ ! -d $my_home/.vim/bundle/Vundle.vim ]]; then
-		echo "Clone the Vundle repo"
-		git clone https://github.com/gmarik/Vundle.vim.git $my_home/.vim/bundle/Vundle.vim
-		echo "done"
-	fi
-
 	echo "install vim add ons"
 	vim +PluginInstall +qall
 	vim +PluginUpdate +qall
