@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
-*) return;;
+	*) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -117,12 +117,22 @@ fi
 #enable vim mode for bash
 set -o vi
 
+powerlineshpath=~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+powerlineexists=false
+if [ -f $powerlineshpath ]; then
+	powerlineexists=true
+else
+	powerlineshpath=~/.local/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
+	if [ -f $powerlineshpath ]; then
+		powerlineexists=true
+	fi
+fi
 # if powerline bash bindings exist, activate powerline for bash
-if [ -f ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+if [ "$powerlineexists" = "true" ]; then
 	export POWERLINE_COMMAND=powerline
 	export POWERLINE_CONFIG_COMMAND=powerline-config
 	powerline-daemon -q
-	WERLINE_BASH_CONTINUATION=1
+	POWERLINE_BASH_CONTINUATION=1
 	POWERLINE_BASH_SELECT=1
-	. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+	. $powerlineshpath
 fi
