@@ -259,7 +259,6 @@ install_powerline() {
 install_vim() {
 
 	echo "install vim add ons"
-	vim +PluginInstall +qall
 	vim +PluginUpdate +qall
 	echo "done"
 
