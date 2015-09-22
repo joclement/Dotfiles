@@ -30,6 +30,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
 
 # whether to install system wide or for user
 system_wide=false
+installoption=""
 
 ##########
 
@@ -44,6 +45,8 @@ Folder needs to exist.
 Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc. 
 Default value is $to_dots . 
 Folder must not have a ending /"\\n
+echo -e "-i    gives an installoption, necessary option. 
+Use either \"update\" or \"install\" as an argument." \\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
 echo -e "Example: $script -s -d $my_home/example_folder "\\n
@@ -59,7 +62,7 @@ else
 	exit 1
 fi
 
-while getopts ":d:s h" opt; do
+while getopts ":d:i:s h" opt; do
 	case $opt in
 		d)
 			if [ -d "$OPTARG" ]; then
@@ -72,6 +75,15 @@ while getopts ":d:s h" opt; do
 			else
 				echo "specified directory does not exist. EXIT!"
 				exit 1
+			fi
+			;;
+		i)
+			if [ "$OPTARG" = "update" -o "$OPTARG" = "install" ]; then
+				installoption="$OPTARG"
+			else
+				echo "$OPTARG is not a valid argument. EXIT!"
+				exit 1
+
 			fi
 			;;
 		s)
@@ -293,7 +305,24 @@ doinstalls() {
 	update_vim
 }
 
-dorequirements
-backup_link
-doinstalls
-echo "Everything was installed just fine. Dofiles are updated :)"
+completeinstallation() {
+	dorequirements
+	backup_link
+	doinstalls
+}
+
+update() {
+
+	backup_link
+	update_vim
+}
+
+install() {
+
+	if [ "$installoption" = "update" ]; then
+		update
+	elif [ "$installoption" = "install" ]; then
+		install
+	fi
+}
+install
