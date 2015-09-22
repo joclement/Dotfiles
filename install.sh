@@ -31,6 +31,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
 # whether to install system wide or for user
 system_wide=false
 installoption=""
+recompileyoucompleteme=false
 
 ##########
 
@@ -47,6 +48,7 @@ Default value is $to_dots .
 Folder must not have a ending /"\\n
 echo -e "-i    gives an installoption, necessary option. 
 Use either \"update\" or \"install\" as an argument." \\n
+echo -e "-y    recompile YouCompleteMe. Default is $recompileyoucompleteme" \\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
 echo -e "Example: $script -s -d $my_home/example_folder "\\n
@@ -62,7 +64,7 @@ else
 	exit 1
 fi
 
-while getopts ":d:i:s h" opt; do
+while getopts ":d:i:s y h" opt; do
 	case $opt in
 		d)
 			if [ -d "$OPTARG" ]; then
@@ -88,6 +90,9 @@ while getopts ":d:i:s h" opt; do
 			;;
 		s)
 			system_wide=true
+			;;
+		y)
+			recompileyoucompleteme=true
 			;;
 		h)
 			HELP;
@@ -274,13 +279,15 @@ update_vim() {
 	vim +PluginUpdate +qall
 	echo "done"
 
-	echo "install YouCompleteMe if it is a addon"
-	if [ -f $my_home/.vim/bundle/YouCompleteMe/install.py ]; then
-		python $my_home/.vim/bundle/YouCompleteMe/install.py --clang-completer
-	else 
-		echo "YouCompleteMe has not been found"
+	if [ "$recompileyoucompleteme" = "true" ]; then
+		echo "install YouCompleteMe if it is a addon"
+		if [ -f $my_home/.vim/bundle/YouCompleteMe/install.py ]; then
+			python $my_home/.vim/bundle/YouCompleteMe/install.py --clang-completer
+		else 
+			echo "YouCompleteMe has not been found"
+		fi
+		echo "done"
 	fi
-	echo "done"
 }
 
 install_solarized() {
