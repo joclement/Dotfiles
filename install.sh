@@ -256,7 +256,7 @@ install_powerline() {
 	echo "done"
 }
 
-install_vim() {
+update_vim() {
 
 	echo "install vim add ons"
 	vim +PluginUpdate +qall
@@ -290,7 +290,7 @@ backup_link() {
 doinstalls() {
 	install_solarized
 	install_powerline
-	install_vim
+	update_vim
 }
 
 dorequirements
