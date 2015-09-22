@@ -277,11 +277,23 @@ install_solarized() {
 	cd
 }
 
-install_dependencies
-install_zsh
-create_olddir
-symlink_files
-install_solarized
-install_powerline
-install_vim
+dorequirements() {
+	install_dependencies
+	install_zsh
+}
+
+backup_link() {
+	create_olddir
+	symlink_files
+}
+
+doinstalls() {
+	install_solarized
+	install_powerline
+	install_vim
+}
+
+dorequirements
+backup_link
+doinstalls
 echo "Everything was installed just fine. Dofiles are updated :)"
