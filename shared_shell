@@ -1,19 +1,16 @@
 #!/bin/sh  
-
-export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
-
-if [ -d $HOME/.local/bin ]; then
-	export PATH="$HOME/.local/bin:$PATH"
-fi
+###This file contains all the settings shared between different shells(bash, zsh)
+###It just sources(enables) the other shared files, if they exist
 
 #to include the shared aliases, if they exist
 if [ -f $HOME/.shared_aliases ]; then
 	source $HOME/.shared_aliases
 fi
 
-#set vim as standard editor, also for visual
-export VISUAL=vim
-export EDITOR="$VISUAL"
+#to include the shared environemt variables, if they exist
+if [ -f $HOME/.env ]; then
+	source $HOME/.env
+fi
 
 # Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then

@@ -1,0 +1,13 @@
+#!/bin/bash 
+###This file contains the environment variables used by bash and zsh
+
+export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
+
+if [ -d $HOME/.local/bin ]; then
+	export PATH="$HOME/.local/bin:$PATH"
+fi
+
+#set environment variable for standard editor to vim, also for visual
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
