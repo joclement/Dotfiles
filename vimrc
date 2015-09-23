@@ -253,3 +253,8 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 """behavior settings
 "automatically read file that has been changed on disk and doesn't have changes in vim
 set autoread
+""spell settings
+" highlight spell errors
+hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+" " toggle spell check with <F7>
+map <F7> :setlocal spell! spell?<CR>
