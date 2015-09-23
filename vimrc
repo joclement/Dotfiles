@@ -96,10 +96,10 @@ filetype plugin indent on    " required
 
 "for support 256 colors
 syntax enable
-set t_Co=256
+"set t_Co=256
 set background=dark
 if !has('gui_running')
-	let g:solarized_termcolors=&t_Co
+	"let g:solarized_termcolors=&t_Co
 	let g:solarized_termtrans=1
 endif
 colorscheme solarized
