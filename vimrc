@@ -245,6 +245,7 @@ runtime macros/matchit.vim
 """search settings
 "highlight search matches 
 set hlsearch
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " ignore these files when completing names and in explorer
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.h5
 
