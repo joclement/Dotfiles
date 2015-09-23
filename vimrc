@@ -160,7 +160,7 @@ endfunction
 let myEndColumn=90
 "set color for particular column
 execute "set colorcolumn=".myEndColumn
-highlight ColorColumn ctermbg=233
+highlight ColorColumn ctermbg=black
 "set end of columns to 110
 execute "set tw=".myEndColumn
 
