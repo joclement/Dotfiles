@@ -329,7 +329,7 @@ install() {
 	if [ "$installoption" = "update" ]; then
 		update
 	elif [ "$installoption" = "install" ]; then
-		install
+		completeinstallation
 	fi
 }
 install
