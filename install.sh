@@ -32,6 +32,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
 system_wide=false
 installoption=""
 recompileyoucompleteme=false
+changedefzsh=true
 
 ##########
 
@@ -50,6 +51,7 @@ echo -e "-i    gives an installoption, necessary option.
 Use either \"update\" or \"install\" as an argument." \\n
 echo -e "-y    recompile YouCompleteMe. Default is $recompileyoucompleteme" \\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
+echo -e "-n    Do not set zsh as default shell" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
 echo -e "Example: $script -s -d $my_home/example_folder "\\n
 exit 1
@@ -64,7 +66,7 @@ else
 	exit 1
 fi
 
-while getopts ":d:i:s y h" opt; do
+while getopts ":d:i:s y n h" opt; do
 	case $opt in
 		d)
 			if [ -d "$OPTARG" ]; then
@@ -93,6 +95,9 @@ while getopts ":d:i:s y h" opt; do
 			;;
 		y)
 			recompileyoucompleteme=true
+			;;
+		n)
+			changedefzsh=false
 			;;
 		h)
 			HELP;
@@ -200,16 +205,21 @@ install_dependencies() {
 	fi
 }
 
-install_zsh () {
-	# Test to see if zshell is installed.  If it is:
-	if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+default_zsh() {
 
+	if [ "$changedefzsh" = "true" ]; then
 		# Set the default shell to zsh if it isn't currently set to zsh
 		if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
 			echo "change default shell to zsh..."
 			chsh -s $(which zsh)
 			echo "done"
 		fi
+	fi
+}
+install_zsh () {
+	# Test to see if zshell is installed.  If it is:
+	if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
+		default_zsh
 	else
 		# If zsh isn't installed, get the platform of the current machine
 		platform=$(uname);
