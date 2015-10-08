@@ -5,7 +5,7 @@
 #this function takes 1 argument, the folder, which should be added
 pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-            PATH="${PATH:+"$PATH:"}$1"
+            PATH="$1${PATH:+":$PATH"}"
         fi
 }
 
