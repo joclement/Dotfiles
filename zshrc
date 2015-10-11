@@ -86,3 +86,6 @@ fi
 
 #use vim mode for zsh
 bindkey -v
+
+#change SHELL variable to zsh, if using zsh
+export SHELL=$(which zsh)
