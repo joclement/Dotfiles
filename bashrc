@@ -136,3 +136,6 @@ if [ "$powerlineexists" = "true" ]; then
 	POWERLINE_BASH_SELECT=1
 	. $powerlineshpath
 fi
+
+#changes SHELL variable to bash, if using bash
+export SHELL=$(which bash)
