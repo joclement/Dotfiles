@@ -60,6 +60,9 @@ plugins=(git pip colored-man colorize history)
 
 source $ZSH/oh-my-zsh.sh
 
+#change SHELL variable to zsh, if using zsh
+export SHELL=$(which zsh)
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -86,6 +89,3 @@ fi
 
 #use vim mode for zsh
 bindkey -v
-
-#change SHELL variable to zsh, if using zsh
-export SHELL=$(which zsh)
