@@ -12,6 +12,5 @@
 	cia = !git add -A && git commit
 	unpushed = log @{u}.. --pretty=format:'%h %an %s'
 	pu = push
-[user]
 [push]
 	default = simple
