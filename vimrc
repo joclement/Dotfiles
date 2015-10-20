@@ -62,6 +62,9 @@ Plugin 'honza/vim-snippets'
 "Plugin for vim support for julia
 Plugin 'JuliaLang/julia-vim'
 
+"Plugin for easy switch between source and header file(C++)
+Plugin 'vim-scripts/a.vim'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 
