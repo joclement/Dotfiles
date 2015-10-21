@@ -3,6 +3,8 @@
 CASE_SENSITIVE="true"
 COMPLETION_WAITING_DOTS="true"
 
+# DISABLE AUTOCORRECTION
+DISABLE_CORRECTION="true"
 
 #########################################antigen stuff####################################
 
