@@ -13,16 +13,25 @@ source ~/.antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
-antigen bundle heroku
-antigen bundle pip
-antigen bundle lein
-antigen bundle command-not-found
-antigen bundle history
+#specify bundles
+antigen bundles <<EOBUNDLES
+
+# Guess what to install when running an unknown command
+command-not-found
+
+#for working with git
+git
+
+#for searching through history
+history
 
 # Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-syntax-highlighting
+
+# autcompletion for pip
+pip
+
+EOBUNDLES
 
 # Load the theme.
 antigen theme agnoster
