@@ -1,6 +1,7 @@
-#TODO check if this works
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
+
+#shows dots if waiting for autocompletion, ...
 COMPLETION_WAITING_DOTS="true"
 
 # DISABLE AUTOCORRECTION
