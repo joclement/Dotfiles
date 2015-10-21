@@ -26,6 +26,9 @@ extract
 git
 git-extras
 
+# to go to parent dirs quickly
+Tarrasch/zsh-bd
+
 #for searching through history
 history
 
