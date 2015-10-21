@@ -308,6 +308,7 @@ install_solarized() {
 
 dorequirements() {
 	install_dependencies
+	git submodule update --recursive --init 
 	install_zsh
 }
 
@@ -330,6 +331,7 @@ completeinstallation() {
 
 update() {
 
+	git submodule update --recursive --init 
 	backup_link
 	update_vim
 }
