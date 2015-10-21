@@ -24,6 +24,7 @@ extract
 
 #for working with git
 git
+git-extras
 
 #for searching through history
 history
