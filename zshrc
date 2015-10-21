@@ -17,6 +17,7 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
+antigen bundle history
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
