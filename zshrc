@@ -19,6 +19,9 @@ antigen bundles <<EOBUNDLES
 # Guess what to install when running an unknown command
 command-not-found
 
+# Helper for extracting different types of archives
+extract
+
 #for working with git
 git
 
