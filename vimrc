@@ -184,6 +184,21 @@ nnoremap <silent> <C-A> "_d
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
 
+"Disable arrow keys, force myself to use hjkl
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+
+"Disable error line length with pylin python checker
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
+
+"find word under cursor and replace it something
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+""""""""""""SETTINGS FOR PLUGINS""""""""""""""""""""""""""""""
+
 "set default .ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
@@ -194,15 +209,11 @@ noremap <F3> :call Svndiff("prev")<CR>
 noremap <F4> :call Svndiff("next")<CR>
 "mapping to clear the diffs
 noremap <F5> :call Svndiff("clear")<CR> 
-
 "for autoupdate of difference to version control system 
 let g:svndiff_autoupdate = 1 
 
-"Disable arrow keys, force myself to use hjkl
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+"toogle between syntastic enabled and disabled
+nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 "make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -222,23 +233,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 
-"Disable error line length with pylin python checker
-let g:syntastic_python_pylint_post_args="--max-line-length=120"
-
-"toogle between syntastic enabled and disabled
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-
-"find word under cursor and replace it something
-nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
-
+"""settings for nerdtree
 "set shortcut to toggle display of nerdtree
 map <C-e> :NERDTreeToggle<CR>
-
 "display nerdtree, if vim is started without file argument
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-"set tab settings for specific project
+"set tab settings for julia
 autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
 "activate matchit plugin, is included in normal vim distribution
