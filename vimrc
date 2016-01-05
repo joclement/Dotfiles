@@ -243,6 +243,13 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "set tab settings for julia
 autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
+"""settings for latex
+"tab settings
+autocmd FileType tex set tabstop=2 shiftwidth=2 expandtab
+let g:tex_flavor='latex'
+"to not check spelling in comments
+let g:tex_comment_nospell=1
+
 "activate matchit plugin, is included in normal vim distribution
 "the plugin is for matching, f.x. if or function blocks with %
 runtime macros/matchit.vim
