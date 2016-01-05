@@ -262,4 +262,4 @@ set autoread
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 " " toggle spell check with <F7>
-map <F7> :setlocal spell! spell?<CR>
+map <F8> :setlocal spell! spell?<CR>
