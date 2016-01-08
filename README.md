@@ -27,7 +27,8 @@ If you've any questions, recommendations or criticism feel free to write me a ma
 
 ### Installation
 
-The installation process is explained in detail in the file `install.sh`.
+The installation process is explained in detail in the file `install.sh` and you can get
+some help information with `install.sh -h`.
 
 ### Quick Installation
 
@@ -36,5 +37,5 @@ To be absolutely secure save your Dotfiles prior to doing this!
 ``` bash
 git clone git://github.com/flyingdutchman23/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
-./install.sh
+./install.sh -i install
 ```
