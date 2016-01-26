@@ -243,6 +243,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 "set tab settings for julia
 autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
+"set tab settings for php,html
+autocmd FileType php set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
+
 """settings for latex
 "tab settings
 autocmd FileType tex set tabstop=2 shiftwidth=2 expandtab
