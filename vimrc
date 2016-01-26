@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "Plugin for using git inside vim
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 
 "Plugin for making YouComplete and UltiSnips compatible
 Plugin 'ervandew/supertab'
