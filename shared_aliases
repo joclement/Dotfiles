@@ -26,7 +26,14 @@ alias .....='cd ../../../..'
 alias py='python'
 alias v='vim'
 alias g='git'
+alias s='svn'
 
+###shortcuts for svn
+alias sst='svn status'
+alias sa='svn add'
+alias su='svn update'
+alias sci='svn commit'
+alias sinf='svn info'
 
 
 
