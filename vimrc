@@ -65,6 +65,11 @@ Plugin 'JuliaLang/julia-vim'
 "Plugin for easy switch between source and header file(C++)
 Plugin 'vim-scripts/a.vim'
 
+"Plugin for javascript indentation & highlighting
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 
