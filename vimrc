@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "Plugin for using git inside vim
+"TODO test it
 "Plugin 'tpope/vim-fugitive'
 
 "Plugin for making YouComplete and UltiSnips compatible
@@ -69,6 +70,10 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+"Plugin to show indentation level
+"TODO make it work
+"Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
