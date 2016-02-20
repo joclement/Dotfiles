@@ -247,6 +247,9 @@ autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType php set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
 
+"set tab settings for javascript
+autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
+
 """settings for latex
 "tab settings
 autocmd FileType tex set tabstop=2 shiftwidth=2 expandtab
