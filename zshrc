@@ -41,6 +41,9 @@ zsh-users/zsh-syntax-highlighting
 # autcompletion for pip
 pip
 
+#autocompletion for meteor
+meteor
+
 EOBUNDLES
 
 # Load the theme.
