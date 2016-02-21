@@ -294,3 +294,5 @@ noremap <F8> :setlocal spell! spell?<CR>
 nnoremap <F6> "=strftime("%T")<CR>P
 inoremap <F6> <C-R>=strftime("%T")<CR>"
 
+"shortcut to go into braces while editing
+imap <C-c> <CR><Esc>O
