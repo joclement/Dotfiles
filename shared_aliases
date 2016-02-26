@@ -34,7 +34,7 @@ alias sa='svn add'
 alias su='svn update'
 alias sci='svn commit'
 alias sinf='svn info'
-
+alias sd='svn diff'
 
 
 
