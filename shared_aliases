@@ -35,7 +35,7 @@ alias su='svn update'
 alias sci='svn commit'
 alias sinf='svn info'
 alias sd='svn diff'
-
+alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
 
 
 
