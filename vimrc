@@ -75,6 +75,9 @@ Plugin 'mxw/vim-jsx'
 "TODO make it work
 "Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
 
+"Plugin to edit elements, which surround current position
+Plugin 'tpope/vim-surround'
+
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
 
