@@ -86,7 +86,13 @@ if [ -f $HOME/.shared_shell ]; then
 	source $HOME/.shared_shell
 fi
 
+#to include restricted autcompletion for zshrc
+if [ -f $HOME/.autocompletion_zsh ]; then
+	source $HOME/.autocompletion_zsh
+fi
+
 #use vim mode for zsh
 bindkey -v
 #activate history command search. Is disabled because of vim mode.
 bindkey "^R" history-incremental-search-backward
+

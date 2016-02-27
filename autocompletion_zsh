@@ -1,0 +1,6 @@
+#!/bin/zsh
+#This file is to improve the autocompletion for the zsh shell
+
+#restrict autocompletion for vim
+#do not autcomplete the named filetypes
+zstyle ':completion:*:*:vim:*' file-patterns '^*.(aux|xls|fls|blg|fdb_latexmk|eps|log|pdf|png|ods|bbl|h5|jpg|swp|class|obj|obj|o|a):source-files' '*:all-files'
