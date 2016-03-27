@@ -13,6 +13,7 @@ alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
+alias restnet='sudo service network-manager restart'
 
 
 ###for cd into ancestor directories
