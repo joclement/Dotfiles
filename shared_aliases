@@ -44,6 +44,11 @@ alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
 
 ################################ My alias functions #####################################
 
+#alias function for colordiff for svn
+function sdc() {
+	svn diff $1 | colordiff | less -R
+}
+
 #opens a file the standard way and leads the output to null
 function op {
 	xdg-open $1 > /dev/null
