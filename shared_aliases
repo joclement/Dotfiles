@@ -14,6 +14,7 @@ alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
 alias upg='sudo apt-get upgrade'
 alias restnet='sudo service network-manager restart'
+alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
 
 
 ###for cd into ancestor directories
