@@ -291,8 +291,21 @@ set autoread
 ""spell settings
 " highlight spell errors
 hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
-"" toggle spell check with <F7>
-noremap <F8> :setlocal spell! spell?<CR>
+"" toggle spell check with <F8>, cycle through all languages
+let b:myLang=0
+let g:myLangList=["nospell","de_de","en_us"]
+function! ToggleSpell()
+  let b:myLang=b:myLang+1
+  if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
+  if b:myLang==0
+    setlocal nospell
+  else
+    execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+  endif
+  echo "spell checking language:" g:myLangList[b:myLang]
+endfunction
+
+nmap <silent> <F8> :call ToggleSpell()<CR>
 
 "set timestamp with F6
 nnoremap <F6> "=strftime("%T")<CR>P
