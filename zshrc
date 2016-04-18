@@ -44,6 +44,9 @@ pip
 #autocompletion for meteor
 meteor
 
+#more autocompletion
+zsh-users/zsh-completions src
+
 EOBUNDLES
 
 # Load the theme.
