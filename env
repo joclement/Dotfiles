@@ -3,16 +3,22 @@
 
 #function to add folder to PATH environment variable
 #this function takes 1 argument, the folder, which should be added
-pathadd() {
+pathaddbegin() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
             PATH="$1${PATH:+":$PATH"}"
+        fi
+}
+
+pathaddend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+            PATH="$PATH:$1"
         fi
 }
 
 export PYTHONPATH="$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
 
 if [ -d $HOME/.local/bin ]; then
-	pathadd $HOME/.local/bin
+	pathaddend $HOME/.local/bin
 fi
 
 #set environment variable for standard editor to vim, also for visual
@@ -21,5 +27,5 @@ export EDITOR="$VISUAL"
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    pathadd $HOME/bin
+    pathaddend $HOME/bin
 fi
