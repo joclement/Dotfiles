@@ -173,12 +173,14 @@ function! ChangePaste(type, ...)
 endfunction
 
 "define variable for end column
-let myEndColumn=90
-"set color for particular column
-execute "set colorcolumn=".myEndColumn
-highlight ColorColumn ctermbg=black
-"set end of columns to 110
-execute "set tw=".myEndColumn
+if !has('gui_running')
+	let myEndColumn=90
+	"set color for particular column
+	execute "set colorcolumn=".myEndColumn
+	highlight ColorColumn ctermbg=black
+	"set end of columns to 110
+	execute "set tw=".myEndColumn
+endif
 
 """presentation settings
 "change color of linenumbers to grey
@@ -316,3 +318,8 @@ inoremap <F6> <C-R>=strftime("%T")<CR>"
 
 "shortcut to go into braces while editing
 imap <C-c> <CR><Esc>O
+
+" specific gvim settings
+if has('gui_running')
+	set lines=30 columns=100
+endif
