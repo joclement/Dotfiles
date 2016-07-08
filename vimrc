@@ -52,7 +52,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 
 "plugin for seeing difference with version control system file
-Plugin 'vim-scripts/svndiff'
+"activate it again, if really needed, but has some problems at every vundle
+"update
+"Plugin 'vim-scripts/svndiff'
 
 "Plugin for syntax checking inside vim
 Plugin 'scrooloose/syntastic'
@@ -217,15 +219,18 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 "set default .ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-"""mappings for svndiff
-"mapping for previous diff
-noremap <F3> :call Svndiff("prev")<CR>
-"mapping for next diff
-noremap <F4> :call Svndiff("next")<CR>
-"mapping to clear the diffs
-noremap <F5> :call Svndiff("clear")<CR> 
-"for autoupdate of difference to version control system 
-let g:svndiff_autoupdate = 1 
+
+"Currently not needed, because svndiff is deactivated
+""""mappings for svndiff
+""mapping for previous diff
+"noremap <F3> :call Svndiff("prev")<CR>
+""mapping for next diff
+"noremap <F4> :call Svndiff("next")<CR>
+""mapping to clear the diffs
+"noremap <F5> :call Svndiff("clear")<CR> 
+""for autoupdate of difference to version control system 
+"let g:svndiff_autoupdate = 1 
+
 
 "toogle between syntastic enabled and disabled
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
