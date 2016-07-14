@@ -1,0 +1,7 @@
+set window-height 2000
+set window-width 2000
+set adjust-open width
+
+map + zoom in
+map - zoom out
+map = zoom 0.0
