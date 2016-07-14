@@ -17,6 +17,8 @@ alias restnet='sudo service network-manager restart'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
 alias grep='grep --color=auto'
 alias cgrep='grep --color=always'
+# to run make in the background
+alias backmake='make &> /dev/null &'
 
 
 ###for cd into ancestor directories
