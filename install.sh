@@ -349,14 +349,14 @@ doinstalls() {
 
 completeinstallation() {
 	dorequirements
-	backup_link
+	#backup_link
 	doinstalls
 }
 
 update() {
 
 	git submodule update --recursive --init 
-	backup_link
+	#backup_link
 	update_vim
 }
 
