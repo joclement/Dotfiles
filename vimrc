@@ -37,7 +37,7 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'scrooloose/nerdtree-git-plugin'
 
 "Git repo for latex support
-Plugin 'lervag/vimtex'
+"Plugin 'lervag/vimtex'
 
 "plugin for a cool headerline, now using powerline instead
 "Plugin 'bling/vim-airline'
