@@ -337,7 +337,8 @@ dorequirements() {
 }
 
 backup_link() {
-	create_olddir
+	# creates sometimes error, does not have a real benefit
+	# create_olddir
 	symlink_files
 }
 
@@ -349,14 +350,14 @@ doinstalls() {
 
 completeinstallation() {
 	dorequirements
-	#backup_link
+	backup_link
 	doinstalls
 }
 
 update() {
 
 	git submodule update --recursive --init 
-	#backup_link
+	backup_link
 	update_vim
 }
 
