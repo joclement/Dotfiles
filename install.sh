@@ -55,7 +55,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
 # whether to install system wide or for user
 system_wide=false
 installoption=""
-recompileyoucompleteme=false
+recompileyoucompleteme=true
 changedefzsh=true
 
 ##########
@@ -240,6 +240,7 @@ default_zsh() {
 		fi
 	fi
 }
+
 install_zsh () {
 	# Test to see if zshell is installed.  If it is:
 	if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -269,14 +270,14 @@ install_zsh () {
 install_powerline() {
 
 	echo "check if powerline is installed, if not install"
-	if [ $(pip list | grep powerline-status | wc -l) == 0 ];
+	if [ $(pip3 list | grep powerline-status | wc -l) == 0 ];
 	then
 		if [ "$system_wide" = true ]; then
 			echo "installing system wide"
-			sudo pip install powerline-status;
+			sudo pip3 install powerline-status;
 		else
 			echo "installing for user"
-			pip install --user powerline-status;
+			pip3 install --user powerline-status;
 		fi
 	fi
 	echo "done"
@@ -343,7 +344,9 @@ backup_link() {
 }
 
 doinstalls() {
+	echo "install solarized..."
 	install_solarized
+	echo "finish installtion solarized"
 	install_powerline
 	update_vim
 }
