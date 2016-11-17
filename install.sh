@@ -55,7 +55,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
 # whether to install system wide or for user
 system_wide=false
 installoption=""
-recompileyoucompleteme=true
+recompileyoucompleteme=false
 changedefzsh=true
 
 ##########
