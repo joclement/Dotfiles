@@ -77,7 +77,8 @@ echo -e "-y    recompile YouCompleteMe. Default is $recompileyoucompleteme" \\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-n    Do not set zsh as default shell" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
-echo -e "Example: $script -s -d $my_home/example_folder "\\n
+echo -e "Example for installation: $script -i install -y"\\n
+echo -e "Example for update: $script -i update -y"\\n
 exit 1
 }
 
@@ -102,6 +103,7 @@ while getopts ":d:i:s y n h" opt; do
 				fi
 			else
 				echo "specified directory does not exist. EXIT!"
+				HELP;
 				exit 1
 			fi
 			;;
@@ -110,6 +112,7 @@ while getopts ":d:i:s y n h" opt; do
 				installoption="$OPTARG"
 			else
 				echo "$OPTARG is not a valid argument. EXIT!"
+				HELP;
 				exit 1
 
 			fi
@@ -220,7 +223,8 @@ install_dependencies() {
 			echo "done"
 		fi
 	elif [[ $platform == 'Darwin' ]]; then
-		echo "Please install missing dependencies, then re-run this script!"
+		echo "This script might not be suitable for MAC OS, but you can
+		try!"
 		exit
 	else 
 		echo "Platform $platform not known!"
