@@ -142,7 +142,14 @@ create_olddir() {
 
 	# create dotfiles_old in homedir
 	echo -n "Creating $olddir for backup of any existing dotfiles in $my_home ..."
-	mkdir -p $olddir
+	#TODO check if the existing is a directory
+	if [ ! -f "$my_home/$olddir" ]; then
+		mkdir -p $olddir
+	else
+		echo "There is a file namen $olddir, which is supposed to be
+		the olddir file"
+		exit
+	fi
 	echo "done"
 }
 
@@ -343,7 +350,7 @@ dorequirements() {
 
 backup_link() {
 	# creates sometimes error, does not have a real benefit
-	# create_olddir
+	create_olddir
 	symlink_files
 }
 
