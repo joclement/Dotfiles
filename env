@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 ###This file contains the environment variables used by bash and zsh
 
 #function to add folder to PATH environment variable
@@ -15,7 +15,6 @@ pathaddend() {
         fi
 }
 
-export PYTHONPATH="${PYTHONPATH}:$HOME/.local/lib/python2.7/site-packages:$HOME/.local/lib/python3.4/site-packages/"
 
 if [ -d $HOME/.local/bin ]; then
 	pathaddend $HOME/.local/bin
