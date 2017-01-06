@@ -77,7 +77,8 @@ echo -e "-y    recompile YouCompleteMe. Default is $recompileyoucompleteme" \\n
 echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
 echo -e "-n    Do not set zsh as default shell" \\n
 echo -e "-h    Displays this help message. No further functions are performed."\\n
-echo -e "Example: $script -s -d $my_home/example_folder "\\n
+echo -e "Example for installation: $script -i install -y"\\n
+echo -e "Example for update: $script -i update -y"\\n
 exit 1
 }
 
@@ -102,6 +103,7 @@ while getopts ":d:i:s y n h" opt; do
 				fi
 			else
 				echo "specified directory does not exist. EXIT!"
+				HELP;
 				exit 1
 			fi
 			;;
@@ -110,6 +112,7 @@ while getopts ":d:i:s y n h" opt; do
 				installoption="$OPTARG"
 			else
 				echo "$OPTARG is not a valid argument. EXIT!"
+				HELP;
 				exit 1
 
 			fi
@@ -139,7 +142,14 @@ create_olddir() {
 
 	# create dotfiles_old in homedir
 	echo -n "Creating $olddir for backup of any existing dotfiles in $my_home ..."
-	mkdir -p $olddir
+	#TODO check if the existing is a directory
+	if [ ! -f "$my_home/$olddir" ]; then
+		mkdir -p $olddir
+	else
+		echo "There is a file namen $olddir, which is supposed to be
+		the olddir file"
+		exit
+	fi
 	echo "done"
 }
 
@@ -220,7 +230,8 @@ install_dependencies() {
 			echo "done"
 		fi
 	elif [[ $platform == 'Darwin' ]]; then
-		echo "Please install missing dependencies, then re-run this script!"
+		echo "This script might not be suitable for MAC OS, but you can
+		try!"
 		exit
 	else 
 		echo "Platform $platform not known!"
@@ -240,6 +251,7 @@ default_zsh() {
 		fi
 	fi
 }
+
 install_zsh () {
 	# Test to see if zshell is installed.  If it is:
 	if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
@@ -269,14 +281,14 @@ install_zsh () {
 install_powerline() {
 
 	echo "check if powerline is installed, if not install"
-	if [ $(pip list | grep powerline-status | wc -l) == 0 ];
+	if [ $(pip3 list | grep powerline-status | wc -l) == 0 ];
 	then
 		if [ "$system_wide" = true ]; then
 			echo "installing system wide"
-			sudo pip install powerline-status;
+			sudo pip3 install powerline-status;
 		else
 			echo "installing for user"
-			pip install --user powerline-status;
+			pip3 install --user powerline-status;
 		fi
 	fi
 	echo "done"
@@ -338,12 +350,14 @@ dorequirements() {
 
 backup_link() {
 	# creates sometimes error, does not have a real benefit
-	# create_olddir
+	create_olddir
 	symlink_files
 }
 
 doinstalls() {
+	echo "install solarized..."
 	install_solarized
+	echo "finish installtion solarized"
 	install_powerline
 	update_vim
 }

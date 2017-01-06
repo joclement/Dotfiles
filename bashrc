@@ -112,8 +112,10 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-#enable vim mode for bash
+# enable vim mode for bash
 set -o vi
+# maps the reverse history search to the / key
+bind '"/": reverse-search-history'
 
 powerlineshpath=~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 powerlineexists=false
@@ -134,3 +136,4 @@ if [ "$powerlineexists" = "true" ]; then
 	POWERLINE_BASH_SELECT=1
 	. $powerlineshpath
 fi
+
