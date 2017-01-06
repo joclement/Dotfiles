@@ -192,8 +192,8 @@ vnoremap // y/<C-R>"<CR>
 "show relative line numbers and line number for current line
 set relativenumber
 set number
-" use visual bell instead of beeping
-set visualbell
+" do not use visualbell, because it interrupts too much via ssh
+" set visualbell
 
 "delete to black hole
 nnoremap <silent> <C-A> "_d
