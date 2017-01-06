@@ -41,9 +41,6 @@ zsh-users/zsh-syntax-highlighting
 # autcompletion for pip
 pip
 
-#autocompletion for meteor
-meteor
-
 #more autocompletion
 zsh-users/zsh-completions src
 
