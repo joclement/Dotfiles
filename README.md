@@ -22,8 +22,21 @@ This Dotfiles repository focuses on:
 * git
 * own small functions and aliases to improve work
 
+The used plugins can be changed very easily for vim and zsh because of the use
+of antigen and Vundle. For more information on antigen and Vundle have a look in
+their repositories.
+
 
 If you've any questions, recommendations or criticism feel free to write me a mail.
+
+### Requirements
+
+These Dotfiles are used and have been tested on Ubuntu 14.04 and 16.04. They
+should work on other Linux distributions without any changes as well.
+
+These is no warranty or guarantee that they will work on your system. They have
+been tested and are working on my system, but you should save your Dotfiles and
+back up your system before installing these Dotfiles.
 
 ### Installation
 
