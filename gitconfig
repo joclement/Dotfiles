@@ -18,3 +18,5 @@
 	default = simple
 [color]
 	ui = true
+[diff]
+	tool = vimdiff
