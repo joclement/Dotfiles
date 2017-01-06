@@ -52,6 +52,17 @@ alias gd='git diff --color'
 
 ################################ My alias functions #####################################
 
+#alias function for parallel make
+function pmake() {
+    ncpu=$(nproc)
+    if (( ncpu > 8 ));
+    then
+        make -j8;
+    else
+        make -j$(ncpu);
+    fi;
+}
+
 #alias function for colordiff for svn
 function sdc() {
 	svn diff $1 | colordiff | less -R
