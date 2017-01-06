@@ -97,7 +97,7 @@ fi
 #use vim mode for zsh
 bindkey -v
 #activate history command search. Is disabled because of vim mode.
-bindkey "^R" history-incremental-search-backward
+# bindkey "^R" history-incremental-search-backward
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
