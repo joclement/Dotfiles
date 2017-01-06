@@ -44,6 +44,9 @@ pip
 #more autocompletion
 zsh-users/zsh-completions src
 
+# mercurial auto completion and shortcuts
+mercurial
+
 EOBUNDLES
 
 # Load the theme.
