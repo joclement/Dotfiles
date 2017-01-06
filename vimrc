@@ -260,6 +260,18 @@ map <C-e> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+"""General indentation rules
+" set the tabsize to 4 as a variable
+let tabsize = 4
+" these 3 settings convert a tab into the number of whitespaces defined by the
+" variable tabsize
+set expandtab
+execute "set softtabstop=".tabsize
+execute "set shiftwidth=".tabsize
+" to do multiple shiftwidths when using < or > for indentation, not sure what
+" that means :D
+set shiftround
+
 "set tab settings for julia
 autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
