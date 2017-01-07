@@ -177,10 +177,11 @@ endfunction
 "define variable for end column
 if !has('gui_running')
 	let myEndColumn=80
+	let myColorColumn=myEndColumn+1
 	"set color for particular column
-	execute "set colorcolumn=".myEndColumn
+	execute "set colorcolumn=".myColorColumn
 	highlight ColorColumn ctermbg=black
-	"set end of columns to 110
+	"set end of columns to 80
 	execute "set tw=".myEndColumn
 endif
 
