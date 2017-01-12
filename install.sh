@@ -159,7 +159,9 @@ symlink_files() {
 	# move any existing dotfiles in homedir to dotfiles_old directory, 
 	#then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 
+        # TODO put into a list for creation, #19
 	mkdir -p ~/.vim/bundle
+	mkdir -p ~/.config/zathura
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
