@@ -101,3 +101,8 @@ bindkey -v
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
+
+#to include restricted autcompletion for zshrc
+if [ -f $HOME/.private_zshrc ]; then
+	source $HOME/.private_zshrc
+fi
