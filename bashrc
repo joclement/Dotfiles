@@ -137,3 +137,7 @@ if [ "$powerlineexists" = "true" ]; then
 	. $powerlineshpath
 fi
 
+#to include private commands for bash, if they exist
+if [ -f $HOME/.private_bashrc ]; then
+	source $HOME/.private_bashrc
+fi
