@@ -174,9 +174,13 @@ symlink_files() {
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
+			echo "Move $file into $olddir"
 			mv $my_home/.$file $olddir
 		elif [ -d "$my_home/.$file" ]; then 
-			rm $my_home/.$file
+			echo "This dir $file should be a file. EXIT!"
+			exit
+		else
+			rm -f $my_home/.$file
 		fi
 		echo "done"
 		echo "Creating symlink to $file in $my_home directory."
