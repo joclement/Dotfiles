@@ -8,7 +8,7 @@
 alias ll='ls -l'
 alias la='ls -al'
 alias l='ls -F1'
-alias cl='clear'
+alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias upd='sudo apt-get update'
