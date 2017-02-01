@@ -204,12 +204,6 @@ nnoremap <silent> <C-A> "_d
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
 
-"Disable arrow keys, force myself to use hjkl
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
-
 
 "Disable error line length with pylin python checker
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
