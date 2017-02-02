@@ -330,9 +330,12 @@ endfunction
 
 nmap <silent> <F8> :call ToggleSpell()<CR>
 
-"set timestamp with F6
-nnoremap <F6> "=strftime("%T")<CR>P
-inoremap <F6> <C-R>=strftime("%T")<CR>"
+" function to toggle linenumber showing
+function! ToggleLineNumber()
+    set relativenumber!
+    set number!
+endfunction
+nnoremap <silent> <F6> :call ToggleLineNumber()<CR>
 
 "shortcut to go into braces while editing
 imap <C-c> <CR><Esc>O
