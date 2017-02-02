@@ -232,8 +232,8 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 "let g:svndiff_autoupdate = 1 
 
 
-"toogle between syntastic enabled and disabled
-nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+"toogle between syntastic enabled and disabled, using keys CTRL+k
+nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 "make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
