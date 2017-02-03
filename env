@@ -28,6 +28,15 @@ export EDITOR="$VISUAL"
 
 __pathaddend $HOME/bin
 
+ncpu=$(nproc)
+upper_limit=10
+if (( ncpu > 10 ));
+then
+    ncpu=$upper_limit
+fi;
+
+export MAKEFLAGS="-j $ncpu"
+
 # to keep it local
 unset -f __pathaddbegin
 unset -f __pathaddend
