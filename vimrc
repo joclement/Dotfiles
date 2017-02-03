@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"TODO set up vim-plug
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -114,10 +115,10 @@ filetype plugin indent on    " required
 
 "for support 256 colors
 syntax enable
-"set t_Co=256
+set t_Co=256
 set background=dark
 if !has('gui_running')
-	"let g:solarized_termcolors=&t_Co
+        let g:solarized_termcolors=&t_Co
 	let g:solarized_termtrans=1
 endif
 colorscheme solarized
@@ -147,16 +148,16 @@ if has("autocmd")
 	autocmd BufReadPost * call JumpToLastPosOpen()
 endif
 
-" The following are commented out as they cause vim to behave a lot                                           
-" differently from regular Vi. They are highly recommended though.                                            
-"set showcmd            " Show (partial) command in status line.                                              
-"set showmatch          " Show matching brackets.                                                             
-"set ignorecase         " Do case insensitive matching                                                        
-"set smartcase          " Do smart case matching                                                              
-"set incsearch          " Incremental search                                                                  
-"set autowrite          " Automatically save before commands like :next and :make                             
-"set hidden             " Hide buffers when they are abandoned                                                
-"set mouse=a            " Enable mouse usage (all modes) 
+" The following are commented out as they cause vim to behave a lot
+" differently from regular Vi. They are highly recommended though.
+"set showcmd            " Show (partial) command in status line.
+"set showmatch          " Show matching brackets.
+"set ignorecase         " Do case insensitive matching
+"set smartcase          " Do smart case matching
+"set incsearch          " Incremental search
+"set autowrite          " Automatically save before commands like :next and :make
+"set hidden             " Hide buffers when they are abandoned
+"set mouse=a            " Enable mouse usage (all modes)
 
 
 "for moving cursor by lines
@@ -185,10 +186,11 @@ endfunction
 "define variable for end column
 if !has('gui_running')
 	let myEndColumn=80
+	let myColorColumn=myEndColumn+1
 	"set color for particular column
-	execute "set colorcolumn=".myEndColumn
+	execute "set colorcolumn=".myColorColumn
 	highlight ColorColumn ctermbg=black
-	"set end of columns to 110
+	"set end of columns to 80
 	execute "set tw=".myEndColumn
 endif
 
@@ -208,12 +210,6 @@ nnoremap <silent> <C-A> "_d
 
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
-
-"Disable arrow keys, force myself to use hjkl
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
 
 
 "Disable error line length with pylin python checker
@@ -235,9 +231,9 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 ""mapping for next diff
 "noremap <F4> :call Svndiff("next")<CR>
 ""mapping to clear the diffs
-"noremap <F5> :call Svndiff("clear")<CR> 
-""for autoupdate of difference to version control system 
-"let g:svndiff_autoupdate = 1 
+"noremap <F5> :call Svndiff("clear")<CR>
+""for autoupdate of difference to version control system
+"let g:svndiff_autoupdate = 1
 
 
 "toogle between syntastic enabled and disabled, using keys CTRL+k
@@ -280,6 +276,7 @@ execute "set shiftwidth=".tabsize
 " that means :D
 set shiftround
 
+"TODO move to filetype section
 "set tab settings for julia
 autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
 
@@ -305,7 +302,7 @@ let g:tex_comment_nospell=1
 runtime macros/matchit.vim
 
 """search settings
-"highlight search matches 
+"highlight search matches
 set hlsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " ignore these files when completing names and in explorer
