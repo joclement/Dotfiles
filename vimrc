@@ -69,11 +69,6 @@ Plugin 'JuliaLang/julia-vim'
 "Plugin for easy switch between source and header file(C++)
 Plugin 'vim-scripts/a.vim'
 
-"Plugin for javascript indentation & highlighting
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
 "Plugin to show indentation level
 "TODO make it work
 "Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
@@ -285,9 +280,6 @@ autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 "set tab settings for php,html
 autocmd FileType php set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
-
-"set tab settings for javascript
-autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
 
 """settings for latex
 "tab settings
