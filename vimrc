@@ -352,6 +352,16 @@ if has('gui_running')
 	set lines=30 columns=100
 endif
 
+" TODO not sure if it works
+" to have autocompletion for selecting new files from current working directory
+" for each buffer in vim, so hopefull each tab as well
+let g:netrw_keepdir=0
+" to have the same effect with the explorer, so hopefully nerdtree as well
+set browsedir=current
+
+" use tags of any upper dir, if they are not available in the current dir
+set tags+=./tags;/
+
 
 " set makeprg to use make inside vim
 function! UpdateMakeSettings()
