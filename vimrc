@@ -345,6 +345,14 @@ if has('gui_running')
 	set lines=30 columns=100
 endif
 
+
+" set makeprg to use make inside vim
+function! UpdateMakeSettings()
+    set makeprg=make\ -C\ $MY_BUILD_DIR
+endfunction
+call UpdateMakeSettings()
+nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
+
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
