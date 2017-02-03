@@ -1,30 +1,33 @@
 #!/bin/bash
 ###This file contains the environment variables used by bash and zsh
 
-#function to add folder to PATH environment variable
-#this function takes 1 argument, the folder, which should be added
-pathaddbegin() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-            PATH="$1${PATH:+":$PATH"}"
-        fi
+# functions to add folder to PATH environment variable
+# Both functions takes 1 argument, the dir, which should be added
+# this function adds a to the begin, if the dir is not at the begin or in the
+# middle of PATH
+__pathaddbegin() {
+    if [ -d "$1" ] && [[ ":$PATH" != *":$1:"* ]];
+    then
+        PATH="$1${PATH:+":$PATH"}"
+    fi
+}
+# add dir to end, if it is nowhere in PATH
+__pathaddend() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]];
+    then
+        PATH="$PATH:$1"
+    fi
 }
 
-pathaddend() {
-    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-            PATH="$PATH:$1"
-        fi
-}
 
-
-if [ -d $HOME/.local/bin ]; then
-	pathaddend $HOME/.local/bin
-fi
+__pathaddend $HOME/.local/bin
 
 #set environment variable for standard editor to vim, also for visual
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    pathaddend $HOME/bin
-fi
+__pathaddend $HOME/bin
+
+# to keep it local
+unset -f __pathaddbegin
+unset -f __pathaddend
