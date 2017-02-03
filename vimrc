@@ -170,9 +170,6 @@ noremap <buffer> <silent> $ g$
 onoremap <silent> j gj
 onoremap <silent> k gk
 
-"Autoformat Indent
-nnoremap <silent> F gg=G''
-
 "replace with content of clipboard
 "noremap <buffer> <silent> <M-r> "_d
 
