@@ -42,15 +42,17 @@ my_home=$HOME
 to_dots=$HOME
 
 # dotfiles directory
-dir=$to_dots/Dotfiles
+dot_dir=$to_dots/Dotfiles
 
 # old dotfiles backup directory
 olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
-	dircolors-solarized antigen vim/bundle/Vundle.vim env\
+	dircolors-solarized antigen vim/bundle/Vundle.vim vim/ftplugin/* env\
 	autocompletion_zsh config/zathura/zathurarc"
+
+dirs="vim/bundle vim/ftplugin config/zathura"
 
 # whether to install system wide or for user
 system_wide=false
@@ -159,17 +161,30 @@ symlink_files() {
 	# move any existing dotfiles in homedir to dotfiles_old directory, 
 	#then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 
-	mkdir -p ~/.vim/bundle
+        for dir in $dirs; do
+            echo "Create dotfile dir: $dir"
+            if [ ! -f "$my_home/.$dir" ]; then
+                mkdir -p $my_home/.$dir
+            else
+                    echo "There is a file named $dir, which is supposed to be
+                    a directory"
+                    exit
+            fi
+        done
 	for file in $files; do
 		echo "Moving any existing dotfiles from $my_home to $olddir"
 		if [ -f "$my_home/.$file" ]; then
+			echo "Move $file into $olddir"
 			mv $my_home/.$file $olddir
 		elif [ -d "$my_home/.$file" ]; then 
-			rm $my_home/.$file
+			echo "This dir $file should be a file. EXIT!"
+			exit
+		else
+			rm -f $my_home/.$file
 		fi
 		echo "done"
 		echo "Creating symlink to $file in $my_home directory."
-		ln -s $dir/$file $my_home/.$file
+		ln -s $dot_dir/$file $my_home/.$file
 		echo "done"
 	done
 }
@@ -180,10 +195,10 @@ install_dependencies() {
 	if [[ $platform == 'Linux' ]]; then
 		if [[ -f /etc/debian_version ]]; then
 
-			echo "check if pip is installed, if not install"
-			if [ $(dpkg-query -l | grep pip | wc -l) == 0 ];
+			echo "check if pip3 is installed, if not install"
+			if [ $(dpkg-query -l | grep pip3 | wc -l) == 0 ];
 			then
-				sudo apt-get install pip;
+				sudo apt-get install python3-pip;
 			fi
 			echo "done"
 
@@ -337,7 +352,7 @@ update_vim() {
 }
 
 install_solarized() {
-	cd $dir/gnome-terminal-colors-solarized/
+	cd $dot_dir/gnome-terminal-colors-solarized/
 	. install.sh
 	cd
 }
