@@ -129,15 +129,23 @@ python3 del powerline_setup
 "so that vim-powerline appears all the time
 set laststatus=2
 
-" If using a dark background within the editing area and syntax highlighting                                  
-" turn on this option as well                                                                                 
+" If using a dark background within the editing area and syntax highlighting
+" turn on this option as well
 hi Visual term=reverse cterm=reverse guibg=Grey
 
-" Uncomment the following to have Vim jump to the last position when                                          
-" reopening a file                                                                                            
-if has("autocmd")                                                                                            
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif               
-endif                                                                                                        
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+function! JumpToLastPosOpen()
+    if exists("b:NoJumpToLastPosOpen")
+        return
+    endif
+    if line("'\"") > 1 && line("'\"") <= line("$")
+        exe "normal! g'\""
+    endif
+endfunction
+if has("autocmd")
+	autocmd BufReadPost * call JumpToLastPosOpen()
+endif
 
 " The following are commented out as they cause vim to behave a lot                                           
 " differently from regular Vi. They are highly recommended though.                                            
