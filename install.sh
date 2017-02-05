@@ -39,7 +39,7 @@ script=`basename $0`
 my_home=$HOME
 
 # alternative home folder for installation
-to_dots=$HOME
+to_dots=$my_home
 
 # dotfiles directory
 dot_dir=$to_dots/Dotfiles
@@ -65,12 +65,14 @@ changedefzsh=true
 #Help function
 function HELP {
     echo -e \\n"Help documentation for ${script}"\\n
-    echo "Installs the dotfiles of this git Dotfiles repository. You may need to give your passport
-    to install needed sytem wide software packages, f.x. cmake"
+    echo "Installs the dotfiles of this git Dotfiles repository. You may need to
+    give your passport to install needed sytem wide software packages, f.x. cmake"
     echo -e "Basic usage: ./$script "\\n
-    echo -e "-d    specify parent dir of Dotfiles git repo. Dotfiles has to be in that dir.
+    echo -e "-d    specify parent dir of Dotfiles git repo. Dotfiles has to be
+    in that dir.
     Folder needs to exist.
-    Normally this folder is the home directory, f.x. .vimrc is normally stored in $HOME/.vimrc.
+    Normally this folder is the home directory, f.x. .vimrc is normally stored
+    in $my_home/.vimrc.
     Default value is $to_dots .
     Folder must not have a ending /"\\n
     echo -e "-i    gives an installoption, necessary option.
@@ -81,7 +83,7 @@ function HELP {
     echo -e "-h    Displays this help message. No further functions are performed."\\n
     echo -e "Example for installation: $script -i install -y"\\n
     echo -e "Example for update: $script -i update -y"\\n
-    exit 1
+    exit 0
 }
 
 #check if bash is used
