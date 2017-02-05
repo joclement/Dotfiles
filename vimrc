@@ -11,10 +11,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-"Plugin for using git inside vim
-"TODO test it
-"Plugin 'tpope/vim-fugitive'
-
 "Plugin for making YouComplete and UltiSnips compatible
 Plugin 'ervandew/supertab'
 
@@ -33,29 +29,14 @@ Plugin 'altercation/vim-colors-solarized'
 "GitHub repo for working with filesystem plugin
 Plugin 'scrooloose/nerdtree'
 
-"GitHub repo for having git flags in nerdtree
-"TODO get it to work
-"Plugin 'scrooloose/nerdtree-git-plugin'
-
 "Git repo for latex support
 "Plugin 'lervag/vimtex'
-
-"plugin for a cool headerline, now using powerline instead
-"Plugin 'bling/vim-airline'
-
-"plugin for using multiple cursors
-"Plugin 'terryma/vim-multiple-cursors'
 
 "plugin to automatic close braces and similar things
 Plugin 'Raimondi/delimitMate'
 
 "plugin for completing small code parts
 Plugin 'SirVer/ultisnips'
-
-"plugin for seeing difference with version control system file
-"activate it again, if really needed, but has some problems at every vundle
-"update
-"Plugin 'vim-scripts/svndiff'
 
 "Plugin for syntax checking inside vim
 Plugin 'scrooloose/syntastic'
@@ -69,46 +50,15 @@ Plugin 'JuliaLang/julia-vim'
 "Plugin for easy switch between source and header file(C++)
 Plugin 'vim-scripts/a.vim'
 
-"Plugin to show indentation level
-"TODO make it work
-"Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
-
 "Plugin to edit elements, which surround current position
 Plugin 'tpope/vim-surround'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
-"for support 256 colors
+" to support 256 colors
 syntax enable
 set t_Co=256
 set background=dark
@@ -118,11 +68,11 @@ if !has('gui_running')
 endif
 colorscheme solarized
 
-"setup powerline for vim
+" setup powerline for vim
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
-"so that vim-powerline appears all the time
+" so that vim-powerline appears all the time
 set laststatus=2
 
 " If using a dark background within the editing area and syntax highlighting
@@ -139,20 +89,11 @@ function! JumpToLastPosOpen()
         exe "normal! g'\""
     endif
 endfunction
-if has("autocmd")
-	autocmd BufReadPost * call JumpToLastPosOpen()
-endif
+autocmd BufReadPost * call JumpToLastPosOpen()
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-"set showcmd            " Show (partial) command in status line.
-"set showmatch          " Show matching brackets.
-"set ignorecase         " Do case insensitive matching
-"set smartcase          " Do smart case matching
-"set incsearch          " Incremental search
-"set autowrite          " Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
-"set mouse=a            " Enable mouse usage (all modes)
+" TODO think about hidden option, you can edit other files even with unsaved
+" changes in the current file, because it is hidden instead of abandoned.
+"set hidden
 
 
 "for moving cursor by lines
@@ -164,9 +105,6 @@ noremap <buffer> <silent> $ g$
 "for other right behavior for cursor movement
 onoremap <silent> j gj
 onoremap <silent> k gk
-
-"replace with content of clipboard
-"noremap <buffer> <silent> <M-r> "_d
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@
@@ -187,18 +125,11 @@ if !has('gui_running')
 endif
 
 """presentation settings
-"change color of linenumbers to grey
-"highlight LineNr ctermfg=darkgray
 "to search for visually selected text
 vnoremap // y/<C-R>"<CR>
 "show relative line numbers and line number for current line
 set relativenumber
 set number
-" do not use visualbell, because it interrupts too much via ssh
-" set visualbell
-
-"delete to black hole
-nnoremap <silent> <C-A> "_d
 
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
@@ -266,8 +197,6 @@ let tabsize = 4
 set expandtab
 execute "set tabstop=".tabsize
 execute "set shiftwidth=".tabsize
-" to do multiple shiftwidths when using < or > for indentation, not sure what
-" that means :D
 set shiftround
 
 "activate matchit plugin, is included in normal vim distribution
