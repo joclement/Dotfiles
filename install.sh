@@ -182,10 +182,15 @@ symlink_files() {
             mv $my_home/.$file $olddir
         elif [ -d "$my_home/.$file" ];
         then
-            echo "This dir $file should be a file. EXIT!"
-            exit 1
+            if [ -L "$my_home/.$file" ]
+            then
+                rm $my_home/.$file
+            else
+                echo "This dir $file should be a file. EXIT!"
+                exit 1
+            fi
         else
-            rm -f $my_home/.$file
+            echo "This link $file does not exist yet in the $my_home dir."
         fi
         echo "done"
         echo "Creating symlink to $file in $my_home directory."
