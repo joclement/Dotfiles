@@ -144,16 +144,13 @@ done
 
 create_olddir() {
 
-    # create dotfiles_old in homedir
-    echo -n "Creating $olddir for backup of any existing dotfiles in $my_home ..."
-    #TODO check if the existing is a directory
-    if [ ! -f "$my_home/$olddir" ];
+    echo -n "Creating $olddir for backup of any existing dotfiles"
+    if [ ! -f "$olddir" ];
     then
         mkdir -p $olddir
     else
-        echo "There is a file namen $olddir, which is supposed to be
-        the olddir file"
-        exit
+        echo "There is a file named $olddir, which should be the backup dir"
+        exit 1
     fi
     echo "done"
 }
