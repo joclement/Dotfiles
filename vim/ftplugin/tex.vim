@@ -1,5 +1,4 @@
 set tabstop=2
-set shiftwidth=2
 
 let g:tex_flavor='latex'
 " to not check spelling in comments

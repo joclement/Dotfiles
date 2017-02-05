@@ -190,13 +190,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """General indentation rules
-" set the tabsize to 4 as a variable
-let tabsize = 4
-" these 3 settings convert a tab into the number of whitespaces defined by the
-" variable tabsize
 set expandtab
-execute "set tabstop=".tabsize
-execute "set shiftwidth=".tabsize
+set tabstop=4
+set shiftwidth=0
 set shiftround
 
 "activate matchit plugin, is included in normal vim distribution
