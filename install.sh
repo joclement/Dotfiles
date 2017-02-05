@@ -171,7 +171,7 @@ symlink_files() {
         else
             echo "There is a file named $dir, which is supposed to be
             a directory"
-            exit
+            exit 1
         fi
     done
     for file in $files; do
@@ -183,7 +183,7 @@ symlink_files() {
         elif [ -d "$my_home/.$file" ];
         then
             echo "This dir $file should be a file. EXIT!"
-            exit
+            exit 1
         else
             rm -f $my_home/.$file
         fi
@@ -255,11 +255,11 @@ install_dependencies() {
     then
         echo "This script might not be suitable for MAC OS, but you can
         try!"
-        exit
+        exit 1
     else
         echo "Platform $platform not known!"
         echo "This script might be not suitable for your platform"
-        exit
+        exit 1
     fi
 }
 
@@ -303,7 +303,7 @@ install_zsh () {
         elif [[ $platform == 'Darwin' ]];
         then
             echo "Please install zsh, then re-run this script!"
-            exit
+            exit 1
         fi
     fi
 }
