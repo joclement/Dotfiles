@@ -371,6 +371,6 @@ function! RemoveTrailingWhitespace()
     if exists('b:NoRemoveTrailingWhitespace')
         return
     endif
-    %s/\s\+$//e
+    %s/\s\+$//ge
 endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
