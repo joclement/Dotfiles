@@ -264,7 +264,7 @@ let tabsize = 4
 " these 3 settings convert a tab into the number of whitespaces defined by the
 " variable tabsize
 set expandtab
-execute "set softtabstop=".tabsize
+execute "set tabstop=".tabsize
 execute "set shiftwidth=".tabsize
 " to do multiple shiftwidths when using < or > for indentation, not sure what
 " that means :D
