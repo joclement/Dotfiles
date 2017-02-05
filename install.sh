@@ -83,7 +83,6 @@ function HELP {
     echo -e "-h    Displays this help message. No further functions are performed."\\n
     echo -e "Example for installation: $script -i install -y"\\n
     echo -e "Example for update: $script -i update -y"\\n
-    exit 0
 }
 
 #check if bash is used
@@ -134,11 +133,13 @@ while getopts ":d:i:s y n h" opt; do
             ;;
         h)
             HELP;
+            exit 0
             ;;
         \?)
             echo "Invalid option:
             -$OPTARG" >&2
             HELP;
+            exit 0
             ;;
     esac
 done
