@@ -38,6 +38,9 @@ script=`basename $0`
 # alternative home folder for installation
 my_home=$HOME
 
+# folder to install repos, which are not in the ubuntu packages
+local_software=$my_home/local_software
+
 # alternative home folder for installation
 to_dots=$my_home
 
@@ -387,12 +390,22 @@ install_vundle() {
     git clone https://github.com/VundleVim/Vundle.vim.git $my_home/vim/bundle/Vundle.vim
 }
 
+install_ctags() {
+    git clone https://github.com/universal-ctags/ctags $local_sotfware/universal-ctags
+    cd $local_software/universal-ctags
+    sh autogen.sh
+    sh configure.sh
+    make
+    sudo make install
+}
+
 doinstalls() {
     echo "install solarized..."
     install_solarized
     echo "finish installtion solarized"
     install_powerline
     install_vundle
+    install_ctags
     update_vim
 }
 
