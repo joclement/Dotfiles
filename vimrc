@@ -1,65 +1,52 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-"TODO set up vim-plug
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" TODO check if necessary
+" For making YouComplete and UltiSnips compatible
+Plug 'ervandew/supertab'
 
-"Plugin for making YouComplete and UltiSnips compatible
-Plugin 'ervandew/supertab'
+" For easy commenting
+Plug 'scrooloose/nerdcommenter'
 
-"GitHub repo for easy commenting plugin
-Plugin 'scrooloose/nerdcommenter'
+" Auto completion
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 
-"GitHub repo for Auto completion plugin
-Plugin 'Valloric/YouCompleteMe'
+" Solarized color theme
+Plug 'altercation/vim-colors-solarized'
 
-"Plugin for solarized color theme
-Plugin 'altercation/vim-colors-solarized'
+" TODO get it to work
+" For automatically generating a file for semantic autocompletion plugin
+"Plug 'rdnetto/YCM-Generator'
 
-"GitHub repo for automatically generating a file for semantic autocompletion plugin
-"Plugin 'rdnetto/YCM-Generator'
+" filesystem explorer
+Plug 'scrooloose/nerdtree'
 
-"GitHub repo for working with filesystem plugin
-Plugin 'scrooloose/nerdtree'
+" To automatic close braces and similar things
+Plug 'Raimondi/delimitMate'
 
-"Git repo for latex support
-"Plugin 'lervag/vimtex'
+" For completing small code parts
+Plug 'SirVer/ultisnips'
 
-"plugin to automatic close braces and similar things
-Plugin 'Raimondi/delimitMate'
+" For syntax checking inside vim
+Plug 'scrooloose/syntastic'
 
-"plugin for completing small code parts
-Plugin 'SirVer/ultisnips'
+" To have the standard Ultisnips snippets
+Plug 'honza/vim-snippets'
 
-"Plugin for syntax checking inside vim
-Plugin 'scrooloose/syntastic'
+" for julia coding
+Plug 'JuliaLang/julia-vim'
 
-"Plugin to have the standard Ultisnips snippets
-Plugin 'honza/vim-snippets'
+" For easy switch between source and header file(C++)
+Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
-"Plugin for vim support for julia
-Plugin 'JuliaLang/julia-vim'
+" To edit elements, which surround current position
+Plug 'tpope/vim-surround'
 
-"Plugin for easy switch between source and header file(C++)
-Plugin 'vim-scripts/a.vim'
+call plug#end()
 
-"Plugin to edit elements, which surround current position
-Plugin 'tpope/vim-surround'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
 
 " to support 256 colors
-syntax enable
 set t_Co=256
 set background=dark
 if !has('gui_running')

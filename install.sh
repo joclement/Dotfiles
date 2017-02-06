@@ -52,10 +52,10 @@ olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
-    dircolors-solarized antigen vim/bundle/Vundle.vim vim/ftplugin/* env\
+    dircolors-solarized antigen vim/ftplugin/* env\
     autocompletion_zsh config/zathura/zathurarc"
 
-dirs="vim/bundle vim/ftplugin config/zathura"
+dirs="vim/ftplugin config/zathura"
 
 # whether to install system wide or for user
 system_wide=false
@@ -80,12 +80,11 @@ function HELP {
     Folder must not have a ending /"\\n
     echo -e "-i    gives an installoption, necessary option.
     Use either \"update\" or \"install\" as an argument." \\n
-    echo -e "-y    recompile YouCompleteMe. Default is $recompileyoucompleteme" \\n
     echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
     echo -e "-n    Do not set zsh as default shell" \\n
     echo -e "-h    Displays this help message. No further functions are performed."\\n
-    echo -e "Example for installation: $script -i install -y"\\n
-    echo -e "Example for update: $script -i update -y"\\n
+    echo -e "Example for installation: $script -i install"\\n
+    echo -e "Example for update: $script -i update"\\n
 }
 
 #check if bash is used
@@ -97,7 +96,7 @@ else
     exit 1
 fi
 
-while getopts ":d:i:s y n h" opt; do
+while getopts ":d:i:s n h" opt; do
     case $opt in
         d)
             if [ -d "$OPTARG" ];
@@ -127,9 +126,6 @@ while getopts ":d:i:s y n h" opt; do
             ;;
         s)
             system_wide=true
-            ;;
-        y)
-            recompileyoucompleteme=true
             ;;
         n)
             changedefzsh=false
@@ -353,20 +349,8 @@ install_powerline() {
 
 update_vim() {
     echo "install vim add ons"
-    vim +PluginUpdate +qall
+    vim +PlugUpdate +qall
     echo "done"
-
-    if [ "$recompileyoucompleteme" = "true" ];
-    then
-        echo "install YouCompleteMe if it is a addon"
-        if [ -f $my_home/.vim/bundle/YouCompleteMe/install.py ];
-        then
-            python $my_home/.vim/bundle/YouCompleteMe/install.py --clang-completer
-        else
-            echo "YouCompleteMe has not been found"
-        fi
-        echo "done"
-    fi
 }
 
 install_solarized() {
@@ -386,8 +370,9 @@ backup_link() {
     symlink_files
 }
 
-install_vundle() {
-    git clone https://github.com/VundleVim/Vundle.vim.git $my_home/vim/bundle/Vundle.vim
+install_vimplug() {
+    curl -fLo $my_home/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_ctags() {
@@ -404,7 +389,7 @@ doinstalls() {
     install_solarized
     echo "finish installtion solarized"
     install_powerline
-    install_vundle
+    install_vimplug
     mkdir -p $local_software
     install_ctags
     update_vim
