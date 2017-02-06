@@ -405,6 +405,7 @@ doinstalls() {
     echo "finish installtion solarized"
     install_powerline
     install_vundle
+    mkdir -p $local_software
     install_ctags
     update_vim
 }
