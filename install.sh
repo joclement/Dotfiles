@@ -146,7 +146,6 @@ done
 
 
 create_olddir() {
-
     echo -n "Creating $olddir for backup of any existing dotfiles"
     if [ ! -f "$olddir" ];
     then
@@ -160,10 +159,6 @@ create_olddir() {
 
 
 symlink_files() {
-
-    # move any existing dotfiles in homedir to dotfiles_old directory,
-    #then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-
     for dir in $dirs; do
         echo "Create dotfile dir: $dir"
         if [ ! -f "$my_home/.$dir" ];
@@ -201,13 +196,11 @@ symlink_files() {
 }
 
 install_dependencies() {
-
     platform=$(uname);
     if [[ $platform == 'Linux' ]];
     then
         if [[ -f /etc/debian_version ]];
         then
-
             echo "check if pip3 is installed, if not install"
             if [ $(dpkg-query -l | grep pip3 | wc -l) == 0 ];
             then
@@ -270,7 +263,6 @@ install_dependencies() {
 }
 
 default_zsh() {
-
     if [ "$changedefzsh" = "true" ];
     then
         # Set the default shell to zsh if it isn't currently set to zsh
@@ -315,7 +307,6 @@ install_zsh () {
 }
 
 install_powerline() {
-
     echo "check if powerline is installed, if not install"
     if [ $(pip3 list | grep powerline-status | wc -l) == 0 ];
     then
@@ -358,7 +349,6 @@ install_powerline() {
 }
 
 update_vim() {
-
     echo "install vim add ons"
     vim +PluginUpdate +qall
     echo "done"
