@@ -383,11 +383,16 @@ backup_link() {
     symlink_files
 }
 
+install_vundle() {
+    git clone https://github.com/VundleVim/Vundle.vim.git $my_home/vim/bundle/Vundle.vim
+}
+
 doinstalls() {
     echo "install solarized..."
     install_solarized
     echo "finish installtion solarized"
     install_powerline
+    install_vundle
     update_vim
 }
 
