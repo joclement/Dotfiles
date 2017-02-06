@@ -55,7 +55,7 @@ files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
     dircolors-solarized antigen vim/ftplugin/* env\
     autocompletion_zsh config/zathura/zathurarc"
 
-dirs="vim/ftplugin config/zathura"
+dirs="vim/autoload vim/ftplugin config/zathura"
 
 # whether to install system wide or for user
 system_wide=false
@@ -371,7 +371,7 @@ backup_link() {
 }
 
 install_vimplug() {
-    curl -fLo $my_home/.vim/autoload/plug.vim --create-dirs \
+    curl -fL -o $my_home/.vim/autoload/plug.vim \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
