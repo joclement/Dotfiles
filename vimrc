@@ -146,19 +146,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 "set default .ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-
-"Currently not needed, because svndiff is deactivated
-""""mappings for svndiff
-""mapping for previous diff
-"noremap <F3> :call Svndiff("prev")<CR>
-""mapping for next diff
-"noremap <F4> :call Svndiff("next")<CR>
-""mapping to clear the diffs
-"noremap <F5> :call Svndiff("clear")<CR>
-""for autoupdate of difference to version control system
-"let g:svndiff_autoupdate = 1
-
-
 "toogle between syntastic enabled and disabled, using keys CTRL+k
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
@@ -257,7 +244,7 @@ let g:netrw_keepdir=0
 set browsedir=current
 
 " use tags of any upper dir, if they are not available in the current dir
-set tags+=./tags;/
+set tags+=./tags;
 
 
 " set makeprg to use make inside vim
