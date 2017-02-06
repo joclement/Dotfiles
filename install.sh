@@ -335,14 +335,14 @@ install_powerline() {
         sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
     else
         echo "installing for user..."
-        echo "move PowerlineSymbols to ~/.fonts/, create folder if non-existing"
-        mkdir -p ~/.fonts/
-        mv PowerlineSymbols.otf ~/.fonts/
+        echo "move PowerlineSymbols to $my_home/fonts/, create folder if non-existing"
+        mkdir -p $my_home/fonts/
+        mv PowerlineSymbols.otf $my_home/fonts/
         echo "update fonts cache"
-        fc-cache -vf ~/.fonts/
-        echo "move fonts conf to ~/.config/fontconfig/conf.d/, create folder if non-existing"
-        mkdir -p ~/.config/fontconfig/conf.d/
-        mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+        fc-cache -vf $my_home/fonts/
+        echo "move fonts conf to $my_home/config/fontconfig/conf.d/, create folder if non-existing"
+        mkdir -p $my_home/config/fontconfig/conf.d/
+        mv 10-powerline-symbols.conf $my_home/config/fontconfig/conf.d/
     fi
     echo "done"
 }
