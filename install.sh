@@ -32,6 +32,8 @@
 #automatic quit, if error
 set -e
 
+cwd=`pwd`
+
 # the name of the script
 script=`basename $0`
 
@@ -356,7 +358,7 @@ update_vim() {
 install_solarized() {
     cd $dot_dir/gnome-terminal-colors-solarized/
     . install.sh
-    cd
+    cd $cwd
 }
 
 dorequirements() {
@@ -382,6 +384,7 @@ install_ctags() {
     sh configure.sh
     make
     sudo make install
+    cd $cwd
 }
 
 doinstalls() {
