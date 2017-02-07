@@ -387,6 +387,17 @@ install_ctags() {
     cd $cwd
 }
 
+install_global() {
+    version='global-6.5.6'
+    curl -fL -o $local_software/ http://tamacom.com/global/${version}.tar.gz
+    tar -xf ${version}.tar.gz
+    cd $local_software/${version}
+    ./configure
+    make
+    sudo make install
+    cd $cwd
+}
+
 doinstalls() {
     echo "install solarized..."
     install_solarized
@@ -395,6 +406,7 @@ doinstalls() {
     install_vimplug
     mkdir -p $local_software
     install_ctags
+    install_global
     update_vim
 }
 
