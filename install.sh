@@ -378,22 +378,29 @@ install_vimplug() {
 }
 
 install_ctags() {
-    git clone https://github.com/universal-ctags/ctags $local_sotfware/universal-ctags
-    cd $local_software/universal-ctags
-    sh autogen.sh
-    sh configure.sh
+    cd $local_software
+    git clone https://github.com/universal-ctags/ctags
+    cd $local_software/ctags
+    ./autogen.sh
+    cd $local_software/ctags
+    ./configure
+    cd $local_software/ctags
     make
+    cd $local_software/ctags
     sudo make install
     cd $cwd
 }
 
 install_global() {
     version='global-6.5.6'
-    curl -fL -o $local_software/ http://tamacom.com/global/${version}.tar.gz
-    tar -xf ${version}.tar.gz
+    curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
+    cd $local_software
+    tar -zxf ${version}.tar.gz
     cd $local_software/${version}
     ./configure
+    cd $local_software/${version}
     make
+    cd $local_software/${version}
     sudo make install
     cd $cwd
 }
