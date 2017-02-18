@@ -35,7 +35,7 @@ Plug 'scrooloose/syntastic'
 Plug 'honza/vim-snippets'
 
 " for julia coding
-Plug 'JuliaLang/julia-vim'
+Plug 'JuliaEditorSupport/julia-vim'
 
 " For easy switch between source and header file(C++)
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
