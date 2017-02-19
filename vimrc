@@ -166,7 +166,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 """General indentation rules
 set expandtab
 set tabstop=4
-set shiftwidth=0
+set shiftwidth=4
 set shiftround
 
 "activate matchit plugin, is included in normal vim distribution
