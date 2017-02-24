@@ -43,6 +43,8 @@ Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 " To edit elements, which surround current position
 Plug 'tpope/vim-surround'
 
+" TODO add plugin for latex, especially for latex indentation
+
 call plug#end()
 
 
