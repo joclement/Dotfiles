@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 
 call plug#begin('~/.vim/plugged')
 
+" TODO make UltiSnips workable again
 " TODO check if necessary
 " For making YouComplete and UltiSnips compatible
 Plug 'ervandew/supertab'
@@ -80,9 +81,8 @@ function! JumpToLastPosOpen()
 endfunction
 autocmd BufReadPost * call JumpToLastPosOpen()
 
-" TODO think about hidden option, you can edit other files even with unsaved
-" changes in the current file, because it is hidden instead of abandoned.
-"set hidden
+
+set hidden
 
 
 "for moving cursor by lines
