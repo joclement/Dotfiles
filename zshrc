@@ -35,9 +35,6 @@ Tarrasch/zsh-bd
 #for searching through history
 history
 
-# Syntax highlighting bundle.
-zsh-users/zsh-syntax-highlighting
-
 # autcompletion for pip
 pip
 
@@ -48,6 +45,7 @@ zsh-users/zsh-completions src
 mercurial
 
 EOBUNDLES
+# TODO find way to add plugin based on version
 
 # Load the theme.
 antigen theme agnoster
