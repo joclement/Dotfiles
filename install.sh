@@ -48,7 +48,7 @@ dot_dir=$to_dots/Dotfiles
 olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bashrc vimrc gitconfig shared_aliases zshrc shared_shell\
+files="bashrc vimrc gitconfig shared_aliases zshrc inputrc shared_shell\
 	dircolors-solarized antigen vim/bundle/Vundle.vim vim/ftplugin/* env\
 	autocompletion_zsh config/zathura/zathurarc"
 
