@@ -304,6 +304,9 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 
 """behavior settings
 
+"activate backspace
+set backspace=2
+
 "automatically read file that has been changed on disk and doesn't have changes in vim
 set autoread
 

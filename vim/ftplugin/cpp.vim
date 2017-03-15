@@ -8,7 +8,6 @@
 "execute "set softtabstop=".tabsize
 
 " indentation rules
-set backspace=2
 " cindent should override autoindent, so this might be unnecessary as well
 " might be unnecessary, because it is activated for C++ by default
 "set cindent
