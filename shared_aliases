@@ -1,8 +1,5 @@
-#!/bin/sh  
-################################### My aliases ##########################################
-
-###git aliases
-
+#!/bin/sh
+################################### My aliases #################################
 
 ###miscellaneous aliases
 alias ll='ls -l'
@@ -20,13 +17,11 @@ alias cgrep='grep --color=always'
 # to run make in the background
 alias backmake='make &> /dev/null &'
 
-
 ###for cd into ancestor directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
 
 ###shortcuts for programs
 alias py='python3'
@@ -48,9 +43,7 @@ alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
 alias gd='git diff --color'
 
 
-
-
-################################ My alias functions #####################################
+################################ My alias functions ############################
 
 #alias function for parallel make
 function pmake() {
@@ -75,26 +68,14 @@ function op {
 	:
 }
 
-#updates and upgrades the system via apt-get
-function up () {
-	sudo apt-get update;
-	echo "Do you wish to upgrade?";
-	varConfirmLoop=$(confirmLoop)
-		if (( varConfirmLoop == 0 ));
-	then
-		sudo apt-get upgrade;
-	fi;
-}
-
 #function to wait for a valid answer from the user in a loop
-function confirmLoop () {
+function confirmLoop() {
 	varConfirm=$(confirm);
 	compare=2;
 	while true;
 	do
 		if ((varConfirm == compare));
 		then
-			
 			varConfirm=$(confirm);
 		else
 			break;
@@ -105,7 +86,6 @@ function confirmLoop () {
 
 #function to let the user confirm his previos decision
 function confirm () {
-
 	read -p "" choice;
 	if [ "$choice" == "Y" ];
 	then
@@ -113,10 +93,9 @@ function confirm () {
 	elif [ "$choice" == "n" ];
 	then
 		echo 1;
-	else 
+	else
 		echo 2;
 	fi;
-
 }
 
 #a function to create a directory and directly move into it

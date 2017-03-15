@@ -19,7 +19,6 @@ __pathaddend() {
     fi
 }
 
-
 __pathaddend $HOME/.local/bin
 
 #set environment variable for standard editor to vim, also for visual

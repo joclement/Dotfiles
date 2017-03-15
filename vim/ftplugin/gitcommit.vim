@@ -2,4 +2,4 @@
 " remembering of the cursor position, vim jumps to the last used position. But
 " that's not a good behaviour for git commit messages.
 let b:NoJumpToLastPosOpen=1
-let b:NoRemoveTrailingWhiteSpace=1
+let b:NoRemoveTrailingWhitespace=1
