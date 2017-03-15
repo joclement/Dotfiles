@@ -1,115 +1,55 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-"TODO set up vim-plug
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" TODO make UltiSnips workable again
+" TODO check if necessary
+" For making YouComplete and UltiSnips compatible
+Plug 'ervandew/supertab'
 
-"Plugin for using git inside vim
-"TODO test it
-"Plugin 'tpope/vim-fugitive'
+" For easy commenting
+Plug 'scrooloose/nerdcommenter'
 
-"Plugin for making YouComplete and UltiSnips compatible
-Plugin 'ervandew/supertab'
+" Auto completion
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 
-"GitHub repo for easy commenting plugin
-Plugin 'scrooloose/nerdcommenter'
+" Solarized color theme
+Plug 'altercation/vim-colors-solarized'
 
-"GitHub repo for Auto completion plugin
-Plugin 'Valloric/YouCompleteMe'
+" TODO get it to work
+" For automatically generating a file for semantic autocompletion plugin
+"Plug 'rdnetto/YCM-Generator'
 
-"Plugin for solarized color theme
-Plugin 'altercation/vim-colors-solarized'
+" filesystem explorer
+Plug 'scrooloose/nerdtree'
 
-"GitHub repo for automatically generating a file for semantic autocompletion plugin
-"Plugin 'rdnetto/YCM-Generator'
+" To automatic close braces and similar things
+Plug 'Raimondi/delimitMate'
 
-"GitHub repo for working with filesystem plugin
-Plugin 'scrooloose/nerdtree'
+" For completing small code parts
+Plug 'SirVer/ultisnips'
 
-"GitHub repo for having git flags in nerdtree
-"TODO get it to work
-"Plugin 'scrooloose/nerdtree-git-plugin'
+" For syntax checking inside vim
+Plug 'scrooloose/syntastic'
 
-"Git repo for latex support
-"Plugin 'lervag/vimtex'
+" To have the standard Ultisnips snippets
+Plug 'honza/vim-snippets'
 
-"plugin for a cool headerline, now using powerline instead
-"Plugin 'bling/vim-airline'
+" for julia coding
+Plug 'JuliaEditorSupport/julia-vim'
 
-"plugin for using multiple cursors
-"Plugin 'terryma/vim-multiple-cursors'
+" For easy switch between source and header file(C++)
+Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
-"plugin to automatic close braces and similar things
-Plugin 'Raimondi/delimitMate'
+" To edit elements, which surround current position
+Plug 'tpope/vim-surround'
 
-"plugin for completing small code parts
-Plugin 'SirVer/ultisnips'
+" TODO add plugin for latex, especially for latex indentation
 
-"plugin for seeing difference with version control system file
-"activate it again, if really needed, but has some problems at every vundle
-"update
-"Plugin 'vim-scripts/svndiff'
+call plug#end()
 
-"Plugin for syntax checking inside vim
-Plugin 'scrooloose/syntastic'
 
-"Plugin to have the standard Ultisnips snippets
-Plugin 'honza/vim-snippets'
-
-"Plugin for vim support for julia
-Plugin 'JuliaLang/julia-vim'
-
-"Plugin for easy switch between source and header file(C++)
-Plugin 'vim-scripts/a.vim'
-
-"Plugin to show indentation level
-"TODO make it work
-"Plugin 'https://github.com/nathanaelkane/vim-indent-guides.git'
-
-"Plugin to edit elements, which surround current position
-Plugin 'tpope/vim-surround'
-
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
-"for support 256 colors
-syntax enable
+" to support 256 colors
 set t_Co=256
 set background=dark
 if !has('gui_running')
@@ -118,11 +58,11 @@ if !has('gui_running')
 endif
 colorscheme solarized
 
-"setup powerline for vim
+" setup powerline for vim
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
-"so that vim-powerline appears all the time
+" so that vim-powerline appears all the time
 set laststatus=2
 
 " If using a dark background within the editing area and syntax highlighting
@@ -139,20 +79,10 @@ function! JumpToLastPosOpen()
         exe "normal! g'\""
     endif
 endfunction
-if has("autocmd")
-	autocmd BufReadPost * call JumpToLastPosOpen()
-endif
+autocmd BufReadPost * call JumpToLastPosOpen()
 
-" The following are commented out as they cause vim to behave a lot
-" differently from regular Vi. They are highly recommended though.
-"set showcmd            " Show (partial) command in status line.
-"set showmatch          " Show matching brackets.
-"set ignorecase         " Do case insensitive matching
-"set smartcase          " Do smart case matching
-"set incsearch          " Incremental search
-"set autowrite          " Automatically save before commands like :next and :make
-"set hidden             " Hide buffers when they are abandoned
-"set mouse=a            " Enable mouse usage (all modes)
+
+set hidden
 
 
 "for moving cursor by lines
@@ -164,9 +94,6 @@ noremap <buffer> <silent> $ g$
 "for other right behavior for cursor movement
 onoremap <silent> j gj
 onoremap <silent> k gk
-
-"replace with content of clipboard
-"noremap <buffer> <silent> <M-r> "_d
 
 "This allows for change paste motion cp{motion}
 nmap <silent> cp :set opfunc=ChangePaste<CR>g@
@@ -187,18 +114,11 @@ if !has('gui_running')
 endif
 
 """presentation settings
-"change color of linenumbers to grey
-"highlight LineNr ctermfg=darkgray
 "to search for visually selected text
 vnoremap // y/<C-R>"<CR>
 "show relative line numbers and line number for current line
 set relativenumber
 set number
-" do not use visualbell, because it interrupts too much via ssh
-" set visualbell
-
-"delete to black hole
-nnoremap <silent> <C-A> "_d
 
 "leaves preview scratch mode
 autocmd CompleteDone * pclose
@@ -214,19 +134,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 "set default .ycm_extra_conf.py
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
-
-"Currently not needed, because svndiff is deactivated
-""""mappings for svndiff
-""mapping for previous diff
-"noremap <F3> :call Svndiff("prev")<CR>
-""mapping for next diff
-"noremap <F4> :call Svndiff("next")<CR>
-""mapping to clear the diffs
-"noremap <F5> :call Svndiff("clear")<CR>
-""for autoupdate of difference to version control system
-"let g:svndiff_autoupdate = 1
-
 
 "toogle between syntastic enabled and disabled, using keys CTRL+k
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
@@ -259,34 +166,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """General indentation rules
-" set the tabsize to 4 as a variable
-let tabsize = 4
-" these 3 settings convert a tab into the number of whitespaces defined by the
-" variable tabsize
 set expandtab
-execute "set softtabstop=".tabsize
-execute "set shiftwidth=".tabsize
-" to do multiple shiftwidths when using < or > for indentation, not sure what
-" that means :D
+set tabstop=4
+set shiftwidth=4
 set shiftround
-
-"TODO move to filetype section
-"set tab settings for julia
-autocmd FileType julia set tabstop=2 shiftwidth=2 expandtab
-
-"set tab settings for python
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
-
-"set tab settings for php,html
-autocmd FileType php set tabstop=2 shiftwidth=2 expandtab
-autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
-
-"""settings for latex
-"tab settings
-autocmd FileType tex set tabstop=2 shiftwidth=2 expandtab
-let g:tex_flavor='latex'
-"to not check spelling in comments
-let g:tex_comment_nospell=1
 
 "activate matchit plugin, is included in normal vim distribution
 "the plugin is for matching, f.x. if or function blocks with %
@@ -299,13 +182,15 @@ nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 " ignore these files when completing names and in explorer
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 			\,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
-                        \,*.pdf
+                        \,*.toc
 
 
 """behavior settings
 
 "activate backspace
 set backspace=2
+
+set history=1000
 
 "automatically read file that has been changed on disk and doesn't have changes in vim
 set autoread
@@ -352,7 +237,7 @@ let g:netrw_keepdir=0
 set browsedir=current
 
 " use tags of any upper dir, if they are not available in the current dir
-set tags+=./tags;/
+set tags+=./tags;
 
 
 " set makeprg to use make inside vim
@@ -366,7 +251,7 @@ nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertEnter * call clearmatches()
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " remove trailing whitespace
@@ -374,6 +259,6 @@ function! RemoveTrailingWhitespace()
     if (exists('b:NoRemoveTrailingWhitespace') || &ft=='')
         return
     endif
-    %s/\s\+$//e
+    %s/\s\+$//ge
 endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
