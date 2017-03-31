@@ -7,6 +7,8 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE AUTOCORRECTION
 DISABLE_CORRECTION="true"
 
+export TERM="xterm-256color"
+
 if [ -f $HOME/.private_zshrc ]; then
 	source $HOME/.private_zshrc
 fi
