@@ -7,6 +7,8 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE AUTOCORRECTION
 DISABLE_CORRECTION="true"
 
+
+
 #########################################antigen stuff####################################
 
 source ~/.antigen/antigen.zsh
@@ -48,7 +50,15 @@ EOBUNDLES
 # TODO find way to add plugin based on version
 
 # Load the theme.
-antigen theme agnoster
+antigen theme bhilburn/powerlevel9k powerlevel9k
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs)
+if [ -n "$SSH_CLIENT" ]; then
+    POWERLEVEL9K_CONTEXT_TEMPLATE="@%m"
+fi
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 # Tell antigen that you're done.
 antigen apply
