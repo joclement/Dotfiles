@@ -61,9 +61,22 @@ endif
 colorscheme solarized
 
 " setup powerline for vim
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+let python3_works=1
+try
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+catch /E319:/
+    let python3_works=0
+endtry
+if python3_works == 0
+    try
+        python from powerline.vim import setup as powerline_setup
+        python powerline_setup()
+        python del powerline_setup
+    catch /E319:/
+    endtry
+endif
 " so that vim-powerline appears all the time
 set laststatus=2
 
