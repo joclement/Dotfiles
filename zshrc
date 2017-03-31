@@ -94,6 +94,14 @@ fi
 
 #use vim mode for zsh
 bindkey -v
+# to do backslash vim-like search faster
+vi-search-fix() {
+zle vi-cmd-mode
+zle .vi-history-search-backward
+}
+autoload vi-search-fix
+zle -N vi-search-fix
+bindkey -M viins '\e/' vi-search-fix
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
