@@ -7,7 +7,9 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE AUTOCORRECTION
 DISABLE_CORRECTION="true"
 
-
+if [ -f $HOME/.private_zshrc ]; then
+	source $HOME/.private_zshrc
+fi
 
 #########################################antigen stuff####################################
 
@@ -115,8 +117,3 @@ bindkey -M viins '\e/' vi-search-fix
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
-
-#to include restricted autcompletion for zshrc
-if [ -f $HOME/.private_zshrc ]; then
-	source $HOME/.private_zshrc
-fi
