@@ -122,10 +122,6 @@ vnoremap // y/<C-R>"<CR>
 set relativenumber
 set number
 
-"leaves preview scratch mode
-autocmd CompleteDone * pclose
-
-
 "Disable error line length with pylin python checker
 let g:syntastic_python_pylint_post_args="--max-line-length=120"
 
