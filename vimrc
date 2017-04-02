@@ -46,6 +46,8 @@ Plug 'tpope/vim-surround'
 
 Plug 'embear/vim-localvimrc'
 
+Plug 'tpope/vim-dispatch'
+
 " TODO add plugin for latex, especially for latex indentation
 
 call plug#end()
