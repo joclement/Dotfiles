@@ -6,26 +6,14 @@ This repository uses some of the content from github.com/michaeljsmalley/Dotfile
 especially for linking the Dotfiles. I thank him for sharing his Dotfiles.
 
 This Dotfiles repository focuses on:
-* the z shell with a lot of plug-ins:
-    * antigen
-    * solarized
-    * git
-    * history
-    * ...
-* vim with the usage of a lot plug-ins:
-    * YouCompleteMe
-    * solarized
-    * nerdtree
-    * ultisnips
-    * vim-latex
-    * ...
+* zsh using antigen
+* vim
 * git
 * own small functions and aliases to improve work
 
 The used plugins can be changed very easily for vim and zsh because of the use
 of antigen and Vundle. For more information on antigen and Vundle have a look in
 their repositories.
-
 
 If you've any questions, recommendations or criticism feel free to write me a mail.
 
@@ -40,8 +28,10 @@ back up your system before installing these Dotfiles.
 
 ### Installation
 
-The installation process is explained in detail in the file `install.sh` and you can get
-some help information with `install.sh -h`.
+The installation process is explained in detail in the file `install.sh` and you
+can get some help information with `install.sh -h`.
+The bash script relies on certain tools, which are just install on debian based
+systems like apt, so this script can not be used on other distributions.
 
 ### Quick Installation
 
