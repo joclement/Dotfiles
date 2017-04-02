@@ -50,6 +50,9 @@ zsh-users/zsh-completions src
 # mercurial auto completion and shortcuts
 mercurial
 
+# to show alias, if there is one for a full command
+djui/alias-tips
+
 EOBUNDLES
 # TODO find way to add plugin based on version
 
