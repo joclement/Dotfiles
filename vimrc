@@ -48,6 +48,8 @@ Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-dispatch'
 
+Plug 'jistr/vim-nerdtree-tabs'
+
 " TODO add plugin for latex, especially for latex indentation
 
 call plug#end()
@@ -173,7 +175,7 @@ let g:syntastic_check_on_open = 0
 
 """settings for nerdtree
 "set shortcut to toggle display of nerdtree
-map <C-e> :NERDTreeToggle<CR>
+map <C-e> :NERDTreeMirrorToggle<CR>
 "display nerdtree, if vim is started without file argument
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
