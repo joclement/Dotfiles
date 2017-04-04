@@ -291,3 +291,10 @@ function! DeleteHiddenUnmodifiedBuffers()
     endfor
     echo "Closed ".closed." hidden buffers"
 endfunction
+
+" command for dispatch like normal cw command
+function! DispatchCw()
+    execute 'Copen'
+    execute 'cw'
+endfunction
+command! Cw call DispatchCw()
