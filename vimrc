@@ -298,3 +298,14 @@ function! DispatchCw()
     execute 'cw'
 endfunction
 command! Cw call DispatchCw()
+
+function! AutoCloseQuickfix()
+    if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"
+        q
+    endif
+endfunction
+
+augroup QFClose
+    autocmd!
+    autocmd WinEnter * call AutoCloseQuickfix()
+augroup END
