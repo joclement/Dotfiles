@@ -59,7 +59,7 @@ EOBUNDLES
 # Load the theme.
 antigen theme bhilburn/powerlevel9k powerlevel9k
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
 if [ -n "$SSH_CLIENT" ]; then
     POWERLEVEL9K_CONTEXT_TEMPLATE="@%m"
 fi
