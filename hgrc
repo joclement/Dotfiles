@@ -1,0 +1,39 @@
+[ui]
+ignore = ~/.hgignore
+
+[extensions]
+children =
+churn =
+color =
+graphlog =
+mq =
+hgk =
+pager =
+purge =
+rebase =
+record =
+transplant =
+convert=
+carp =!
+
+
+[merge-patterns]
+** = vimdiff
+
+[diff]
+showfunc = True
+git = True
+
+[mq]
+secret = True
+
+[color]
+qseries.applied = green bold underline
+qseries.unapplied = red bold
+qseries.missing = blue bold
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff, tip, status, help, incoming, outgoing
+
+%include ~/.privatehgrc
