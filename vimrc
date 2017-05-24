@@ -58,10 +58,8 @@ call plug#end()
 " to support 256 colors
 set t_Co=256
 set background=dark
-if !has('gui_running')
-        let g:solarized_termcolors=&t_Co
-	let g:solarized_termtrans=1
-endif
+let g:solarized_termcolors=&t_Co
+let g:solarized_termtrans=1
 colorscheme solarized
 
 " setup powerline for vim
@@ -122,15 +120,13 @@ function! ChangePaste(type, ...)
 endfunction
 
 "define variable for end column
-if !has('gui_running')
-	let myEndColumn=80
-	let myColorColumn=myEndColumn+1
-	"set color for particular column
-	execute "set colorcolumn=".myColorColumn
-	highlight ColorColumn ctermbg=black
-	"set end of columns to 80
-	execute "set tw=".myEndColumn
-endif
+let myEndColumn=80
+let myColorColumn=myEndColumn+1
+"set color for particular column
+execute "set colorcolumn=".myColorColumn
+highlight ColorColumn ctermbg=black
+"set end of columns to 80
+execute "set tw=".myEndColumn
 
 """presentation settings
 "to search for visually selected text
@@ -239,11 +235,6 @@ nnoremap <silent> <F6> :call ToggleLineNumber()<CR>
 
 "shortcut to go into braces while editing
 imap <C-c> <CR><Esc>O
-
-" specific gvim settings
-if has('gui_running')
-	set lines=30 columns=100
-endif
 
 " TODO not sure if it works
 " to have autocompletion for selecting new files from current working directory
