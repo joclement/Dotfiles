@@ -53,7 +53,7 @@ dot_dir=$to_dots/Dotfiles
 olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="bashrc vimrc gitconfig shared_aliases zshrc inputrc shared_shell\
+files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
 	dircolors-solarized antigen vim/ftplugin/* env\
 	autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc"
 
