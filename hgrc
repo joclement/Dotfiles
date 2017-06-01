@@ -16,6 +16,8 @@ transplant =
 convert=
 carp =!
 
+[alias]
+qd = qdiff
 
 [merge-patterns]
 ** = vimdiff
