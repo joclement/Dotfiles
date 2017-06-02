@@ -4,3 +4,5 @@
 #restrict autocompletion for vim
 #do not autcomplete the named filetypes
 zstyle ':completion:*:*:vim:*' file-patterns '^*.(class|zip|doc|aux|xls|fls|blg|fdb_latexmk|eps|log|pdf|png|ods|bbl|h5|jpg|swp|class|obj|obj|o|a|toc):source-files' '*:all-files'
+
+zstyle ':completion:*:*:op:*' file-patterns '^*.(md|cpp|hpp):source-files' '*:all-files'
