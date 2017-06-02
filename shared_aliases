@@ -107,6 +107,6 @@ function mkcd {
 
 function md2html {
     markdownfile=$1
-    htmlfile=${markdownfile: -3}".html"
-    markdown $marfilename > htmlfile
+    htmlfile=${markdownfile%".md"}".html"
+    markdown $markdownfile > $htmlfile
 }
