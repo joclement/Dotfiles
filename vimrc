@@ -7,45 +7,31 @@ call plug#begin('~/.vim/plugged')
 " For making YouComplete and UltiSnips compatible
 Plug 'ervandew/supertab'
 
-" Auto completion
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-
-" Solarized color theme
-Plug 'altercation/vim-colors-solarized'
-
 " TODO get it to work
-" For automatically generating a file for semantic autocompletion plugin
 "Plug 'rdnetto/YCM-Generator'
 
-" filesystem explorer
-Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
 
-" To automatic close braces and similar things
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+
 Plug 'Raimondi/delimitMate'
 
-" For completing small code parts
 Plug 'SirVer/ultisnips'
-
-" For syntax checking inside vim
-Plug 'scrooloose/syntastic'
-
-" To have the standard Ultisnips snippets
 Plug 'honza/vim-snippets'
 
-" for julia coding
+Plug 'scrooloose/syntastic'
+
 Plug 'JuliaEditorSupport/julia-vim'
 
-" For easy switch between source and header file(C++)
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
-" To edit elements, which surround current position
 Plug 'tpope/vim-surround'
 
 Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-dispatch'
-
-Plug 'jistr/vim-nerdtree-tabs'
 
 " TODO add plugin for latex, especially for latex indentation
 
