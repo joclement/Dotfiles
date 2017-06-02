@@ -7,9 +7,6 @@ call plug#begin('~/.vim/plugged')
 " For making YouComplete and UltiSnips compatible
 Plug 'ervandew/supertab'
 
-" For easy commenting
-Plug 'scrooloose/nerdcommenter'
-
 " Auto completion
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 
