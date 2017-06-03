@@ -104,3 +104,9 @@ function mkcd {
     mkdir $1 && cd $1
   fi
 }
+
+function md2html {
+    markdownfile=$1
+    htmlfile=${markdownfile%".md"}".html"
+    markdown $markdownfile > $htmlfile
+}
