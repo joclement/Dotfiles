@@ -211,9 +211,8 @@ endfunction
 
 
 " spelling {{{
-" highlight spell errors
-hi SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
-"" toggle spell check with <F8>, cycle through all languages
+highlight SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
+
 let b:myLang=0
 let g:myLangList=["nospell","de_de","en_us"]
 function! ToggleSpell()
