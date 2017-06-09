@@ -213,17 +213,17 @@ endfunction
 " spelling {{{
 highlight SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
-let b:myLang=0
+let g:myLang=0
 let g:myLangList=["nospell","de_de","en_us"]
 function! ToggleSpell()
-  let b:myLang=b:myLang+1
-  if b:myLang>=len(g:myLangList) | let b:myLang=0 | endif
-  if b:myLang==0
+  let g:myLang += 1
+  if g:myLang>=len(g:myLangList) | let g:myLang=0 | endif
+  if g:myLang==0
     setlocal nospell
   else
-    execute "setlocal spell spelllang=".get(g:myLangList, b:myLang)
+    execute "setlocal spell spelllang=".get(g:myLangList, g:myLang)
   endif
-  echo "spell checking language:" g:myLangList[b:myLang]
+  echo "spell checking language:" g:myLangList[g:myLang]
 endfunction
 
 nmap <silent> <F8> :call ToggleSpell()<CR>
