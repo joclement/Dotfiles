@@ -148,11 +148,15 @@ nnoremap <silent> <F6> :call ToggleLineNumber()<CR>
 
 
 " end column highlighting {{{
-let myEndColumn=80
-execute "set textwidth=".myEndColumn
-let myColorColumn=myEndColumn+1
-execute "set colorcolumn=".myColorColumn
-highlight ColorColumn ctermbg=black
+function! SetTextWidth(myTextwidth)
+    let myEndColumn = a:myTextwidth
+    execute "set textwidth=".myEndColumn
+    let myColorColumn=myEndColumn+1
+    execute "set colorcolumn=".myColorColumn
+    highlight ColorColumn ctermbg=black
+endfunction
+
+call SetTextWidth(80)
 " }}}
 
 
