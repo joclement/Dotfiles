@@ -312,10 +312,6 @@ let g:netrw_keepdir=0
 " to have the same effect with the explorer, so hopefully nerdtree as well
 set browsedir=current
 
-" use tags of any upper dir, if they are not available in the current dir
-" TODO remove?
-set tags+=./tags;
-
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 " TODO what is this option good for?
