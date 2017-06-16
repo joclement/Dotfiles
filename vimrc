@@ -297,13 +297,6 @@ set history=1000
 " TODO what is this good for?
 imap <C-c> <CR><Esc>O
 
-" TODO not sure if it works
-" to have autocompletion for selecting new files from current working directory
-" for each buffer in vim, so hopefull each tab as well
-let g:netrw_keepdir=0
-" to have the same effect with the explorer, so hopefully nerdtree as well
-set browsedir=current
-
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 " TODO what is this option good for?
