@@ -292,11 +292,6 @@ set backspace=2
 set history=1000
 " }}}
 
-
-"shortcut to go into braces while editing
-" TODO what is this good for?
-imap <C-c> <CR><Esc>O
-
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 " TODO what is this option good for?
