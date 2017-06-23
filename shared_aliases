@@ -34,6 +34,9 @@ alias sinf='svn info'
 alias sd='svn diff'
 alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
 
+###shortcuts for mercurial
+alias hglg='hg log --stat'
+
 ### shortcuts for git commands
 # to activate colors in terminal via ssh
 alias gd='git diff --color'
