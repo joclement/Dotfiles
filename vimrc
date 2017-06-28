@@ -9,8 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ervandew/supertab'
 
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-" TODO get it to work
-"Plug 'rdnetto/YCM-Generator'
+Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
 Plug 'altercation/vim-colors-solarized'
 
