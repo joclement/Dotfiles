@@ -1,22 +1,26 @@
 [include]
-	path = ~/.gituserconfig
+    path = ~/.gituserconfig
 [alias]
-	co = checkout
-	st = status
-	amend = commit -a --amend
-	ci = commit
-	br = branch
-	wipe = !git add -A && git commit -qm WIPE
-	last = log -1 HEAD
-	ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
-	glog = log --pretty=format:\"%h %s\" --graph
-	ciam = !git add -A && git commit -m
-	cia = !git add -A && git commit
-	unpushed = log @{u}.. --pretty=format:'%h %an %s'
-	pu = push
+    co = checkout
+    st = status
+    amend = commit -a --amend
+    ci = commit
+    br = branch
+    wipe = !git add -A && git commit -qm WIPE
+    last = log -1 HEAD
+    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+    glog = log --pretty=format:\"%h %s\" --graph
+    ciam = !git add -A && git commit -m
+    cia = !git add -A && git commit
+    unpushed = log @{u}.. --pretty=format:'%h %an %s'
+    pu = push
 [push]
-	default = simple
+    default = simple
 [color]
-	ui = true
+    ui = true
 [diff]
-	tool = vimdiff
+    tool = vimdiff
+[advice]
+    statusHints = false
+[core]
+    whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
