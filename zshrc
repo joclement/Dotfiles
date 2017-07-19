@@ -9,10 +9,6 @@ DISABLE_CORRECTION="true"
 
 export TERM="xterm-256color"
 
-if [ -f $HOME/.private_zshrc ]; then
-	source $HOME/.private_zshrc
-fi
-
 #########################################antigen stuff####################################
 
 source ~/.antigen/antigen.zsh
@@ -94,3 +90,7 @@ bindkey -M viins '\e/' vi-search-fix
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
+
+if [ -f $HOME/.private_zshrc ]; then
+	source $HOME/.private_zshrc
+fi
