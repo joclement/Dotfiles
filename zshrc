@@ -29,13 +29,9 @@ extract
 git
 git-extras
 voronkovich/gitignore.plugin.zsh
-github
 
 # to go to parent dirs quickly
 Tarrasch/zsh-bd
-
-#for searching through history
-history
 
 # autcompletion for pip
 pip
