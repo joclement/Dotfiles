@@ -58,44 +58,44 @@ function pmake() {
 
 #alias function for colordiff for svn
 function sdc() {
-	svn diff $1 | colordiff | less -R
+    svn diff $1 | colordiff | less -R
 }
 
 #opens a file the standard way and leads the output to null
 function op {
-	xdg-open $1 > /dev/null
-	sleep 0.35
-	:
+    xdg-open $1 > /dev/null
+    sleep 0.35
+    :
 }
 
 #function to wait for a valid answer from the user in a loop
 function confirmLoop() {
-	varConfirm=$(confirm);
-	compare=2;
-	while true;
-	do
-		if ((varConfirm == compare));
-		then
-			varConfirm=$(confirm);
-		else
-			break;
-		fi;
-	done;
-	echo $varConfirm;
+    varConfirm=$(confirm);
+    compare=2;
+    while true;
+    do
+        if ((varConfirm == compare));
+        then
+            varConfirm=$(confirm);
+        else
+            break;
+        fi;
+    done;
+    echo $varConfirm;
 }
 
 #function to let the user confirm his previos decision
 function confirm () {
-	read -p "" choice;
-	if [ "$choice" == "Y" ];
-	then
-		echo 0;
-	elif [ "$choice" == "n" ];
-	then
-		echo 1;
-	else
-		echo 2;
-	fi;
+    read -p "" choice;
+    if [ "$choice" == "Y" ];
+    then
+        echo 0;
+    elif [ "$choice" == "n" ];
+    then
+        echo 1;
+    else
+        echo 2;
+    fi;
 }
 
 #a function to create a directory and directly move into it
