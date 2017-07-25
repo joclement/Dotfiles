@@ -65,14 +65,6 @@ antigen apply
 export SHELL=$(which zsh)
 
 
-if [ -f $HOME/.shared_shell ]; then
-    source $HOME/.shared_shell
-fi
-
-if [ -f $HOME/.autocompletion_zsh ]; then
-    source $HOME/.autocompletion_zsh
-fi
-
 #use vim mode for zsh
 bindkey -v
 # to do backslash vim-like search faster
@@ -83,6 +75,15 @@ zle .vi-history-search-backward
 autoload vi-search-fix
 zle -N vi-search-fix
 bindkey -M viins '\e/' vi-search-fix
+
+
+if [ -f $HOME/.shared_shell ]; then
+    source $HOME/.shared_shell
+fi
+
+if [ -f $HOME/.autocompletion_zsh ]; then
+    source $HOME/.autocompletion_zsh
+fi
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
