@@ -66,11 +66,11 @@ export SHELL=$(which zsh)
 
 
 if [ -f $HOME/.shared_shell ]; then
-	source $HOME/.shared_shell
+    source $HOME/.shared_shell
 fi
 
 if [ -f $HOME/.autocompletion_zsh ]; then
-	source $HOME/.autocompletion_zsh
+    source $HOME/.autocompletion_zsh
 fi
 
 #use vim mode for zsh
@@ -88,5 +88,5 @@ bindkey -M viins '\e/' vi-search-fix
 setopt APPEND_HISTORY
 
 if [ -f $HOME/.private_zshrc ]; then
-	source $HOME/.private_zshrc
+    source $HOME/.private_zshrc
 fi
