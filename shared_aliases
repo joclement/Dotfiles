@@ -113,3 +113,7 @@ function md2html {
     htmlfile=${markdownfile%".md"}".html"
     markdown $markdownfile > $htmlfile
 }
+
+function cless {
+    pygmentize -f terminal "$1" | less -R
+}
