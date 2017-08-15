@@ -119,6 +119,8 @@ nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
 
 " }}}
 
+let g:localvimrc_persistent = 1
+
 " }}}
 
 
