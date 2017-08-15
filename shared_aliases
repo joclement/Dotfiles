@@ -9,9 +9,8 @@ alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude-dir={.git,.svn}'
 alias cgrep='grep --color=always'
-alias exgrep='cgrep --exclude-dir={.hg,.git}'
 # to run make in the background
 alias backmake='make &> /dev/null &'
 
@@ -113,4 +112,8 @@ function md2html {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
     markdown $markdownfile > $htmlfile
+}
+
+function cless {
+    pygmentize -f terminal "$1" | less -R
 }

@@ -9,6 +9,10 @@ DISABLE_CORRECTION="true"
 
 export TERM="xterm-256color"
 
+if [ -f $HOME/.private_zshrc_begin ]; then
+    source $HOME/.private_zshrc_begin
+fi
+
 #########################################antigen stuff####################################
 
 source ~/.antigen/antigen.zsh
@@ -63,7 +67,6 @@ antigen apply
 
 
 export SHELL=$(which zsh)
-
 
 #use vim mode for zsh
 bindkey -v
