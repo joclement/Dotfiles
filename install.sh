@@ -356,9 +356,11 @@ update_vim() {
 }
 
 install_solarized() {
+    echo "install solarized..."
     cd $dot_dir/gnome-terminal-colors-solarized/
     ./install.sh --scheme dark --profile solarized --skip-dircolors
     cd $cwd
+    echo "DONE"
 }
 
 dorequirements() {
@@ -373,11 +375,14 @@ backup_link() {
 }
 
 install_vimplug() {
+    echo "install vimplug..."
     curl -fL -o $my_home/.vim/autoload/plug.vim \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "DONE"
 }
 
 install_ctags() {
+    echo "install ctags..."
     cd $local_software
     git clone https://github.com/universal-ctags/ctags
     cd $local_software/ctags
@@ -389,9 +394,11 @@ install_ctags() {
     cd $local_software/ctags
     sudo make install
     cd $cwd
+    echo "DONE"
 }
 
 install_global() {
+    echo "install global..."
     version='global-6.5.6'
     curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
     cd $local_software
@@ -403,12 +410,11 @@ install_global() {
     cd $local_software/${version}
     sudo make install
     cd $cwd
+    echo "DONE"
 }
 
 doinstalls() {
-    echo "install solarized..."
     install_solarized
-    echo "finish installtion solarized"
     install_powerline
     install_vimplug
     mkdir -p $local_software
