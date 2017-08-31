@@ -384,6 +384,7 @@ install_vimplug() {
 install_ctags() {
     echo "install ctags..."
     cd $local_software
+    rm -rf ctags
     git clone https://github.com/universal-ctags/ctags
     cd $local_software/ctags
     ./autogen.sh
@@ -402,6 +403,7 @@ install_global() {
     version='global-6.5.6'
     curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
     cd $local_software
+    rm -rf ${version}
     tar -zxf ${version}.tar.gz
     cd $local_software/${version}
     ./configure
