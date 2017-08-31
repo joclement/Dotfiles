@@ -203,7 +203,7 @@ install_dependencies() {
         if [[ -f /etc/debian_version ]];
         then
             echo "check if pip3 is installed, if not install"
-            if [ $(dpkg-query -l | grep pip3 | wc -l) == 0 ];
+            if [ $(dpkg-query -l | grep python3-pip | wc -l) == 0 ];
             then
                 sudo apt-get install python3-pip;
             fi
