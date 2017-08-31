@@ -357,7 +357,7 @@ update_vim() {
 
 install_solarized() {
     cd $dot_dir/gnome-terminal-colors-solarized/
-    . install.sh
+    ./install.sh --scheme dark --profile solarized --skip-dircolors
     cd $cwd
 }
 
