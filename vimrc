@@ -282,8 +282,8 @@ augroup END
 
 " folding {{{
 set foldmethod=syntax
-set foldlevel=20
-set foldcolumn=0
+set foldlevel=3
+set foldnestmax=5
 " }}}
 
 
