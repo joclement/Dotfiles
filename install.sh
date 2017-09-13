@@ -250,6 +250,13 @@ install_dependencies() {
                 sudo apt-get install dconf-cli;
             fi
             echo "done"
+
+            echo "check if global(gtags) is installed, if not install"
+            if [ $(dpkg-query -l | grep global | wc -l) == 0 ];
+            then
+                sudo apt-get install global;
+            fi
+            echo "done"
         fi
     else
         echo "Platform $platform not known!"
@@ -394,20 +401,22 @@ install_ctags() {
 }
 
 install_global() {
-    echo "install global..."
-    version='global-6.5.6'
-    curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
-    cd $local_software
-    rm -rf ${version}
-    tar -zxf ${version}.tar.gz
-    cd $local_software/${version}
-    ./configure
-    cd $local_software/${version}
-    make
-    cd $local_software/${version}
-    sudo make install
-    cd $cwd
-    echo "DONE"
+    if [ ! command -v foo >/dev/null 2>&1 ]; then
+        echo "install global..."
+        version='global-6.5.6'
+        curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
+        cd $local_software
+        rm -rf ${version}
+        tar -zxf ${version}.tar.gz
+        cd $local_software/${version}
+        ./configure
+        cd $local_software/${version}
+        make
+        cd $local_software/${version}
+        sudo make install
+        cd $cwd
+        echo "DONE"
+    fi
 }
 
 doinstalls() {
