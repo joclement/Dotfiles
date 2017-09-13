@@ -30,8 +30,9 @@ back up your system before installing these Dotfiles.
 
 The installation process is explained in detail in the file `install.sh` and you
 can get some help information with `install.sh -h`.
-The bash script relies on certain tools, which are just install on debian based
-systems like apt, so this script can not be used on other distributions.
+The bash script relies on certain tools, which it will check for and install if
+needed. Therefor it uses apt, which is just available on debian based systems.
+So this script can not be used or has to be adapted for other distributions.
 
 ### Quick Installation
 
