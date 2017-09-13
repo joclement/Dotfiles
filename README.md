@@ -8,6 +8,7 @@ especially for linking the Dotfiles. I thank him for sharing his Dotfiles.
 This Dotfiles repository focuses on:
 * zsh using antigen
 * vim
+* solarized
 * git
 * own small functions and aliases to improve work
 
