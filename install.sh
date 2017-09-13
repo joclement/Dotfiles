@@ -57,7 +57,7 @@ files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
        dircolors-solarized antigen vim/ftplugin/* vim/syntax/* vim/ftdetect/*\
        env autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc"
 
-dirs="vim/autoload vim/ftplugin vim/syntax vim/ftdetect config/zathura"
+dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura"
 
 # whether to install system wide or for user
 system_wide=false
@@ -415,7 +415,11 @@ install_global() {
         cd $local_software/${version}
         sudo make install
         cd $cwd
+        ln -s $local_software/${version}/gtags.vim $my_home/.vim/plugin/.
         echo "DONE"
+    elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
+    then
+        ln -s /usr/local/share/gtags/gtags.vim $my_home/.vim/plugin/.
     fi
 }
 
