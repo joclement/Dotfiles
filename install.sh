@@ -251,14 +251,9 @@ install_dependencies() {
             fi
             echo "done"
         fi
-    elif [[ $platform == 'Darwin' ]];
-    then
-        echo "This script might not be suitable for MAC OS, but you can
-        try!"
-        exit 1
     else
         echo "Platform $platform not known!"
-        echo "This script might be not suitable for your platform"
+        echo "This script is not suitable for your platform"
         exit 1
     fi
 }
