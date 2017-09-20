@@ -1,0 +1,14 @@
+syntax: glob
+# exclude vim tmp files
+*.sw*
+
+# exclude gnu global database files
+GPATH
+GTAGS
+GRTAGS
+
+# exclude origin files created when reverting a file
+*.orig
+
+# my organization files
+TODO
