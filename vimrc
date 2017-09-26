@@ -98,6 +98,8 @@ map <C-e> :NERDTreeMirrorToggle<CR>
 "display nerdtree, if vim is started without file argument
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
 " Dispatch {{{
