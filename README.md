@@ -9,7 +9,7 @@ This Dotfiles repository focuses on:
 * zsh using antigen
 * vim
 * solarized
-* git
+* git, mercurial
 * own small functions and aliases to improve work
 
 The used plugins can be changed very easily for vim and zsh because of the use
