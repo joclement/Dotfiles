@@ -9,9 +9,8 @@ alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep --color=auto'
-alias cgrep='grep --color=always'
-alias exgrep='cgrep --exclude-dir={.hg,.git}'
+alias grep='grep --color=auto --exclude-dir={.git,.svn,.hg}'
+alias cgrep='grep --color=always --exclude-dir={.git,.svn,.hg}'
 # to run make in the background
 alias backmake='make &> /dev/null &'
 
@@ -58,44 +57,44 @@ function pmake() {
 
 #alias function for colordiff for svn
 function sdc() {
-	svn diff $1 | colordiff | less -R
+    svn diff $1 | colordiff | less -R
 }
 
 #opens a file the standard way and leads the output to null
 function op {
-	xdg-open $1 > /dev/null
-	sleep 0.35
-	:
+    xdg-open $1 > /dev/null
+    sleep 0.35
+    :
 }
 
 #function to wait for a valid answer from the user in a loop
 function confirmLoop() {
-	varConfirm=$(confirm);
-	compare=2;
-	while true;
-	do
-		if ((varConfirm == compare));
-		then
-			varConfirm=$(confirm);
-		else
-			break;
-		fi;
-	done;
-	echo $varConfirm;
+    varConfirm=$(confirm);
+    compare=2;
+    while true;
+    do
+        if ((varConfirm == compare));
+        then
+            varConfirm=$(confirm);
+        else
+            break;
+        fi;
+    done;
+    echo $varConfirm;
 }
 
 #function to let the user confirm his previos decision
 function confirm () {
-	read -p "" choice;
-	if [ "$choice" == "Y" ];
-	then
-		echo 0;
-	elif [ "$choice" == "n" ];
-	then
-		echo 1;
-	else
-		echo 2;
-	fi;
+    read -p "" choice;
+    if [ "$choice" == "Y" ];
+    then
+        echo 0;
+    elif [ "$choice" == "n" ];
+    then
+        echo 1;
+    else
+        echo 2;
+    fi;
 }
 
 #a function to create a directory and directly move into it
@@ -113,4 +112,8 @@ function md2html {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
     markdown $markdownfile > $htmlfile
+}
+
+function cless {
+    pygmentize -f terminal "$1" | less -R
 }
