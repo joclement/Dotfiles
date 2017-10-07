@@ -54,10 +54,10 @@ olddir=$to_dots/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
-	   dircolors-solarized antigen vim/ftplugin/* vim/syntax/* vim/ftdetect/*\
-       env autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc"
+       dircolors-solarized antigen vim/ftplugin/* vim/syntax/* vim/ftdetect/*\
+       env autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc hgignore"
 
-dirs="vim/autoload vim/ftplugin vim/syntax vim/ftdetect config/zathura"
+dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura"
 
 # whether to install system wide or for user
 system_wide=false
@@ -203,7 +203,7 @@ install_dependencies() {
         if [[ -f /etc/debian_version ]];
         then
             echo "check if pip3 is installed, if not install"
-            if [ $(dpkg-query -l | grep pip3 | wc -l) == 0 ];
+            if [ $(dpkg-query -l | grep python3-pip | wc -l) == 0 ];
             then
                 sudo apt-get install python3-pip;
             fi
@@ -250,15 +250,17 @@ install_dependencies() {
                 sudo apt-get install dconf-cli;
             fi
             echo "done"
+
+            echo "check if global(gtags) is installed, if not install"
+            if [ $(dpkg-query -l | grep global | wc -l) == 0 ];
+            then
+                sudo apt-get install global;
+            fi
+            echo "done"
         fi
-    elif [[ $platform == 'Darwin' ]];
-    then
-        echo "This script might not be suitable for MAC OS, but you can
-        try!"
-        exit 1
     else
         echo "Platform $platform not known!"
-        echo "This script might be not suitable for your platform"
+        echo "This script is not suitable for your platform"
         exit 1
     fi
 }
@@ -356,9 +358,11 @@ update_vim() {
 }
 
 install_solarized() {
+    echo "install solarized..."
     cd $dot_dir/gnome-terminal-colors-solarized/
-    . install.sh
+    ./install.sh --scheme dark --profile solarized --skip-dircolors
     cd $cwd
+    echo "DONE"
 }
 
 dorequirements() {
@@ -373,12 +377,16 @@ backup_link() {
 }
 
 install_vimplug() {
+    echo "install vimplug..."
     curl -fL -o $my_home/.vim/autoload/plug.vim \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "DONE"
 }
 
 install_ctags() {
+    echo "install ctags..."
     cd $local_software
+    rm -rf ctags
     git clone https://github.com/universal-ctags/ctags
     cd $local_software/ctags
     ./autogen.sh
@@ -389,26 +397,34 @@ install_ctags() {
     cd $local_software/ctags
     sudo make install
     cd $cwd
+    echo "DONE"
 }
 
 install_global() {
-    version='global-6.5.6'
-    curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
-    cd $local_software
-    tar -zxf ${version}.tar.gz
-    cd $local_software/${version}
-    ./configure
-    cd $local_software/${version}
-    make
-    cd $local_software/${version}
-    sudo make install
-    cd $cwd
+    if [ ! command -v foo >/dev/null 2>&1 ]; then
+        echo "install global..."
+        version='global-6.5.6'
+        curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
+        cd $local_software
+        rm -rf ${version}
+        tar -zxf ${version}.tar.gz
+        cd $local_software/${version}
+        ./configure
+        cd $local_software/${version}
+        make
+        cd $local_software/${version}
+        sudo make install
+        cd $cwd
+        ln -s $local_software/${version}/gtags.vim $my_home/.vim/plugin/.
+        echo "DONE"
+    elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
+    then
+        ln -s /usr/local/share/gtags/gtags.vim $my_home/.vim/plugin/.
+    fi
 }
 
 doinstalls() {
-    echo "install solarized..."
     install_solarized
-    echo "finish installtion solarized"
     install_powerline
     install_vimplug
     mkdir -p $local_software

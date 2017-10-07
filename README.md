@@ -8,7 +8,8 @@ especially for linking the Dotfiles. I thank him for sharing his Dotfiles.
 This Dotfiles repository focuses on:
 * zsh using antigen
 * vim
-* git
+* solarized
+* git, mercurial
 * own small functions and aliases to improve work
 
 The used plugins can be changed very easily for vim and zsh because of the use
@@ -30,8 +31,9 @@ back up your system before installing these Dotfiles.
 
 The installation process is explained in detail in the file `install.sh` and you
 can get some help information with `install.sh -h`.
-The bash script relies on certain tools, which are just install on debian based
-systems like apt, so this script can not be used on other distributions.
+The bash script relies on certain tools, which it will check for and install if
+needed. Therefor it uses apt, which is just available on debian based systems.
+So this script can not be used or has to be adapted for other distributions.
 
 ### Quick Installation
 
