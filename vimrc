@@ -98,6 +98,8 @@ map <C-e> :NERDTreeMirrorToggle<CR>
 "display nerdtree, if vim is started without file argument
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
 " Dispatch {{{
@@ -118,6 +120,8 @@ nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
 " }}}
 
 " }}}
+
+let g:localvimrc_persistent = 1
 
 " }}}
 
@@ -202,6 +206,7 @@ vnoremap // y/<C-R>"<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
+set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git}
 " }}}
 
 
@@ -280,15 +285,15 @@ augroup END
 
 " folding {{{
 set foldmethod=syntax
-set foldlevel=20
-set foldcolumn=0
+set foldlevel=3
+set foldnestmax=5
 " }}}
 
 
 " misc {{{
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
-			\,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
-                        \,*.toc
+            \,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
+                        \,*.toc,*.pyc
 
 set backspace=2
 
