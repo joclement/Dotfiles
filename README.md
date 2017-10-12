@@ -22,7 +22,7 @@ They should work on other Linux distributions without any changes as well.
 Mainly the install file won't work partly on non Debian-based systems,
 because it uses `dpkg`.
 
-These is no warranty or guarantee that they will work on your system.
+There is no warranty or guarantee that they will work on your system.
 They have been tested and are working on my system, but you should save your
 Dotfiles and back up your system before installing these Dotfiles.
 
@@ -32,7 +32,7 @@ The installation process is explained in detail in the file `install.sh` and you
 can get some help information with `install.sh -h`.
 The bash script relies on certain tools, which it will check for and install if
 needed.
-Therefor it uses apt, which is just available on debian based systems.
+Therefor it uses apt, which is just available on Debian based systems.
 So this script can not be used or has to be adapted for other distributions.
 
 ### Quick Installation
