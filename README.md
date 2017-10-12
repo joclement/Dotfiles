@@ -19,6 +19,8 @@ If you've any questions, recommendations or criticism feel free to write me a ma
 
 These Dotfiles are used and have been tested on Ubuntu 14.04 and 16.04.
 They should work on other Linux distributions without any changes as well.
+Mainly the install file won't work partly on non Debian-based systems,
+because it uses `dpkg`.
 
 These is no warranty or guarantee that they will work on your system.
 They have been tested and are working on my system, but you should save your
