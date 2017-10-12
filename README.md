@@ -2,9 +2,6 @@ Dotfiles
 ========
 This repository includes all of my custom Dotfiles.
 
-This repository uses some of the content from github.com/michaeljsmalley/Dotfiles,
-especially for linking the Dotfiles. I thank him for sharing his Dotfiles.
-
 This Dotfiles repository focuses on:
 * zsh using antigen
 * vim
@@ -44,3 +41,11 @@ git clone git://github.com/flyingdutchman23/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
 ./install.sh -i install
 ```
+
+### Acknowledgments
+
+This repository used content from
+[Michael Smalley's Dotfiles](github.com/michaeljsmalley/Dotfiles)
+for linking the Dotfiles.
+I thank him for sharing his Dotfiles.
+
