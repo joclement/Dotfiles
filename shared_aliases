@@ -23,6 +23,7 @@ alias .....='cd ../../../..'
 ###shortcuts for programs
 alias py='python3'
 alias vi='vim'
+alias vless='vim -R -'
 
 ###shortcuts for svn
 alias sst='svn status'
