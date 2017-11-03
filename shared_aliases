@@ -9,8 +9,8 @@ alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 8.8.8.8'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep --color=auto --exclude-dir={.git,.svn}'
-alias cgrep='grep --color=always'
+alias grep='grep --color=auto --exclude-dir={.git,.svn,.hg}'
+alias cgrep='grep --color=always --exclude-dir={.git,.svn,.hg}'
 # to run make in the background
 alias backmake='make &> /dev/null &'
 
@@ -23,6 +23,7 @@ alias .....='cd ../../../..'
 ###shortcuts for programs
 alias py='python3'
 alias vi='vim'
+alias vless='vim -R -'
 
 ###shortcuts for svn
 alias sst='svn status'
