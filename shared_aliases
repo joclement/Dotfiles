@@ -56,7 +56,7 @@ function pmake() {
 }
 
 #alias function for colordiff for svn
-function sdc() {
+function svndiff() {
     svn diff $1 | colordiff | less -R
 }
 
