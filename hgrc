@@ -19,6 +19,7 @@ carp =!
 [alias]
 qd = qdiff
 unpushed = outgoing
+qs = qdiff --stat
 
 [merge-patterns]
 ** = vimdiff
