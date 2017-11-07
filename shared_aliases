@@ -60,6 +60,7 @@ function pmake() {
 function svndiff() {
     svn diff $1 | colordiff | less -R
 }
+alias sdc='svndiff'
 
 #opens a file the standard way and leads the output to null
 function op {
