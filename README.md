@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/flyingdutchman23/Dotfiles.svg?branch=master)](https://travis-ci.org/flyingdutchman23/Dotfiles)
+
 Dotfiles
 ========
 This repository includes all of my custom Dotfiles.
