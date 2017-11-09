@@ -43,14 +43,11 @@ my_home=$HOME
 # folder to install repos, which are not in the ubuntu packages
 local_software=$my_home/local_software
 
-# alternative home folder for installation
-to_dots=$my_home
-
 # dotfiles directory
-dot_dir=$to_dots/Dotfiles
+dot_dir=$my_home/Dotfiles
 
 # old dotfiles backup directory
-olddir=$to_dots/Dotfiles_old
+olddir=$my_home/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
@@ -74,13 +71,6 @@ function HELP {
     echo "Installs the dotfiles of this git Dotfiles repository. You may need to
     give your passport to install needed sytem wide software packages, f.x. cmake"
     echo -e "Basic usage: ./$script "\\n
-    echo -e "-d    specify parent dir of Dotfiles git repo. Dotfiles has to be
-    in that dir.
-    Folder needs to exist.
-    Normally this folder is the home directory, f.x. .vimrc is normally stored
-    in $my_home/.vimrc.
-    Default value is $to_dots .
-    Folder must not have a ending /"\\n
     echo -e "-i    gives an installoption, necessary option.
     Use either \"update\" or \"install\" as an argument." \\n
     echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
@@ -102,22 +92,6 @@ fi
 
 while getopts ":d:i:s n h o" opt; do
     case $opt in
-        d)
-            if [ -d "$OPTARG" ];
-            then
-                if [[ -L "$OPTARG" ]];
-                then
-                    echo "specified directory is a link. EXIT!"
-                    exit 1
-                else
-                    to_dots=$OPTARG
-                fi
-            else
-                echo "specified directory does not exist. EXIT!"
-                HELP;
-                exit 1
-            fi
-            ;;
         i)
             if [ "$OPTARG" == "update" -o "$OPTARG" == "install" ];
             then
