@@ -16,4 +16,4 @@ USER tester
 ENV HOME /home/tester
 
 WORKDIR /home/tester/Dotfiles
-RUN ./install.sh -i install -n
+RUN ./install.sh -i install -n -o
