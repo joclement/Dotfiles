@@ -64,7 +64,6 @@ dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathur
 approve_solarized_install=true
 system_wide=false
 installoption=""
-recompileyoucompleteme=false
 changedefzsh=true
 
 ##########
@@ -346,14 +345,17 @@ install_powerline() {
         sudo cp $dot_dir/fonts/10-powerline-symbols.conf /etc/fonts/conf.d/
     else
         echo "installing for user..."
-        echo "move PowerlineSymbols to $my_home/fonts/, create folder if non-existing"
+        echo "move PowerlineSymbols to $my_home/fonts/, \
+            create folder if non-existing"
         mkdir -p $my_home/fonts/
         cp $dot_dir/fonts/PowerlineSymbols.otf $my_home/fonts/
         echo "update fonts cache"
         fc-cache -vf $my_home/fonts/
-        echo "move fonts conf to $my_home/config/fontconfig/conf.d/, create folder if non-existing"
+        echo "move fonts conf to $my_home/config/fontconfig/conf.d/, \
+            create folder if non-existing"
         mkdir -p $my_home/config/fontconfig/conf.d/
-        cp $dot_dir/fonts/10-powerline-symbols.conf $my_home/config/fontconfig/conf.d/
+        cp $dot_dir/fonts/10-powerline-symbols.conf \
+            $my_home/config/fontconfig/conf.d/
     fi
     echo "done"
 }
@@ -417,7 +419,8 @@ install_global() {
     if [ ! command -v foo >/dev/null 2>&1 ]; then
         echo "install global..."
         version='global-6.5.6'
-        curl -fL -o $local_software/${version}.tar.gz http://tamacom.com/global/${version}.tar.gz
+        curl -fL -o $local_software/${version}.tar.gz \
+            http://tamacom.com/global/${version}.tar.gz
         cd $local_software
         rm -rf ${version}
         tar -zxf ${version}.tar.gz
