@@ -4,7 +4,7 @@ RUN locale-gen en_US.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -qq update && \
       sudo \
-      wget \
+      wget
 
 RUN useradd -s /bin/zsh tester
 ADD . /home/tester/Dotfiles
