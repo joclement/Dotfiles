@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 
-RUN locale-gen en_US.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -qq update && \
+    apt-get install -qq -o=Dpkg::Use-Pty=0 \
       sudo \
       wget
 
@@ -16,5 +16,4 @@ USER tester
 ENV HOME /home/tester
 
 WORKDIR /home/tester/Dotfiles
-RUN git submodule update --init
-RUN ./install -i install
+RUN ./install.sh -i install
