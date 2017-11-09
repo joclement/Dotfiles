@@ -335,27 +335,25 @@ install_powerline() {
 
     echo "install powerline fonts"
 
-    wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf;
-    wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf;
     if [ "$system_wide" == true ];
     then
         echo "installing system wide..."
         echo "move PowerlineSymbols to /usr/share/fonts/"
-        sudo mv PowerlineSymbols.otf /usr/share/fonts/
+        sudo cp $dot_dir/fonts/PowerlineSymbols.otf /usr/share/fonts/
         echo "update fonts cache"
         sudo fc-cache -vf
         echo "move fonts conf to /etc/fonts/conf.d/"
-        sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+        sudo cp $dot_dir/fonts/10-powerline-symbols.conf /etc/fonts/conf.d/
     else
         echo "installing for user..."
         echo "move PowerlineSymbols to $my_home/fonts/, create folder if non-existing"
         mkdir -p $my_home/fonts/
-        mv PowerlineSymbols.otf $my_home/fonts/
+        cp $dot_dir/fonts/PowerlineSymbols.otf $my_home/fonts/
         echo "update fonts cache"
         fc-cache -vf $my_home/fonts/
         echo "move fonts conf to $my_home/config/fontconfig/conf.d/, create folder if non-existing"
         mkdir -p $my_home/config/fontconfig/conf.d/
-        mv 10-powerline-symbols.conf $my_home/config/fontconfig/conf.d/
+        cp $dot_dir/fonts/10-powerline-symbols.conf $my_home/config/fontconfig/conf.d/
     fi
     echo "done"
 }
