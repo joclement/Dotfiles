@@ -254,6 +254,10 @@ install_dependencies() {
             sudo apt-get install -y curl;
             echo "done"
 
+            echo "install dh-autoreconf"
+            sudo apt-get install dh-autoreconf
+            echo "done"
+
             echo "check if dconf-cli is installed, if not install"
             if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
             then
