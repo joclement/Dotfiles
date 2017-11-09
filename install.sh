@@ -60,6 +60,7 @@ files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
 dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura"
 
 # whether to install system wide or for user
+approve_solarized_install=true
 system_wide=false
 installoption=""
 recompileyoucompleteme=false
@@ -84,6 +85,7 @@ function HELP {
     Use either \"update\" or \"install\" as an argument." \\n
     echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
     echo -e "-n    Do not set zsh as default shell" \\n
+    echo -e "-o    Do not install solarized for gnome-terminal" \\n
     echo -e "-h    Displays this help message. No further functions are performed."\\n
     echo -e "Example for installation: $script -i install"\\n
     echo -e "Example for update: $script -i update"\\n
@@ -98,7 +100,7 @@ else
     exit 1
 fi
 
-while getopts ":d:i:s n h" opt; do
+while getopts ":d:i:s n h o" opt; do
     case $opt in
         d)
             if [ -d "$OPTARG" ];
@@ -131,6 +133,9 @@ while getopts ":d:i:s n h" opt; do
             ;;
         n)
             changedefzsh=false
+            ;;
+        o)
+            approve_solarized_install=false
             ;;
         h)
             HELP;
@@ -352,6 +357,12 @@ install_solarized() {
     echo "DONE"
 }
 
+checked_install_solarized() {
+    if [ "$approve_solarized_install" == true ]; then
+        install_solarized
+    fi
+}
+
 dorequirements() {
     install_dependencies
     git submodule update --recursive --init
@@ -411,7 +422,7 @@ install_global() {
 }
 
 doinstalls() {
-    install_solarized
+    checked_install_solarized
     install_powerline
     install_vimplug
     mkdir -p $local_software
