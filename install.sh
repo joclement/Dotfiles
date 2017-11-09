@@ -259,8 +259,8 @@ install_dependencies() {
             echo "done"
         fi
     else
-        echo "Platform $platform not known!"
-        echo "This script is not suitable for your platform"
+        echo "This script is not suitable in this form for your platform"
+        echo "If your are sure to use it, edit this script."
         exit 1
     fi
 }
@@ -287,23 +287,13 @@ install_zsh () {
         # If zsh isn't installed, get the platform of the current machine
         platform=$(uname);
         # If the platform is Linux, try an apt-get to install zsh and then recurse
-        if [[ $platform == 'Linux' ]];
+        if [ $platform == 'Linux' ] && [ -f /etc/debian_version ];
         then
-            if [[ -f /etc/redhat-release ]];
-            then
-                sudo yum install zsh
-                install_zsh
-            fi
-            if [[ -f /etc/debian_version ]];
-            then
-                sudo apt-get install zsh
-                install_zsh
-            fi
-
-            # If the platform is OS X, tell the user to install zsh :)
-        elif [[ $platform == 'Darwin' ]];
-        then
-            echo "Please install zsh, then re-run this script!"
+            sudo apt-get install -y zsh
+            install_zsh
+        else
+            echo "This script is not suitable in this form for your platform."
+            echo "If your are sure to use it, edit this script."
             exit 1
         fi
     fi
