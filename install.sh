@@ -246,6 +246,10 @@ install_dependencies() {
             sudo apt-get install -y git;
             echo "done"
 
+            echo "install fontconfig for fc-cache"
+            sudo apt-get install -y fontconfig;
+            echo "done"
+
             echo "check if dconf-cli is installed, if not install"
             if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
             then
