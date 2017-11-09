@@ -255,7 +255,7 @@ install_dependencies() {
             echo "done"
 
             echo "install dh-autoreconf"
-            sudo apt-get install dh-autoreconf
+            sudo apt-get install -y dh-autoreconf;
             echo "done"
 
             echo "check if dconf-cli is installed, if not install"
