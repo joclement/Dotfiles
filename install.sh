@@ -119,7 +119,7 @@ while getopts ":d:i:s n h o" opt; do
             fi
             ;;
         i)
-            if [ "$OPTARG" = "update" -o "$OPTARG" = "install" ];
+            if [ "$OPTARG" == "update" -o "$OPTARG" == "install" ];
             then
                 installoption="$OPTARG"
             else
@@ -268,7 +268,7 @@ install_dependencies() {
 }
 
 default_zsh() {
-    if [ "$changedefzsh" = "true" ];
+    if [ "$changedefzsh" == "true" ];
     then
         # Set the default shell to zsh if it isn't currently set to zsh
         if [[ ! $(echo $SHELL) == $(which zsh) ]];
@@ -305,7 +305,7 @@ install_powerline() {
     echo "check if powerline is installed, if not install"
     if [ $(pip3 list | grep powerline-status | wc -l) == 0 ];
     then
-        if [ "$system_wide" = true ];
+        if [ "$system_wide" == true ];
         then
             echo "installing system wide"
             sudo pip3 install powerline-status;
@@ -320,7 +320,7 @@ install_powerline() {
 
     wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf;
     wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf;
-    if [ "$system_wide" = true ];
+    if [ "$system_wide" == true ];
     then
         echo "installing system wide..."
         echo "move PowerlineSymbols to /usr/share/fonts/"
@@ -444,10 +444,10 @@ update() {
 }
 
 install() {
-    if [ "$installoption" = "update" ];
+    if [ "$installoption" == "update" ];
     then
         update
-    elif [ "$installoption" = "install" ];
+    elif [ "$installoption" == "install" ];
     then
         completeinstallation
     fi
