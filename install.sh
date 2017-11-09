@@ -258,6 +258,10 @@ install_dependencies() {
             sudo apt-get install -y dh-autoreconf;
             echo "done"
 
+            echo "install pkg-config for ctags"
+            sudo apt-get install -y pkg-config;
+            echo "done"
+
             echo "check if dconf-cli is installed, if not install"
             if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
             then
