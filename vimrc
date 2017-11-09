@@ -127,11 +127,14 @@ let g:localvimrc_persistent = 1
 
 
 " colorscheme {{{
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=&t_Co
-let g:solarized_termtrans=1
-colorscheme solarized
+try
+    set t_Co=256
+    set background=dark
+    let g:solarized_termcolors=&t_Co
+    let g:solarized_termtrans=1
+    colorscheme solarized
+catch /^Vim\%((\a\+)\)\=:E185/
+endtry
 " }}}
 
 
