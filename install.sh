@@ -250,6 +250,10 @@ install_dependencies() {
             sudo apt-get install -y fontconfig;
             echo "done"
 
+            echo "install curl"
+            sudo apt-get install -y curl;
+            echo "done"
+
             echo "check if dconf-cli is installed, if not install"
             if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
             then
