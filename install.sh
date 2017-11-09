@@ -254,7 +254,7 @@ install_dependencies() {
             sudo apt-get install -y curl;
             echo "done"
 
-            echo "install dh-autoreconf"
+            echo "install dh-autoreconf for ctags"
             sudo apt-get install -y dh-autoreconf;
             echo "done"
 
