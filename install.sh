@@ -55,7 +55,8 @@ olddir=$to_dots/Dotfiles_old
 # list of files/folders to symlink in homedir
 files="bashrc vimrc gvimrc gitconfig shared_aliases zshrc inputrc shared_shell\
        dircolors-solarized antigen vim/ftplugin/* vim/syntax/* vim/ftdetect/*\
-       env autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc hgignore"
+       env autocompletion_zsh config/zathura/zathurarc tmux.conf hgrc hgignore
+       vim/autoload/*"
 
 dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura"
 
