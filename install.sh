@@ -237,11 +237,8 @@ install_dependencies() {
             fi
             echo "done"
 
-            echo "check if git is installed, if not install"
-            if [ $(dpkg-query -l | grep git | wc -l) == 0 ];
-            then
-                sudo apt-get install -y git;
-            fi
+            echo "install git"
+            sudo apt-get install -y git;
             echo "done"
 
             echo "check if dconf-cli is installed, if not install"
