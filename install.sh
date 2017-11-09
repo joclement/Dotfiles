@@ -6,7 +6,7 @@
 ### and change!
 #
 ### Prior to running the first time I would recommend to save the Dotfiles before,
-### just in they get lost!
+### just in case they get lost!
 #
 # This script sets up the Dotfiles environment from github.com/flyingdutchman23/Dotfiles.
 # For that it checks whether the necessary software is available and installs it if
