@@ -48,6 +48,6 @@ cd ~/Dotfiles
 ### Acknowledgments
 
 This repository used content from
-[Michael Smalley's Dotfiles](github.com/michaeljsmalley/Dotfiles)
+[Michael Smalley's Dotfiles](https://github.com/michaeljsmalley/Dotfiles)
 for linking the Dotfiles.
 I thank him for sharing his Dotfiles.
