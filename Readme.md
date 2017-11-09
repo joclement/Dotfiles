@@ -11,10 +11,6 @@ This Dotfiles repository focuses on:
 * git, mercurial
 * own small functions and aliases to improve work
 
-The used plugins can be changed very easily for vim and zsh because of the use
-of antigen and Vundle.
-For more information on antigen and Vundle have a look in their repositories.
-
 If you've any questions, recommendations or criticism feel free to write me a mail.
 
 ### Requirements
