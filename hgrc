@@ -17,10 +17,8 @@ convert=
 carp =!
 
 [alias]
-qd = qdiff
 unpushed = outgoing
 qs = qdiff --stat
-qpu = qpush
 
 [merge-patterns]
 ** = vimdiff
