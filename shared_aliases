@@ -42,6 +42,7 @@ alias hgsm='hg sum'
 ### shortcuts for git commands
 # to activate colors in terminal via ssh
 alias gd='git diff --color'
+alias gdm='git diff --color --diff-filter=M'
 
 
 ################################ My alias functions ############################
