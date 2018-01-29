@@ -22,6 +22,7 @@ alias .....='cd ../../../..'
 
 ###shortcuts for programs
 alias py='python3'
+alias pip='pip3'
 alias vi='vim'
 alias vless='vim -R -'
 
