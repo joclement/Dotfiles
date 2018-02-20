@@ -25,6 +25,8 @@ Plug 'scrooloose/syntastic'
 
 Plug 'JuliaEditorSupport/julia-vim'
 
+Plug 'Vimjas/vim-python-pep8-indent'
+
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
 Plug 'tpope/vim-surround'
