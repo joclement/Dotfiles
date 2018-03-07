@@ -212,7 +212,7 @@ install_dependencies() {
             echo "check if vim is installed, if not install"
             if [ $(dpkg-query -l | grep vim | wc -l) == 0 ];
             then
-                sudo apt-get install -y vim-nox;
+                sudo apt-get install -y vim-gtk;
             fi
             echo "done"
 
