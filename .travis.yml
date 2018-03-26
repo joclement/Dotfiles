@@ -11,6 +11,7 @@ script:
 
 after_success:
     - docker build -t codecoverage .
+    - sudo apt-get install wget
     - docker run codecoverage bash -c "sudo apt-get install -y
         libcurl4-openssl-dev libelf-dev libdw-dev cmake wget curl zlib1g-dev"
     - ci_env=`bash <(curl -s https://codecov.io/env)`
