@@ -1,5 +1,8 @@
 #!/bin/bash
 
+sudo apt-get install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake \
+                    wget curl zlib1g-dev build-essential pkg-config python
+
 echo "wget kcov"
 wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
     echo "done wget" &&
