@@ -3,5 +3,15 @@ sudo: required
 services:
     - docker
 
+install:
+    - docker build -t dotfiles .
+
 script:
-    - docker build .
+    - docker run dotfiles bash -c "./install.sh -i install -n -o"
+
+after_success:
+    - mkdir shared
+    - docker run dotfiles bash -c "sudo apt-get install -y
+        libcurl4-openssl-dev libelf-dev libdw-dev cmake wget curl zlib1g-dev"
+    - docker run dotfiles -v "$PWD/shared:/shared" bash -c "bash ./code_coverage.sh"
+    - bash <(curl -s https://codecov.io/bash)

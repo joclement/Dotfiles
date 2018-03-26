@@ -10,5 +10,6 @@ wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
     cd ../.. &&
     rm -rf kcov-master &&
     mkdir -p coverage &&
-    kcov coverage install.sh &&
-    bash <(curl -s https://codecov.io/bash)
+    kcov coverage ./install.sh -i install -n -o &&
+    mv coverage/* /shared/
+
