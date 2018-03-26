@@ -1,8 +1,8 @@
 #!/bin/bash
 
-set -e
-
+echo "wget kcov"
 wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
+    echo "done wget" &&
     tar xzf master.tar.gz &&
     cd kcov-master &&
     mkdir build && cd build &&
@@ -11,5 +11,5 @@ wget https://github.com/SimonKagstrom/kcov/archive/master.tar.gz &&
     rm -rf kcov-master &&
     mkdir -p coverage &&
     kcov coverage ./install.sh -i install -n -o &&
-    mv coverage/* /shared/
+    bash <(curl -s https://codecov.io/bash)
 
