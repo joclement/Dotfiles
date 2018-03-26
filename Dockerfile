@@ -16,3 +16,7 @@ ENV HOME /home/tester
 
 WORKDIR /home/tester/Dotfiles
 RUN ./install.sh -i install -n -o
+
+# for code coverage
+RUN sudo apt-get install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake
+RUN ./code_coverage.sh
