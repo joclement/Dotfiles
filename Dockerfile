@@ -19,4 +19,5 @@ RUN ./install.sh -i install -n -o
 
 # for code coverage
 RUN sudo apt-get install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake
+RUN sudo apt-get install -y wget curl zlib1g-dev
 RUN bash ./code_coverage.sh
