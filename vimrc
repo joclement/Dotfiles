@@ -313,6 +313,8 @@ set backspace=2
 set history=1000
 " }}}
 
+set wildmenu
+
 " If using a dark background within the editing area and syntax highlighting
 " turn on this option as well
 " TODO what is this option good for?
