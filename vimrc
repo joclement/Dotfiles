@@ -35,6 +35,8 @@ Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-dispatch'
 
+Plug 'sjl/gundo.vim'
+
 " TODO add plugin for latex, especially for latex indentation
 
 call plug#end()
@@ -124,6 +126,8 @@ nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
 " }}}
 
 let g:localvimrc_persistent = 1
+
+let g:gundo_prefer_python3 = 1
 
 " }}}
 
