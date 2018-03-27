@@ -315,9 +315,4 @@ set history=1000
 
 set wildmenu
 
-" If using a dark background within the editing area and syntax highlighting
-" turn on this option as well
-" TODO what is this option good for?
-hi Visual term=reverse cterm=reverse guibg=Grey
-
 " vim:foldmethod=marker foldlevel=0
