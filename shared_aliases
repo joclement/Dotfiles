@@ -4,7 +4,6 @@
 ###miscellaneous aliases
 alias ll='ls -l'
 alias la='ls -al'
-alias l='ls -F1'
 alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
