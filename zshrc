@@ -72,6 +72,9 @@ export SHELL=$(which zsh)
 
 #use vim mode for zsh
 bindkey -v
+# Better searching in command mode
+bindkey -M vicmd "k" up-line-or-beginning-search
+bindkey -M vicmd "j" down-line-or-beginning-search
 
 
 if [ -f $HOME/.shared_shell ]; then
