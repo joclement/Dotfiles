@@ -37,7 +37,7 @@ Plug 'tpope/vim-dispatch'
 
 Plug 'sjl/gundo.vim'
 
-" TODO add plugin for latex, especially for latex indentation
+Plug 'vim-latex/vim-latex'
 
 call plug#end()
 " }}}
