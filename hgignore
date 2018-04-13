@@ -7,8 +7,5 @@ GPATH
 GTAGS
 GRTAGS
 
-# exclude origin files created when reverting a file
-*.orig
-
 # my organization files
 TODO
