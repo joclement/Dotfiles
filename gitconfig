@@ -24,3 +24,5 @@
     statusHints = false
 [core]
     whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
+[merge]
+	tool = vimdiff
