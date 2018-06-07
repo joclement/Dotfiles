@@ -1,6 +1,7 @@
 syntax: glob
-# exclude vim tmp files
+# exclude vim related files
 *.sw*
+.lvimrc
 
 # exclude gnu global database files
 GPATH
