@@ -163,8 +163,7 @@ nnoremap <silent> <F6> :call ToggleLineNumber()<CR>
 function! SetTextWidth(myTextwidth)
     let myEndColumn = a:myTextwidth
     execute "set textwidth=".myEndColumn
-    let myColorColumn=myEndColumn+1
-    execute "set colorcolumn=".myColorColumn
+    set colorcolumn=+1
     highlight ColorColumn ctermbg=black
 endfunction
 
