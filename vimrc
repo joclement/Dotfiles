@@ -202,10 +202,12 @@ set shiftwidth=4
 set shiftround
 " }}}
 
+
 " syntax highlighting {{{
 let g:load_doxygen_syntax=1
 let g:doxygen_javadoc_autobrief=0
 " }}}
+
 
 " search, replace {{{
 set hlsearch
@@ -310,8 +312,9 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 set backspace=2
 
 set history=1000
-" }}}
 
 set wildmenu
+" }}}
+
 
 " vim:foldmethod=marker foldlevel=0
