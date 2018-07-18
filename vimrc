@@ -253,7 +253,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 " remove trailing whitespace
 function! RemoveTrailingWhitespace()
-    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff=='diff')
+    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff)
         return
     endif
     %s/\s\+$//ge
