@@ -8,8 +8,3 @@ install:
 
 script:
     - docker run dotfiles bash -c "./install.sh -i install -n -o"
-
-after_success:
-    - docker build -t codecoverage .
-    - ci_env=`bash <(curl -s https://codecov.io/env)`
-    - docker run $ci_env codecoverage bash -c "./code_coverage.sh"
