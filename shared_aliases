@@ -38,6 +38,7 @@ alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
 alias hglg='hg log --stat'
 alias hga='hg add'
 alias hgsm='hg sum'
+alias hgcd='hg checkout default'
 
 ### shortcuts for git commands
 # to activate colors in terminal via ssh
