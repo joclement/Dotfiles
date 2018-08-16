@@ -181,39 +181,23 @@ install_dependencies() {
     then
         if [[ -f /etc/debian_version ]];
         then
-            echo "check if pip3 is installed, if not install"
-            if [ $(dpkg-query -l | grep python3-pip | wc -l) == 0 ];
-            then
-                sudo apt-get install -y python3-pip;
-            fi
+            echo "install pip3"
+            sudo apt-get install -y python3-pip;
             echo "done"
 
-            echo "check if build-essential is installed, if not install"
-            if [ $(dpkg-query -l | grep build-essential | wc -l) == 0 ];
-            then
-                sudo apt-get install -y build-essential;
-            fi
+            echo "install build-essential"
+            sudo apt-get install -y build-essential;
+
+            echo "install cmake"
+            sudo apt-get install -y cmake;
             echo "done"
 
-            echo "check if cmake is installed, if not install"
-            if [ $(dpkg-query -l | grep cmake | wc -l) == 0 ];
-            then
-                sudo apt-get install -y cmake;
-            fi
+            echo "install python-dev"
+            sudo apt-get install -y python-dev;
             echo "done"
 
-            echo "check if python-dev is installed, if not install"
-            if [ $(dpkg-query -l | grep python-dev | wc -l) == 0 ];
-            then
-                sudo apt-get install -y python-dev;
-            fi
-            echo "done"
-
-            echo "check if vim is installed, if not install"
-            if [ $(dpkg-query -l | grep vim | wc -l) == 0 ];
-            then
-                sudo apt-get install -y vim-gtk;
-            fi
+            echo "install vim"
+            sudo apt-get install -y vim-gtk;
             echo "done"
 
             echo "install git"
@@ -236,19 +220,11 @@ install_dependencies() {
             sudo apt-get install -y pkg-config;
             echo "done"
 
-            echo "check if dconf-cli is installed, if not install"
-            if [ $(dpkg-query -l | grep dconf-cli | wc -l) == 0 ];
-            then
-                sudo apt-get install -y dconf-cli;
-            fi
-            echo "done"
+            echo "install dconf-cli"
+            sudo apt-get install -y dconf-cli;
 
-            echo "check if global(gtags) is installed, if not install"
-            if [ $(dpkg-query -l | grep global | wc -l) == 0 ];
-            then
-                sudo apt-get install -y global;
-            fi
-            echo "done"
+            echo "install global(gtags)"
+            sudo apt-get install -y global;
         fi
     else
         echo "This script is not suitable in this form for your platform"
