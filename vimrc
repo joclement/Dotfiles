@@ -39,6 +39,8 @@ Plug 'sjl/gundo.vim'
 
 Plug 'vim-latex/vim-latex'
 
+Plug 'Matt-Deacalion/vim-systemd-syntax'
+
 call plug#end()
 " }}}
 
