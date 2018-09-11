@@ -37,9 +37,6 @@ voronkovich/gitignore.plugin.zsh
 # to go to parent dirs quickly
 Tarrasch/zsh-bd
 
-# autcompletion for pip
-pip
-
 #more autocompletion
 zsh-users/zsh-completions src
 
