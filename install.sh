@@ -57,7 +57,7 @@ files="env shared_shell shared_aliases bashrc inputrc
        config/zathura/zathurarc
        tmux.conf
        hgrc hgignore
-       gitconfig"
+       gitconfig gitignore"
 
 dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura"
 
