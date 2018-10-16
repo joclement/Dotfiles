@@ -18,3 +18,5 @@ Session.vim
 tags
 # Persistent undo
 [._]*.un~
+# Exclude local vimrc
+.lvimrc
