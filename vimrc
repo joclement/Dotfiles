@@ -33,7 +33,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'embear/vim-localvimrc'
 
-Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch', { 'tag': 'v1.5' }
 
 Plug 'sjl/gundo.vim'
 
