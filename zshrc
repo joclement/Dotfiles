@@ -45,6 +45,8 @@ mercurial
 
 docker
 
+pip
+
 EOBUNDLES
 # TODO find way to add plugin based on version
 
