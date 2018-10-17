@@ -52,7 +52,7 @@ EOBUNDLES
 
 antigen theme bhilburn/powerlevel9k powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv)
 if [ -n "$SSH_CLIENT" ]; then
     POWERLEVEL9K_CONTEXT_TEMPLATE="@%m"
 fi
