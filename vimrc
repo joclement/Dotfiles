@@ -94,6 +94,7 @@ let g:syntastic_warning_symbol = "⚠"
 "disable syntastic by default
 let g:syntastic_check_on_open = 0
 
+let g:syntastic_python_checkers = ['flake8']
 
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 " }}}
