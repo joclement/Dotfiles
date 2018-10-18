@@ -94,7 +94,6 @@ let g:syntastic_warning_symbol = "⚠"
 "disable syntastic by default
 let g:syntastic_check_on_open = 0
 
-let g:syntastic_python_pylint_post_args="--max-line-length=120"
 
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 " }}}
