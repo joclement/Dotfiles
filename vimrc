@@ -230,7 +230,7 @@ set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git,build}\ -I
 highlight SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
 let g:myLang=0
-let g:myLangList=["nospell","de_de","en_us", "en_gb"]
+let g:myLangList=["nospell","de_de","en_us", "en_gb", "nl"]
 function! ToggleSpell()
   let g:myLang += 1
   if g:myLang>=len(g:myLangList) | let g:myLang=0 | endif
