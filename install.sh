@@ -200,6 +200,10 @@ install_dependencies() {
             sudo apt-get install -y python-dev;
             echo "done"
 
+            echo "install python3-dev"
+            sudo apt-get install -y python3-dev;
+            echo "done"
+
             echo "install vim"
             sudo apt-get install -y vim-gtk;
             echo "done"
