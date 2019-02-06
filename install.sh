@@ -196,10 +196,6 @@ install_dependencies() {
             sudo apt-get install -y cmake;
             echo "done"
 
-            echo "install python-dev"
-            sudo apt-get install -y python-dev;
-            echo "done"
-
             echo "install python3-dev"
             sudo apt-get install -y python3-dev;
             echo "done"
