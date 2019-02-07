@@ -18,7 +18,6 @@ carp =!
 
 [alias]
 unpushed = outgoing
-qs = qdiff --stat
 reset = revert
 
 [merge-patterns]
