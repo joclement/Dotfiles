@@ -389,7 +389,14 @@ install_global() {
         echo "DONE"
     elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
     then
-        ln -s /usr/local/share/gtags/gtags.vim $my_home/.vim/plugin/.
+        if [ -f "/usr/local/share/gtags/gtags.vim" ]; then
+            ln -s /usr/local/share/gtags/gtags.vim $my_home/.vim/plugin/.
+        elif [ -f "/usr/share/vim/addons/gtags.vim" ]; then
+            ln -s /usr/share/vim/addons/gtags.vim $my_home/.vim/plugin/.
+        else
+            echo "Couldn't find gtags vim plugin."
+            exit 1
+        fi
     fi
 }
 
