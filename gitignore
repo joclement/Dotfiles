@@ -20,3 +20,6 @@ tags
 [._]*.un~
 # Exclude local vimrc
 .lvimrc
+
+### YouCompleteMe
+.ycm_extra_conf.py
