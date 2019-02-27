@@ -23,3 +23,8 @@ tags
 
 ### YouCompleteMe
 .ycm_extra_conf.py
+
+### Gtags
+GPATH
+GRTAGS
+GTAGS
