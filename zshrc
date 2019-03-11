@@ -23,9 +23,6 @@ antigen use oh-my-zsh
 #specify bundles
 antigen bundles <<EOBUNDLES
 
-# Guess what to install when running an unknown command
-command-not-found
-
 # Helper for extracting different types of archives
 extract
 
@@ -42,8 +39,6 @@ zsh-users/zsh-completions src
 
 # mercurial auto completion and shortcuts
 mercurial
-
-docker
 
 pip
 
