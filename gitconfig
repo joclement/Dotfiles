@@ -27,4 +27,4 @@
     whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
     excludesfile = ~/.gitignore
 [merge]
-	tool = vimdiff
+    tool = vimdiff
