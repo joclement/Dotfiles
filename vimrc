@@ -222,7 +222,8 @@ vnoremap // y/<C-R>"<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git,build}\ -I
+set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git,build}\
+            \ --exclude=tags\ -I
 " }}}
 
 
