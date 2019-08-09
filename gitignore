@@ -28,3 +28,6 @@ tags
 GPATH
 GRTAGS
 GTAGS
+
+### virtual environment
+.venv
