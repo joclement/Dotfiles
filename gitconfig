@@ -7,13 +7,14 @@
     ci = commit
     br = branch
     wipe = !git add -A && git commit -qm WIPE
-    last = log -1 HEAD
+    slog = log --stat
+    last = log --stat -1 HEAD
     ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
     glog = log --pretty=format:\"%h %s\" --graph
-    ciam = !git add -A && git commit -m
-    cia = !git add -A && git commit
+    cia = commit --amend
+    cian = commit --amend --no-edit
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
-    pu = push
+    dca = diff --cached
 [push]
     default = simple
     followTags = true
