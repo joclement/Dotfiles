@@ -30,3 +30,5 @@
     tool = vimdiff
 [log]
     abbrevCommit = true
+[commit]
+    gpgsign = true
