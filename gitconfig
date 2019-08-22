@@ -15,6 +15,7 @@
     cian = commit --amend --no-edit
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
     dca = diff --cached
+    ap = add --patch
 [push]
     default = simple
     followTags = true
