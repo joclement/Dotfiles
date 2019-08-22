@@ -34,3 +34,4 @@
     abbrevCommit = true
 [commit]
     gpgsign = true
+    verbose = true
