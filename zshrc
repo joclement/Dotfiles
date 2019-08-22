@@ -27,8 +27,6 @@ antigen bundles <<EOBUNDLES
 extract
 
 #for working with git
-#git
-#git-extras
 voronkovich/gitignore.plugin.zsh
 
 # to go to parent dirs quickly
