@@ -16,6 +16,7 @@
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
     dca = diff --cached
     ap = add --patch
+    fpu = push --force-with-lease
 [push]
     default = simple
     followTags = true
