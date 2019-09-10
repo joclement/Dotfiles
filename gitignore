@@ -31,3 +31,8 @@ GTAGS
 
 ### virtual environment
 .venv
+
+### Markdown HTML files
+README.html
+CHANGELOG.html
+CONTRIBUTING.html
