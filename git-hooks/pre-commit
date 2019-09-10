@@ -4,8 +4,6 @@
 if git rev-parse --verify HEAD >/dev/null 2>&1
 then
     against=HEAD
-else
-    exit 0
 fi
 
 # Redirect output to stderr.
