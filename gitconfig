@@ -36,3 +36,5 @@
 [commit]
     gpgsign = true
     verbose = true
+[credential]
+    helper = cache
