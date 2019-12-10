@@ -7,6 +7,7 @@
     ci = commit
     cia = commit --amend
     cian = commit --amend --no-edit
+    cm = checkout master
     co = checkout
     dca = diff --cached
     fpu = push --force-with-lease
