@@ -1,22 +1,22 @@
 [include]
     path = ~/.gituserconfig
 [alias]
-    co = checkout
-    st = status
     amend = commit -a --amend
-    ci = commit
+    ap = add --patch
     br = branch
-    wipe = !git add -A && git commit -qm WIPE
-    slog = log --stat
-    last = log --stat -1 HEAD
-    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
-    glog = log --pretty=format:\"%h %s\" --graph
+    ci = commit
     cia = commit --amend
     cian = commit --amend --no-edit
-    unpushed = log @{u}.. --pretty=format:'%h %an %s'
+    co = checkout
     dca = diff --cached
-    ap = add --patch
     fpu = push --force-with-lease
+    glog = log --pretty=format:\"%h %s\" --graph
+    last = log --stat -1 HEAD
+    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
+    slog = log --stat
+    st = status
+    unpushed = log @{u}.. --pretty=format:'%h %an %s'
+    wipe = !git add -A && git commit -qm WIPE
 [push]
     default = simple
     followTags = true
@@ -27,8 +27,8 @@
 [advice]
     statusHints = false
 [core]
-    whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
     excludesfile = ~/.gitignore
+    whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
 [merge]
     tool = vimdiff
 [log]
