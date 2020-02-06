@@ -39,3 +39,5 @@
     verbose = true
 [credential]
     helper = cache
+[status]
+    submoduleSummary = true
