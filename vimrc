@@ -323,7 +323,7 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
 
 set backspace=2
 
-set history=1000
+set history=10000
 
 set wildmenu
 " }}}
