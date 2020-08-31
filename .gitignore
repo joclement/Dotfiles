@@ -1,2 +1,4 @@
 *.swp
 *.html
+
+vim/autoload/plug.vim.old
