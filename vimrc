@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ervandew/supertab'
 
 Plug 'ycm-core/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
 Plug 'altercation/vim-colors-solarized'
 
