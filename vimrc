@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 " For making YouComplete and UltiSnips compatible
 Plug 'ervandew/supertab'
 
-Plug 'Valloric/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
 Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
 
 Plug 'altercation/vim-colors-solarized'
