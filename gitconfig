@@ -42,3 +42,5 @@
     helper = cache
 [status]
     submoduleSummary = true
+[pull]
+    rebase = true
