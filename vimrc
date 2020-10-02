@@ -3,11 +3,6 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
-" TODO make UltiSnips workable again
-" TODO check if necessary
-" For making YouComplete and UltiSnips compatible
-Plug 'ervandew/supertab'
-
 Plug 'ycm-core/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
 
 Plug 'altercation/vim-colors-solarized'
@@ -73,16 +68,8 @@ set laststatus=2
 
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 
-" compatability YCM, UltiSnips {{{
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-" }}}
-
 " UltiSnips key {{{
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>""
+let g:UltiSnipsExpandTrigger = "<c-j>"
 " }}}
 
 " syntastic {{{
