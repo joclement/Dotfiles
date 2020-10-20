@@ -114,8 +114,6 @@ fi
 
 # enable vim mode for bash
 set -o vi
-# maps the reverse history search to the / key
-bind '"/": reverse-search-history'
 
 powerlineshpath=~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 powerlineexists=false
