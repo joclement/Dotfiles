@@ -74,6 +74,8 @@ fi
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
 
+export HISTSIZE=1000000
+
 if [ -f $HOME/.private_zshrc ]; then
     source $HOME/.private_zshrc
 fi
