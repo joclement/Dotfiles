@@ -35,9 +35,6 @@ Tarrasch/zsh-bd
 #more autocompletion
 zsh-users/zsh-completions src
 
-# mercurial auto completion and shortcuts
-mercurial
-
 pip
 
 EOBUNDLES
