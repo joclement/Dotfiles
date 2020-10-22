@@ -267,6 +267,18 @@ endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
 
+" remove empty lines at EOF
+function TrimEndLines()
+    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff)
+        return
+    endif
+    let save_cursor = getpos(".")
+    silent! %s#\($\n\s*\)\+\%$##
+    call setpos('.', save_cursor)
+endfunction
+
+autocmd BufWritePre * call TrimEndLines()
+" }}}
 
 " buffer management {{{
 set autoread
