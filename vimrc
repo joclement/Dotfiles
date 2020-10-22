@@ -3,7 +3,7 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'ycm-core/YouCompleteMe', {'do': 'python3 ./install.py --clang-completer'}
+Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer --java-completer'}
 
 Plug 'altercation/vim-colors-solarized'
 
