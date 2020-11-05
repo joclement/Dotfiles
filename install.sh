@@ -61,7 +61,8 @@ files="env shared_shell shared_aliases
        hgrc hgignore
        gitconfig gitignore"
 
-dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect config/zathura
+dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect
+      config/zathura
       zfunc"
 
 # whether to install system wide or for user
