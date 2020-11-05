@@ -50,7 +50,9 @@ dot_dir=$my_home/Dotfiles
 olddir=$my_home/Dotfiles_old
 
 # list of files/folders to symlink in homedir
-files="env shared_shell shared_aliases bashrc inputrc
+files="env shared_shell shared_aliases
+       bashrc
+       inputrc
        zshrc autocompletion_zsh antigen dircolors-solarized
        vimrc gvimrc vim/ftplugin/* vim/syntax/* vim/ftdetect/* vim/autoload/*
        ideavimrc
