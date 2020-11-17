@@ -1,9 +1,10 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -qq update && \
-    apt-get install -qq -o=Dpkg::Use-Pty=0 \
-      sudo
+    DEBIAN_FRONTEND=noninteractive apt-get install -qq -o=Dpkg::Use-Pty=0 \
+      sudo \
+      tzdata
 
 RUN useradd -s /bin/zsh tester
 ADD . /home/tester/Dotfiles
