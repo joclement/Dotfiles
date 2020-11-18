@@ -16,7 +16,7 @@ fi
 # for custom autocompletion
 fpath+=$HOME/.zfunc
 
-#########################################antigen stuff####################################
+###############################antigen stuff####################################
 
 source ~/.antigen/antigen.zsh
 
@@ -56,6 +56,7 @@ POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 antigen apply
 
+##############################Further config####################################
 
 export SHELL=$(which zsh)
 
