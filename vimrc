@@ -17,8 +17,6 @@ Plug 'honza/vim-snippets'
 
 Plug 'scrooloose/syntastic'
 
-Plug 'JuliaEditorSupport/julia-vim'
-
 Plug 'Vimjas/vim-python-pep8-indent'
 
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
