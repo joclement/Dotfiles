@@ -15,8 +15,8 @@ If you've any questions, recommendations or criticism feel free to write me a ma
 
 ### Requirements
 
-These Dotfiles are used and have been tested on Ubuntu 14.04 and 16.04.
-They should work on other Linux distributions without any changes as well.
+These Dotfiles are used and most suited for Ubuntu 18.04.
+They should probably work on other Linux distributions as well.
 Mainly the install file won't work partly on non Debian-based systems,
 because it uses `dpkg`.
 
