@@ -35,6 +35,8 @@ Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 Plug 'cespare/vim-toml'
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 call plug#end()
 " }}}
 
