@@ -6,10 +6,10 @@ This repository includes all of my custom Dotfiles.
 
 This Dotfiles repository focuses on:
 * zsh using antigen
-* vim
+* vim using vim-plug for plugin management
 * solarized
 * git, mercurial
-* own small functions and aliases to improve work
+* own small functions and aliases
 
 If you've any questions, recommendations or criticism feel free to write me a mail.
 
