@@ -15,23 +15,20 @@ If you've any questions, recommendations or criticism feel free to write me a ma
 
 ### Requirements
 
-These Dotfiles are used and most suited for Ubuntu 18.04.
-They should probably work on other Linux distributions as well.
-Mainly the install file won't work partly on non Debian-based systems,
-because it uses `dpkg`.
-
-There is no warranty or guarantee that they will work on your system.
-They have been tested and are working on my system, but you should save your
-Dotfiles and back up your system before installing these Dotfiles.
+These Dotfiles are used and most suited for Ubuntu 18.04, but they will
+probably work on other Linux distributions as well.
+Mainly the install file will only work on Ubuntu or other Debian based Systems
+as it uses `apt` and `dpkg`.
 
 ### Installation
 
 The installation process is explained in detail in the file `install.sh` and you
 can get some help information with `install.sh -h`.
-The bash script relies on certain tools, which it will check for and install if
-needed.
-Therefore it uses apt, which is just available on Debian based systems.
-So this script can not be used or has to be adapted for other distributions.
+As described the installation will only work on Debian based Systems.
+
+There is no warranty or guarantee that they will work on your system.
+They have been tested and are working on my system, but you should save your
+Dotfiles and/or back up your system before installing these Dotfiles.
 
 ### Quick Installation
 
