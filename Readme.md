@@ -30,7 +30,7 @@ The installation process is explained in detail in the file `install.sh` and you
 can get some help information with `install.sh -h`.
 The bash script relies on certain tools, which it will check for and install if
 needed.
-Therefor it uses apt, which is just available on Debian based systems.
+Therefore it uses apt, which is just available on Debian based systems.
 So this script can not be used or has to be adapted for other distributions.
 
 ### Quick Installation
