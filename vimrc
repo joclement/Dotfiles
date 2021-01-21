@@ -18,6 +18,7 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/syntastic'
 
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'vim-python/python-syntax'
 
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
