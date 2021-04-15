@@ -18,7 +18,8 @@
     st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
     wipe = !git add -A && git commit -qm WIPE
-    delmerg = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
+    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
+    delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
 [push]
     default = simple
     followTags = true
