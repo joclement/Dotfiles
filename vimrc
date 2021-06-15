@@ -127,14 +127,8 @@ let g:gundo_prefer_python3 = 1
 
 
 " colorscheme {{{
-try
-    set t_Co=256
-    set background=dark
-    let g:solarized_termcolors=&t_Co
-    let g:solarized_termtrans=1
-    colorscheme solarized
-catch /^Vim\%((\a\+)\)\=:E185/
-endtry
+set background=dark
+colorscheme solarized
 " }}}
 
 
