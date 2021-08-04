@@ -259,7 +259,7 @@ endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
 
-" remove empty lines at EOF
+" remove empty lines at EOF {{{
 function TrimEndLines()
     if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff)
         return
