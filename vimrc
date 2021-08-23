@@ -262,7 +262,7 @@ autocmd BufWritePre * call RemoveTrailingWhitespace()
 
 " remove empty lines at EOF {{{
 function TrimEndLines()
-    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff)
+    if (exists('b:NoTrimEndLines') || &ft=='' || &diff)
         return
     endif
     let save_cursor = getpos(".")
