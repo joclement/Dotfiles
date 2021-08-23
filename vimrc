@@ -194,6 +194,7 @@ set shiftround
 " syntax highlighting {{{
 let g:load_doxygen_syntax=1
 let g:doxygen_javadoc_autobrief=0
+let g:python_highlight_all = 1
 " }}}
 
 
