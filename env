@@ -19,13 +19,36 @@ __pathaddend() {
     fi
 }
 
-__pathaddend $HOME/.local/bin
+
+if [ -d "$HOME/bin" ] ; then
+    __pathaddend $HOME/bin
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    __pathaddend $HOME/.local/bin
+fi
+
+POETRY_HOME="$HOME/.poetry/bin"
+if [ -d "$POETRY_HOME" ] ; then
+    __pathaddend $POETRY_HOME
+fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+if [ -d "$PYENV_ROOT/bin" ] ; then
+    __pathaddbegin $PYENV_ROOT/bin
+    eval "$(pyenv init --path)"
+fi
+
+unset -f __pathaddbegin
+unset -f __pathaddend
+
+# ---------------------------------------------------------------------
 
 #set environment variable for standard editor to vim, also for visual
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-__pathaddend $HOME/bin
+# ---------------------------------------------------------------------
 
 ncpu=$(nproc)
 upper_limit=10
@@ -35,7 +58,3 @@ then
 fi;
 
 export MAKEFLAGS="-j $ncpu"
-
-# to keep it local
-unset -f __pathaddbegin
-unset -f __pathaddend
