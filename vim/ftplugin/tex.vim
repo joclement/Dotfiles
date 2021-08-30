@@ -1,4 +1,3 @@
-" FIXME the auto indentation for tex does not work
 setlocal tabstop=2
 setlocal shiftwidth=2
 
