@@ -1,7 +1,6 @@
 [include]
     path = ~/.gituserconfig
 [alias]
-    amend = commit -a --amend
     ap = add --patch
     br = branch
     ci = commit
@@ -17,7 +16,6 @@
     slog = log --stat
     st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
-    wipe = !git add -A && git commit -qm WIPE
     delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
     delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
 [push]
