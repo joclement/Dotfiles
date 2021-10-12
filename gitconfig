@@ -9,6 +9,8 @@
     cm = !(git branch --list | grep master && git checkout master) || git checkout main
     co = checkout
     dca = diff --cached
+    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
+    delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
     fpu = push --force-with-lease
     glog = log --pretty=format:\"%h %s\" --graph
     last = log --stat -1 HEAD
@@ -16,8 +18,6 @@
     slog = log --stat
     st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
-    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
-    delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
 [push]
     default = simple
     followTags = true
