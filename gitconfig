@@ -21,6 +21,7 @@
 [push]
     default = simple
     followTags = true
+    signed = true
 [color]
     ui = true
 [diff]
