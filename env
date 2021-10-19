@@ -47,14 +47,3 @@ unset -f __pathaddend
 #set environment variable for standard editor to vim, also for visual
 export VISUAL=vim
 export EDITOR="$VISUAL"
-
-# ---------------------------------------------------------------------
-
-ncpu=$(nproc)
-upper_limit=10
-if (( ncpu > 10 ));
-then
-    ncpu=$upper_limit
-fi;
-
-export MAKEFLAGS="-j $ncpu"
