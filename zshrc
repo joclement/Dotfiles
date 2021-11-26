@@ -43,7 +43,7 @@ pip
 EOBUNDLES
 # TODO find way to add plugin based on version
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme romkatv/powerlevel10k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv)
 if [ -n "$SSH_CLIENT" ]; then
