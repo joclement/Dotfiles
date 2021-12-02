@@ -44,7 +44,6 @@ unset -f __pathaddend
 
 # ---------------------------------------------------------------------
 
-#set environment variable for standard editor to vim, also for visual
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
