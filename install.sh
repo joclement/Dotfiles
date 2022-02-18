@@ -64,7 +64,7 @@ my_home=$HOME
 local_software=$my_home/local_software
 
 # dotfiles directory
-dot_dir=$my_home/Dotfiles
+dot_dir=$cwd
 
 # old dotfiles backup directory
 olddir=$my_home/Dotfiles_old
@@ -87,6 +87,7 @@ dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect
 
 # whether to install system wide or for user
 approve_solarized_install=true
+approve_vim_update=true
 system_wide=false
 installoption=""
 changedefzsh=true
@@ -96,7 +97,8 @@ changedefzsh=true
 #Help function
 function HELP {
     echo "Help documentation for ${script}"
-    echo "Install the dotfiles of this Dotfiles repository."
+    echo -n "Install the dotfiles of this Dotfiles repository. Run this script"
+    echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
     echo "-i    gives an installoption, necessary option."
@@ -104,6 +106,7 @@ function HELP {
     echo "-s    Install some parts system wide. Default is $system_wide"
     echo "-n    Do not set zsh as default shell"
     echo "-o    Do not install solarized for gnome-terminal"
+    echo "-v    Do not install/update vim addons"
     echo "-h    Displays this help message. No further functions are performed."
     echo ""
     echo "Example for installation: $script -i install"
@@ -119,7 +122,7 @@ else
     exit 1
 fi
 
-while getopts ":d:i:s n h o" opt; do
+while getopts ":d:i:s n h o v" opt; do
     case $opt in
         i)
             if [ "$OPTARG" == "update" -o "$OPTARG" == "install" ];
@@ -139,6 +142,9 @@ while getopts ":d:i:s n h o" opt; do
             ;;
         o)
             approve_solarized_install=false
+            ;;
+        v)
+            approve_vim_update=false
             ;;
         h)
             HELP;
@@ -340,9 +346,11 @@ install_powerline() {
 }
 
 update_vim() {
-    echo "install vim add ons"
-    vim +PlugUpdate +qall
-    echo "done"
+    if [ "$approve_vim_update" == true ]; then
+        echo "install vim add ons"
+        vim +PlugUpdate +qall
+        echo "done"
+    fi
 }
 
 install_solarized() {
