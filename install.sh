@@ -148,7 +148,7 @@ while getopts ":d:i:s n h o" opt; do
             echo "Invalid option:
             -$OPTARG" >&2
             HELP;
-            exit 0
+            exit 1
             ;;
     esac
 done
