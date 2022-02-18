@@ -97,7 +97,7 @@ changedefzsh=true
 function HELP {
     echo -e \\n"Help documentation for ${script}"\\n
     echo "Installs the dotfiles of this git Dotfiles repository. You may need to
-    give your passport to install needed sytem wide software packages, f.x. cmake"
+    give your password to install needed sytem wide software packages, f.x. cmake"
     echo -e "Basic usage: ./$script "\\n
     echo -e "-i    gives an installoption, necessary option.
     Use either \"update\" or \"install\" as an argument." \\n
