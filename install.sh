@@ -95,18 +95,19 @@ changedefzsh=true
 
 #Help function
 function HELP {
-    echo -e \\n"Help documentation for ${script}"\\n
-    echo "Installs the dotfiles of this git Dotfiles repository. You may need to
-    give your password to install needed sytem wide software packages, f.x. cmake"
-    echo -e "Basic usage: ./$script "\\n
-    echo -e "-i    gives an installoption, necessary option.
-    Use either \"update\" or \"install\" as an argument." \\n
-    echo -e "-s    Install some parts system wide. Default is $system_wide" \\n
-    echo -e "-n    Do not set zsh as default shell" \\n
-    echo -e "-o    Do not install solarized for gnome-terminal" \\n
-    echo -e "-h    Displays this help message. No further functions are performed."\\n
-    echo -e "Example for installation: $script -i install"\\n
-    echo -e "Example for update: $script -i update"\\n
+    echo "Help documentation for ${script}"
+    echo "Install the dotfiles of this Dotfiles repository."
+    echo ""
+    echo "Basic usage: ./$script"
+    echo "-i    gives an installoption, necessary option."
+    echo "      Use either \"update\" or \"install\" as an argument."
+    echo "-s    Install some parts system wide. Default is $system_wide"
+    echo "-n    Do not set zsh as default shell"
+    echo "-o    Do not install solarized for gnome-terminal"
+    echo "-h    Displays this help message. No further functions are performed."
+    echo ""
+    echo "Example for installation: $script -i install"
+    echo "Example for update: $script -i update"
 }
 
 #check if bash is used
