@@ -88,3 +88,5 @@ fi
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

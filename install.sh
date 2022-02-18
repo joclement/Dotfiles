@@ -73,7 +73,8 @@ olddir=$my_home/Dotfiles_old
 files="env shared_shell shared_aliases
        bashrc
        inputrc
-       zshrc autocompletion_zsh antigen dircolors-solarized
+       zshrc antigen dircolors-solarized
+       autocompletion_zsh zsh-syntax-highlighting
        vimrc gvimrc vim/ftplugin/* vim/syntax/* vim/ftdetect/* vim/autoload/*
        ideavimrc
        config/zathura/zathurarc
