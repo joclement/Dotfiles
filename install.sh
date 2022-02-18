@@ -122,7 +122,7 @@ else
     exit 1
 fi
 
-while getopts ":d:i:s n h o v" opt; do
+while getopts ":i:s n h o v" opt; do
     case $opt in
         i)
             if [ "$OPTARG" == "update" -o "$OPTARG" == "install" ];
