@@ -1,6 +1,5 @@
 #!/bin/bash
 ############################
-# .make.sh
 #
 ### Tested with Ubuntu! So not recommended for other operating systems without prior check
 ### and change!
