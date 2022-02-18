@@ -1,4 +1,4 @@
-[![Build Status](https://github.com/flyingdutchman23/Dotfiles/workflows/Test/badge.svg)](https://github.com/flyingdutchman23/Dotfiles/actions?workflow=Test)
+[![Test](https://github.com/flyingdutchman23/Dotfiles/workflows/Test/badge.svg)](https://github.com/flyingdutchman23/Dotfiles/actions?workflow=Test)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
