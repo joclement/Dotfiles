@@ -13,4 +13,4 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         sudo apt-get install -qq tzdata
-        ./install.sh -i install -n -o
+        ./install.sh -i install -n -o -v
