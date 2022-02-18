@@ -11,5 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - run: sudo apt update
     - run: sudo apt-get install -qq tzdata
     - run: ./install.sh -i install -n -o -v
