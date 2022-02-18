@@ -64,7 +64,7 @@ my_home=$HOME
 local_software=$my_home/local_software
 
 # dotfiles directory
-dot_dir=$my_home/Dotfiles
+dot_dir=$cwd
 
 # old dotfiles backup directory
 olddir=$my_home/Dotfiles_old
@@ -96,7 +96,8 @@ changedefzsh=true
 #Help function
 function HELP {
     echo "Help documentation for ${script}"
-    echo "Install the dotfiles of this Dotfiles repository."
+    echo -n "Install the dotfiles of this Dotfiles repository. Run this script"
+    echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
     echo "-i    gives an installoption, necessary option."
