@@ -45,7 +45,7 @@ cd ~/Dotfiles
 ### Licensing
 
 Nearly all files in this project are licensed under [the MIT license](LICENSE).
-The exceptions is currently [install.sh](install.sh), licensed with GPLv3 as it is based on
+The exception is currently [install.sh](install.sh), licensed with GPLv3 as it is based on
 [this file](https://github.com/michaeljsmalley/dotfiles/blob/dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh).
 
 ### Acknowledgments
