@@ -1,4 +1,5 @@
 [![Test](https://github.com/flyingdutchman23/Dotfiles/workflows/Test/badge.svg)](https://github.com/flyingdutchman23/Dotfiles/actions?workflow=Test)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/flyingdutchman23/Dotfiles/master.svg)](https://results.pre-commit.ci/latest/github/flyingdutchman23/Dotfiles/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
