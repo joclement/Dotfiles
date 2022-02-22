@@ -1,4 +1,3 @@
-#!/bin/bash
 ###This file contains the environment variables used by bash and zsh
 
 # functions to add folder to PATH environment variable

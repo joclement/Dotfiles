@@ -13,4 +13,3 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git}\ -I
 " }}}
-
