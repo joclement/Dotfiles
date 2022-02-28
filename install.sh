@@ -79,7 +79,6 @@ files="env shared_shell shared_aliases
        ideavimrc
        config/zathura/zathurarc
        tmux.conf
-       hgrc hgignore
        gitconfig gitignore"
 
 dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect
