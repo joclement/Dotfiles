@@ -19,23 +19,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 ###shortcuts for programs
-alias py='python3'
 alias vi='vim'
 alias vless='vim -R -'
-
-###shortcuts for svn
-alias sst='svn status'
-alias sa='svn add'
-alias su='svn update'
-alias sci='svn commit'
-alias sinf='svn info'
-alias sd='svn diff'
-alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
-
-### shortcuts for git commands
-# to activate colors in terminal via ssh
-alias gd='git diff --color'
-alias gdm='git diff --color --diff-filter=M'
 
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
