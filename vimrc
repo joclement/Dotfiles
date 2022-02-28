@@ -209,7 +209,7 @@ vnoremap // y/<C-R>"<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.hg,.git,build,.mypy_cache,.nox,.pytest_cache}\
+set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache}\
             \ --exclude=tags\ -I
 " }}}
 
@@ -316,7 +316,7 @@ set foldnestmax=5
 
 
 " misc {{{
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
             \,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
                         \,*.toc,*.pyc
 

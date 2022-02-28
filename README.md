@@ -11,7 +11,7 @@ This Dotfiles repository focuses on:
 * zsh using antigen
 * vim using vim-plug for plugin management
 * solarized
-* git, mercurial
+* git
 * own small functions and aliases
 
 If you've any questions, recommendations or criticism feel free to write me a mail.

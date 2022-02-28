@@ -7,8 +7,8 @@ alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep -I --color=auto --exclude-dir={.git,.svn,.hg} --exclude=tags'
-alias cgrep='grep --color=always --exclude-dir={.git,.svn,.hg}'
+alias grep='grep -I --color=auto --exclude-dir={.git,.svn} --exclude=tags'
+alias cgrep='grep --color=always --exclude-dir={.git,.svn}'
 # to run make in the background
 alias backmake='make &> /dev/null &'
 
@@ -31,12 +31,6 @@ alias sci='svn commit'
 alias sinf='svn info'
 alias sd='svn diff'
 alias svnignore='svn propset svn:ignore -RF ./.svnignore .'
-
-###shortcuts for mercurial
-alias hglg='hg log --stat'
-alias hga='hg add'
-alias hgsm='hg sum'
-alias hgcd='hg checkout default'
 
 ### shortcuts for git commands
 # to activate colors in terminal via ssh
