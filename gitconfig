@@ -28,6 +28,7 @@
     tool = vimdiff
 [advice]
     statusHints = false
+    skippedCherryPicks = false
 [core]
     excludesfile = ~/.gitignore
     whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
