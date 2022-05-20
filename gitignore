@@ -39,3 +39,6 @@ CONTRIBUTING.html
 
 ### Python
 .python-version
+
+### Lua
+lua_modules
