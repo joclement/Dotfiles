@@ -19,7 +19,6 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 ###shortcuts for programs
-alias vi='vim'
 alias vless='vim -R -'
 
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
