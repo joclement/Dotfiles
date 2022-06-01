@@ -52,5 +52,6 @@
     required = true
 [rebase]
     autostash = true
+    autosquash = true
 [init]
     defaultBranch = main
