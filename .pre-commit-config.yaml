@@ -11,3 +11,11 @@ repos:
     - id: check-shebang-scripts-are-executable
     - id: check-executables-have-shebangs
     - id: detect-private-key
+- repo: https://github.com/Vimjas/vint
+  rev: 471e70bfff02edab460bc238c2e6d8aa46197d60
+  hooks:
+    - id: vint
+      exclude: |
+        (?x)(
+          ^vim/autoload/plug\.vim$
+        )
