@@ -6,7 +6,7 @@
 "setlocal cindent
 setlocal autoindent
 setlocal smartindent
-" to not indent after 'namespace' decleration
+" to not indent after 'namespace' declaration
 setlocal cino=N-s,g0,n0,+0
 
 call SetTextWidth(80)
