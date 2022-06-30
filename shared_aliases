@@ -68,7 +68,7 @@ function confirmLoop() {
     echo $varConfirm;
 }
 
-#function to let the user confirm his previos decision
+#function to let the user confirm his previous decision
 function confirm () {
     read -p "" choice;
     if [ "$choice" == "Y" ];
