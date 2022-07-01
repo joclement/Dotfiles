@@ -34,6 +34,9 @@ Plug 'vim-latex/vim-latex'
 
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 Plug 'cespare/vim-toml'
 
 Plug 'ctrlpvim/ctrlp.vim'
