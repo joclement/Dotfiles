@@ -3,6 +3,7 @@
 " that's not a good behaviour for git commit messages.
 let b:NoJumpToLastPosOpen=1
 let b:NoRemoveTrailingWhitespace=1
+let b:EditorConfig_disable = 1
 
 setlocal spell spelllang=en_us
 
