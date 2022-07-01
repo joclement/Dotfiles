@@ -46,6 +46,8 @@ cd ~/Dotfiles
 ### Licensing
 
 Nearly all files in this project are licensed under [the MIT license](LICENSE).
+The file [vim/autoload/plug.vim](vim/autoload/plug.vim) is also licensed under
+[the MIT license], but with a different copyright owner.
 This does of course not apply to the used git submodules.
 Furthermore, an exception is [install.sh](install.sh), which is licensed with
 GPLv3 as it is based on
