@@ -109,15 +109,6 @@ function! DispatchCw()
 endfunction
 command! Cw call DispatchCw()
 " }}}
-
-" update makeprg {{{
-function! UpdateMakeSettings()
-    set makeprg=nice\ -n\ 19\ make\ -j\ $MAKE_PARALLELIZATION\ -C\ $MY_BUILD_DIR
-endfunction
-call UpdateMakeSettings()
-nnoremap <silent> <F7> :call UpdateMakeSettings()<CR>
-" }}}
-
 " }}}
 
 let g:localvimrc_persistent = 1
