@@ -39,7 +39,7 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'cespare/vim-toml'
 
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 " }}}
