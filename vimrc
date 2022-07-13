@@ -41,6 +41,8 @@ Plug 'cespare/vim-toml'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'preservim/tagbar'
+
 call plug#end()
 " }}}
 
