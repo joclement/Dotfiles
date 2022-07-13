@@ -1,9 +1,6 @@
 ################################### My aliases #################################
 
 ###miscellaneous aliases
-alias ll='ls -l'
-alias la='ls -al'
-alias cl='reset'
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
