@@ -26,7 +26,7 @@ alias docker_clean_volumes='docker volume rm $(docker volume ls -q)'
 ################################ My alias functions ############################
 
 #alias function for parallel make
-function pmake() {
+function pmake {
     ncpu=$(nproc)
     upper_limit=10
     if (( ncpu > 10 ));
