@@ -38,7 +38,7 @@ if [ -d "$PYENV_ROOT/bin" ] ; then
     eval "$(pyenv init --path)"
 fi
 
-if [ -d "$HOME/.cargo" ] ; then
+if [ -f "$HOME/.cargo/env" ] ; then
     source $HOME/.cargo/env
 fi
 
