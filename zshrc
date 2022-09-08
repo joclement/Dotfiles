@@ -79,6 +79,7 @@ fi
 setopt APPEND_HISTORY
 
 export HISTSIZE=1000000
+export SAVEHIST=$HISTSIZE
 
 if [ -f $HOME/.private_zshrc ]; then
     source $HOME/.private_zshrc
