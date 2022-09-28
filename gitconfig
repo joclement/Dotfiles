@@ -38,7 +38,7 @@
     abbrevCommit = true
 [commit]
     gpgsign = true
-    verbose = false
+    verbose = true
 [credential]
     helper = cache
 [status]
