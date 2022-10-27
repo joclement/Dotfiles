@@ -75,13 +75,13 @@ files="env shared_shell shared_aliases
        inputrc
        zshrc antigen dircolors-solarized
        autocompletion_zsh zsh-syntax-highlighting
-       vimrc gvimrc vim/ftplugin/* vim/syntax/* vim/ftdetect/* vim/autoload/*
+       vimrc gvimrc vim/ftplugin/* vim/ftdetect/* vim/autoload/*
        ideavimrc
        config/zathura/zathurarc
        tmux.conf
        gitconfig gitignore"
 
-dirs="vim/autoload vim/ftplugin vim/plugin vim/syntax vim/ftdetect
+dirs="vim/autoload vim/ftplugin vim/plugin vim/ftdetect
       config/zathura
       zfunc"
 
