@@ -393,11 +393,8 @@ install_ctags() {
     git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
     cd $local_software/ctags
     ./autogen.sh
-    cd $local_software/ctags
     ./configure
-    cd $local_software/ctags
     make
-    cd $local_software/ctags
     sudo make install
     cd $cwd
     echo "DONE"
