@@ -390,6 +390,7 @@ install_ctags() {
     cd $local_software
     rm -rf ctags
     git clone https://github.com/universal-ctags/ctags
+    git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
     cd $local_software/ctags
     ./autogen.sh
     cd $local_software/ctags
