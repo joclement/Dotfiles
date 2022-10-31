@@ -222,6 +222,7 @@ install_dependencies() {
 
             echo "install build-essential"
             sudo apt-get install -y build-essential;
+            echo "done"
 
             echo "install cmake"
             sudo apt-get install -y cmake;
