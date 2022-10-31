@@ -216,16 +216,16 @@ install_dependencies() {
     then
         if [[ -f /etc/debian_version ]];
         then
-            echo "install pip3"
-            sudo apt-get install -y python3-pip;
-            echo "done"
-
             echo "install build-essential"
             sudo apt-get install -y build-essential;
             echo "done"
 
             echo "install cmake"
             sudo apt-get install -y cmake;
+            echo "done"
+
+            echo "install pip3"
+            sudo apt-get install -y python3-pip;
             echo "done"
 
             echo "install python3-dev"
