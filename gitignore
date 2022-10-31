@@ -42,3 +42,6 @@ CONTRIBUTING.html
 
 ### Lua
 lua_modules
+
+### Other
+.cache/
