@@ -32,9 +32,7 @@
 # github.com/flyingdutchman23/Dotfiles.
 ############################
 
-########## Variables
 
-#automatic quit, if error
 set -e
 
 cwd=`pwd`
