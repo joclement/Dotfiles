@@ -217,6 +217,23 @@ install_dependencies() {
             sudo apt-get install -y python3-venv;
             echo "done"
 
+            echo "install for pyenv"
+            sudo apt-get install -y libedit-dev \
+                                    libssl-dev \
+                                    zlib1g-dev \
+                                    libbz2-dev \
+                                    libreadline-dev \
+                                    libsqlite3-dev \
+                                    llvm \
+                                    libncursesw5-dev \
+                                    xz-utils \
+                                    tk-dev \
+                                    libxml2-dev \
+                                    libxmlsec1-dev \
+                                    libffi-dev \
+                                    liblzma-dev;
+            echo "done"
+
             echo "install vim"
             sudo apt-get install -y vim-gtk;
             echo "done"
@@ -441,6 +458,12 @@ install_global() {
     fi
 }
 
+install_pyenv() {
+    curl -L \
+        https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+        | bash
+}
+
 doinstalls() {
     checked_install_solarized
     install_powerline
@@ -448,6 +471,7 @@ doinstalls() {
     mkdir -p $local_software
     install_ctags
     install_global
+    install_pyenv
     update_vim
 }
 
