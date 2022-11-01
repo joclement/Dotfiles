@@ -22,29 +22,14 @@
 ############################
 
 ############################
-### Tested with Ubuntu! So not recommended for other operating systems without prior check
-### and change!
+# Tested with Ubuntu! So not recommended for other operating systems without
+# prior check and change!
 #
-### Prior to running the first time I would recommend to save the Dotfiles before,
-### just in case they get lost!
+# Prior to running this script I recommend to save the Dotfiles, just in case
+# they get lost!
 #
-# This script sets up the Dotfiles environment from github.com/flyingdutchman23/Dotfiles.
-# For that it checks whether the necessary software is available and installs it if
-# needed.
-# Then it installs the z shell and sets it as the default shell.
-# After that it also saves the already existing Dotfiles in a directory specified by the variable
-# olddir.
-# Then this script creates symlinks from the home directory to any desired Dotfiles in the
-# desired directory specified with the variable dir.
-# Then it installs solarized. Information about that is available here:
-# http://ethanschoonover.com/solarized/vim-colors-solarized
-# It installs the powerline plug-in for vim and the z shell as well.
-# At last it installs and updates all the vim plug-ins and recompiles YouCompleteMe if
-# wanted.
-#
-# For the installation process the user can choose whether he wants to install certain
-# parts system_wide or in the home folder.
-# Currently the option is available for the powerline plug-in.
+# This script sets up the Dotfiles environment from
+# github.com/flyingdutchman23/Dotfiles.
 ############################
 
 ########## Variables
