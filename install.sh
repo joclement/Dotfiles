@@ -199,6 +199,8 @@ install_dependencies() {
     then
         if [[ -f /etc/debian_version ]];
         then
+            sudo apt-get update;
+
             echo "install build-essential"
             sudo apt-get install -y build-essential;
             echo "done"
