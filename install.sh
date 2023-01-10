@@ -27,9 +27,6 @@
 #
 # Prior to running this script I recommend to save the Dotfiles, just in case
 # they get lost!
-#
-# This script sets up the Dotfiles environment from
-# github.com/flyingdutchman23/Dotfiles.
 ############################
 
 
