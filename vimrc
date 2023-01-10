@@ -317,6 +317,8 @@ set backspace=2
 set history=10000
 
 set wildmenu
+
+set scrolloff=3
 " }}}
 
 
