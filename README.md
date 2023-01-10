@@ -1,5 +1,5 @@
-[![Test](https://github.com/flyingdutchman23/Dotfiles/workflows/Test/badge.svg)](https://github.com/flyingdutchman23/Dotfiles/actions?workflow=Test)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/flyingdutchman23/Dotfiles/master.svg)](https://results.pre-commit.ci/latest/github/flyingdutchman23/Dotfiles/master)
+[![Test](https://github.com/joclement/Dotfiles/workflows/Test/badge.svg)](https://github.com/joclement/Dotfiles/actions?workflow=Test)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/joclement/Dotfiles/master.svg)](https://results.pre-commit.ci/latest/github/joclement/Dotfiles/master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
@@ -38,7 +38,7 @@ Dotfiles and/or back up your system before installing these Dotfiles.
 To be absolutely secure save your Dotfiles prior to doing this!
 
 ``` bash
-git clone git://github.com/flyingdutchman23/Dotfiles ~/Dotfiles
+git clone git://github.com/joclement/Dotfiles ~/Dotfiles
 cd ~/Dotfiles
 ./install.sh -i install
 ```
