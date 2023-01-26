@@ -35,13 +35,12 @@ Dotfiles and/or back up your system before installing these Dotfiles.
 
 ### Quick Installation
 
-To be absolutely secure save your Dotfiles prior to doing this!
+To be secure save your Dotfiles prior to installing with this install script!
 
-``` bash
-git clone git://github.com/joclement/Dotfiles ~/Dotfiles
-cd ~/Dotfiles
-./install.sh -i install
-```
+After cloning this repo to a suitable location like `~/Dotfiles` just run the
+following commands inside the folder:
+* `./install.sh -h ` for help
+* `./install.sh -i install` for simple install
 
 ### Licensing
 
