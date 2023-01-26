@@ -7,7 +7,7 @@ Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer'}
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
 Plug 'Raimondi/delimitMate'
