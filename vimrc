@@ -41,6 +41,9 @@ Plug 'cespare/vim-toml'
 
 Plug 'editorconfig/editorconfig-vim'
 
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+
 call plug#end()
 " }}}
 
