@@ -91,10 +91,7 @@ export SHELL=$(which bash)
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-#to include the shared shell settings, if they exist
-if [ -f $HOME/.shared_shell ]; then
-    source $HOME/.shared_shell
-fi
+source $HOME/.shared_shell
 
 #to include the particular bash aliases, if they exist
 if [ -f ~/.bash_aliases ]; then
