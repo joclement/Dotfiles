@@ -8,6 +8,8 @@ alias grep='grep -I --color=auto --exclude-dir={.git,.svn} --exclude=tags'
 alias cgrep='grep --color=always --exclude-dir={.git,.svn}'
 # to run make in the background
 alias backmake='make &> /dev/null &'
+# use sudo to get all open ports
+alias open_ports='netstat -tulpn | grep LISTEN'
 
 ###for cd into ancestor directories
 alias ..='cd ..'
