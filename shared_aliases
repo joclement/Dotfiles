@@ -1,21 +1,17 @@
 ################################### My aliases #################################
 
-###miscellaneous aliases
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
 alias grep='grep -I --color=auto --exclude-dir={.git,.svn} --exclude=tags'
 # use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'
+alias vless='vim -R -'
 
-###for cd into ancestor directories
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-
-###shortcuts for programs
-alias vless='vim -R -'
 
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
@@ -24,7 +20,6 @@ alias docker_clean_volumes='docker volume rm $(docker volume ls -q)'
 
 ################################ My alias functions ############################
 
-#alias function for parallel make
 function pmake {
     ncpu=$(nproc)
     upper_limit=10
@@ -35,14 +30,12 @@ function pmake {
     make -j$ncpu "$@";
 }
 
-#opens a file the standard way and leads the output to null
 function op {
     xdg-open $1 > /dev/null
     sleep 0.35
     :
 }
 
-#a function to create a directory and directly move into it
 function mkcd {
   if [ ! -n "$1" ]; then
     echo "Enter a directory name"
