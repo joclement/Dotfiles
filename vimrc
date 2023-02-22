@@ -204,8 +204,13 @@ vnoremap // y/<C-R>"<CR>
 "find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
-set grepprg=grep\ -n\ $*\ /dev/null\ --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache}\
-            \ --exclude=tags\ -I
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+else
+    set grepprg=grep\ -n\ $*\ /dev/null\
+                \ --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache}\
+                \ --exclude=tags\ -I
+endif
 " }}}
 
 

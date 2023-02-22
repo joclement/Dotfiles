@@ -248,6 +248,9 @@ install_dependencies() {
 
             echo "install parallel"
             sudo apt-get install -y parallel;
+
+            echo "install silversearcher-ag"
+            sudo apt-get install -y silversearcher-ag;
         fi
     else
         echo "This script is not suitable in this form for your platform"
