@@ -245,6 +245,9 @@ install_dependencies() {
 
             echo "install global(gtags)"
             sudo apt-get install -y global;
+
+            echo "install parallel"
+            sudo apt-get install -y parallel;
         fi
     else
         echo "This script is not suitable in this form for your platform"

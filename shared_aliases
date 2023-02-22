@@ -20,6 +20,10 @@ alias docker_clean_volumes='docker volume rm $(docker volume ls -q)'
 
 ################################ My alias functions ############################
 
+function pgrep {
+    find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
+}
+
 function pmake {
     ncpu=$(nproc)
     upper_limit=10
