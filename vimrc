@@ -24,6 +24,8 @@ Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
 
 Plug 'tpope/vim-surround'
 
+Plug 'tpope/vim-abolish'
+
 Plug 'embear/vim-localvimrc'
 
 Plug 'tpope/vim-dispatch', { 'tag': 'v1.5' }
