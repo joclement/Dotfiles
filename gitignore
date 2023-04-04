@@ -46,3 +46,4 @@ lua_modules
 ### Other
 .cache/
 .git-commit-message
+UltiSnips/
