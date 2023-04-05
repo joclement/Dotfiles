@@ -20,7 +20,7 @@ If you've any questions, recommendations or criticism feel free to write me a ma
 
 These Dotfiles are used and most suited for Ubuntu 18.04, but they will
 probably work on other Linux distributions as well.
-Mainly the install file will only work on Ubuntu or other Debian based Systems
+The install file will only work on Ubuntu or other Debian based Systems
 as it uses `apt` and `dpkg`.
 
 ### Installation

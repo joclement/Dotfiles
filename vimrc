@@ -3,7 +3,29 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer'}
+Plug 'neoclide/coc.nvim',
+    \ {'branch': 'release',
+    \  'commit': 'bbaa1d5d1ff3cbd9d26bb37cfda1a990494c4043'}
+
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-docker',
+  \ 'coc-emoji',
+  \ 'coc-git',
+  \ 'coc-import-cost',
+  \ 'coc-jedi',
+  \ 'coc-json',
+  \ 'coc-lua',
+  \ 'coc-marketplace',
+  \ 'coc-prettier',
+  \ 'coc-pyright',
+  \ 'coc-snippets',
+  \ 'coc-stylelint',
+  \ 'coc-tsserver',
+  \ 'coc-ultisnips',
+  \ 'coc-yaml'
+  \ ]
+
 
 Plug 'altercation/vim-colors-solarized'
 
