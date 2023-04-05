@@ -350,6 +350,19 @@ set history=10000
 set wildmenu
 
 set scrolloff=3
+
+function IsAnyParentDir(dirname)
+    let path = fnamemodify(bufname('%'), ':p:h')
+    let dirs = split(path, '/')
+
+    for dir in dirs
+        if dir == a:dirname
+            return 1
+        endif
+    endfor
+
+    return 0
+endfunction
 " }}}
 
 
