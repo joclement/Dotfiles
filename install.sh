@@ -396,8 +396,6 @@ checked_install_solarized() {
 
 dorequirements() {
     install_dependencies
-    install_nodejs
-    install_github_cli
     git submodule update --recursive --init
     install_zsh
 }
@@ -468,6 +466,8 @@ install_pyenv() {
 
 doinstalls() {
     checked_install_solarized
+    install_github_cli
+    install_nodejs
     install_powerline
     install_vimplug
     mkdir -p $local_software
