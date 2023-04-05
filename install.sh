@@ -197,6 +197,8 @@ install_dependencies() {
     then
         if [[ -f /etc/debian_version ]];
         then
+            sudo apt-get update;
+
             echo "install build-essential"
             sudo apt-get install -y build-essential;
             echo "done"
@@ -215,6 +217,23 @@ install_dependencies() {
 
             echo "install python3-venv"
             sudo apt-get install -y python3-venv;
+            echo "done"
+
+            echo "install for pyenv"
+            sudo apt-get install -y libedit-dev \
+                                    libssl-dev \
+                                    zlib1g-dev \
+                                    libbz2-dev \
+                                    libreadline-dev \
+                                    libsqlite3-dev \
+                                    llvm \
+                                    libncursesw5-dev \
+                                    xz-utils \
+                                    tk-dev \
+                                    libxml2-dev \
+                                    libxmlsec1-dev \
+                                    libffi-dev \
+                                    liblzma-dev;
             echo "done"
 
             echo "install vim"
@@ -377,8 +396,6 @@ checked_install_solarized() {
 
 dorequirements() {
     install_dependencies
-    install_nodejs
-    install_github_cli
     git submodule update --recursive --init
     install_zsh
 }
@@ -441,10 +458,19 @@ install_global() {
     fi
 }
 
+install_pyenv() {
+    curl -L \
+        https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+        | bash
+}
+
 doinstalls() {
     checked_install_solarized
+    install_github_cli
+    install_nodejs
     install_powerline
     install_vimplug
+    install_pyenv
     mkdir -p $local_software
     install_ctags
     install_global
