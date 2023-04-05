@@ -470,10 +470,10 @@ doinstalls() {
     install_nodejs
     install_powerline
     install_vimplug
+    install_pyenv
     mkdir -p $local_software
     install_ctags
     install_global
-    install_pyenv
     update_vim
 }
 
