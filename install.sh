@@ -197,6 +197,8 @@ install_dependencies() {
     then
         if [[ -f /etc/debian_version ]];
         then
+            sudo apt-get update;
+
             echo "install build-essential"
             sudo apt-get install -y build-essential;
             echo "done"
@@ -215,6 +217,23 @@ install_dependencies() {
 
             echo "install python3-venv"
             sudo apt-get install -y python3-venv;
+            echo "done"
+
+            echo "install for pyenv"
+            sudo apt-get install -y libedit-dev \
+                                    libssl-dev \
+                                    zlib1g-dev \
+                                    libbz2-dev \
+                                    libreadline-dev \
+                                    libsqlite3-dev \
+                                    llvm \
+                                    libncursesw5-dev \
+                                    xz-utils \
+                                    tk-dev \
+                                    libxml2-dev \
+                                    libxmlsec1-dev \
+                                    libffi-dev \
+                                    liblzma-dev;
             echo "done"
 
             echo "install vim"
@@ -273,7 +292,23 @@ default_zsh() {
     fi
 }
 
-install_zsh () {
+install_nodejs() {
+    curl -sL \
+        https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
+        -o nodesource_setup.sh
+    sudo bash nodesource_setup.sh
+    sudo apt-get install -y nodejs
+}
+
+install_github_cli() {
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+    && sudo apt update \
+    && sudo apt install gh -y
+}
+
+install_zsh() {
     # Test to see if zshell is installed.  If it is:
     if [ -f /bin/zsh -o -f /usr/bin/zsh ];
     then
@@ -423,10 +458,19 @@ install_global() {
     fi
 }
 
+install_pyenv() {
+    curl -L \
+        https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
+        | bash
+}
+
 doinstalls() {
     checked_install_solarized
+    install_github_cli
+    install_nodejs
     install_powerline
     install_vimplug
+    install_pyenv
     mkdir -p $local_software
     install_ctags
     install_global

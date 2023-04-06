@@ -10,7 +10,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - run: sudo apt update
-    - run: sudo apt install -qq tzdata
+    - run: sudo apt install -y --no-install-recommends -qq tzdata
     - run: ./install.sh -i install -n -o -v

@@ -3,7 +3,9 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
-Plug 'ycm-core/YouCompleteMe', {'do': './install.py --clangd-completer'}
+Plug 'neoclide/coc.nvim',
+    \ {'branch': 'release',
+    \  'commit': 'bbaa1d5d1ff3cbd9d26bb37cfda1a990494c4043'}
 
 Plug 'altercation/vim-colors-solarized'
 
@@ -75,8 +77,6 @@ endif
 set laststatus=2
 " }}}
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-
 " UltiSnips key {{{
 let g:UltiSnipsExpandTrigger = "<c-j>"
 " }}}
@@ -114,6 +114,27 @@ function! DispatchCw()
 endfunction
 command! Cw call DispatchCw()
 " }}}
+" }}}
+
+" coc {{{
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-docker',
+  \ 'coc-emoji',
+  \ 'coc-git',
+  \ 'coc-import-cost',
+  \ 'coc-jedi',
+  \ 'coc-json',
+  \ 'coc-lua',
+  \ 'coc-marketplace',
+  \ 'coc-prettier',
+  \ 'coc-pyright',
+  \ 'coc-snippets',
+  \ 'coc-stylelint',
+  \ 'coc-tsserver',
+  \ 'coc-ultisnips',
+  \ 'coc-yaml'
+  \ ]
 " }}}
 
 let g:localvimrc_persistent = 1
@@ -329,6 +350,19 @@ set history=10000
 set wildmenu
 
 set scrolloff=3
+
+function IsAnyParentDir(dirname)
+    let path = fnamemodify(bufname('%'), ':p:h')
+    let dirs = split(path, '/')
+
+    for dir in dirs
+        if dir == a:dirname
+            return 1
+        endif
+    endfor
+
+    return 0
+endfunction
 " }}}
 
 
