@@ -37,17 +37,14 @@ cwd=`pwd`
 # the name of the script
 script=`basename $0`
 
-# alternative home folder for installation
-my_home=$HOME
-
 # folder to install repos, which are not in the ubuntu packages
-local_software=$my_home/local_software
+local_software=$HOME/local_software
 
 # dotfiles directory
 dot_dir=$cwd
 
 # old dotfiles backup directory
-olddir=$my_home/Dotfiles_old
+olddir=$HOME/Dotfiles_old
 
 # list of files/folders to symlink in homedir
 files="env shared_shell shared_aliases
@@ -157,9 +154,9 @@ create_olddir() {
 symlink_files() {
     for dir in $dirs; do
         echo "Create dotfile dir: $dir"
-        if [ ! -f "$my_home/.$dir" ];
+        if [ ! -f "$HOME/.$dir" ];
         then
-            mkdir -p $my_home/.$dir
+            mkdir -p $HOME/.$dir
         else
             echo "There is a file named $dir, which is supposed to be
             a directory"
@@ -167,26 +164,26 @@ symlink_files() {
         fi
     done
     for file in $files; do
-        echo "Moving any existing dotfiles from $my_home to $olddir"
-        if [ -f "$my_home/.$file" ];
+        echo "Moving any existing dotfiles from $HOME to $olddir"
+        if [ -f "$HOME/.$file" ];
         then
             echo "Move $file into $olddir"
-            mv $my_home/.$file $olddir
-        elif [ -d "$my_home/.$file" ];
+            mv $HOME/.$file $olddir
+        elif [ -d "$HOME/.$file" ];
         then
-            if [ -L "$my_home/.$file" ]
+            if [ -L "$HOME/.$file" ]
             then
-                rm $my_home/.$file
+                rm $HOME/.$file
             else
                 echo "This dir $file should be a file. EXIT!"
                 exit 1
             fi
         else
-            echo "This link $file does not exist yet in the $my_home dir."
+            echo "This link $file does not exist yet in the $HOME dir."
         fi
         echo "done"
-        echo "Creating symlink to $file in $my_home directory."
-        ln -s $dot_dir/$file $my_home/.$file
+        echo "Creating symlink to $file in $HOME directory."
+        ln -s $dot_dir/$file $HOME/.$file
         echo "done"
     done
 }
@@ -357,17 +354,17 @@ install_powerline() {
         sudo cp $dot_dir/fonts/10-powerline-symbols.conf /etc/fonts/conf.d/
     else
         echo "installing for user..."
-        echo "move PowerlineSymbols to $my_home/fonts/, \
+        echo "move PowerlineSymbols to $HOME/fonts/, \
             create folder if non-existing"
-        mkdir -p $my_home/fonts/
-        cp $dot_dir/fonts/PowerlineSymbols.otf $my_home/fonts/
+        mkdir -p $HOME/fonts/
+        cp $dot_dir/fonts/PowerlineSymbols.otf $HOME/fonts/
         echo "update fonts cache"
-        fc-cache -vf $my_home/fonts/
-        echo "move fonts conf to $my_home/config/fontconfig/conf.d/, \
+        fc-cache -vf $HOME/fonts/
+        echo "move fonts conf to $HOME/config/fontconfig/conf.d/, \
             create folder if non-existing"
-        mkdir -p $my_home/config/fontconfig/conf.d/
+        mkdir -p $HOME/config/fontconfig/conf.d/
         cp $dot_dir/fonts/10-powerline-symbols.conf \
-            $my_home/config/fontconfig/conf.d/
+            $HOME/config/fontconfig/conf.d/
     fi
     echo "done"
 }
@@ -407,7 +404,7 @@ backup_link() {
 
 install_vimplug() {
     echo "install vimplug..."
-    curl -fL -o $my_home/.vim/autoload/plug.vim \
+    curl -fL -o $HOME/.vim/autoload/plug.vim \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     echo "DONE"
 }
@@ -443,14 +440,14 @@ install_global() {
         cd $local_software/${version}
         sudo make install
         cd $cwd
-        ln -s $local_software/${version}/gtags.vim $my_home/.vim/plugin/.
+        ln -s $local_software/${version}/gtags.vim $HOME/.vim/plugin/.
         echo "DONE"
     elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
     then
         if [ -f "/usr/local/share/gtags/gtags.vim" ]; then
-            ln -s /usr/local/share/gtags/gtags.vim $my_home/.vim/plugin/.
+            ln -s /usr/local/share/gtags/gtags.vim $HOME/.vim/plugin/.
         elif [ -f "/usr/share/vim/addons/gtags.vim" ]; then
-            ln -s /usr/share/vim/addons/gtags.vim $my_home/.vim/plugin/.
+            ln -s /usr/share/vim/addons/gtags.vim $HOME/.vim/plugin/.
         else
             echo "Couldn't find gtags vim plugin."
             exit 1
