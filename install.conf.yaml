@@ -53,4 +53,4 @@
     - command: ./install.sh
       stdout: true
       stderr: true
-    - chsh -s $(which zsh)
+    - sudo chsh -s $(which zsh)
