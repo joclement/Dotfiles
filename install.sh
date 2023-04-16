@@ -195,16 +195,8 @@ install_dependencies() {
             sudo apt-get install -y cmake;
             echo "done"
 
-            echo "install pip3"
-            sudo apt-get install -y python3-pip;
-            echo "done"
-
-            echo "install python3-dev"
-            sudo apt-get install -y python3-dev;
-            echo "done"
-
-            echo "install python3-venv"
-            sudo apt-get install -y python3-venv;
+            echo "install Python 3 packages"
+            sudo apt-get install -y python3-pip python3-dev python3-venv;
             echo "done"
 
             echo "install for pyenv"
