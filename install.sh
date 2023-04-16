@@ -57,7 +57,6 @@ function HELP {
     echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
-    echo "-v    Do not install/update vim addons"
     echo "-h    Displays this help message. No further functions are performed."
     echo ""
     echo "Example for installation: $script -i install"
@@ -163,7 +162,7 @@ install_powerline() {
 }
 
 update_vim() {
-    if [ "$approve_vim_update" == true ]; then
+    if [ "$approve_vim_update" = true ]; then
         echo "install/update vim add-ons"
         vim +PlugUpdate +qall
 
