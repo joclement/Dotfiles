@@ -279,7 +279,7 @@ install_powerline() {
 
 update_vim() {
     if [ "$approve_vim_update" == true ]; then
-        echo "install vim add-ons"
+        echo "install/update vim add-ons"
         vim +PlugUpdate +qall
         echo "done"
     fi
