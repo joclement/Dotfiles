@@ -46,7 +46,7 @@ dot_dir=$cwd
 # old dotfiles backup directory
 olddir=$HOME/Dotfiles_old
 
-approve_vim_update=true
+approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
 ##########
 
@@ -67,9 +67,6 @@ function HELP {
 
 while getopts ":i:s n h o v" opt; do
     case $opt in
-        v)
-            approve_vim_update=false
-            ;;
         h)
             HELP;
             exit 0
