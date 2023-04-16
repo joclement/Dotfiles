@@ -23,14 +23,14 @@
     ~/.shared_shell:
     ~/.tmux.conf:
     ~/.vim/autoload:
-        create: true
-        path: vim/autoload
+      create: true
+      path: vim/autoload
     ~/.vim/ftdetect:
-        create: true
-        path: vim/ftdetect
+      create: true
+      path: vim/ftdetect
     ~/.vim/ftplugin:
-        create: true
-        path: vim/ftplugin
+      create: true
+      path: vim/ftplugin
     ~/.vimrc:
     ~/.zprofile:
     ~/.zsh-syntax-highlighting:
@@ -43,9 +43,8 @@
     - ~/.zfunc
 
 - shell:
-  - git submodule update --recursive --init
-  -
-    command: ./install.sh
-    stdout: true
-    stderr: true
-  - chsh -s $(which zsh)
+    - git submodule update --recursive --init
+    - command: ./install.sh
+      stdout: true
+      stderr: true
+    - chsh -s $(which zsh)

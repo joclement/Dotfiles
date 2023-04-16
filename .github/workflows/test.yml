@@ -2,15 +2,15 @@ name: Test
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
     branches:
-    - main
+      - main
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: sudo apt update
-    - run: sudo apt install -y --no-install-recommends -qq tzdata
-    - run: ./install
+      - uses: actions/checkout@v3
+      - run: sudo apt update
+      - run: sudo apt install -y --no-install-recommends -qq tzdata
+      - run: ./install
