@@ -85,82 +85,69 @@ done
 
 
 install_dependencies() {
-    platform=$(uname);
-    if [[ $platform == 'Linux' ]];
-    then
-        if [[ -f /etc/debian_version ]];
-        then
-            sudo apt-get update;
+    echo "install build-essential"
+    sudo apt-get install -y build-essential;
+    echo "done"
 
-            echo "install build-essential"
-            sudo apt-get install -y build-essential;
-            echo "done"
+    echo "install cmake"
+    sudo apt-get install -y cmake;
+    echo "done"
 
-            echo "install cmake"
-            sudo apt-get install -y cmake;
-            echo "done"
+    echo "install Python 3 packages"
+    sudo apt-get install -y python3-pip python3-dev python3-venv;
+    echo "done"
 
-            echo "install Python 3 packages"
-            sudo apt-get install -y python3-pip python3-dev python3-venv;
-            echo "done"
+    echo "install for pyenv"
+    sudo apt-get install -y libedit-dev \
+                            libssl-dev \
+                            zlib1g-dev \
+                            libbz2-dev \
+                            libreadline-dev \
+                            libsqlite3-dev \
+                            llvm \
+                            libncursesw5-dev \
+                            xz-utils \
+                            tk-dev \
+                            libxml2-dev \
+                            libxmlsec1-dev \
+                            libffi-dev \
+                            liblzma-dev;
+    echo "done"
 
-            echo "install for pyenv"
-            sudo apt-get install -y libedit-dev \
-                                    libssl-dev \
-                                    zlib1g-dev \
-                                    libbz2-dev \
-                                    libreadline-dev \
-                                    libsqlite3-dev \
-                                    llvm \
-                                    libncursesw5-dev \
-                                    xz-utils \
-                                    tk-dev \
-                                    libxml2-dev \
-                                    libxmlsec1-dev \
-                                    libffi-dev \
-                                    liblzma-dev;
-            echo "done"
+    echo "install vim"
+    sudo apt-get install -y vim-gtk;
+    echo "done"
 
-            echo "install vim"
-            sudo apt-get install -y vim-gtk;
-            echo "done"
+    echo "install fontconfig for fc-cache"
+    sudo apt-get install -y fontconfig;
+    echo "done"
 
-            echo "install fontconfig for fc-cache"
-            sudo apt-get install -y fontconfig;
-            echo "done"
+    echo "install curl"
+    sudo apt-get install -y curl;
+    echo "done"
 
-            echo "install curl"
-            sudo apt-get install -y curl;
-            echo "done"
+    echo "install dh-autoreconf for ctags"
+    sudo apt-get install -y dh-autoreconf;
+    echo "done"
 
-            echo "install dh-autoreconf for ctags"
-            sudo apt-get install -y dh-autoreconf;
-            echo "done"
+    echo "install pkg-config for ctags"
+    sudo apt-get install -y pkg-config;
+    echo "done"
 
-            echo "install pkg-config for ctags"
-            sudo apt-get install -y pkg-config;
-            echo "done"
+    echo "install dconf-cli"
+    sudo apt-get install -y dconf-cli;
 
-            echo "install dconf-cli"
-            sudo apt-get install -y dconf-cli;
+    echo "install global(gtags)"
+    sudo apt-get install -y global;
 
-            echo "install global(gtags)"
-            sudo apt-get install -y global;
+    echo "install parallel"
+    sudo apt-get install -y parallel;
 
-            echo "install parallel"
-            sudo apt-get install -y parallel;
+    echo "install silversearcher-ag"
+    sudo apt-get install -y silversearcher-ag;
 
-            echo "install silversearcher-ag"
-            sudo apt-get install -y silversearcher-ag;
-
-            echo "install zsh"
-            sudo apt-get install -y zsh
-        fi
-    else
-        echo "This script is not suitable in this form for your platform"
-        echo "If your are sure to use it, edit this script."
-        exit 1
-    fi
+    echo "install zsh"
+    sudo apt-get install -y zsh
 }
 
 install_nodejs() {
