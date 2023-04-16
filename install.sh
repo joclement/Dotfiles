@@ -189,19 +189,8 @@ install_powerline() {
     pip3 install powerline-status
     echo "done"
 
-    echo "install powerline fonts"
-
-    echo "move PowerlineSymbols to $HOME/fonts/, \
-        create folder if non-existing"
-    mkdir -p $HOME/fonts/
-    cp $dot_dir/fonts/PowerlineSymbols.otf $HOME/fonts/
     echo "update fonts cache"
     fc-cache -vf $HOME/fonts/
-    echo "move fonts conf to $HOME/config/fontconfig/conf.d/, \
-        create folder if non-existing"
-    mkdir -p $HOME/config/fontconfig/conf.d/
-    cp $dot_dir/fonts/10-powerline-symbols.conf \
-        $HOME/config/fontconfig/conf.d/
     echo "done"
 }
 
