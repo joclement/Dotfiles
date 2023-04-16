@@ -353,18 +353,11 @@ install_global() {
     fi
 }
 
-install_pyenv() {
-    curl -L \
-        https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer \
-        | bash
-}
-
 doinstalls() {
     checked_install_solarized
     install_github_cli
     install_nodejs
     install_powerline
-    install_pyenv
     mkdir -p $local_software
     install_ctags
     install_global

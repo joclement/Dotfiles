@@ -18,6 +18,7 @@
     ~/.ideavimrc:
     ~/.inputrc:
     ~/.profile:
+    ~/.pyenv:
     ~/.shared_aliases:
     ~/.shared_shell:
     ~/.tmux.conf:
