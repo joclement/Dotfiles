@@ -220,10 +220,6 @@ install_dependencies() {
             sudo apt-get install -y vim-gtk;
             echo "done"
 
-            echo "install git"
-            sudo apt-get install -y git;
-            echo "done"
-
             echo "install fontconfig for fc-cache"
             sudo apt-get install -y fontconfig;
             echo "done"
