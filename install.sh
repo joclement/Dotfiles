@@ -48,7 +48,6 @@ olddir=$HOME/Dotfiles_old
 
 approve_solarized_install=true
 approve_vim_update=true
-system_wide=false
 
 ##########
 
@@ -59,7 +58,6 @@ function HELP {
     echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
-    echo "-s    Install some parts system wide. Default is $system_wide"
     echo "-o    Do not install solarized for gnome-terminal"
     echo "-v    Do not install/update vim addons"
     echo "-h    Displays this help message. No further functions are performed."
@@ -71,9 +69,6 @@ function HELP {
 
 while getopts ":i:s n h o v" opt; do
     case $opt in
-        s)
-            system_wide=true
-            ;;
         o)
             approve_solarized_install=false
             ;;
@@ -190,45 +185,23 @@ install_github_cli() {
 }
 
 install_powerline() {
-    echo "check if powerline is installed, if not install"
-    if [ $(pip3 list | grep powerline-status | wc -l) == 0 ];
-    then
-        if [ "$system_wide" == true ];
-        then
-            echo "installing system wide"
-            sudo pip3 install powerline-status;
-        else
-            echo "installing for user"
-            pip3 install --user powerline-status;
-        fi
-    fi
+    echo "install powerline-status"
+    pip3 install powerline-status
     echo "done"
 
     echo "install powerline fonts"
 
-    if [ "$system_wide" == true ];
-    then
-        echo "installing system wide..."
-        echo "move PowerlineSymbols to /usr/share/fonts/"
-        sudo cp $dot_dir/fonts/PowerlineSymbols.otf /usr/share/fonts/
-        echo "update fonts cache"
-        sudo fc-cache -vf
-        echo "move fonts conf to /etc/fonts/conf.d/"
-        sudo cp $dot_dir/fonts/10-powerline-symbols.conf /etc/fonts/conf.d/
-    else
-        echo "installing for user..."
-        echo "move PowerlineSymbols to $HOME/fonts/, \
-            create folder if non-existing"
-        mkdir -p $HOME/fonts/
-        cp $dot_dir/fonts/PowerlineSymbols.otf $HOME/fonts/
-        echo "update fonts cache"
-        fc-cache -vf $HOME/fonts/
-        echo "move fonts conf to $HOME/config/fontconfig/conf.d/, \
-            create folder if non-existing"
-        mkdir -p $HOME/config/fontconfig/conf.d/
-        cp $dot_dir/fonts/10-powerline-symbols.conf \
-            $HOME/config/fontconfig/conf.d/
-    fi
+    echo "move PowerlineSymbols to $HOME/fonts/, \
+        create folder if non-existing"
+    mkdir -p $HOME/fonts/
+    cp $dot_dir/fonts/PowerlineSymbols.otf $HOME/fonts/
+    echo "update fonts cache"
+    fc-cache -vf $HOME/fonts/
+    echo "move fonts conf to $HOME/config/fontconfig/conf.d/, \
+        create folder if non-existing"
+    mkdir -p $HOME/config/fontconfig/conf.d/
+    cp $dot_dir/fonts/10-powerline-symbols.conf \
+        $HOME/config/fontconfig/conf.d/
     echo "done"
 }
 
