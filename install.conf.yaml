@@ -9,11 +9,15 @@
     ~/.autocompletion_zsh:
     ~/.bash_profile:
     ~/.bashrc:
-    ~/config/fontconfig/conf.d: fonts/10-powerline-symbols.conf
+    ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
+      create: true
+      path: fonts/10-powerline-symbols.conf
     ~/.config/zathura: config/zathura
     ~/.dircolors-solarized:
     ~/.env:
-    ~/fonts/PowerlineSymbols.otf: fonts/PowerlineSymbols.otf
+    ~/fonts/PowerlineSymbols.otf:
+      create: true
+      path: fonts/PowerlineSymbols.otf
     ~/.gitconfig:
     ~/.gitignore:
     ~/.gvimrc:
@@ -40,8 +44,6 @@
     ~/.zshrc:
 
 - create:
-    - ~/config/fontconfig/conf.d
-    - ~/fonts
     - ~/local_software
     - ~/.vim/plugin
     - ~/.zfunc
