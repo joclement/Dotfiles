@@ -37,10 +37,8 @@ Dotfiles and/or back up your system before installing these Dotfiles.
 
 To be secure save your Dotfiles prior to installing with this install script!
 
-After cloning this repo to a suitable location like `~/Dotfiles` just run the
-following commands inside the folder:
-* `./install.sh -h ` for help
-* `./install.sh -i install` for simple install
+After cloning this repository to a suitable location like `~/Dotfiles` just run
+`./install`.
 
 ### Licensing
 

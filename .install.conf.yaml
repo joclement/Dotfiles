@@ -1,0 +1,64 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.antigen:
+    ~/.autocompletion_zsh:
+    ~/.bash_profile:
+      force: true
+      path: bash_profile
+    ~/.bashrc:
+      force: true
+      path: bashrc
+    ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
+      create: true
+      path: fonts/10-powerline-symbols.conf
+    ~/.config/zathura: config/zathura
+    ~/.dircolors-solarized:
+    ~/.env:
+    ~/fonts/PowerlineSymbols.otf:
+      create: true
+      path: fonts/PowerlineSymbols.otf
+    ~/.gitconfig:
+    ~/.gitignore:
+    ~/.gvimrc:
+    ~/.ideavimrc:
+    ~/.inputrc:
+    ~/.profile:
+      force: true
+      path: profile
+    ~/.pyenv:
+    ~/.shared_aliases:
+    ~/.shared_shell:
+    ~/.tmux.conf:
+    ~/.vim/autoload:
+      create: true
+      path: vim/autoload
+    ~/.vim/ftdetect:
+      create: true
+      path: vim/ftdetect
+    ~/.vim/ftplugin:
+      create: true
+      path: vim/ftplugin
+    ~/.vimrc:
+    ~/.zprofile:
+    ~/.zsh-syntax-highlighting:
+    ~/.zshenv:
+    ~/.zshrc:
+
+- create:
+    - ~/local_software
+    - ~/.vim/plugin
+    - ~/.zfunc
+
+- shell:
+    - git submodule update --recursive --init
+    - command: ./install.sh
+      stdout: true
+      stderr: true
+    - command: sudo chsh -s $(which zsh)
+      stdout: true
+      stderr: true

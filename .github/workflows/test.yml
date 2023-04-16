@@ -2,15 +2,19 @@ name: Test
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
     branches:
-    - main
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-    - uses: actions/checkout@v3
-    - run: sudo apt update
-    - run: sudo apt install -y --no-install-recommends -qq tzdata
-    - run: ./install.sh -i install -n -o -v
+      - uses: actions/checkout@v3
+      - run: APPROVE_VIM_UPDATE=false ./install
