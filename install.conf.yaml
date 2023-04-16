@@ -42,6 +42,7 @@
     - ~/.zfunc
 
 - shell:
+  - git submodule update --recursive --init
   -
     command: ./install.sh -i install
     stdout: true
