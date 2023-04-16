@@ -46,23 +46,6 @@ dot_dir=$cwd
 # old dotfiles backup directory
 olddir=$HOME/Dotfiles_old
 
-# list of files/folders to symlink in homedir
-files="env shared_shell shared_aliases
-       profile
-       bash_profile bashrc
-       inputrc
-       zshenv zprofile zshrc antigen dircolors-solarized
-       autocompletion_zsh zsh-syntax-highlighting
-       vimrc gvimrc vim/ftplugin/* vim/ftdetect/* vim/autoload/*
-       ideavimrc
-       config/zathura/zathurarc
-       tmux.conf
-       gitconfig gitignore"
-
-dirs="vim/autoload vim/ftplugin vim/plugin vim/ftdetect
-      config/zathura
-      zfunc"
-
 approve_solarized_install=true
 approve_vim_update=true
 system_wide=false
@@ -128,56 +111,6 @@ while getopts ":i:s n h o v" opt; do
     esac
 done
 
-
-create_olddir() {
-    echo -n "Creating $olddir for backup of any existing dotfiles"
-    if [ ! -f "$olddir" ];
-    then
-        mkdir -p $olddir
-    else
-        echo "There is a file named $olddir, which should be the backup dir"
-        exit 1
-    fi
-    echo "done"
-}
-
-
-symlink_files() {
-    for dir in $dirs; do
-        echo "Create dotfile dir: $dir"
-        if [ ! -f "$HOME/.$dir" ];
-        then
-            mkdir -p $HOME/.$dir
-        else
-            echo "There is a file named $dir, which is supposed to be
-            a directory"
-            exit 1
-        fi
-    done
-    for file in $files; do
-        echo "Moving any existing dotfiles from $HOME to $olddir"
-        if [ -f "$HOME/.$file" ];
-        then
-            echo "Move $file into $olddir"
-            mv $HOME/.$file $olddir
-        elif [ -d "$HOME/.$file" ];
-        then
-            if [ -L "$HOME/.$file" ]
-            then
-                rm $HOME/.$file
-            else
-                echo "This dir $file should be a file. EXIT!"
-                exit 1
-            fi
-        else
-            echo "This link $file does not exist yet in the $HOME dir."
-        fi
-        echo "done"
-        echo "Creating symlink to $file in $HOME directory."
-        ln -s $dot_dir/$file $HOME/.$file
-        echo "done"
-    done
-}
 
 install_dependencies() {
     platform=$(uname);
@@ -372,11 +305,6 @@ dorequirements() {
     install_zsh
 }
 
-backup_link() {
-    create_olddir
-    symlink_files
-}
-
 install_vimplug() {
     echo "install vimplug..."
     curl -fL -o $HOME/.vim/autoload/plug.vim \
@@ -451,13 +379,11 @@ doinstalls() {
 
 completeinstallation() {
     dorequirements
-    backup_link
     doinstalls
 }
 
 update() {
     git submodule update --recursive --init
-    backup_link
     update_vim
 }
 

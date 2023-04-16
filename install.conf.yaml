@@ -1,0 +1,48 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.antigen:
+    ~/.autocompletion_zsh:
+    ~/.bash_profile:
+    ~/.bashrc:
+    ~/.config/zathura: config/zathura
+    ~/.dircolors-solarized:
+    ~/.env:
+    ~/.gitconfig:
+    ~/.gitignore:
+    ~/.gvimrc:
+    ~/.ideavimrc:
+    ~/.inputrc:
+    ~/.profile:
+    ~/.shared_aliases:
+    ~/.shared_shell:
+    ~/.tmux.conf:
+    ~/.vim/autoload:
+        create: true
+        path: vim/autoload
+    ~/.vim/ftdetect:
+        create: true
+        path: vim/ftdetect
+    ~/.vim/ftplugin:
+        create: true
+        path: vim/ftplugin
+    ~/.vimrc:
+    ~/.zprofile:
+    ~/.zsh-syntax-highlighting:
+    ~/.zshenv:
+    ~/.zshrc:
+
+
+- create:
+    - ~/.vim/plugin
+    - ~/.zfunc
+
+- shell:
+  -
+    command: ./install.sh -i install
+    stdout: true
+    stderr: true
