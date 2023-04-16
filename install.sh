@@ -87,15 +87,12 @@ done
 install_dependencies() {
     echo "install build-essential"
     sudo apt-get install -y build-essential;
-    echo "done"
 
     echo "install cmake"
     sudo apt-get install -y cmake;
-    echo "done"
 
     echo "install Python 3 packages"
     sudo apt-get install -y python3-pip python3-dev python3-venv;
-    echo "done"
 
     echo "install for pyenv"
     sudo apt-get install -y libedit-dev \
@@ -112,27 +109,21 @@ install_dependencies() {
                             libxmlsec1-dev \
                             libffi-dev \
                             liblzma-dev;
-    echo "done"
 
     echo "install vim"
     sudo apt-get install -y vim-gtk;
-    echo "done"
 
     echo "install fontconfig for fc-cache"
     sudo apt-get install -y fontconfig;
-    echo "done"
 
     echo "install curl"
     sudo apt-get install -y curl;
-    echo "done"
 
     echo "install dh-autoreconf for ctags"
     sudo apt-get install -y dh-autoreconf;
-    echo "done"
 
     echo "install pkg-config for ctags"
     sudo apt-get install -y pkg-config;
-    echo "done"
 
     echo "install dconf-cli"
     sudo apt-get install -y dconf-cli;
@@ -169,21 +160,18 @@ install_github_cli() {
 install_powerline() {
     echo "install powerline-status"
     pip3 install powerline-status
-    echo "done"
 
     echo "update fonts cache"
     fc-cache -vf $HOME/fonts/
-    echo "done"
 }
 
 update_vim() {
     if [ "$approve_vim_update" == true ]; then
         echo "install/update vim add-ons"
         vim +PlugUpdate +qall
-        echo "done"
+
         echo "upgrade vim-plug"
         vim +PlugUpgrade +qall
-        echo "done"
     fi
 }
 
