@@ -45,6 +45,6 @@
 - shell:
   - git submodule update --recursive --init
   -
-    command: ./install.sh -i install
+    command: ./install.sh
     stdout: true
     stderr: true

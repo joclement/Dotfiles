@@ -49,7 +49,6 @@ olddir=$HOME/Dotfiles_old
 approve_solarized_install=true
 approve_vim_update=true
 system_wide=false
-installoption=""
 changedefzsh=true
 
 ##########
@@ -61,8 +60,6 @@ function HELP {
     echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
-    echo "-i    gives an installoption, necessary option."
-    echo "      Use either \"update\" or \"install\" as an argument."
     echo "-s    Install some parts system wide. Default is $system_wide"
     echo "-n    Do not set zsh as default shell"
     echo "-o    Do not install solarized for gnome-terminal"
@@ -76,16 +73,6 @@ function HELP {
 
 while getopts ":i:s n h o v" opt; do
     case $opt in
-        i)
-            if [ "$OPTARG" == "update" -o "$OPTARG" == "install" ];
-            then
-                installoption="$OPTARG"
-            else
-                echo "$OPTARG is not a valid argument. EXIT!"
-                HELP;
-                exit 1
-            fi
-            ;;
         s)
             system_wide=true
             ;;
@@ -364,23 +351,9 @@ doinstalls() {
     update_vim
 }
 
-completeinstallation() {
+install() {
     dorequirements
     doinstalls
-}
-
-update() {
-    update_vim
-}
-
-install() {
-    if [ "$installoption" == "update" ];
-    then
-        update
-    elif [ "$installoption" == "install" ];
-    then
-        completeinstallation
-    fi
 }
 
 install
