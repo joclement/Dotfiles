@@ -282,6 +282,9 @@ update_vim() {
         echo "install/update vim add-ons"
         vim +PlugUpdate +qall
         echo "done"
+        echo "upgrade vim-plug"
+        vim +PlugUpgrade +qall
+        echo "done"
     fi
 }
 
@@ -302,13 +305,6 @@ checked_install_solarized() {
 dorequirements() {
     install_dependencies
     install_zsh
-}
-
-install_vimplug() {
-    echo "install vimplug..."
-    curl -fL -o $HOME/.vim/autoload/plug.vim \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    echo "DONE"
 }
 
 install_ctags() {
@@ -368,7 +364,6 @@ doinstalls() {
     install_github_cli
     install_nodejs
     install_powerline
-    install_vimplug
     install_pyenv
     mkdir -p $local_software
     install_ctags
