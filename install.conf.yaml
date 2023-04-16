@@ -8,7 +8,11 @@
     ~/.antigen:
     ~/.autocompletion_zsh:
     ~/.bash_profile:
+      force: true
+      path: bash_profile
     ~/.bashrc:
+      force: true
+      path: bashrc
     ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
       create: true
       path: fonts/10-powerline-symbols.conf
@@ -24,6 +28,8 @@
     ~/.ideavimrc:
     ~/.inputrc:
     ~/.profile:
+      force: true
+      path: profile
     ~/.pyenv:
     ~/.shared_aliases:
     ~/.shared_shell:
