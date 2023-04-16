@@ -39,7 +39,6 @@
     ~/.zshenv:
     ~/.zshrc:
 
-
 - create:
     - ~/config/fontconfig/conf.d
     - ~/fonts
