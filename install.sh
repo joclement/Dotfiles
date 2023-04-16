@@ -65,7 +65,6 @@ dirs="vim/autoload vim/ftplugin vim/plugin vim/ftdetect
 
 approve_solarized_install=true
 approve_vim_update=true
-# whether to install system wide or for user
 system_wide=false
 installoption=""
 changedefzsh=true
@@ -279,7 +278,6 @@ install_dependencies() {
 default_zsh() {
     if [ "$changedefzsh" == "true" ];
     then
-        # Set the default shell to zsh if it isn't currently set to zsh
         if [[ ! $(echo $SHELL) == $(which zsh) ]];
         then
             echo "change default shell to zsh..."
@@ -306,14 +304,11 @@ install_github_cli() {
 }
 
 install_zsh() {
-    # Test to see if zshell is installed.  If it is:
     if [ -f /bin/zsh -o -f /usr/bin/zsh ];
     then
         default_zsh
     else
-        # If zsh isn't installed, get the platform of the current machine
         platform=$(uname);
-        # If the platform is Linux, try an apt-get to install zsh and then recurse
         if [ $platform == 'Linux' ] && [ -f /etc/debian_version ];
         then
             sudo apt-get install -y zsh
