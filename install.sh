@@ -46,7 +46,6 @@ dot_dir=$cwd
 # old dotfiles backup directory
 olddir=$HOME/Dotfiles_old
 
-approve_solarized_install=true
 approve_vim_update=true
 
 ##########
@@ -58,7 +57,6 @@ function HELP {
     echo " in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
-    echo "-o    Do not install solarized for gnome-terminal"
     echo "-v    Do not install/update vim addons"
     echo "-h    Displays this help message. No further functions are performed."
     echo ""
@@ -69,9 +67,6 @@ function HELP {
 
 while getopts ":i:s n h o v" opt; do
     case $opt in
-        o)
-            approve_solarized_install=false
-            ;;
         v)
             approve_vim_update=false
             ;;
@@ -208,15 +203,9 @@ update_vim() {
 install_solarized() {
     echo "install solarized..."
     cd $dot_dir/gnome-terminal-colors-solarized/
-    ./install.sh --scheme dark --profile solarized --skip-dircolors
+    ./install.sh --scheme dark --profile solarized --skip-dircolors || true
     cd $cwd
     echo "DONE"
-}
-
-checked_install_solarized() {
-    if [ "$approve_solarized_install" == true ]; then
-        install_solarized
-    fi
 }
 
 dorequirements() {
@@ -270,7 +259,7 @@ install_global() {
 }
 
 doinstalls() {
-    checked_install_solarized
+    install_solarized
     install_github_cli
     install_nodejs
     install_powerline
