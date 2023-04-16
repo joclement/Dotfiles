@@ -274,7 +274,6 @@ doinstalls() {
     install_github_cli
     install_nodejs
     install_powerline
-    mkdir -p $local_software
     install_ctags
     install_global
     update_vim
