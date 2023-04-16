@@ -90,14 +90,6 @@ function HELP {
     echo "Example for update: $script -i update"
 }
 
-#check if bash is used
-if [[ 0 == 0 ]];
-then
-    echo ""
-else
-    echo "You need to use bash to run this script!"
-    exit 1
-fi
 
 while getopts ":i:s n h o v" opt; do
     case $opt in
