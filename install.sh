@@ -63,9 +63,9 @@ dirs="vim/autoload vim/ftplugin vim/plugin vim/ftdetect
       config/zathura
       zfunc"
 
-# whether to install system wide or for user
 approve_solarized_install=true
 approve_vim_update=true
+# whether to install system wide or for user
 system_wide=false
 installoption=""
 changedefzsh=true
