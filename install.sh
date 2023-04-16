@@ -49,7 +49,6 @@ olddir=$HOME/Dotfiles_old
 approve_solarized_install=true
 approve_vim_update=true
 system_wide=false
-changedefzsh=true
 
 ##########
 
@@ -61,7 +60,6 @@ function HELP {
     echo ""
     echo "Basic usage: ./$script"
     echo "-s    Install some parts system wide. Default is $system_wide"
-    echo "-n    Do not set zsh as default shell"
     echo "-o    Do not install solarized for gnome-terminal"
     echo "-v    Do not install/update vim addons"
     echo "-h    Displays this help message. No further functions are performed."
@@ -75,9 +73,6 @@ while getopts ":i:s n h o v" opt; do
     case $opt in
         s)
             system_wide=true
-            ;;
-        n)
-            changedefzsh=false
             ;;
         o)
             approve_solarized_install=false
@@ -167,23 +162,14 @@ install_dependencies() {
 
             echo "install silversearcher-ag"
             sudo apt-get install -y silversearcher-ag;
+
+            echo "install zsh"
+            sudo apt-get install -y zsh
         fi
     else
         echo "This script is not suitable in this form for your platform"
         echo "If your are sure to use it, edit this script."
         exit 1
-    fi
-}
-
-default_zsh() {
-    if [ "$changedefzsh" == "true" ];
-    then
-        if [[ ! $(echo $SHELL) == $(which zsh) ]];
-        then
-            echo "change default shell to zsh..."
-            chsh -s $(which zsh)
-            echo "done"
-        fi
     fi
 }
 
@@ -201,24 +187,6 @@ install_github_cli() {
     && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
     && sudo apt update \
     && sudo apt install gh -y
-}
-
-install_zsh() {
-    if [ -f /bin/zsh -o -f /usr/bin/zsh ];
-    then
-        default_zsh
-    else
-        platform=$(uname);
-        if [ $platform == 'Linux' ] && [ -f /etc/debian_version ];
-        then
-            sudo apt-get install -y zsh
-            install_zsh
-        else
-            echo "This script is not suitable in this form for your platform."
-            echo "If your are sure to use it, edit this script."
-            exit 1
-        fi
-    fi
 }
 
 install_powerline() {
@@ -291,7 +259,6 @@ checked_install_solarized() {
 
 dorequirements() {
     install_dependencies
-    install_zsh
 }
 
 install_ctags() {
