@@ -363,6 +363,11 @@ function IsAnyParentDir(dirname)
 
     return 0
 endfunction
+
+" Adapted from https://vi.stackexchange.com/questions/29062
+function StartsWith(str, start)
+    return a:str[0:len(a:start)-1] ==# a:start
+endfunction
 " }}}
 
 
