@@ -43,6 +43,13 @@
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin
+    ~/.config/Code/User/settings.json:
+      create: true
+      path: vscode/settings.json
+    ~/.config/Code/User/snippets:
+      create: true
+      path: vscode/snippets
+      force: true
     ~/.vimrc:
     ~/.zprofile:
     ~/.zsh-syntax-highlighting:

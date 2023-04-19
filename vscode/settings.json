@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.renderWhitespace": "trailing",
+    "editor.wordWrap": "wordWrapColumn",
+    "cmake.configureOnOpen": true
+}
