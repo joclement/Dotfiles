@@ -16,7 +16,9 @@
     ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
       create: true
       path: fonts/10-powerline-symbols.conf
-    ~/.config/zathura: config/zathura
+    ~/.config/zathura:
+      create: true
+      path: config/zathura
     ~/.dircolors-solarized:
     ~/.env:
     ~/fonts/PowerlineSymbols.otf:
