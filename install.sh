@@ -88,7 +88,10 @@ install_dependencies() {
     sudo apt-get install -y cmake;
 
     echo "install Python 3 packages"
-    sudo apt-get install -y python3-pip python3-dev python3-venv;
+    sudo apt-get install -y python3-pip \
+                            python3-dev \
+                            python3-venv \
+                            python-is-python3;
 
     echo "install for pyenv"
     sudo apt-get install -y libedit-dev \
