@@ -16,6 +16,13 @@
     ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
       create: true
       path: fonts/10-powerline-symbols.conf
+    ~/.config/Code/User/settings.json:
+      create: true
+      path: vscode/settings.json
+    ~/.config/Code/User/snippets:
+      create: true
+      path: vscode/snippets
+      force: true
     ~/.config/zathura:
       create: true
       path: config/zathura
@@ -45,13 +52,6 @@
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin
-    ~/.config/Code/User/settings.json:
-      create: true
-      path: vscode/settings.json
-    ~/.config/Code/User/snippets:
-      create: true
-      path: vscode/snippets
-      force: true
     ~/.vimrc:
     ~/.zprofile:
     ~/.zsh-syntax-highlighting:
