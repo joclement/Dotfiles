@@ -16,7 +16,16 @@
     ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
       create: true
       path: fonts/10-powerline-symbols.conf
-    ~/.config/zathura: config/zathura
+    ~/.config/Code/User/settings.json:
+      create: true
+      path: vscode/settings.json
+    ~/.config/Code/User/snippets:
+      create: true
+      path: vscode/snippets
+      force: true
+    ~/.config/zathura:
+      create: true
+      path: config/zathura
     ~/.dircolors-solarized:
     ~/.env:
     ~/fonts/PowerlineSymbols.otf:
