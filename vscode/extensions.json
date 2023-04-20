@@ -17,6 +17,7 @@
         "ms-vscode.powershell",
         "twxs.cmake",
         "vscodevim.vim",
-        "XadillaX.viml"
+        "XadillaX.viml",
+        "xaver.clang-format"
     ]
 }
