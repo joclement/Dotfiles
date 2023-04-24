@@ -22,7 +22,7 @@ As `apt` is used the installation will only work on Debian based systems.
 
 ### Installation
 
-This repostiory makes use of [dotbot](https://github.com/anishathalye/dotbot)
+This repository makes use of [dotbot](https://github.com/anishathalye/dotbot)
 to link the dotfiles and install software, see
 [.install.conf.yaml](.install.conf.yaml) for the dotbot configuration file.
 
