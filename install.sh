@@ -81,6 +81,8 @@ done
 
 
 install_dependencies() {
+    sudo apt-get update;
+
     echo "install build-essential"
     sudo apt-get install -y build-essential;
 
