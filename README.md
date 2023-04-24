@@ -14,9 +14,6 @@ This Dotfiles repository focuses on:
 * git
 * own small functions and aliases
 
-If you've any questions, recommendations or criticism feel free to write me a
-mail.
-
 ### Requirements
 
 I use these Dotfiles with Ubuntu. As most files are OS-agnostic these would work
