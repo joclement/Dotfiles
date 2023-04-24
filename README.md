@@ -5,7 +5,7 @@
 
 Dotfiles
 ========
-This repository includes all of my custom Dotfiles.
+This repository includes my custom Dotfiles.
 
 This Dotfiles repository focuses on:
 * zsh using antigen
