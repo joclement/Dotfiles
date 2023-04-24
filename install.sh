@@ -182,10 +182,6 @@ install_solarized() {
     echo "DONE"
 }
 
-dorequirements() {
-    install_dependencies
-}
-
 install_ctags() {
     echo "install ctags..."
     cd $local_software
@@ -243,7 +239,7 @@ doinstalls() {
 }
 
 install() {
-    dorequirements
+    install_dependencies
     doinstalls
 }
 
