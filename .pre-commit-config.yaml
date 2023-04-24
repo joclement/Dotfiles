@@ -10,7 +10,7 @@ repos:
         exclude: |
           (?x)(
             ^vscode/settings\.json$|
-            ^vscode/extensions\.json$|
+            ^vscode/extensions\.json$
           )
       - id: check-added-large-files
       - id: check-shebang-scripts-are-executable
