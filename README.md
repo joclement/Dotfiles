@@ -19,16 +19,15 @@ mail.
 
 ### Requirements
 
-These Dotfiles are used and most suited for Ubuntu 18.04, but they will
-probably work on other Linux distributions as well.
-The install file will only work on Ubuntu or other Debian based Systems
-as it uses `apt` and `dpkg`.
+I use these Dotfiles with Ubuntu. As most files are OS-agnostic these would work
+on other operating systems as well.
+As `apt` is used the installation will only work on Debian based systems.
 
 ### Installation
 
-The installation process is explained in detail in the file `install.sh` and you
-can get some help information with `install.sh -h`.
-As described the installation will only work on Debian based Systems.
+This repostiory makes use of [dotbot](https://github.com/anishathalye/dotbot)
+to link the dotfiles and install software, see
+[.install.conf.yaml](.install.conf.yaml) for the dotbot configuration file.
 
 There is no warranty or guarantee that they will work on your system.
 They have been tested and are working on my system, but you should save your
