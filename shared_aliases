@@ -34,12 +34,6 @@ function pmake {
     make -j$ncpu "$@";
 }
 
-function op {
-    xdg-open $1 > /dev/null
-    sleep 0.35
-    :
-}
-
 function mkcd {
     mkdir $1 && cd $1
 }
