@@ -32,10 +32,10 @@
 
 set -e
 
-cwd=`pwd`
+cwd=$(pwd)
 
 # the name of the script
-script=`basename $0`
+script=$(basename "$0")
 
 # folder to install repos, which are not in the ubuntu packages
 local_software=$HOME/local_software
@@ -160,7 +160,7 @@ install_powerline() {
     pip3 install powerline-status
 
     echo "update fonts cache"
-    fc-cache -vf $HOME/fonts/
+    fc-cache -vf "$HOME"/fonts/
 }
 
 update_vim() {
@@ -175,24 +175,24 @@ update_vim() {
 
 install_solarized() {
     echo "install solarized..."
-    cd $dot_dir/gnome-terminal-colors-solarized/
+    cd "$dot_dir"/gnome-terminal-colors-solarized/
     ./install.sh --scheme dark --profile solarized --skip-dircolors || true
-    cd $cwd
+    cd "$cwd"
     echo "DONE"
 }
 
 install_ctags() {
     echo "install ctags..."
-    cd $local_software
+    cd "$local_software"
     rm -rf ctags
     git clone https://github.com/universal-ctags/ctags
-    cd $local_software/ctags
+    cd "$local_software"/ctags
     git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
     ./autogen.sh
     ./configure
     make
     sudo make install
-    cd $cwd
+    cd "$cwd"
     echo "DONE"
 }
 
