@@ -32,19 +32,16 @@
 
 set -e
 
-cwd=`pwd`
+cwd=$(pwd)
 
 # the name of the script
-script=`basename $0`
+script=$(basename "$0")
 
 # folder to install repos, which are not in the ubuntu packages
 local_software=$HOME/local_software
 
 # dotfiles directory
 dot_dir=$cwd
-
-# old dotfiles backup directory
-olddir=$HOME/Dotfiles_old
 
 approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
@@ -64,7 +61,7 @@ function HELP {
 }
 
 
-while getopts ":i:s n h o v" opt; do
+while getopts "h" opt; do
     case $opt in
         h)
             HELP;
@@ -163,7 +160,7 @@ install_powerline() {
     pip3 install powerline-status
 
     echo "update fonts cache"
-    fc-cache -vf $HOME/fonts/
+    fc-cache -vf "$HOME"/fonts/
 }
 
 update_vim() {
@@ -178,56 +175,25 @@ update_vim() {
 
 install_solarized() {
     echo "install solarized..."
-    cd $dot_dir/gnome-terminal-colors-solarized/
+    cd "$dot_dir"/gnome-terminal-colors-solarized/
     ./install.sh --scheme dark --profile solarized --skip-dircolors || true
-    cd $cwd
+    cd "$cwd"
     echo "DONE"
 }
 
 install_ctags() {
     echo "install ctags..."
-    cd $local_software
+    cd "$local_software"
     rm -rf ctags
     git clone https://github.com/universal-ctags/ctags
-    cd $local_software/ctags
+    cd "$local_software"/ctags
     git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
     ./autogen.sh
     ./configure
     make
     sudo make install
-    cd $cwd
+    cd "$cwd"
     echo "DONE"
-}
-
-install_global() {
-    if [ ! command -v foo >/dev/null 2>&1 ]; then
-        echo "install global..."
-        version='global-6.5.6'
-        curl -fL -o $local_software/${version}.tar.gz \
-            http://tamacom.com/global/${version}.tar.gz
-        cd $local_software
-        rm -rf ${version}
-        tar -zxf ${version}.tar.gz
-        cd $local_software/${version}
-        ./configure
-        cd $local_software/${version}
-        make
-        cd $local_software/${version}
-        sudo make install
-        cd $cwd
-        ln -s $local_software/${version}/gtags.vim $HOME/.vim/plugin/.
-        echo "DONE"
-    elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
-    then
-        if [ -f "/usr/local/share/gtags/gtags.vim" ]; then
-            ln -s /usr/local/share/gtags/gtags.vim $HOME/.vim/plugin/.
-        elif [ -f "/usr/share/vim/addons/gtags.vim" ]; then
-            ln -s /usr/share/vim/addons/gtags.vim $HOME/.vim/plugin/.
-        else
-            echo "Couldn't find gtags vim plugin."
-            exit 1
-        fi
-    fi
 }
 
 doinstalls() {
@@ -236,7 +202,6 @@ doinstalls() {
     install_nodejs
     install_powerline
     install_ctags
-    install_global
     update_vim
 }
 
