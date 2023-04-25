@@ -61,7 +61,7 @@ function HELP {
 }
 
 
-while getopts ":i:s n h o v" opt; do
+while getopts "h" opt; do
     case $opt in
         h)
             HELP;
