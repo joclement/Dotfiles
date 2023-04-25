@@ -31,13 +31,7 @@ function pmake {
     then
         ncpu=$upper_limit
     fi;
-    make -j$ncpu "$@";
-}
-
-function op {
-    xdg-open $1 > /dev/null
-    sleep 0.35
-    :
+    nice -n19 make -j$ncpu "$@";
 }
 
 function mkcd {
