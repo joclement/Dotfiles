@@ -37,7 +37,7 @@ repos:
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.9.0.2
+    rev: 4bb61ddc1b4175565f8f975fd20d657f00f2bd53  # frozen: v0.9.0.2
     hooks:
       - id: shellcheck
         args: ["--norc"]
