@@ -217,6 +217,8 @@ let g:python_highlight_all = 1
 
 
 " search, replace {{{
+set smartcase
+
 set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
