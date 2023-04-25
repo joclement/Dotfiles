@@ -43,9 +43,6 @@ local_software=$HOME/local_software
 # dotfiles directory
 dot_dir=$cwd
 
-# old dotfiles backup directory
-olddir=$HOME/Dotfiles_old
-
 approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
 ##########
