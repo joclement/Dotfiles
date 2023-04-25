@@ -199,44 +199,12 @@ install_ctags() {
     echo "DONE"
 }
 
-install_global() {
-    if [ ! command -v foo >/dev/null 2>&1 ]; then
-        echo "install global..."
-        version='global-6.5.6'
-        curl -fL -o $local_software/${version}.tar.gz \
-            http://tamacom.com/global/${version}.tar.gz
-        cd $local_software
-        rm -rf ${version}
-        tar -zxf ${version}.tar.gz
-        cd $local_software/${version}
-        ./configure
-        cd $local_software/${version}
-        make
-        cd $local_software/${version}
-        sudo make install
-        cd $cwd
-        ln -s $local_software/${version}/gtags.vim $HOME/.vim/plugin/.
-        echo "DONE"
-    elif [ $(dpkg-query -l | grep global | wc -l) == 0 ];
-    then
-        if [ -f "/usr/local/share/gtags/gtags.vim" ]; then
-            ln -s /usr/local/share/gtags/gtags.vim $HOME/.vim/plugin/.
-        elif [ -f "/usr/share/vim/addons/gtags.vim" ]; then
-            ln -s /usr/share/vim/addons/gtags.vim $HOME/.vim/plugin/.
-        else
-            echo "Couldn't find gtags vim plugin."
-            exit 1
-        fi
-    fi
-}
-
 doinstalls() {
     install_solarized
     install_github_cli
     install_nodejs
     install_powerline
     install_ctags
-    install_global
     update_vim
 }
 
