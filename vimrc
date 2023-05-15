@@ -48,6 +48,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'shumphrey/fugitive-gitlab.vim'
 
+Plug 'chrisbra/csv.vim'
+
 call plug#end()
 " }}}
 
