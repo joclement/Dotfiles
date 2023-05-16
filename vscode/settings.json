@@ -6,5 +6,6 @@
     "editor.renderWhitespace": "trailing",
     "editor.wordWrap": "wordWrapColumn",
     "cmake.configureOnOpen": true,
+    "keyboard.dispatch": "keyCode"
     "window.zoomLevel": 1
 }
