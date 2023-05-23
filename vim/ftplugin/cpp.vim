@@ -10,3 +10,5 @@ setlocal smartindent
 setlocal cino=N-s,g0,n0,+0
 
 call SetTextWidth(80)
+
+setlocal matchpairs+=<:>
