@@ -27,6 +27,7 @@
     ui = true
 [diff]
     tool = vimdiff
+    ignoreSubmodules = dirty
 [advice]
     statusHints = false
     skippedCherryPicks = false
@@ -58,3 +59,5 @@
     defaultBranch = main
 [submodule]
     recurse = true
+[checkout]
+    ignoreSubmodules = dirty
