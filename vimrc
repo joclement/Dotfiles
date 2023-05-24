@@ -120,6 +120,7 @@ command! Cw call DispatchCw()
 
 " coc {{{
 let g:coc_global_extensions = [
+  \ 'coc-clangd',
   \ 'coc-css',
   \ 'coc-docker',
   \ 'coc-emoji',
