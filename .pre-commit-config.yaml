@@ -47,3 +47,7 @@ repos:
       - id: commitizen
       - id: commitizen-branch
         stages: [push]
+  - repo: https://github.com/Lucas-C/pre-commit-hooks
+    rev: 12885e376b93dc4536ad68d156065601e4433665  # frozen: v1.5.1
+    hooks:
+      - id: remove-tabs
