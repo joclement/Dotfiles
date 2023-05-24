@@ -220,6 +220,7 @@ let g:python_highlight_all = 1
 
 
 " search, replace {{{
+set ignorecase
 set smartcase
 
 set hlsearch
