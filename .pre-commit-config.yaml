@@ -42,7 +42,7 @@ repos:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 672ff94cf7eb5d3133671a6a860c8c119695d02d  # frozen: 3.2.0
+    rev: 4060cc22d47761e2b5015b5f2d2484c3d65f92a5  # frozen: 3.2.2
     hooks:
       - id: commitizen
       - id: commitizen-branch
