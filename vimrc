@@ -106,6 +106,15 @@ command! Cw call DispatchCw()
 " }}}
 
 " coc {{{
+set encoding=utf-8
+
+set nobackup
+set nowritebackup
+
+set updatetime=300
+
+set signcolumn=yes
+
 let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-docker',
