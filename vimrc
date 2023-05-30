@@ -133,9 +133,13 @@ let g:coc_global_extensions = [
   \ ]
 " }}}
 
+" lvimrc {{{
 let g:localvimrc_persistent = 1
+" }}}
 
+" gundo {{{
 let g:gundo_prefer_python3 = 1
+" }}}
 
 " }}}
 
