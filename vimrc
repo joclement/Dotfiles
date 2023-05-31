@@ -106,13 +106,20 @@ command! Cw call DispatchCw()
 " }}}
 
 " coc {{{
+set encoding=utf-8
+
+set nobackup
+set nowritebackup
+
+set updatetime=300
+
+set signcolumn=yes
+
 let g:coc_global_extensions = [
   \ 'coc-clangd',
-  \ 'coc-css',
   \ 'coc-docker',
   \ 'coc-emoji',
   \ 'coc-git',
-  \ 'coc-import-cost',
   \ 'coc-jedi',
   \ 'coc-json',
   \ 'coc-lua',
@@ -121,15 +128,18 @@ let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-snippets',
   \ 'coc-stylelint',
-  \ 'coc-tsserver',
   \ 'coc-ultisnips',
   \ 'coc-yaml'
   \ ]
 " }}}
 
+" lvimrc {{{
 let g:localvimrc_persistent = 1
+" }}}
 
+" gundo {{{
 let g:gundo_prefer_python3 = 1
+" }}}
 
 " }}}
 
