@@ -90,20 +90,18 @@ filetype indent on
 
 " }}}
 
-" nerdtree settings {{{
+" nerdtree {{{
 map <C-e> :NERDTreeMirrorToggle<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
 " Dispatch {{{
-" function show Dispatch quickfix {{{
 function! DispatchCw()
     execute 'Copen'
     execute 'cw'
 endfunction
 command! Cw call DispatchCw()
-" }}}
 " }}}
 
 " coc {{{
