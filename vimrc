@@ -82,6 +82,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
+" TODO check what this setting does and whether it is still needed
 " latex {{{
 filetype plugin on
 filetype indent on
@@ -89,23 +90,21 @@ filetype indent on
 
 " }}}
 
-" nerdtree settings {{{
+" NERDTree {{{
 map <C-e> :NERDTreeMirrorToggle<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
 " }}}
 
 " Dispatch {{{
-" function show Dispatch quickfix {{{
 function! DispatchCw()
     execute 'Copen'
     execute 'cw'
 endfunction
 command! Cw call DispatchCw()
 " }}}
-" }}}
 
-" coc {{{
+" CoC {{{
 set encoding=utf-8
 
 set nobackup
@@ -114,6 +113,30 @@ set nowritebackup
 set updatetime=300
 
 set signcolumn=yes
+
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
 
 let g:coc_global_extensions = [
   \ 'coc-clangd',
@@ -244,7 +267,7 @@ endif
 highlight SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
 
 let g:myLang=0
-let g:myLangList=["nospell","de_de","en_us", "en_gb", "nl"]
+let g:myLangList=["nospell", "de_de", "en_us", "en_gb", "nl"]
 function! ToggleSpell()
   let g:myLang += 1
   if g:myLang>=len(g:myLangList) | let g:myLang=0 | endif
