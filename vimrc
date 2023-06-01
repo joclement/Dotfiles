@@ -90,7 +90,7 @@ filetype indent on
 
 " }}}
 
-" nerdtree {{{
+" NERDTree {{{
 map <C-e> :NERDTreeMirrorToggle<CR>
 
 let NERDTreeIgnore = ['\.pyc$']
@@ -104,7 +104,7 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
-" coc {{{
+" CoC {{{
 set encoding=utf-8
 
 set nobackup
