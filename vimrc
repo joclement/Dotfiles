@@ -82,6 +82,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
+" TODO check what this setting does and whether it is still needed
 " latex {{{
 filetype plugin on
 filetype indent on
