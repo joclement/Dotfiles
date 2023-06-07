@@ -136,8 +136,8 @@ install_dependencies() {
 install_nodejs() {
     curl -sL \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
-        -o nodesource_setup.sh
-    sudo bash nodesource_setup.sh
+        -o /tmp/nodesource_setup.sh
+    sudo bash /tmp/nodesource_setup.sh
     sudo apt-get install -y nodejs
 }
 
