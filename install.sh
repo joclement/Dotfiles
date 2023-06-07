@@ -114,11 +114,8 @@ install_dependencies() {
     echo "install curl"
     sudo apt-get install -y curl;
 
-    echo "install dh-autoreconf for ctags"
-    sudo apt-get install -y dh-autoreconf;
-
-    echo "install pkg-config for ctags"
-    sudo apt-get install -y pkg-config;
+    echo "install ctags dependencies"
+    sudo apt-get install -y dh-autoreconf pkg-config;
 
     echo "install dconf-cli"
     sudo apt-get install -y dconf-cli;
