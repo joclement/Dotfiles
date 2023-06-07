@@ -49,6 +49,9 @@
     ~/.vim/autoload:
       create: true
       path: vim/autoload
+    ~/.vim/coc-settings.json:
+      create: true
+      path: vim/coc-settings.json
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin
