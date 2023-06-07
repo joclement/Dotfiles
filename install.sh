@@ -83,9 +83,6 @@ install_dependencies() {
     echo "install build-essential"
     sudo apt-get install -y build-essential;
 
-    echo "install cmake"
-    sudo apt-get install -y cmake;
-
     echo "install Python 3 packages"
     sudo apt-get install -y python3-pip \
                             python3-dev \
