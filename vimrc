@@ -18,6 +18,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'dense-analysis/ale'
 
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
