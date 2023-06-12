@@ -24,6 +24,8 @@ function pgrep {
     find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
 }
 
+# TODO do I really still need this function? I think this can also be done with
+# an environment variable.
 function pmake {
     ncpu=$(nproc)
     upper_limit=10
