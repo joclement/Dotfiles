@@ -175,6 +175,7 @@ install_solarized() {
     echo "DONE"
 }
 
+# TODO improve upgrading by making this e.g. a git submodule
 install_ctags() {
     echo "install ctags..."
     cd "$local_software"
