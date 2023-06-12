@@ -50,6 +50,8 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 
 Plug 'chrisbra/csv.vim'
 
+Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 " }}}
 
