@@ -17,7 +17,7 @@
     last = log --stat -1 HEAD
     ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
     slog = log --stat
-    st = status
+    st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
 [push]
     default = simple
