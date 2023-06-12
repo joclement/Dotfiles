@@ -37,9 +37,6 @@ cwd=$(pwd)
 # the name of the script
 script=$(basename "$0")
 
-# folder to install repos, which are not in the ubuntu packages
-local_software=$HOME/local_software
-
 # dotfiles directory
 dot_dir=$cwd
 
@@ -114,14 +111,8 @@ install_dependencies() {
     echo "install curl"
     sudo apt-get install -y curl;
 
-    echo "install ctags dependencies"
-    sudo apt-get install -y dh-autoreconf pkg-config;
-
     echo "install dconf-cli"
     sudo apt-get install -y dconf-cli;
-
-    echo "install global(gtags)"
-    sudo apt-get install -y global;
 
     echo "install parallel"
     sudo apt-get install -y parallel;
@@ -180,28 +171,11 @@ install_solarized() {
     echo "DONE"
 }
 
-# TODO improve upgrading by making this e.g. a git submodule
-install_ctags() {
-    echo "install ctags..."
-    cd "$local_software"
-    rm -rf ctags
-    git clone https://github.com/universal-ctags/ctags
-    cd "$local_software"/ctags
-    git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
-    ./autogen.sh
-    ./configure
-    make
-    sudo make install
-    cd "$cwd"
-    echo "DONE"
-}
-
 doinstalls() {
     install_solarized
     install_github_cli
     install_coc_dependencies
     install_powerline
-    install_ctags
     update_vim
 }
 

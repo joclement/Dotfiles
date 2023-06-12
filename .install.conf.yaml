@@ -59,7 +59,6 @@
     ~/.zshrc:
 
 - create:
-    - ~/local_software
     - ~/.vim/plugin
     - ~/.zfunc
 
