@@ -14,6 +14,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_networks='docker prune network'
 alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
 alias docker_kill_all='docker kill $(docker ps -q)'
 alias docker_clean_volumes='docker volume rm $(docker volume ls -q)'
