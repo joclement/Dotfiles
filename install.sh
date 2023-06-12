@@ -141,6 +141,11 @@ install_nodejs() {
     sudo apt-get install -y nodejs
 }
 
+install_coc_dependencies() {
+    install_nodejs
+    sudo npm install --global yarn
+}
+
 install_github_cli() {
     curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
     && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -194,7 +199,7 @@ install_ctags() {
 doinstalls() {
     install_solarized
     install_github_cli
-    install_nodejs
+    install_coc_dependencies
     install_powerline
     install_ctags
     update_vim

@@ -4,8 +4,9 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim',
-    \ {'branch': 'release',
-    \  'commit': 'bbaa1d5d1ff3cbd9d26bb37cfda1a990494c4043'}
+    \ {'branch': 'master',
+    \  'commit': '2a0e5546ac287398b6ec52d425a5cbecbb72e37e',
+    \  'do': 'yarn install --frozen-lockfile'}
 
 Plug 'altercation/vim-colors-solarized'
 
