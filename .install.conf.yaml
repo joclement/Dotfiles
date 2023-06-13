@@ -49,9 +49,6 @@
     ~/.vim/autoload:
       create: true
       path: vim/autoload
-    ~/.vim/ftdetect:
-      create: true
-      path: vim/ftdetect
     ~/.vim/ftplugin:
       create: true
       path: vim/ftplugin
