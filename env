@@ -35,7 +35,7 @@ fi
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT/bin" ] ; then
     __pathaddend $PYENV_ROOT/bin
-    eval "$(pyenv init --path)"
+    __pathaddend $PYENV_ROOT/shims
 fi
 
 if [ -f "$HOME/.cargo/env" ] ; then
