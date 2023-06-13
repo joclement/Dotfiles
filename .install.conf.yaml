@@ -23,6 +23,9 @@
       create: true
       path: vscode/snippets
       force: true
+    ~/.config/nvim/init.vim:
+      create: true
+      path: nvim/init.vim
     ~/.config/zathura:
       create: true
       path: config/zathura
