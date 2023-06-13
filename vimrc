@@ -89,6 +89,10 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
+" ALE {{{
+let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
+" }}}
+
 " CoC {{{
 set encoding=utf-8
 
