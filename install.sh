@@ -37,9 +37,6 @@ cwd=$(pwd)
 # the name of the script
 script=$(basename "$0")
 
-# folder to install repos, which are not in the ubuntu packages
-local_software=$HOME/local_software
-
 # dotfiles directory
 dot_dir=$cwd
 
@@ -83,9 +80,6 @@ install_dependencies() {
     echo "install build-essential"
     sudo apt-get install -y build-essential;
 
-    echo "install cmake"
-    sudo apt-get install -y cmake;
-
     echo "install Python 3 packages"
     sudo apt-get install -y python3-pip \
                             python3-dev \
@@ -117,17 +111,8 @@ install_dependencies() {
     echo "install curl"
     sudo apt-get install -y curl;
 
-    echo "install dh-autoreconf for ctags"
-    sudo apt-get install -y dh-autoreconf;
-
-    echo "install pkg-config for ctags"
-    sudo apt-get install -y pkg-config;
-
     echo "install dconf-cli"
     sudo apt-get install -y dconf-cli;
-
-    echo "install global(gtags)"
-    sudo apt-get install -y global;
 
     echo "install parallel"
     sudo apt-get install -y parallel;
@@ -142,9 +127,14 @@ install_dependencies() {
 install_nodejs() {
     curl -sL \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
-        -o nodesource_setup.sh
-    sudo bash nodesource_setup.sh
+        -o /tmp/nodesource_setup.sh
+    sudo bash /tmp/nodesource_setup.sh
     sudo apt-get install -y nodejs
+}
+
+install_coc_dependencies() {
+    install_nodejs
+    sudo npm install --global yarn
 }
 
 install_github_cli() {
@@ -181,27 +171,11 @@ install_solarized() {
     echo "DONE"
 }
 
-install_ctags() {
-    echo "install ctags..."
-    cd "$local_software"
-    rm -rf ctags
-    git clone https://github.com/universal-ctags/ctags
-    cd "$local_software"/ctags
-    git checkout d8f5c062ea6ff484f4f1f5095a7d3c364f3019ea
-    ./autogen.sh
-    ./configure
-    make
-    sudo make install
-    cd "$cwd"
-    echo "DONE"
-}
-
 doinstalls() {
     install_solarized
     install_github_cli
-    install_nodejs
+    install_coc_dependencies
     install_powerline
-    install_ctags
     update_vim
 }
 

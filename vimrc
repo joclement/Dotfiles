@@ -4,8 +4,9 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim',
-    \ {'branch': 'release',
-    \  'commit': 'bbaa1d5d1ff3cbd9d26bb37cfda1a990494c4043'}
+    \ {'branch': 'master',
+    \  'commit': '2a0e5546ac287398b6ec52d425a5cbecbb72e37e',
+    \  'do': 'yarn install --frozen-lockfile'}
 
 Plug 'altercation/vim-colors-solarized'
 
@@ -17,7 +18,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-Plug 'scrooloose/syntastic'
 
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -50,6 +50,8 @@ Plug 'shumphrey/fugitive-gitlab.vim'
 
 Plug 'chrisbra/csv.vim'
 
+Plug 'junegunn/vim-easy-align'
+
 call plug#end()
 " }}}
 
@@ -59,35 +61,17 @@ call plug#end()
 runtime macros/matchit.vim
 
 " powerline {{{
-python3 from powerline.vim import setup as powerline_setup
-python3 powerline_setup()
-python3 del powerline_setup
+if !has('nvim')
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
+endif
 " so that vim-powerline appears all the time
 set laststatus=2
 " }}}
 
 " UltiSnips key {{{
 let g:UltiSnipsExpandTrigger = "<c-j>"
-" }}}
-
-" syntastic {{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-
-let g:syntastic_python_checkers = ['flake8']
-
-nnoremap <C-k> :SyntasticCheck<CR> :SyntasticToggleMode<CR>
-
-" TODO check what this setting does and whether it is still needed
-" latex {{{
-filetype plugin on
-filetype indent on
-" }}}
-
 " }}}
 
 " NERDTree {{{
