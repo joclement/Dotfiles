@@ -18,6 +18,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'dense-analysis/ale'
 
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vim-python/python-syntax'
@@ -88,6 +89,10 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
+" ALE {{{
+let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
+" }}}
+
 " CoC {{{
 set encoding=utf-8
 
@@ -97,24 +102,6 @@ set nowritebackup
 set updatetime=300
 
 set signcolumn=yes
-
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
