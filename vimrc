@@ -145,6 +145,10 @@ let g:localvimrc_persistent = 1
 let g:gundo_prefer_python3 = 1
 " }}}
 
+" vim-latex {{{
+let g:tex_flavor='latex'
+" }}}
+
 " }}}
 
 
