@@ -76,10 +76,6 @@ endif
 set laststatus=2
 " }}}
 
-" UltiSnips key {{{
-let g:UltiSnipsExpandTrigger = "<c-j>"
-" }}}
-
 " NERDTree {{{
 map <C-e> :NERDTreeMirrorToggle<CR>
 
