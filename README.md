@@ -40,12 +40,11 @@ After cloning this repository to a suitable location like `~/Dotfiles` just run
 ### Licensing
 
 Nearly all files in this project are licensed under [the MIT license](LICENSE).
-The file [vim/autoload/plug.vim](vim/autoload/plug.vim) is also licensed under
-the MIT license, but with a different copyright owner.
-This does of course not apply to the used git submodules.
-Furthermore, an exception is [install.sh](install.sh), which is licensed with
-GPLv3 as it is based on
-[this file](https://github.com/michaeljsmalley/dotfiles/blob/dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh).
+Exceptions are:
+* The file [vim/autoload/plug.vim](vim/autoload/plug.vim) has a different copyright owner
+* The used submodules
+* The file [install.sh](install.sh), licensed with GPLv3 as it is based on
+[this file](https://github.com/michaeljsmalley/dotfiles/blob/dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh)
 
 ### Acknowledgments
 
