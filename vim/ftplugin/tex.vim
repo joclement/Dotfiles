@@ -12,5 +12,3 @@ set makeprg='make'
 
 " cycle only through wanted refs, e.g. after typing 'fig:'
 set iskeyword+=:
-
-let g:syntastic_tex_checkers = ['chktex']
