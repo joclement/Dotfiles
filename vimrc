@@ -3,6 +3,8 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
+Plug 'andymass/vim-matchup'
+
 Plug 'neoclide/coc.nvim',
     \ {'branch': 'master',
     \  'commit': '2a0e5546ac287398b6ec52d425a5cbecbb72e37e',
@@ -63,8 +65,6 @@ call plug#end()
 
 
 " plugin settings {{{
-
-runtime macros/matchit.vim
 
 " powerline {{{
 if !has('nvim')
