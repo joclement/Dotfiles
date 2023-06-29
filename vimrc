@@ -53,6 +53,8 @@ Plug 'chrisbra/csv.vim'
 
 Plug 'junegunn/vim-easy-align'
 
+Plug 'ludovicchabant/vim-gutentags'
+
 call plug#end()
 " }}}
 
