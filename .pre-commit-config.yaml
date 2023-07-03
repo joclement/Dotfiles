@@ -25,7 +25,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/codespell-project/codespell
-    rev: ec0f41b9573937aebab66e3ca5b00d00a7b339fa  # frozen: v2.2.4
+    rev: 355e50e14fd03fe83e4ed9aa0489824b150b3b58  # frozen: v2.2.5
     hooks:
       - id: codespell
         exclude: |
@@ -42,7 +42,7 @@ repos:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 4060cc22d47761e2b5015b5f2d2484c3d65f92a5  # frozen: 3.2.2
+    rev: cd818fef05e4b4afab76d9f8ca9c53f14459700d  # frozen: 3.5.2
     hooks:
       - id: commitizen
       - id: commitizen-branch
