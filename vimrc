@@ -289,7 +289,7 @@ autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
 
 " remove empty lines at EOF {{{
-function TrimEndLines()
+function! TrimEndLines()
     if (exists('b:NoTrimEndLines') || &ft=='' || &diff)
         return
     endif
@@ -356,7 +356,7 @@ set wildmenu
 
 set scrolloff=3
 
-function IsAnyParentDir(dirname)
+function! IsAnyParentDir(dirname)
     let path = fnamemodify(bufname('%'), ':p:h')
     let dirs = split(path, '/')
 
@@ -370,7 +370,7 @@ function IsAnyParentDir(dirname)
 endfunction
 
 " Adapted from https://vi.stackexchange.com/questions/29062
-function StartsWith(str, start)
+function! StartsWith(str, start)
     return a:str[0:len(a:start)-1] ==# a:start
 endfunction
 
