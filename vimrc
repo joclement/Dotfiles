@@ -372,6 +372,10 @@ endfunction
 function StartsWith(str, start)
     return a:str[0:len(a:start)-1] ==# a:start
 endfunction
+
+function! UpdateMakeSettings()
+    set makeprg=nice\ -n\ 19\ make\ -j\ $MAKE_PARALLELIZATION\ -C\ $MY_BUILD_DIR
+endfunction
 " }}}
 
 
