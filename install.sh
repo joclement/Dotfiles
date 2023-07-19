@@ -126,10 +126,13 @@ install_dependencies() {
 
 install_nodejs() {
     echo "install Node.js..."
-    curl -sL \
+    echo "  download setup script"
+    curl --verbose -sL \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
         -o /tmp/nodesource_setup.sh
+    echo "  execute setup script"
     sudo bash /tmp/nodesource_setup.sh
+    echo "  install nodejs"
     sudo apt-get install -y nodejs
     echo "DONE"
 }
