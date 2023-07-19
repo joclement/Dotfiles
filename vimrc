@@ -47,6 +47,7 @@ Plug 'cespare/vim-toml'
 Plug 'editorconfig/editorconfig-vim'
 
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
 
 Plug 'chrisbra/csv.vim'
