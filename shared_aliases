@@ -59,3 +59,7 @@ function gitfixup {
     git commit --fixup $selected_commit
     GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash ${selected_commit}~1
 }
+
+function list_dirty_gits {
+    find ./ -type d -name '.git' -exec sh -c 'cd "{}/.." && git diff --quiet --ignore-submodules --exit-code || echo "Dirty: {}"' \;
+}
