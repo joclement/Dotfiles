@@ -3,6 +3,8 @@ set nocompatible
 " plugin manager {{{
 call plug#begin('~/.vim/plugged')
 
+Plug 'andymass/vim-matchup'
+
 Plug 'neoclide/coc.nvim',
     \ {'branch': 'master',
     \  'commit': '2a0e5546ac287398b6ec52d425a5cbecbb72e37e',
@@ -64,8 +66,6 @@ call plug#end()
 
 " plugin settings {{{
 
-runtime macros/matchit.vim
-
 " powerline {{{
 if !has('nvim')
     python3 from powerline.vim import setup as powerline_setup
@@ -74,10 +74,6 @@ if !has('nvim')
 endif
 " so that vim-powerline appears all the time
 set laststatus=2
-" }}}
-
-" UltiSnips key {{{
-let g:UltiSnipsExpandTrigger = "<c-j>"
 " }}}
 
 " NERDTree {{{
@@ -143,6 +139,10 @@ let g:localvimrc_persistent = 1
 
 " gundo {{{
 let g:gundo_prefer_python3 = 1
+" }}}
+
+" vim-latex {{{
+let g:tex_flavor='latex'
 " }}}
 
 " }}}
