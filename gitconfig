@@ -1,5 +1,8 @@
 [include]
     path = ~/.gituserconfig
+[advice]
+    skippedCherryPicks = false
+    statusHints = false
 [alias]
     ap = add --patch
     br = branch
@@ -9,8 +12,8 @@
     cm = !(git branch --list | grep master && git checkout master) || git checkout main
     co = checkout
     dca = diff --cached
-    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
     delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
+    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
     fpu = push --force-with-lease
     fpus = push --force-with-lease --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
@@ -19,45 +22,42 @@
     slog = log --stat
     st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
+[checkout]
+    ignoreSubmodules = dirty
+[color]
+    ui = true
+[commit]
+    gpgsign = true
+    verbose = true
+[core]
+    excludesfile = ~/.gitignore
+    whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
+[credential]
+    helper = cache
+[diff]
+    ignoreSubmodules = dirty
+    tool = vimdiff
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    process = git-lfs filter-process
+    required = true
+    smudge = git-lfs smudge -- %f
+[init]
+    defaultBranch = main
+[log]
+    abbrevCommit = true
+[merge]
+    tool = vimdiff
+[pull]
+    rebase = true
 [push]
     default = simple
     followTags = true
     signed = true
-[color]
-    ui = true
-[diff]
-    tool = vimdiff
-    ignoreSubmodules = dirty
-[advice]
-    statusHints = false
-    skippedCherryPicks = false
-[core]
-    excludesfile = ~/.gitignore
-    whitespace = blank-at-eof,blank-at-eol,space-before-tab,tab-in-indent
-[merge]
-    tool = vimdiff
-[log]
-    abbrevCommit = true
-[commit]
-    gpgsign = true
-    verbose = true
-[credential]
-    helper = cache
+[rebase]
+    autosquash = true
+    autostash = true
 [status]
     submoduleSummary = true
-[pull]
-    rebase = true
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-[rebase]
-    autostash = true
-    autosquash = true
-[init]
-    defaultBranch = main
 [submodule]
     recurse = true
-[checkout]
-    ignoreSubmodules = dirty
