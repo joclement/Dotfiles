@@ -56,6 +56,8 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'ludovicchabant/vim-gutentags'
 
+Plug 'psf/black', { 'branch': 'stable' }
+
 call plug#end()
 " }}}
 
