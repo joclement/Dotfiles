@@ -125,24 +125,23 @@ install_dependencies() {
 }
 
 install_nodejs() {
-    curl -sL \
+    echo "install Node.js..."
+    echo "  download setup script"
+    curl --verbose -sL \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
         -o /tmp/nodesource_setup.sh
+    echo "  execute setup script"
     sudo bash /tmp/nodesource_setup.sh
+    echo "  install nodejs"
     sudo apt-get install -y nodejs
+    echo "DONE"
 }
 
 install_coc_dependencies() {
+    echo "install CoC dependencies..."
     install_nodejs
     sudo npm install --global yarn
-}
-
-install_github_cli() {
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-    && sudo apt update \
-    && sudo apt install gh -y
+    echo "DONE"
 }
 
 install_powerline() {
@@ -173,7 +172,6 @@ install_solarized() {
 
 doinstalls() {
     install_solarized
-    install_github_cli
     install_coc_dependencies
     install_powerline
     update_vim
