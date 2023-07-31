@@ -235,7 +235,7 @@ vnoremap // y/<C-R>"<CR>
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 if executable('ag')
-    set grepprg=ag\ --vimgrep
+    set grepprg=ag\ --hidden\ --vimgrep
 else
     set grepprg=grep\ -n\ $*\ /dev/null\
                 \ --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache}\
