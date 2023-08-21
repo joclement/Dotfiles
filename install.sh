@@ -146,7 +146,7 @@ install_coc_dependencies() {
 
 install_powerline() {
     echo "install powerline-status"
-    pip3 install powerline-status
+    pip install --upgrade powerline-status
 
     echo "update fonts cache"
     fc-cache -vf "$HOME"/fonts/
