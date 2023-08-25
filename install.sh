@@ -144,14 +144,6 @@ install_coc_dependencies() {
     echo "DONE"
 }
 
-install_powerline() {
-    echo "install powerline-status"
-    pip install --upgrade --constraint=requirements.txt powerline-status
-
-    echo "update fonts cache"
-    fc-cache -vf "$HOME"/fonts/
-}
-
 update_vim() {
     if [ "$approve_vim_update" = true ]; then
         echo "install/update vim add-ons"
@@ -173,7 +165,6 @@ install_solarized() {
 doinstalls() {
     install_solarized
     install_coc_dependencies
-    install_powerline
     update_vim
 }
 
