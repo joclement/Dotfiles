@@ -112,26 +112,6 @@ fi
 # enable vim mode for bash
 set -o vi
 
-powerlineshpath=~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
-powerlineexists=false
-if [ -f $powerlineshpath ]; then
-    powerlineexists=true
-else
-    powerlineshpath=~/.local/lib/python3.4/site-packages/powerline/bindings/bash/powerline.sh
-    if [ -f $powerlineshpath ]; then
-        powerlineexists=true
-    fi
-fi
-# if powerline bash bindings exist, activate powerline for bash
-if [ "$powerlineexists" = "true" ]; then
-    export POWERLINE_COMMAND=powerline
-    export POWERLINE_CONFIG_COMMAND=powerline-config
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    . $powerlineshpath
-fi
-
 #to include private commands for bash, if they exist
 if [ -f $HOME/.private_bashrc ]; then
     source $HOME/.private_bashrc
