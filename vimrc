@@ -60,20 +60,18 @@ Plug 'ludovicchabant/vim-gutentags'
 
 Plug 'psf/black', { 'branch': 'stable' }
 
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 " }}}
 
 
 " plugin settings {{{
 
-" powerline {{{
-if !has('nvim')
-    python3 from powerline.vim import setup as powerline_setup
-    python3 powerline_setup()
-    python3 del powerline_setup
-endif
-" so that the statusline appears all the time
-set laststatus=2
+" vim-airline {{{
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
 " }}}
 
 " NERDTree {{{
