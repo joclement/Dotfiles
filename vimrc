@@ -72,7 +72,7 @@ if !has('nvim')
     python3 powerline_setup()
     python3 del powerline_setup
 endif
-" so that vim-powerline appears all the time
+" so that the statusline appears all the time
 set laststatus=2
 " }}}
 
