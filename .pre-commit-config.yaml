@@ -51,6 +51,10 @@ repos:
     rev: 12885e376b93dc4536ad68d156065601e4433665  # frozen: v1.5.1
     hooks:
       - id: remove-tabs
+        exclude: |
+          (?x)(
+            ^.git/COMMIT_EDITMSG$
+          )
 
 ci:
   autoupdate_schedule: quarterly
