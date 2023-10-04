@@ -16,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - run: APPROVE_VIM_UPDATE=false ./install
