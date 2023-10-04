@@ -33,22 +33,22 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/google/yamlfmt
-    rev: c433f347693ee3bbbfd4f626e502685dd8aafa82  # frozen: v0.9.0
+    rev: c9bfa38f9b0c555a26200596d5f4dcef07627683  # frozen: v0.10.0
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: 375289a39f5708101b1f916eb729e8d6da96993f  # frozen: v0.9.0.5
+    rev: 4de1378e4cd853bfc2b111b05fff35e2dbf809a3  # frozen: v0.9.0.6
     hooks:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: cd818fef05e4b4afab76d9f8ca9c53f14459700d  # frozen: 3.5.2
+    rev: 13e962fd1e1b8d0921fd072bc5c484be9afd0c4c  # frozen: 3.10.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
         stages: [push]
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: 12885e376b93dc4536ad68d156065601e4433665  # frozen: v1.5.1
+    rev: 762c66ea96843b54b936fc680162ea67f85ec2d7  # frozen: v1.5.4
     hooks:
       - id: remove-tabs
         exclude: |
