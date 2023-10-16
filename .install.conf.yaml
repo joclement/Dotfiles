@@ -70,6 +70,6 @@
     - command: ./install.sh
       stdout: true
       stderr: true
-    - command: sudo chsh -s $(which zsh)
+    - command: echo 'Run `chsh -s $(which zsh)`'
       stdout: true
       stderr: true
