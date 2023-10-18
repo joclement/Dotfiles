@@ -290,7 +290,7 @@ function! RemoveTrailingWhitespace()
     if (exists('b:NoRemoveTrailingWhitespace') || &diff || &binary)
         return
     endif
-    %s/\s\+$//ge
+    %s/\s\+$//e
 endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
