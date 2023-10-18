@@ -290,7 +290,9 @@ function! RemoveTrailingWhitespace()
     if (exists('b:NoRemoveTrailingWhitespace') || &diff || &binary)
         return
     endif
-    %s/\s\+$//e
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
 endfun
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 " }}}
