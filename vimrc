@@ -287,7 +287,7 @@ autocmd BufWinLeave * call clearmatches()
 
 " remove trailing whitespace
 function! RemoveTrailingWhitespace()
-    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff)
+    if (exists('b:NoRemoveTrailingWhitespace') || &ft=='' || &diff || &binary)
         return
     endif
     %s/\s\+$//ge
