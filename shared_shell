@@ -4,7 +4,6 @@
 source $HOME/.shared_aliases
 source $HOME/.env
 
-# Put any proprietary or private functions/values in ~/.private, and this will source them
 if [ -f $HOME/.private ]; then
     source $HOME/.private
 fi
