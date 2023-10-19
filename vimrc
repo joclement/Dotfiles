@@ -63,6 +63,8 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'inkarkat/vim-SyntaxRange'
+
 call plug#end()
 " }}}
 
