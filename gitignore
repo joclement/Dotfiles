@@ -43,6 +43,9 @@ CONTRIBUTING.html
 ### Lua
 lua_modules
 
+### Node.js
+node_modules/
+
 ### Other
 .cache/
 .git-commit-message
