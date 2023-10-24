@@ -45,7 +45,7 @@ function mkcd {
 function md2html {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
-    markdown $markdownfile > $htmlfile
+    pandoc -f markdown $markdownfile > $htmlfile
 }
 
 function cless {
