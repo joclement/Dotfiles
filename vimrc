@@ -65,6 +65,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'inkarkat/vim-SyntaxRange'
 
+Plug 'preservim/tagbar'
+
 call plug#end()
 " }}}
 
