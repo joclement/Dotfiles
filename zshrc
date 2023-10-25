@@ -26,9 +26,6 @@ antigen use oh-my-zsh
 #specify bundles
 antigen bundles <<EOBUNDLES
 
-# Helper for extracting different types of archives
-extract
-
 #for working with git
 voronkovich/gitignore.plugin.zsh
 
