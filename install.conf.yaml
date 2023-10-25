@@ -97,6 +97,7 @@
     - command: ./install.sh
       stdout: true
       stderr: true
+    - command: ./configure_powerlevel10k.sh
     - command: echo 'Run `chsh -s $(which zsh)`'
       stdout: true
       stderr: true
