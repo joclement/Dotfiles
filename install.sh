@@ -167,15 +167,12 @@ install_solarized() {
 }
 
 
-doinstalls() {
-    install_solarized
-    install_coc_dependencies
-    update_vim
-}
 
 install() {
     install_dependencies
-    doinstalls
+    install_solarized
+    install_coc_dependencies
+    update_vim
 }
 
 install
