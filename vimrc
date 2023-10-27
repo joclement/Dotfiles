@@ -97,6 +97,8 @@ let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
 " }}}
 
 " CoC {{{
+
+" Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
 set encoding=utf-8
 
 set nobackup
