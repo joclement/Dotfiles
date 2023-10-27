@@ -61,10 +61,8 @@ function HELP {
 install_dependencies() {
     sudo apt-get update;
 
-    echo "install build-essential"
     sudo apt-get install -y build-essential;
 
-    echo "install Python 3 packages"
     sudo apt-get install -y python3-pip \
                             python3-dev \
                             python3-venv \
@@ -86,25 +84,19 @@ install_dependencies() {
                             libffi-dev \
                             liblzma-dev;
 
-    echo "install vim"
     sudo apt-get install -y vim-gtk;
 
     echo "install fontconfig for fc-cache"
     sudo apt-get install -y fontconfig;
 
-    echo "install curl"
     sudo apt-get install -y curl;
 
-    echo "install dconf-cli"
     sudo apt-get install -y dconf-cli;
 
-    echo "install parallel"
     sudo apt-get install -y parallel;
 
-    echo "install silversearcher-ag"
     sudo apt-get install -y silversearcher-ag;
 
-    echo "install zsh"
     sudo apt-get install -y zsh
 }
 
