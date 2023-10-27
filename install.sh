@@ -60,13 +60,6 @@ function HELP {
 install_dependencies() {
     sudo apt-get update;
 
-    sudo apt-get install -y build-essential;
-
-    sudo apt-get install -y python3-pip \
-                            python3-dev \
-                            python3-venv \
-                            python-is-python3;
-
     # for pyenv
     sudo apt-get install -y libedit-dev \
                             libssl-dev \
@@ -83,20 +76,20 @@ install_dependencies() {
                             libffi-dev \
                             liblzma-dev;
 
-    sudo apt-get install -y vim-gtk;
-
     # for fc-cache
     sudo apt-get install -y fontconfig;
 
-    sudo apt-get install -y curl;
-
-    sudo apt-get install -y dconf-cli;
-
-    sudo apt-get install -y parallel;
-
-    sudo apt-get install -y silversearcher-ag;
-
-    sudo apt-get install -y zsh
+    sudo apt-get install -y build-essential \
+                            curl \
+                            dconf-cli \
+                            parallel \
+                            python-is-python3 \
+                            python3-dev \
+                            python3-pip \
+                            python3-venv \
+                            silversearcher-ag \
+                            vim-gtk \
+                            zsh;
 }
 
 
