@@ -67,7 +67,7 @@ install_dependencies() {
                             python3-venv \
                             python-is-python3;
 
-    echo "install for pyenv"
+    # for pyenv
     sudo apt-get install -y libedit-dev \
                             libssl-dev \
                             zlib1g-dev \
@@ -85,7 +85,7 @@ install_dependencies() {
 
     sudo apt-get install -y vim-gtk;
 
-    echo "install fontconfig for fc-cache"
+    # for fc-cache
     sudo apt-get install -y fontconfig;
 
     sudo apt-get install -y curl;
