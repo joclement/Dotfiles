@@ -14,9 +14,6 @@
     ~/.bashrc:
       force: true
       path: bashrc
-    ~/config/fontconfig/conf.d/10-powerline-symbols.conf:
-      create: true
-      path: fonts/10-powerline-symbols.conf
     ~/.config/Code/User/settings.json:
       create: true
       path: vscode/settings.json
@@ -32,9 +29,6 @@
       path: config/zathura
     ~/.dircolors-solarized:
     ~/.env:
-    ~/fonts/PowerlineSymbols.otf:
-      create: true
-      path: fonts/PowerlineSymbols.otf
     ~/.gitconfig:
     ~/.gitignore:
     ~/.gvimrc:
