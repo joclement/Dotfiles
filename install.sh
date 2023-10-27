@@ -58,22 +58,6 @@ function HELP {
 }
 
 
-while getopts "h" opt; do
-    case $opt in
-        h)
-            HELP;
-            exit 0
-            ;;
-        \?)
-            echo "Invalid option:
-            -$OPTARG" >&2
-            HELP;
-            exit 1
-            ;;
-    esac
-done
-
-
 install_dependencies() {
     sudo apt-get update;
 
@@ -174,5 +158,21 @@ install() {
     install_coc_dependencies
     update_vim
 }
+
+
+while getopts "h" opt; do
+    case $opt in
+        h)
+            HELP;
+            exit 0
+            ;;
+        \?)
+            echo "Invalid option:
+            -$OPTARG" >&2
+            HELP;
+            exit 1
+            ;;
+    esac
+done
 
 install
