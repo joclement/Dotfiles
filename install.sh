@@ -124,6 +124,7 @@ install_dependencies() {
     sudo apt-get install -y zsh
 }
 
+
 install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
@@ -137,12 +138,14 @@ install_nodejs() {
     echo "DONE"
 }
 
+
 install_coc_dependencies() {
     echo "install CoC dependencies..."
     install_nodejs
     sudo npm install --global yarn
     echo "DONE"
 }
+
 
 update_vim() {
     if [ "$approve_vim_update" = true ]; then
@@ -154,6 +157,7 @@ update_vim() {
     fi
 }
 
+
 install_solarized() {
     echo "install solarized..."
     cd "$dot_dir"/gnome-terminal-colors-solarized/
@@ -161,6 +165,7 @@ install_solarized() {
     cd "$cwd"
     echo "DONE"
 }
+
 
 doinstalls() {
     install_solarized
