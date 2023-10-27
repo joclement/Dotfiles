@@ -44,7 +44,6 @@ approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
 ##########
 
-#Help function
 function HELP {
     echo "Help documentation for ${script}"
     echo -n "Install the dotfiles of this Dotfiles repository. Run this script"
