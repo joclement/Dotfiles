@@ -57,42 +57,6 @@ function HELP {
 }
 
 
-install_dependencies() {
-    sudo apt-get update;
-
-    # for pyenv
-    sudo apt-get install -y libedit-dev \
-                            libssl-dev \
-                            zlib1g-dev \
-                            libbz2-dev \
-                            libreadline-dev \
-                            libsqlite3-dev \
-                            llvm \
-                            libncursesw5-dev \
-                            xz-utils \
-                            tk-dev \
-                            libxml2-dev \
-                            libxmlsec1-dev \
-                            libffi-dev \
-                            liblzma-dev;
-
-    # for fc-cache
-    sudo apt-get install -y fontconfig;
-
-    sudo apt-get install -y build-essential \
-                            curl \
-                            dconf-cli \
-                            parallel \
-                            python-is-python3 \
-                            python3-dev \
-                            python3-pip \
-                            python3-venv \
-                            silversearcher-ag \
-                            vim-gtk \
-                            zsh;
-}
-
-
 install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
@@ -138,7 +102,6 @@ install_solarized() {
 
 
 install() {
-    install_dependencies
     install_solarized
     install_coc_dependencies
     update_vim

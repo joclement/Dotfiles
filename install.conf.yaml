@@ -62,6 +62,37 @@
 
 - shell:
     - git submodule update --recursive --init
+    - sudo apt-get update
+    # Install pyenv dependencies
+    - >
+      sudo apt-get install -y libedit-dev \
+                              libssl-dev \
+                              zlib1g-dev \
+                              libbz2-dev \
+                              libreadline-dev \
+                              libsqlite3-dev \
+                              llvm \
+                              libncursesw5-dev \
+                              xz-utils \
+                              tk-dev \
+                              libxml2-dev \
+                              libxmlsec1-dev \
+                              libffi-dev \
+                              liblzma-dev
+    - description: Install package for fc-cache
+      command: sudo apt-get install -y fontconfig
+    - >
+      sudo apt-get install -y build-essential \
+                              curl \
+                              dconf-cli \
+                              parallel \
+                              python-is-python3 \
+                              python3-dev \
+                              python3-pip \
+                              python3-venv \
+                              silversearcher-ag \
+                              vim-gtk \
+                              zsh
     - command: ./install.sh
       stdout: true
       stderr: true
