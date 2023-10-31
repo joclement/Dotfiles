@@ -57,6 +57,7 @@
     ~/.zshrc:
 
 - create:
+    - ~/.git-template
     - ~/.vim/plugin
     - ~/.zfunc
 
