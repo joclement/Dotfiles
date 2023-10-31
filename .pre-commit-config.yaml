@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: check-hooks-apply
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: f71fa2c1f9cf5cb705f73dffe4b21f7c61470ba9  # frozen: v4.4.0
+    rev: c4a0b883114b00d8d76b479c820ce7950211c99b  # frozen: v4.5.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -26,7 +26,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/codespell-project/codespell
-    rev: 355e50e14fd03fe83e4ed9aa0489824b150b3b58  # frozen: v2.2.5
+    rev: 6e41aba91fb32e9feb741a6258eefeb9c6e4a482  # frozen: v2.2.6
     hooks:
       - id: codespell
         exclude: |
@@ -43,7 +43,7 @@ repos:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 13e962fd1e1b8d0921fd072bc5c484be9afd0c4c  # frozen: 3.10.0
+    rev: e9647c7ae1a8fca4067018642135fe7d78c9f0e9  # frozen: 3.12.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
