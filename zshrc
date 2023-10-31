@@ -26,9 +26,6 @@ antigen use oh-my-zsh
 #specify bundles
 antigen bundles <<EOBUNDLES
 
-# Helper for extracting different types of archives
-extract
-
 #for working with git
 voronkovich/gitignore.plugin.zsh
 
@@ -44,15 +41,6 @@ EOBUNDLES
 # TODO find way to add plugin based on version
 
 antigen theme romkatv/powerlevel10k
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs virtualenv)
-if [ -n "$SSH_CLIENT" ]; then
-    POWERLEVEL9K_CONTEXT_TEMPLATE="@%m"
-fi
-# shorten all ancestor dir names
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
-POWERLEVEL9K_SHORTEN_DELIMITER=""
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 antigen apply
 

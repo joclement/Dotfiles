@@ -97,6 +97,8 @@ let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
 " }}}
 
 " CoC {{{
+
+" Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
 set encoding=utf-8
 
 set nobackup
@@ -133,6 +135,12 @@ let g:coc_global_extensions = [
   \ 'coc-ultisnips',
   \ 'coc-yaml'
   \ ]
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
 " }}}
 
 " lvimrc {{{

@@ -44,7 +44,6 @@ approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
 ##########
 
-#Help function
 function HELP {
     echo "Help documentation for ${script}"
     echo -n "Install the dotfiles of this Dotfiles repository. Run this script"
@@ -55,6 +54,57 @@ function HELP {
     echo ""
     echo "Example for installation: $script -i install"
     echo "Example for update: $script -i update"
+}
+
+
+install_nodejs() {
+    echo "install Node.js..."
+    echo "  download setup script"
+    curl --verbose -sL \
+        https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
+        -o /tmp/nodesource_setup.sh
+    echo "  execute setup script"
+    sudo bash /tmp/nodesource_setup.sh
+    echo "  install nodejs"
+    sudo apt-get install -y nodejs
+    echo "DONE"
+}
+
+
+install_coc_dependencies() {
+    echo "install CoC dependencies..."
+    install_nodejs
+    sudo npm install --global yarn
+    echo "DONE"
+}
+
+
+update_vim() {
+    if [ "$approve_vim_update" = true ]; then
+        echo "install/update vim add-ons"
+        vim +PlugUpdate +qall
+
+        echo "upgrade vim-plug"
+        vim +PlugUpgrade +qall
+    fi
+}
+
+
+install_solarized() {
+    echo "install solarized..."
+    cd "$dot_dir"/gnome-terminal-colors-solarized/
+    ./install.sh --scheme dark --profile solarized --skip-dircolors \
+        || echo "WARNING: Failed to install solarized terminal colors"
+    cd "$cwd"
+    echo "DONE"
+}
+
+
+
+install() {
+    install_solarized
+    install_coc_dependencies
+    update_vim
 }
 
 
@@ -72,105 +122,5 @@ while getopts "h" opt; do
             ;;
     esac
 done
-
-
-install_dependencies() {
-    sudo apt-get update;
-
-    echo "install build-essential"
-    sudo apt-get install -y build-essential;
-
-    echo "install Python 3 packages"
-    sudo apt-get install -y python3-pip \
-                            python3-dev \
-                            python3-venv \
-                            python-is-python3;
-
-    echo "install for pyenv"
-    sudo apt-get install -y libedit-dev \
-                            libssl-dev \
-                            zlib1g-dev \
-                            libbz2-dev \
-                            libreadline-dev \
-                            libsqlite3-dev \
-                            llvm \
-                            libncursesw5-dev \
-                            xz-utils \
-                            tk-dev \
-                            libxml2-dev \
-                            libxmlsec1-dev \
-                            libffi-dev \
-                            liblzma-dev;
-
-    echo "install vim"
-    sudo apt-get install -y vim-gtk;
-
-    echo "install fontconfig for fc-cache"
-    sudo apt-get install -y fontconfig;
-
-    echo "install curl"
-    sudo apt-get install -y curl;
-
-    echo "install dconf-cli"
-    sudo apt-get install -y dconf-cli;
-
-    echo "install parallel"
-    sudo apt-get install -y parallel;
-
-    echo "install silversearcher-ag"
-    sudo apt-get install -y silversearcher-ag;
-
-    echo "install zsh"
-    sudo apt-get install -y zsh
-}
-
-install_nodejs() {
-    echo "install Node.js..."
-    echo "  download setup script"
-    curl --verbose -sL \
-        https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
-        -o /tmp/nodesource_setup.sh
-    echo "  execute setup script"
-    sudo bash /tmp/nodesource_setup.sh
-    echo "  install nodejs"
-    sudo apt-get install -y nodejs
-    echo "DONE"
-}
-
-install_coc_dependencies() {
-    echo "install CoC dependencies..."
-    install_nodejs
-    sudo npm install --global yarn
-    echo "DONE"
-}
-
-update_vim() {
-    if [ "$approve_vim_update" = true ]; then
-        echo "install/update vim add-ons"
-        vim +PlugUpdate +qall
-
-        echo "upgrade vim-plug"
-        vim +PlugUpgrade +qall
-    fi
-}
-
-install_solarized() {
-    echo "install solarized..."
-    cd "$dot_dir"/gnome-terminal-colors-solarized/
-    ./install.sh --scheme dark --profile solarized --skip-dircolors || true
-    cd "$cwd"
-    echo "DONE"
-}
-
-doinstalls() {
-    install_solarized
-    install_coc_dependencies
-    update_vim
-}
-
-install() {
-    install_dependencies
-    doinstalls
-}
 
 install
