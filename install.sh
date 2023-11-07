@@ -100,7 +100,6 @@ install_solarized() {
 }
 
 
-
 install() {
     install_solarized
     install_coc_dependencies
