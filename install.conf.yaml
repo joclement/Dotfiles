@@ -51,6 +51,7 @@
       create: true
       path: vim/ftplugin
     ~/.vimrc:
+    ~/.yamllint:
     ~/.zprofile:
     ~/.zsh-syntax-highlighting:
     ~/.zshenv:
