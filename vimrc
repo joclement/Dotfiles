@@ -92,10 +92,6 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
-" ALE {{{
-let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
-" }}}
-
 " CoC {{{
 
 " Based on https://github.com/neoclide/coc.nvim#example-vim-configuration

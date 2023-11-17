@@ -15,3 +15,5 @@ setlocal cino=N-s,g0,n0,+0
 call SetTextWidth(80)
 
 setlocal matchpairs+=<:>
+
+let b:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
