@@ -396,5 +396,4 @@ function! UpdateMakeSettings()
 endfunction
 " }}}
 
-
 " vim:foldmethod=marker foldlevel=0
