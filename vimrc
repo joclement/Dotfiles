@@ -92,10 +92,6 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
-" ALE {{{
-let g:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
-" }}}
-
 " CoC {{{
 
 " Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
@@ -399,6 +395,5 @@ function! UpdateMakeSettings()
     set makeprg=nice\ -n\ 19\ make\ -j\ $MAKE_PARALLELIZATION\ -C\ $MY_BUILD_DIR
 endfunction
 " }}}
-
 
 " vim:foldmethod=marker foldlevel=0
