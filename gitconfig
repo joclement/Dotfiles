@@ -65,3 +65,5 @@
     recurse = true
 [user]
     useConfigOnly = true
+[rerere]
+    enabled = true
