@@ -67,3 +67,5 @@
     useConfigOnly = true
 [rerere]
     enabled = true
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+    path = ~/.github_userconfig
