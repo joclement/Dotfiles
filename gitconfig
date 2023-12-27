@@ -8,18 +8,18 @@
     br = branch
     ci = commit
     cia = commit --amend
-    cian = commit --amend --no-edit
+    cian = cia --no-edit
     cm = !(git branch --list | grep master && git checkout master) || git checkout main
     co = checkout
     dca = diff --cached
     delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
     delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
     fpu = push --force-with-lease
-    fpus = push --force-with-lease --push-option=ci.skip
+    fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     last = log --stat -1 HEAD
-    ll = log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat
-    rbc = !(GIT_EDITOR=true git rebase --continue)
+    rbc = rebase --continue
+    rbcn = !(GIT_EDITOR=true git rbc)
     slog = log --stat
     st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
