@@ -30,7 +30,7 @@
 ############################
 
 
-set -e
+set -euo pipefail
 
 cwd=$(pwd)
 
@@ -92,10 +92,9 @@ update_vim() {
 
 install_solarized() {
     echo "install solarized..."
-    cd "$dot_dir"/gnome-terminal-colors-solarized/
-    ./install.sh --scheme dark --profile solarized --skip-dircolors \
+    "$dot_dir"/gnome-terminal-colors-solarized/install.sh \
+        --scheme dark --profile solarized --skip-dircolors \
         || echo "WARNING: Failed to install solarized terminal colors"
-    cd "$cwd"
     echo "DONE"
 }
 

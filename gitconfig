@@ -1,3 +1,5 @@
+# vi: ft=gitconfig
+
 [include]
     path = ~/.gituserconfig
 [advice]
@@ -9,15 +11,16 @@
     ci = commit
     cia = commit --amend
     cian = cia --no-edit
-    cm = !(git branch --list | grep master && git checkout master) || git checkout main
+    cm = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD \
+        | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
-    delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
-    delmrgmas = "!git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
+    delmrgmain = !git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d
+    delmrgmas = !git branch --merged master | grep  -v '\\*\\|master' | xargs -n 1 git branch -d
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
-    last = log --stat -1 HEAD
+    last = slog -1 HEAD
     rbc = rebase --continue
     rbcn = !(GIT_EDITOR=true git rbc)
     slog = log --stat
