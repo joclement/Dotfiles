@@ -30,7 +30,7 @@
 ############################
 
 
-set -e
+set -euo pipefail
 
 cwd=$(pwd)
 
