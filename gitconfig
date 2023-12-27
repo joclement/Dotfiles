@@ -18,7 +18,8 @@
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     last = log --stat -1 HEAD
-    rbc = !(GIT_EDITOR=true git rebase --continue)
+    rbc = rebase --continue
+    rbcn = !(GIT_EDITOR=true git rbc)
     slog = log --stat
     st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
