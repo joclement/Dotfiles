@@ -11,7 +11,7 @@
     ci = commit
     cia = commit --amend
     cian = cia --no-edit
-    cm = !(git branch --list | grep master && git checkout master) || git checkout main
+    cm = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
     delmrgmain = "!git branch --merged main | grep  -v '\\*\\|main' | xargs -n 1 git branch -d"
