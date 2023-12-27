@@ -20,7 +20,7 @@
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
-    last = log --stat -1 HEAD
+    last = slog -1 HEAD
     rbc = rebase --continue
     rbcn = !(GIT_EDITOR=true git rbc)
     slog = log --stat
