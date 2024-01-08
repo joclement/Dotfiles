@@ -243,7 +243,6 @@ nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 if executable('ag')
     set grepprg=ag\ --hidden\ --vimgrep\
                 \ --ignore-dir=.git\
-                \ --ignore-dir=.git\
                 \ --ignore-dir=build\
                 \ --ignore-dir=.mypy_cache\
                 \ --ignore-dir=.nox\
