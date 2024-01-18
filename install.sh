@@ -50,9 +50,6 @@ function HELP {
     echo ""
     echo "Basic usage: ./$script"
     echo "-h    Displays this help message. No further functions are performed."
-    echo ""
-    echo "Example for installation: $script -i install"
-    echo "Example for update: $script -i update"
 }
 
 
