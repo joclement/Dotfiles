@@ -46,14 +46,10 @@ approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
 
 function HELP {
     echo "Help documentation for ${script}"
-    echo -n "Install the dotfiles of this Dotfiles repository. Run this script"
-    echo " in this Dotfiles folder."
+    echo "Install this Dotfiles repo. Run this script in this Dotfiles folder."
     echo ""
     echo "Basic usage: ./$script"
     echo "-h    Displays this help message. No further functions are performed."
-    echo ""
-    echo "Example for installation: $script -i install"
-    echo "Example for update: $script -i update"
 }
 
 

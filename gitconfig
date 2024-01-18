@@ -67,6 +67,7 @@
 [submodule]
     recurse = true
 [user]
+    name = Joris Clement
     useConfigOnly = true
 [rerere]
     enabled = true
