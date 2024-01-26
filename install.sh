@@ -42,7 +42,7 @@ dot_dir=$cwd
 
 ##########
 
-function HELP {
+help() {
     echo "Help documentation for ${script}"
     echo "Install this Dotfiles repo. Run this script in this Dotfiles folder."
     echo ""
@@ -105,13 +105,13 @@ install() {
 while getopts "h" opt; do
     case $opt in
         h)
-            HELP;
+            help;
             exit 0
             ;;
         \?)
             echo "Invalid option:
             -$OPTARG" >&2
-            HELP;
+            help;
             exit 1
             ;;
     esac
