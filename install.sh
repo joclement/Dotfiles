@@ -40,8 +40,6 @@ script=$(basename "$0")
 # dotfiles directory
 dot_dir=$cwd
 
-approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
-
 ##########
 
 function HELP {
@@ -76,6 +74,8 @@ install_coc_dependencies() {
 
 
 update_vim() {
+    approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
+
     if [ "$approve_vim_update" = true ]; then
         echo "install/update vim add-ons"
         vim +PlugUpdate +qall
