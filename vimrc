@@ -12,9 +12,6 @@ Plug 'neoclide/coc.nvim',
 
 Plug 'altercation/vim-colors-solarized'
 
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
 Plug 'Raimondi/delimitMate'
 
 Plug 'SirVer/ultisnips'
@@ -78,10 +75,17 @@ let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
 " }}}
 
-" NERDTree {{{
-map <C-e> :NERDTreeMirrorToggle<CR>
+" built-in file explorer {{{
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
 
-let NERDTreeIgnore = ['\.pyc$']
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * if expand("%") == "" | edit . | endif
+augroup END
+
 " }}}
 
 " Dispatch {{{
