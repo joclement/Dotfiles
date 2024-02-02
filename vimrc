@@ -67,7 +67,6 @@ Plug 'preservim/tagbar'
 call plug#end()
 " }}}
 
-
 " plugin settings {{{
 
 " vim-airline {{{
@@ -85,7 +84,6 @@ augroup ProjectDrawer
   autocmd!
   autocmd VimEnter * if expand("%") == "" | edit . | endif
 augroup END
-
 " }}}
 
 " Dispatch {{{
@@ -97,7 +95,6 @@ command! Cw call DispatchCw()
 " }}}
 
 " CoC {{{
-
 " Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
 set encoding=utf-8
 
@@ -140,7 +137,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
 " }}}
 
 " lvimrc {{{
@@ -157,12 +153,10 @@ let g:tex_flavor='latex'
 
 " }}}
 
-
 " colorscheme {{{
 set background=dark
 colorscheme solarized
 " }}}
-
 
 " row numbers {{{
 set relativenumber
@@ -178,7 +172,6 @@ nnoremap <silent> <F6> :call ToggleLineNumber()<CR>
 
 " }}}
 
-
 " end column highlighting {{{
 function! SetTextWidth(myTextwidth)
     let myEndColumn = a:myTextwidth
@@ -189,7 +182,6 @@ endfunction
 
 call SetTextWidth(80)
 " }}}
-
 
 " function jump to last pos open {{{
 function! JumpToLastPosOpen()
@@ -203,7 +195,6 @@ endfunction
 autocmd BufReadPost * call JumpToLastPosOpen()
 " }}}
 
-
 " cursor movement by line {{{
 noremap <buffer> <silent> k gk
 noremap <buffer> <silent> j gj
@@ -214,7 +205,6 @@ onoremap <silent> j gj
 onoremap <silent> k gk
 " }}}
 
-
 " indentation {{{
 set expandtab
 set tabstop=4
@@ -222,13 +212,11 @@ set shiftwidth=4
 set shiftround
 " }}}
 
-
 " syntax highlighting {{{
 let g:load_doxygen_syntax=1
 let g:doxygen_javadoc_autobrief=0
 let g:python_highlight_all = 1
 " }}}
-
 
 " search, replace {{{
 set ignorecase
@@ -258,7 +246,6 @@ else
                 \ --exclude=tags\ -I
 endif
 " }}}
-
 
 " spelling {{{
 highlight SpellErrors guibg=red guifg=black ctermbg=red ctermfg=black
@@ -341,7 +328,6 @@ function! DeleteHiddenUnmodifiedBuffers()
 endfunction
 " }}}
 
-
 " auto close quickfix {{{
 function! AutoCloseQuickfix()
     if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"
@@ -355,13 +341,11 @@ augroup QFClose
 augroup END
 " }}}
 
-
 " folding {{{
 set foldmethod=syntax
 set foldlevel=3
 set foldnestmax=5
 " }}}
-
 
 " misc {{{
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
