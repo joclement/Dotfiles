@@ -34,7 +34,6 @@ set -euo pipefail
 
 cwd=$(pwd)
 
-# the name of the script
 script=$(basename "$0")
 
 # dotfiles directory
