@@ -29,7 +29,6 @@
 # they get lost!
 ############################
 
-
 set -euo pipefail
 
 cwd=$(pwd)
@@ -49,7 +48,6 @@ help() {
     echo "-h    Displays this help message. No further functions are performed."
 }
 
-
 install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
@@ -65,14 +63,12 @@ install_nodejs() {
     echo "DONE"
 }
 
-
 install_coc_dependencies() {
     echo "install CoC dependencies..."
     install_nodejs
     sudo npm install --global yarn
     echo "DONE"
 }
-
 
 update_vim() {
     approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
@@ -86,7 +82,6 @@ update_vim() {
     fi
 }
 
-
 install_solarized() {
     echo "install solarized..."
     "$dot_dir"/gnome-terminal-colors-solarized/install.sh \
@@ -94,7 +89,6 @@ install_solarized() {
         || echo "WARNING: Failed to install solarized terminal colors"
     echo "DONE"
 }
-
 
 install() {
     install_solarized
@@ -107,13 +101,13 @@ install() {
 while getopts "h" opt; do
     case $opt in
         h)
-            help;
+            help
             exit 0
             ;;
         \?)
             echo "Invalid option:
             -$OPTARG" >&2
-            help;
+            help
             exit 1
             ;;
     esac

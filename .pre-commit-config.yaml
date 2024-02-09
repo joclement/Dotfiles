@@ -60,6 +60,10 @@ repos:
     rev: 2b74735540f79457a50369e5c17a2c35d52c3298  # frozen: 2.7.3
     hooks:
       - id: editorconfig-checker
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.7.0-4
+    hooks:
+      - id: shfmt
 
 ci:
   autoupdate_schedule: quarterly
