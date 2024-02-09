@@ -102,6 +102,7 @@ install() {
     update_vim
 }
 
+##########
 
 while getopts "h" opt; do
     case $opt in
