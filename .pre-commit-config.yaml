@@ -61,7 +61,7 @@ repos:
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: v3.7.0-4
+    rev: 03afcba30046268bdc9b59f315fc5385d25dccee  # frozen: v3.7.0-4
     hooks:
       - id: shfmt
 
