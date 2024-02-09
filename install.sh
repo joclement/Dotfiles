@@ -31,17 +31,19 @@
 
 set -euo pipefail
 
-script=$(basename "$0")
+SCRIPT=$(basename "$0")
+readonly SCRIPT
 
-dotfiles_dir=$(dirname "$0")
+DOTFILES_DIR=$(dirname "$0")
+readonly DOTFILES_DIR
 
 ##########
 
 help() {
-    echo "Help documentation for ${script}"
+    echo "Help documentation for ${SCRIPT}"
     echo "Install this Dotfiles repo. Run this script in this Dotfiles folder."
     echo ""
-    echo "Basic usage: ./$script"
+    echo "Basic usage: ./$SCRIPT"
     echo "-h    Displays this help message. No further functions are performed."
 }
 
@@ -81,7 +83,7 @@ update_vim() {
 
 install_solarized() {
     echo "install solarized..."
-    "$dotfiles_dir"/gnome-terminal-colors-solarized/install.sh \
+    "$DOTFILES_DIR"/gnome-terminal-colors-solarized/install.sh \
         --scheme dark --profile solarized --skip-dircolors \
         || echo "WARNING: Failed to install solarized terminal colors"
     echo "DONE"
