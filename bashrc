@@ -76,7 +76,8 @@ esac
 ########################OWN SETTINGS##################################
 
 #changes SHELL variable to bash, if using bash
-export SHELL=$(which bash)
+SHELL=$(which bash)
+export SHELL
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
