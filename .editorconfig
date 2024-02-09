@@ -7,7 +7,16 @@ max_line_length = 80
 insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = space
-indent_size = 4
 
 [*.{yaml,yml}]
 indent_size = 2
+
+[autocompletion_zsh]
+max_line_length = unset
+
+[vim/autoload/plug.vim]
+indent_size = unset
+max_line_length = unset
+
+[vscode/{extensions,settings}.json]
+insert_final_newline = unset
