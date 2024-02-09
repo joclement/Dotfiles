@@ -31,11 +31,9 @@
 
 set -euo pipefail
 
-cwd=$(pwd)
-
 script=$(basename "$0")
 
-dotfiles_dir=$cwd
+dotfiles_dir=$(dirname "$0")
 
 ##########
 
