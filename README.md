@@ -1,6 +1,10 @@
-[![Test](https://github.com/joclement/Dotfiles/workflows/Test/badge.svg)](https://github.com/joclement/Dotfiles/actions?workflow=Test)
-[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/joclement/Dotfiles/master.svg)](https://results.pre-commit.ci/latest/github/joclement/Dotfiles/master)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Test](https://github.com/joclement/Dotfiles/workflows/Test/badge.svg)](
+  https://github.com/joclement/Dotfiles/actions?workflow=Test)
+[![pre-commit.ci status](
+  https://results.pre-commit.ci/badge/github/joclement/Dotfiles/master.svg)](
+  https://results.pre-commit.ci/latest/github/joclement/Dotfiles/master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](
+  https://opensource.org/licenses/MIT)
 
 
 Dotfiles
@@ -41,10 +45,13 @@ After cloning this repository to a suitable location like `~/Dotfiles` just run
 
 Nearly all files in this project are licensed under [the MIT license](LICENSE).
 Exceptions are:
-* The file [vim/autoload/plug.vim](vim/autoload/plug.vim) has a different copyright owner
+* The file [vim/autoload/plug.vim](vim/autoload/plug.vim) has a different
+  copyright owner
 * The used submodules
 * The file [install.sh](install.sh), licensed with GPLv3 as it is based on
-[this file](https://github.com/michaeljsmalley/dotfiles/blob/dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh)
+[this file](
+  https://github.com/michaeljsmalley/dotfiles/blob/
+  dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh)
 
 ### Acknowledgments
 

@@ -29,34 +29,32 @@
 # they get lost!
 ############################
 
-
 set -euo pipefail
 
-cwd=$(pwd)
+SCRIPT=$(basename "$0")
+readonly SCRIPT
 
-# the name of the script
-script=$(basename "$0")
-
-# dotfiles directory
-dot_dir=$cwd
+DOTFILES_DIR=$(dirname "$0")
+readonly DOTFILES_DIR
 
 ##########
 
 help() {
-    echo "Help documentation for ${script}"
+    echo "Help documentation for ${SCRIPT}"
     echo "Install this Dotfiles repo. Run this script in this Dotfiles folder."
     echo ""
-    echo "Basic usage: ./$script"
+    echo "Basic usage: ./$SCRIPT"
     echo "-h    Displays this help message. No further functions are performed."
 }
-
 
 install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
+    # editorconfig-checker-disable max_line_length
     curl --verbose -sL \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
         -o /tmp/nodesource_setup.sh
+    # editorconfig-checker-enable max_line_length
     echo "  execute setup script"
     sudo bash /tmp/nodesource_setup.sh
     echo "  install nodejs"
@@ -64,14 +62,12 @@ install_nodejs() {
     echo "DONE"
 }
 
-
 install_coc_dependencies() {
     echo "install CoC dependencies..."
     install_nodejs
     sudo npm install --global yarn
     echo "DONE"
 }
-
 
 update_vim() {
     approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
@@ -85,15 +81,13 @@ update_vim() {
     fi
 }
 
-
 install_solarized() {
     echo "install solarized..."
-    "$dot_dir"/gnome-terminal-colors-solarized/install.sh \
+    "$DOTFILES_DIR"/gnome-terminal-colors-solarized/install.sh \
         --scheme dark --profile solarized --skip-dircolors \
         || echo "WARNING: Failed to install solarized terminal colors"
     echo "DONE"
 }
-
 
 install() {
     install_solarized
@@ -101,17 +95,18 @@ install() {
     update_vim
 }
 
+##########
 
 while getopts "h" opt; do
     case $opt in
         h)
-            help;
+            help
             exit 0
             ;;
         \?)
             echo "Invalid option:
             -$OPTARG" >&2
-            help;
+            help
             exit 1
             ;;
     esac
