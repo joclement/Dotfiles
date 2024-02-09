@@ -1,7 +1,7 @@
 # vi: ft=bash
 
-###This file contains all the settings shared between different shells(bash, zsh)
-###It just sources(enables) the other shared files, if they exist
+# This file contains all the settings shared between different shells(bash, zsh)
+# It just sources(enables) the other shared files, if they exist
 
 source $HOME/.shared_aliases
 source $HOME/.env

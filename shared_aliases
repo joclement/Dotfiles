@@ -5,7 +5,10 @@
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep -I --color=auto --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache} --exclude=tags'
+alias grep='grep -I \
+                 --color=auto \
+                 --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache} \
+                 --exclude=tags'
 # use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'
 alias used_ports='sudo lsof -i -P -n | grep LISTEN'
@@ -64,5 +67,8 @@ function gitfixup {
 }
 
 function list_dirty_gits {
-    find ./ -type d -name '.git' -exec sh -c 'cd "{}/.." && git diff --quiet --ignore-submodules --exit-code || echo "Dirty: {}"' \;
+    is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
+    find ./ -type d \
+            -name '.git' \
+            -exec sh -c "cd '{}/..' && $is_git_dirty || echo 'Dirty: {}'" \;
 }
