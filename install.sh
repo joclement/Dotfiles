@@ -35,8 +35,7 @@ cwd=$(pwd)
 
 script=$(basename "$0")
 
-# dotfiles directory
-dot_dir=$cwd
+dotfiles_dir=$cwd
 
 ##########
 
@@ -84,7 +83,7 @@ update_vim() {
 
 install_solarized() {
     echo "install solarized..."
-    "$dot_dir"/gnome-terminal-colors-solarized/install.sh \
+    "$dotfiles_dir"/gnome-terminal-colors-solarized/install.sh \
         --scheme dark --profile solarized --skip-dircolors \
         || echo "WARNING: Failed to install solarized terminal colors"
     echo "DONE"
