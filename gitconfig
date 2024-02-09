@@ -41,6 +41,8 @@
 [diff]
     ignoreSubmodules = dirty
     tool = vimdiff
+[fetch]
+    parallel = 8
 [filter "lfs"]
     clean = git-lfs clean -- %f
     process = git-lfs filter-process
