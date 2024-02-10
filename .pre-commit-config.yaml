@@ -64,6 +64,11 @@ repos:
     rev: 03afcba30046268bdc9b59f315fc5385d25dccee  # frozen: v3.7.0-4
     hooks:
       - id: shfmt
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.0
+    hooks:
+      - id: check-github-workflows
+      - id: check-dependabot
 
 ci:
   autoupdate_schedule: quarterly
