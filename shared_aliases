@@ -13,6 +13,7 @@ alias grep='grep -I \
 alias open_ports='netstat -tulpn | grep LISTEN'
 alias used_ports='sudo lsof -i -P -n | grep LISTEN'
 alias vless='vim -R -'
+alias vi='vim'
 
 alias ..='cd ..'
 alias ...='cd ../..'
