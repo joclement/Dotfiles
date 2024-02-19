@@ -29,6 +29,7 @@
       path: config/zathura
     ~/.dircolors-solarized:
     ~/.env:
+    ~/.fzf:
     ~/.gitconfig:
     ~/.github_userconfig:
     ~/.gitignore:

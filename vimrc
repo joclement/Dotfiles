@@ -2,6 +2,10 @@ set nocompatible
 
 " plugin settings {{{
 
+" fzf {{{
+set runtimepath+=~/.fzf
+" }}}
+
 " vim-airline {{{
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
