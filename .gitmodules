@@ -17,3 +17,105 @@
 [submodule "pyenv"]
     path = pyenv
     url = https://github.com/pyenv/pyenv
+[submodule "vim/pack/plugins/start/vim-matchup"]
+    path = vim/pack/plugins/start/vim-matchup
+    url = https://github.com/andymass/vim-matchup.git
+[submodule "vim/pack/plugins/start/coc.nvim"]
+    path = vim/pack/plugins/start/coc.nvim
+    url = https://github.com/neoclide/coc.nvim.git
+[submodule "vim/pack/plugins/start/nerdtree"]
+    path = vim/pack/plugins/start/nerdtree
+    url = https://github.com/preservim/nerdtree.git
+[submodule "vim/pack/plugins/start/vim-nerdtree-tabs"]
+    path = vim/pack/plugins/start/vim-nerdtree-tabs
+    url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule "vim/pack/plugins/start/ultisnips"]
+    path = vim/pack/plugins/start/ultisnips
+    url = https://github.com/SirVer/ultisnips.git
+[submodule "vim/pack/plugins/start/vim-snippets"]
+    path = vim/pack/plugins/start/vim-snippets
+    url = https://github.com/honza/vim-snippets.git
+[submodule "vim/pack/plugins/start/ale"]
+    path = vim/pack/plugins/start/ale
+    url = https://github.com/dense-analysis/ale.git
+[submodule "vim/pack/plugins/start/vim-python-pep8-indent"]
+    path = vim/pack/plugins/start/vim-python-pep8-indent
+    url = https://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule "vim/pack/plugins/start/python-syntax"]
+    path = vim/pack/plugins/start/python-syntax
+    url = https://github.com/vim-python/python-syntax.git
+[submodule "vim/pack/plugins/start/vim-surround"]
+    path = vim/pack/plugins/start/vim-surround
+    url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/plugins/start/vim-abolish"]
+    path = vim/pack/plugins/start/vim-abolish
+    url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/pack/plugins/start/vim-localvimrc"]
+    path = vim/pack/plugins/start/vim-localvimrc
+    url = https://github.com/embear/vim-localvimrc.git
+[submodule "vim/pack/plugins/start/vim-dispatch"]
+    path = vim/pack/plugins/start/vim-dispatch
+    url = https://github.com/tpope/vim-dispatch.git
+[submodule "vim/pack/plugins/start/gundo.vim"]
+    path = vim/pack/plugins/start/gundo.vim
+    url = https://github.com/sjl/gundo.vim.git
+[submodule "vim/pack/plugins/start/vim-latex"]
+    path = vim/pack/plugins/start/vim-latex
+    url = https://github.com/vim-latex/vim-latex.git
+[submodule "vim/pack/plugins/start/vim-systemd-syntax"]
+    path = vim/pack/plugins/start/vim-systemd-syntax
+    url = https://github.com/Matt-Deacalion/vim-systemd-syntax.git
+[submodule "fzf"]
+    path = fzf
+    url = https://github.com/junegunn/fzf.git
+[submodule "vim/pack/plugins/start/fzf.vim"]
+    path = vim/pack/plugins/start/fzf.vim
+    url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/pack/plugins/start/vim-toml"]
+    path = vim/pack/plugins/start/vim-toml
+    url = https://github.com/cespare/vim-toml.git
+[submodule "vim/pack/plugins/start/editorconfig-vim"]
+    path = vim/pack/plugins/start/editorconfig-vim
+    url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/pack/plugins/start/vim-fugitive"]
+    path = vim/pack/plugins/start/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/plugins/start/vim-rhubarb"]
+    path = vim/pack/plugins/start/vim-rhubarb
+    url = https://github.com/tpope/vim-rhubarb.git
+[submodule "vim/pack/plugins/start/fugitive-gitlab.vim"]
+    path = vim/pack/plugins/start/fugitive-gitlab.vim
+    url = https://github.com/shumphrey/fugitive-gitlab.vim.git
+[submodule "vim/pack/plugins/start/csv.vim"]
+    path = vim/pack/plugins/start/csv.vim
+    url = https://github.com/chrisbra/csv.vim.git
+[submodule "vim/pack/plugins/start/vim-easy-align"]
+    path = vim/pack/plugins/start/vim-easy-align
+    url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vim/pack/plugins/start/vim-gutentags"]
+    path = vim/pack/plugins/start/vim-gutentags
+    url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim/pack/plugins/start/black"]
+    path = vim/pack/plugins/start/black
+    url = https://github.com/psf/black.git
+[submodule "vim/pack/plugins/start/vim-airline"]
+    path = vim/pack/plugins/start/vim-airline
+    url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/plugins/start/vim-airline-themes"]
+    path = vim/pack/plugins/start/vim-airline-themes
+    url = https://github.com/vim-airline/vim-airline-themes.git
+[submodule "vim/pack/plugins/start/vim-SyntaxRange"]
+    path = vim/pack/plugins/start/vim-SyntaxRange
+    url = https://github.com/inkarkat/vim-SyntaxRange.git
+[submodule "vim/pack/plugins/start/tagbar"]
+    path = vim/pack/plugins/start/tagbar
+    url = https://github.com/preservim/tagbar.git
+[submodule "vim/pack/plugins/start/vim-colors-solarized"]
+  path = vim/pack/plugins/start/vim-colors-solarized
+  url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/pack/plugins/opt/vim/pack/plugins/opt/solarized8"]
+    path = vim/pack/plugins/opt/vim/pack/plugins/opt/solarized8
+    url = https://github.com/lifepillar/vim-solarized8.git
+[submodule "vim/pack/plugins/opt/a.vim"]
+    path = vim/pack/plugins/opt/a.vim
+    url = https://github.com/vim-scripts/a.vim.git

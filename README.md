@@ -45,8 +45,6 @@ After cloning this repository to a suitable location like `~/Dotfiles` just run
 
 Nearly all files in this project are licensed under [the MIT license](LICENSE).
 Exceptions are:
-* The file [vim/autoload/plug.vim](vim/autoload/plug.vim) has a different
-  copyright owner
 * The used submodules
 * The file [install.sh](install.sh), licensed with GPLv3 as it is based on
 [this file](
