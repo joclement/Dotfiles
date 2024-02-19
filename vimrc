@@ -1,75 +1,5 @@
 set nocompatible
 
-" plugin manager {{{
-call plug#begin('~/.vim/plugged')
-
-Plug 'andymass/vim-matchup'
-
-Plug 'neoclide/coc.nvim',
-    \ {'branch': 'master',
-    \  'commit': '2a0e5546ac287398b6ec52d425a5cbecbb72e37e',
-    \  'do': 'yarn install --frozen-lockfile'}
-
-Plug 'altercation/vim-colors-solarized'
-
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
-Plug 'Raimondi/delimitMate'
-
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-Plug 'dense-analysis/ale'
-
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'vim-python/python-syntax'
-
-Plug 'vim-scripts/a.vim', { 'for': 'cpp' }
-
-Plug 'tpope/vim-surround'
-
-Plug 'tpope/vim-abolish'
-
-Plug 'embear/vim-localvimrc'
-
-Plug 'tpope/vim-dispatch', { 'tag': 'v1.5' }
-
-Plug 'sjl/gundo.vim'
-
-Plug 'vim-latex/vim-latex'
-
-Plug 'Matt-Deacalion/vim-systemd-syntax'
-
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'cespare/vim-toml'
-
-Plug 'editorconfig/editorconfig-vim'
-
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'shumphrey/fugitive-gitlab.vim'
-
-Plug 'chrisbra/csv.vim'
-
-Plug 'junegunn/vim-easy-align'
-
-Plug 'ludovicchabant/vim-gutentags'
-
-Plug 'psf/black', { 'branch': 'stable' }
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'inkarkat/vim-SyntaxRange'
-
-Plug 'preservim/tagbar'
-
-call plug#end()
-" }}}
-
 " plugin settings {{{
 
 " vim-airline {{{
@@ -162,6 +92,7 @@ let g:tex_flavor='latex'
 " }}}
 
 " colorscheme {{{
+syntax enable
 set background=dark
 colorscheme solarized
 " }}}

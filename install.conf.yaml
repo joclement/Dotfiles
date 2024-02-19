@@ -42,9 +42,9 @@
     ~/.shared_aliases:
     ~/.shared_shell:
     ~/.tmux.conf:
-    ~/.vim/autoload:
+    ~/.vim/pack:
       create: true
-      path: vim/autoload
+      path: vim/pack
     ~/.vim/coc-settings.json:
       create: true
       path: vim/coc-settings.json
@@ -101,5 +101,8 @@
       stderr: true
     - command: ./configure_powerlevel10k.sh
     - command: echo 'Run `chsh -s $(which zsh)`'
+      stdout: true
+      stderr: true
+    - command: ./install-vim-plugins.sh
       stdout: true
       stderr: true
