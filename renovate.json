@@ -4,6 +4,7 @@
     "github>renovatebot/.github"
   ],
   "git-submodules": {
-    "enabled": true
+    "enabled": true,
+    "automerge": false
   }
 }
