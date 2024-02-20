@@ -4,12 +4,7 @@
     "github>renovatebot/.github"
   ],
   "git-submodules": {
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "matchDepTypes": ["submodule"],
-      "automerge": false
-    }
-  ]
+    "enabled": true,
+    "automerge": false
+  }
 }
