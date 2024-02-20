@@ -4,7 +4,12 @@
     "github>renovatebot/.github"
   ],
   "git-submodules": {
-    "enabled": true,
-    "automerge": false
-  }
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": false
+    }
+  ]
 }
