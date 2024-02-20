@@ -51,7 +51,7 @@ install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
     # editorconfig-checker-disable
-    curl --verbose --silent \
+    curl --verbose --silent --fail --show-error \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
         --output /tmp/nodesource_setup.sh
     # editorconfig-checker-enable
