@@ -69,18 +69,6 @@ install_coc_dependencies() {
     echo "DONE"
 }
 
-update_vim() {
-    approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
-
-    if [ "$approve_vim_update" = true ]; then
-        echo "install/update vim add-ons"
-        vim +PlugUpdate +qall
-
-        echo "upgrade vim-plug"
-        vim +PlugUpgrade +qall
-    fi
-}
-
 install_solarized() {
     echo "install solarized..."
     "$DOTFILES_DIR"/gnome-terminal-colors-solarized/install.sh \
@@ -92,7 +80,6 @@ install_solarized() {
 install() {
     install_solarized
     install_coc_dependencies
-    update_vim
 }
 
 ##########

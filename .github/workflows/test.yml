@@ -19,4 +19,4 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
-      - run: APPROVE_VIM_UPDATE=false ./install
+      - run: ./install
