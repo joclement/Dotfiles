@@ -8,7 +8,7 @@
   },
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": ["submodule"],
       "automerge": false
     }
   ]
