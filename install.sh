@@ -51,14 +51,14 @@ install_nodejs() {
     echo "install Node.js..."
     echo "  download setup script"
     # editorconfig-checker-disable
-    curl --verbose -sL \
+    curl --verbose --silent --fail --show-error \
         https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
-        -o /tmp/nodesource_setup.sh
+        --output /tmp/nodesource_setup.sh
     # editorconfig-checker-enable
     echo "  execute setup script"
     sudo bash /tmp/nodesource_setup.sh
     echo "  install nodejs"
-    sudo apt-get install -y nodejs
+    sudo apt-get install --yes nodejs
     echo "DONE"
 }
 
@@ -67,18 +67,6 @@ install_coc_dependencies() {
     install_nodejs
     sudo npm install --global yarn
     echo "DONE"
-}
-
-update_vim() {
-    approve_vim_update="${APPROVE_VIM_UPDATE:-default}"
-
-    if [ "$approve_vim_update" = true ]; then
-        echo "install/update vim add-ons"
-        vim +PlugUpdate +qall
-
-        echo "upgrade vim-plug"
-        vim +PlugUpgrade +qall
-    fi
 }
 
 install_solarized() {
@@ -92,7 +80,6 @@ install_solarized() {
 install() {
     install_solarized
     install_coc_dependencies
-    update_vim
 }
 
 ##########
