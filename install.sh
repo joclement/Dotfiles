@@ -65,7 +65,6 @@ install_nodejs() {
 install_coc_dependencies() {
     echo "install CoC dependencies..."
     install_nodejs
-    sudo npm install --global yarn
     echo "DONE"
 }
 

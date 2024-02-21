@@ -1,5 +1,10 @@
 set nocompatible
 
+" basic settings {{{
+syntax enable
+filetype plugin indent on
+" }}}
+
 " plugin settings {{{
 
 " fzf {{{
@@ -95,10 +100,13 @@ let g:gundo_prefer_python3 = 1
 let g:tex_flavor='latex'
 " }}}
 
+" codeium {{{
+let g:codeium_enabled = v:false
+" }}}
+
 " }}}
 
 " colorscheme {{{
-syntax enable
 set background=dark
 colorscheme solarized
 " }}}
