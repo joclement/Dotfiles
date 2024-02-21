@@ -122,3 +122,4 @@
 [submodule "vim/pack/plugins/start/codeium.vim"]
     path = vim/pack/plugins/start/codeium.vim
     url = https://github.com/Exafunction/codeium.vim
+    branch = release
