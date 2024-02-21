@@ -56,6 +56,7 @@
 [submodule "vim/pack/plugins/start/vim-dispatch"]
     path = vim/pack/plugins/start/vim-dispatch
     url = https://github.com/tpope/vim-dispatch.git
+    branch = v1.5
 [submodule "vim/pack/plugins/start/gundo.vim"]
     path = vim/pack/plugins/start/gundo.vim
     url = https://github.com/sjl/gundo.vim.git
