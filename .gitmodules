@@ -119,6 +119,6 @@
 [submodule "vim/pack/plugins/opt/a.vim"]
     path = vim/pack/plugins/opt/a.vim
     url = https://github.com/vim-scripts/a.vim.git
-[submodule "vim/pack/Exafunction/start/codeium.vim"]
-    path = vim/pack/Exafunction/start/codeium.vim
+[submodule "vim/pack/plugins/start/codeium.vim"]
+    path = vim/pack/plugins/start/codeium.vim
     url = https://github.com/Exafunction/codeium.vim
