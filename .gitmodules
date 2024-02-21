@@ -114,9 +114,6 @@
 [submodule "vim/pack/plugins/start/vim-colors-solarized"]
   path = vim/pack/plugins/start/vim-colors-solarized
   url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "vim/pack/plugins/opt/vim/pack/plugins/opt/solarized8"]
-    path = vim/pack/plugins/opt/vim/pack/plugins/opt/solarized8
-    url = https://github.com/lifepillar/vim-solarized8.git
 [submodule "vim/pack/plugins/opt/a.vim"]
     path = vim/pack/plugins/opt/a.vim
     url = https://github.com/vim-scripts/a.vim.git
