@@ -13,7 +13,7 @@ This repository includes my custom Dotfiles.
 
 This Dotfiles repository focuses on:
 * zsh using antigen
-* vim using vim-plug for plugin management
+* vim using the built-in plugin manager pack for plugin management
 * solarized
 * git
 * own small functions and aliases
