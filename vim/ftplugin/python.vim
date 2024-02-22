@@ -9,4 +9,6 @@ if executable('black')
   set formatprg=black\ -q\ 2>/dev/null\ --stdin-filename\ %\ -
 endif
 
+let b:ale_fixers = ['autoimport']
+
 CodeiumEnable
