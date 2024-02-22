@@ -27,6 +27,7 @@
     ~/.config/zathura:
       create: true
       path: config/zathura
+    ~/.ctags.d:
     ~/.dircolors-solarized:
     ~/.env:
     ~/.fzf:
