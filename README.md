@@ -47,9 +47,7 @@ Nearly all files in this project are licensed under [the MIT license](LICENSE).
 Exceptions are:
 * The used submodules
 * The file [install.sh](install.sh), licensed with GPLv3 as it is based on
-[this file](
-  https://github.com/michaeljsmalley/dotfiles/blob/
-  dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh)
+  [this file][1]
 
 ### Acknowledgments
 
@@ -57,3 +55,7 @@ This repository used content from
 [Michael Smalley's Dotfiles](https://github.com/michaeljsmalley/Dotfiles)
 for linking the Dotfiles.
 I thank him for sharing his Dotfiles.
+
+[comment]: editorconfig-checker-disable
+[1]: https://github.com/michaeljsmalley/dotfiles/blob/dfda5948f2afe3d7d2c9087b04b56f8e4918abd0/makesymlinks.sh
+[comment]: editorconfig-checker-enable
