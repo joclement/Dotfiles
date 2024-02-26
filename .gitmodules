@@ -23,6 +23,7 @@
 [submodule "vim/pack/plugins/start/coc.nvim"]
     path = vim/pack/plugins/start/coc.nvim
     url = https://github.com/neoclide/coc.nvim.git
+    branch = release
 [submodule "vim/pack/plugins/start/nerdtree"]
     path = vim/pack/plugins/start/nerdtree
     url = https://github.com/preservim/nerdtree.git
@@ -120,4 +121,3 @@
 [submodule "vim/pack/plugins/start/codeium.vim"]
     path = vim/pack/plugins/start/codeium.vim
     url = https://github.com/Exafunction/codeium.vim.git
-    branch = release
