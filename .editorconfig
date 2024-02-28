@@ -11,6 +11,9 @@ indent_style = space
 [*.{yaml,yml}]
 indent_size = 2
 
+[.github/workflows/test.yml]
+max_line_length = 82
+
 [*.json]
 indent_size = 2
 
