@@ -1,5 +1,7 @@
 {
-  "schedule": ["after 7am on Monday"],
+  "schedule": [
+    "after 7am on Monday"
+  ],
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
@@ -11,12 +13,16 @@
   },
   "packageRules": [
     {
-      "matchPackagePatterns": [".*"],
+      "matchPackagePatterns": [
+        ".*"
+      ],
       "automerge": false
     },
     {
-      "matchPackagePatterns": ["black"],
-      "schedule": "every 30 days"
+      "matchPackagePatterns": [
+        "black"
+      ],
+      "schedule": "every 30 day"
     }
   ]
 }
