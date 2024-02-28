@@ -13,6 +13,10 @@
     {
       "matchPackagePatterns": [".*"],
       "automerge": false
+    },
+    {
+      "matchPackagePatterns": ["black"],
+      "schedule": "once every month"
     }
   ]
 }
