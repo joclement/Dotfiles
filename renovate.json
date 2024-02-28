@@ -16,7 +16,7 @@
     },
     {
       "matchPackagePatterns": ["black"],
-      "schedule": "once every month"
+      "schedule": "every 30 days"
     }
   ]
 }
