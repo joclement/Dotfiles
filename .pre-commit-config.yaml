@@ -34,7 +34,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/google/yamlfmt
-    rev: c9bfa38f9b0c555a26200596d5f4dcef07627683  # frozen: v0.10.0
+    rev: 8a5a5af7ea9d70b65fa637146a83b7fa8d47b9b9  # frozen: v0.11.0
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -43,13 +43,13 @@ repos:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: a35591485dae4eadc30291fcb676169c209604a4  # frozen: v3.13.0
+    rev: f75eddcc1e69195a6edf07bfe7f75dbe6838361a  # frozen: v3.16.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
         stages: [push]
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: 762c66ea96843b54b936fc680162ea67f85ec2d7  # frozen: v1.5.4
+    rev: a30f0d816e5062a67d87c8de753cfe499672b959  # frozen: v1.5.5
     hooks:
       - id: remove-tabs
         exclude: |
@@ -61,11 +61,11 @@ repos:
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: 03afcba30046268bdc9b59f315fc5385d25dccee  # frozen: v3.7.0-4
+    rev: f9a49c0c4a9a57b1b094b5fd69b6c375cc957400  # frozen: v3.8.0-1
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.28.0
+    rev: b058a5d218e0760c0dd55c7db9870bd92428a551  # frozen: 0.28.0
     hooks:
       - id: check-github-workflows
       - id: check-renovate
