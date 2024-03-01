@@ -22,7 +22,7 @@
       "matchPackagePatterns": [
         "black"
       ],
-      "schedule": "every 30 days"
+      "schedule": "every 30 day"
     }
   ]
 }
