@@ -68,7 +68,6 @@ repos:
     rev: 0.28.0
     hooks:
       - id: check-github-workflows
-      - id: check-dependabot
       - id: check-renovate
 
 ci:
