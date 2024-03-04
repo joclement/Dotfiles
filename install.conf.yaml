@@ -45,13 +45,10 @@
     ~/.shared_shell:
     ~/.tmux.conf:
     ~/.vim/pack:
-      create: true
       path: vim/pack
     ~/.vim/coc-settings.json:
-      create: true
       path: vim/coc-settings.json
     ~/.vim/ftplugin:
-      create: true
       path: vim/ftplugin
     ~/.vimrc:
     ~/.yamllint:
@@ -62,6 +59,7 @@
 
 - create:
     - ~/.git-template
+    - ~/.vim
     - ~/.zfunc
 
 - shell:
