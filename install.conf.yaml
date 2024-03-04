@@ -70,13 +70,10 @@
     - ./install-pyenv-dependencies.sh
     - description: Install package for fc-cache
       command: sudo apt-get install -y fontconfig
-    - >
-      sudo apt-get install -y build-essential \
-                              curl \
-                              dconf-cli
-    - command: ./install.sh
+    - command: ./install-solarized.sh
       stdout: true
       stderr: true
+    - ./install-nodejs.sh
     - command: ./configure_powerlevel10k.sh
     - command: echo 'Run `chsh -s $(which zsh)`'
       stdout: true
