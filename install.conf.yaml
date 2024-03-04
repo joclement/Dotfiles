@@ -67,22 +67,7 @@
 - shell:
     - git submodule update --recursive --init
     - sudo apt-get update
-    # Install pyenv dependencies
-    - >
-      sudo apt-get install -y libedit-dev \
-                              libssl-dev \
-                              zlib1g-dev \
-                              libbz2-dev \
-                              libreadline-dev \
-                              libsqlite3-dev \
-                              llvm \
-                              libncursesw5-dev \
-                              xz-utils \
-                              tk-dev \
-                              libxml2-dev \
-                              libxmlsec1-dev \
-                              libffi-dev \
-                              liblzma-dev
+    - ./install-pyenv-dependencies.sh
     - description: Install package for fc-cache
       command: sudo apt-get install -y fontconfig
     - >
