@@ -33,10 +33,6 @@ There is no warranty or guarantee that they will work on your system.
 They have been tested and are working on my system, but you should save your
 Dotfiles and/or back up your system before installing these Dotfiles.
 
-### Quick Installation
-
-To be secure save your Dotfiles prior to installing with this install script!
-
 After cloning this repository to a suitable location like `~/Dotfiles` just run
 `./install`.
 
