@@ -3,17 +3,17 @@
 set -euo pipefail
 
 sudo apt-get install -y \
-    libedit-dev \
-    libssl-dev \
-    zlib1g-dev \
     libbz2-dev \
+    libedit-dev \
+    libffi-dev \
+    liblzma-dev \
+    libncursesw5-dev \
     libreadline-dev \
     libsqlite3-dev \
-    llvm \
-    libncursesw5-dev \
-    xz-utils \
-    tk-dev \
+    libssl-dev \
     libxml2-dev \
     libxmlsec1-dev \
-    libffi-dev \
-    liblzma-dev
+    llvm \
+    tk-dev \
+    xz-utils \
+    zlib1g-dev
