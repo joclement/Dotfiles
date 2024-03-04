@@ -2,10 +2,7 @@
 
 set -euo pipefail
 
-sudo apt-get install -y \
-    build-essential \
-    curl \
-    dconf-cli
+sudo apt-get install -y curl
 
 # editorconfig-checker-disable
 curl --verbose --silent --fail --show-error \
