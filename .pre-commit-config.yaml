@@ -38,12 +38,12 @@ repos:
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: 4de1378e4cd853bfc2b111b05fff35e2dbf809a3  # frozen: v0.9.0.6
+    rev: a23f6b85d0fdd5bb9d564e2579e678033debbdff  # frozen: v0.10.0.1
     hooks:
       - id: shellcheck
         args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: f75eddcc1e69195a6edf07bfe7f75dbe6838361a  # frozen: v3.16.0
+    rev: 669080c8c180a1f81bc3f0666b0d49fb71ab6dde  # frozen: v3.21.3
     hooks:
       - id: commitizen
       - id: commitizen-branch
@@ -65,7 +65,7 @@ repos:
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: b058a5d218e0760c0dd55c7db9870bd92428a551  # frozen: 0.28.0
+    rev: b3444eca522835c46db56fbf6cdd788d8e21217d  # frozen: 0.28.1
     hooks:
       - id: check-github-workflows
       - id: check-renovate
