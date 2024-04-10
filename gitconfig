@@ -16,11 +16,11 @@
     co = checkout
     dca = diff --cached
     delmrgmain = !git branch --merged main \
-                | grep -v '\\*\\|main' \
-                | xargs --no-run-if-empty -n 1 git branch -d
+                | grep --invert-match '\\*\\|main' \
+                | xargs --no-run-if-empty --max-args=1 git branch --delete
     delmrgmas = !git branch --merged master \
-               | grep -v '\\*\\|master' \
-               | xargs --no-run-if-empty -n 1 git branch -d
+               | grep --invert-match '\\*\\|master' \
+               | xargs --no-run-if-empty --max-args=1 git branch --delete
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
