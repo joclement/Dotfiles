@@ -17,10 +17,10 @@
     dca = diff --cached
     delmrgmain = !git branch --merged main \
                 | grep  -v '\\*\\|main' \
-                | xargs -n 1 git branch -d
+                | xargs --no-run-if-empty -n 1 git branch -d
     delmrgmas = !git branch --merged master \
                | grep  -v '\\*\\|master' \
-               | xargs -n 1 git branch -d
+               | xargs --no-run-if-empty -n 1 git branch -d
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
