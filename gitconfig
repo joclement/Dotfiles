@@ -15,14 +15,8 @@
         | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
-    delmrgmain = !git branch --merged main \
-                | grep --invert-match '\\*\\|main' \
-                | grep --invert-match --file=~/.git_exclude_delete_branches \
-                | xargs --no-run-if-empty --max-args=1 git branch --delete
-    delmrgmas = !git branch --merged master \
-               | grep --invert-match '\\*\\|master' \
-               | grep --invert-match --file=~/.git_exclude_delete_branches \
-               | xargs --no-run-if-empty --max-args=1 git branch --delete
+    delmrgmain = !git_delete_branches_merged_into_main
+    delmrgmas = !git_delete_branches_merged_into_master
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
