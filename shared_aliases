@@ -90,7 +90,7 @@ function git_delete_branches_merged {
     local branches_to_delete
     branches_to_delete=$( \
         git branch --merged $branch \
-        | grep --invert-match '\\*\\|$branch' \
+        | grep --invert-match "\\*\\|$branch" \
     )
     if test -e $EXCLUDE_BRANCHES_FILE; then
         branches_to_delete=$( \
