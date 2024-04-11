@@ -15,8 +15,6 @@
         | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
-    delmrgmain = !git_delete_branches_merged_into_main
-    delmrgmas = !git_delete_branches_merged_into_master
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
