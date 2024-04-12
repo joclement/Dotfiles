@@ -21,6 +21,7 @@
     last = slog -1 HEAD
     rbc = rebase --continue
     rbcn = !(GIT_EDITOR=true git rbc)
+    rbs = rebase --skip
     slog = log --stat
     st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
