@@ -8,7 +8,7 @@
 [alias]
     ap = add --patch
     br = branch
-    ci = commit
+    ci = commit --signoff
     cia = commit --amend
     cian = cia --no-edit
     cm = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD \
