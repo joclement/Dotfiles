@@ -8,25 +8,20 @@
 [alias]
     ap = add --patch
     br = branch
-    ci = commit
-    cia = commit --amend
+    ci = commit --signoff
+    cia = ci --amend
     cian = cia --no-edit
     cm = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD \
         | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
-    delmrgmain = !git branch --merged main \
-                | grep  -v '\\*\\|main' \
-                | xargs -n 1 git branch -d
-    delmrgmas = !git branch --merged master \
-               | grep  -v '\\*\\|master' \
-               | xargs -n 1 git branch -d
     fpu = push --force-with-lease
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     last = slog -1 HEAD
     rbc = rebase --continue
     rbcn = !(GIT_EDITOR=true git rbc)
+    rbs = rebase --skip
     slog = log --stat
     st = status -s
     unpushed = log @{u}.. --pretty=format:'%h %an %s'

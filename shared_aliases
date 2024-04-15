@@ -81,3 +81,32 @@ function gprunesquashmerged {
         && git branch -D $branch; \
     done
 }
+
+function git_delete_branches_merged {
+    local EXCLUDE_BRANCHES_FILE=$HOME/.git_exclude_delete_branches
+
+    local branch=$1
+
+    local branches_to_delete
+    branches_to_delete=$( \
+        git branch --merged $branch \
+        | grep --invert-match "\\*\\|$branch" \
+    )
+    if test -e $EXCLUDE_BRANCHES_FILE; then
+        branches_to_delete=$( \
+            echo $branches_to_delete \
+            | grep --invert-match --file=$EXCLUDE_BRANCHES_FILE \
+        )
+    fi
+
+    echo $branches_to_delete \
+    | xargs --no-run-if-empty --max-args=1 git branch --delete
+}
+
+function gdelmrgmain {
+    git_delete_branches_merged main
+}
+
+function gdelmrgmas {
+    git_delete_branches_merged master
+}

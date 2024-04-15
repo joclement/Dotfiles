@@ -121,3 +121,6 @@
 [submodule "vim/pack/plugins/start/codeium.vim"]
     path = vim/pack/plugins/start/codeium.vim
     url = https://github.com/Exafunction/codeium.vim.git
+[submodule "vim/pack/plugins/opt/vim-shfmt"]
+    path = vim/pack/plugins/opt/vim-shfmt
+    url = https://github.com/z0mbix/vim-shfmt.git
