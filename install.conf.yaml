@@ -44,6 +44,9 @@
     ~/.shared_aliases:
     ~/.shared_shell:
     ~/.tmux.conf:
+    ~/.vim/after/ftplugin/perl.vim:
+      create: true
+      path: vim/after/ftplugin/perl.vim
     ~/.vim/pack:
       create: true
       path: vim/pack
