@@ -10,6 +10,7 @@ setlocal smartindent
 " to not indent after 'namespace' declaration
 setlocal cino=N-s,g0,n0,+0
 
+" TODO Should be 80 without this setting
 call SetTextWidth(80)
 
 setlocal matchpairs+=<:>
