@@ -37,6 +37,7 @@
     ~/.gvimrc:
     ~/.ideavimrc:
     ~/.inputrc:
+    ~/.mypy.ini:
     ~/.profile:
       force: true
       path: profile
