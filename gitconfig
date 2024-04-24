@@ -42,6 +42,7 @@
     tool = vimdiff
 [fetch]
     parallel = 8
+    prune = true
 [filter "lfs"]
     clean = git-lfs clean -- %f
     process = git-lfs filter-process
@@ -56,6 +57,7 @@
     tool = vimdiff
 [pull]
     rebase = true
+    prune = true
 [push]
     default = simple
     followTags = true
