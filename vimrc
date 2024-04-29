@@ -101,7 +101,11 @@ let g:tex_flavor='latex'
 " }}}
 
 " codeium {{{
-let g:codeium_enabled = v:false
+let g:codeium_filetypes_disabled_by_default = v:true
+
+let g:codeium_filetypes = {
+    \ "python": v:true,
+    \ }
 " }}}
 
 " }}}

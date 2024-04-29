@@ -9,5 +9,3 @@ if executable('black')
 endif
 
 let b:ale_fixers = ['autoimport']
-
-CodeiumEnable
