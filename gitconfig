@@ -69,6 +69,8 @@
     submoduleSummary = true
 [submodule]
     recurse = true
+[tag]
+    gpgSign = true
 [user]
     name = Joris Clement
     useConfigOnly = true
