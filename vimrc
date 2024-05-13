@@ -67,6 +67,7 @@ let g:coc_global_extensions = [
   \ 'coc-clangd',
   \ 'coc-docker',
   \ 'coc-emoji',
+  \ 'coc-go',
   \ 'coc-git',
   \ 'coc-jedi',
   \ 'coc-json',
