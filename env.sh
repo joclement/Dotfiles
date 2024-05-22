@@ -16,26 +16,26 @@ __pathaddend() {
 }
 
 if [ -d "$HOME/bin" ]; then
-    __pathaddend $HOME/bin
+    __pathaddend "$HOME"/bin
 fi
 
 if [ -d "$HOME/.local/bin" ]; then
-    __pathaddend $HOME/.local/bin
+    __pathaddend "$HOME"/.local/bin
 fi
 
 POETRY_HOME="$HOME/.poetry/bin"
 if [ -d "$POETRY_HOME" ]; then
-    __pathaddend $POETRY_HOME
+    __pathaddend "$POETRY_HOME"
 fi
 
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT/bin" ]; then
-    __pathaddbegin $PYENV_ROOT/bin
-    __pathaddbegin $PYENV_ROOT/shims
+    __pathaddbegin "$PYENV_ROOT"/bin
+    __pathaddbegin "$PYENV_ROOT"/shims
 fi
 
 if [ -f "$HOME/.cargo/env" ]; then
-    source $HOME/.cargo/env
+    source "$HOME"/.cargo/env
 fi
 
 unset -f __pathaddbegin

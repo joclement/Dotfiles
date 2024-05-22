@@ -34,17 +34,17 @@ function pmake {
     if ((ncpu > 10)); then
         ncpu=$upper_limit
     fi
-    nice -n19 make -j$ncpu "$@"
+    nice -n19 make -j"$ncpu" "$@"
 }
 
 function mkcd {
-    mkdir $1 && cd $1
+    mkdir "$1" && cd "$1" || exit
 }
 
 function md2html {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
-    pandoc --from gfm --to html --standalone $markdownfile --output $htmlfile
+    pandoc --from gfm --to html --standalone "$markdownfile" --output "$htmlfile"
 }
 
 function cless {
@@ -56,8 +56,8 @@ function gitfixup {
         | fzf \
         | cut -c -7)
 
-    git commit --fixup $selected_commit
-    GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash ${selected_commit}~1
+    git commit --fixup "$selected_commit"
+    GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash "${selected_commit}"~1
 }
 
 function list_dirty_gits {
@@ -79,14 +79,14 @@ function gprunesquashmerged {
     local default_branch
     default_branch=$(git_determine_default_branch)
 
-    git checkout -q $default_branch \
+    git checkout -q "$default_branch" \
         && git for-each-ref refs/heads/ "--format=%(refname:short)" \
         | while read branch; do
-            mergeBase=$(git merge-base $default_branch $branch) \
-                && [[ $(git cherry $default_branch \
+            mergeBase=$(git merge-base "$default_branch" "$branch") \
+                && [[ $(git cherry "$default_branch" \
                     $(git commit-tree $(git rev-parse "$branch^{tree}") \
-                        -p $mergeBase -m _)) == "-"* ]] \
-                && git branch -D $branch
+                        -p "$mergeBase" -m _)) == "-"* ]] \
+                && git branch -D "$branch"
         done
 }
 
@@ -98,17 +98,17 @@ function git_delete_branches_merged {
 
     local branches_to_delete
     branches_to_delete=$(
-        git branch --merged $default_branch \
+        git branch --merged "$default_branch" \
             | grep --invert-match "\\*\\|$default_branch"
     )
-    if test -e $EXCLUDE_BRANCHES_FILE; then
+    if test -e "$EXCLUDE_BRANCHES_FILE"; then
         branches_to_delete=$(
-            echo $branches_to_delete \
-                | grep --invert-match --file=$EXCLUDE_BRANCHES_FILE
+            echo "$branches_to_delete" \
+                | grep --invert-match --file="$EXCLUDE_BRANCHES_FILE"
         )
     fi
 
-    echo $branches_to_delete \
+    echo "$branches_to_delete" \
         | xargs --no-run-if-empty --max-args=1 git branch --delete
 }
 
@@ -117,5 +117,5 @@ function datetime_to_unix {
 }
 
 function unix_to_datetime {
-    date -u -d @${1} +'%F %T'
+    date -u -d @"${1}" +'%F %T'
 }
