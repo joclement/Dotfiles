@@ -78,17 +78,8 @@ function list_dirty_gits {
     # editorconfig-checker-enable
 }
 
-function git_determine_default_branch {
-    if git rev-parse --verify main 2> /dev/null; then
-        echo "main"
-    else
-        echo "master"
-    fi
-}
-
 function gprunesquashmerged {
-    local default_branch
-    default_branch=$(git_determine_default_branch)
+    local default_branch="master"
 
     git checkout -q "$default_branch" \
         && git for-each-ref refs/heads/ "--format=%(refname:short)" \
