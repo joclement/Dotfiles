@@ -84,12 +84,7 @@ export SHELL
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-source $HOME/.shared_shell
-
-#to include the particular bash aliases, if they exist
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
+source "$HOME"/.shared_shell.sh
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -106,6 +101,6 @@ fi
 set -o vi
 
 #to include private commands for bash, if they exist
-if [ -f $HOME/.private_bashrc ]; then
-    source $HOME/.private_bashrc
+if [ -f "$HOME"/.private_bashrc ]; then
+    source "$HOME"/.private_bashrc
 fi

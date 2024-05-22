@@ -18,8 +18,8 @@ DISABLE_CORRECTION="true"
 
 export TERM="xterm-256color"
 
-if [ -f $HOME/.private_zshrc_begin ]; then
-    source $HOME/.private_zshrc_begin
+if [ -f "$HOME"/.private_zshrc_begin ]; then
+    source "$HOME"/.private_zshrc_begin
 fi
 
 # for custom autocompletion
@@ -64,8 +64,8 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
 
-source $HOME/.shared_shell
-source $HOME/.autocompletion_zsh
+source "$HOME"/.shared_shell.sh
+source "$HOME"/.autocompletion.zsh
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
@@ -73,16 +73,12 @@ setopt APPEND_HISTORY
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
-if [ -f $HOME/.private_zshrc ]; then
-    source $HOME/.private_zshrc
-fi
-
 #allow to open editor for a command line
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
-source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$HOME"/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # pip autocomplete
 function _pip_completion {
@@ -91,7 +87,7 @@ function _pip_completion {
   read -cn cword
   reply=( $( COMP_WORDS="$words[*]" \
              COMP_CWORD=$(( cword-1 )) \
-             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+             PIP_AUTO_COMPLETE=1 "$words"[1] 2>/dev/null ))
 }
 compctl -K _pip_completion pip
 
