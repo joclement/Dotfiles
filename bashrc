@@ -86,11 +86,6 @@ export SHELL
 
 source "$HOME"/.shared_shell.sh
 
-#to include the particular bash aliases, if they exist
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
