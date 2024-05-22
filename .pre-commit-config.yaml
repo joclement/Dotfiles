@@ -41,7 +41,6 @@ repos:
     rev: a23f6b85d0fdd5bb9d564e2579e678033debbdff  # frozen: v0.10.0.1
     hooks:
       - id: shellcheck
-        args: ["--norc"]
   - repo: https://github.com/commitizen-tools/commitizen
     rev: 669080c8c180a1f81bc3f0666b0d49fb71ab6dde  # frozen: v3.21.3
     hooks:
