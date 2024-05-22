@@ -78,17 +78,8 @@ function list_dirty_gits {
     # editorconfig-checker-enable
 }
 
-function git_determine_default_branch {
-    if git rev-parse --verify main 2> /dev/null; then
-        echo "main"
-    else
-        echo "master"
-    fi
-}
-
 function gprunesquashmerged {
-    local default_branch
-    default_branch=$(git_determine_default_branch)
+    local default_branch="master"
 
     git checkout -q "$default_branch" \
         && git for-each-ref refs/heads/ "--format=%(refname:short)" \
@@ -99,28 +90,6 @@ function gprunesquashmerged {
                         -p "$mergeBase" -m _)) == "-"* ]] \
                 && git branch -D "$branch"
         done
-}
-
-function git_delete_branches_merged {
-    local EXCLUDE_BRANCHES_FILE=$HOME/.git_exclude_delete_branches
-
-    local default_branch
-    default_branch=$(git_determine_default_branch)
-
-    local branches_to_delete
-    branches_to_delete=$(
-        git branch --merged "$default_branch" \
-            | grep --invert-match "\\*\\|$default_branch"
-    )
-    if test -e "$EXCLUDE_BRANCHES_FILE"; then
-        branches_to_delete=$(
-            echo "$branches_to_delete" \
-                | grep --invert-match --file="$EXCLUDE_BRANCHES_FILE"
-        )
-    fi
-
-    echo "$branches_to_delete" \
-        | xargs --no-run-if-empty --max-args=1 git branch --delete
 }
 
 function datetime_to_unix {
