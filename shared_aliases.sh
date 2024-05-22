@@ -5,10 +5,11 @@
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
 alias pingTest='ping 9.9.9.9'
 alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
-alias grep='grep -I \
-                 --color=auto \
-                 --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache} \
-                 --exclude=tags'
+alias grep='grep \
+    -I \
+    --color=auto \
+    --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache} \
+    --exclude=tags'
 # use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'
 alias used_ports='sudo lsof -i -P -n | grep LISTEN'
@@ -46,7 +47,11 @@ function mkcd {
 function md2html {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
-    pandoc --from gfm --to html --standalone "$markdownfile" --output "$htmlfile"
+    pandoc \
+        --from gfm \
+        --to html \
+        --standalone "$markdownfile" \
+        --output "$htmlfile"
 }
 
 function cless {
@@ -64,9 +69,13 @@ function gitfixup {
 
 function list_dirty_gits {
     is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
-    find ./ -type d \
+
+    # editorconfig-checker-disable
+    find ./ \
+        -type d \
         -name '.git' \
         -exec sh -c "cd '$1/..' && $is_git_dirty || echo 'Dirty: $1'" shell {} \;
+    # editorconfig-checker-enable
 }
 
 function git_determine_default_branch {
