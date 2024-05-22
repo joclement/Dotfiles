@@ -115,10 +115,10 @@ function git_delete_branches_merged {
     | xargs --no-run-if-empty --max-args=1 git branch --delete
 }
 
-datetime_to_unix() {
+function datetime_to_unix {
     date -u -d "${1} ${2}" +%s
 }
 
-unix_to_datetime() {
+function unix_to_datetime {
     date -u -d @${1} +'%F %T'
 }
