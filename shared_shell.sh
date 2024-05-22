@@ -4,7 +4,7 @@
 source "$HOME"/.shared_aliases.sh
 source "$HOME"/.env.sh
 
-if [ -f "$HOME"/.private ]; then
+if [ -f "$HOME"/.private.sh ]; then
     source "$HOME"/.private.sh
 fi
 
