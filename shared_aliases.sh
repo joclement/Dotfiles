@@ -1,3 +1,5 @@
+# shellcheck disable=SC2046
+
 ################################### My aliases #################################
 
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
@@ -64,7 +66,7 @@ function list_dirty_gits {
     is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
     find ./ -type d \
         -name '.git' \
-        -exec sh -c "cd '{}/..' && $is_git_dirty || echo 'Dirty: {}'" \;
+        -exec sh -c "cd '$1/..' && $is_git_dirty || echo 'Dirty: $1'" shell {} \;
 }
 
 function git_determine_default_branch {
@@ -81,7 +83,7 @@ function gprunesquashmerged {
 
     git checkout -q "$default_branch" \
         && git for-each-ref refs/heads/ "--format=%(refname:short)" \
-        | while read branch; do
+        | while read -r branch; do
             mergeBase=$(git merge-base "$default_branch" "$branch") \
                 && [[ $(git cherry "$default_branch" \
                     $(git commit-tree $(git rev-parse "$branch^{tree}") \
