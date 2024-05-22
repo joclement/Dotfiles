@@ -73,10 +73,6 @@ setopt APPEND_HISTORY
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
-if [ -f $HOME/.private_zshrc ]; then
-    source $HOME/.private_zshrc
-fi
-
 #allow to open editor for a command line
 autoload -U edit-command-line
 zle -N edit-command-line
