@@ -1,5 +1,3 @@
-# vi: ft=bash
-
 ################################### My aliases #################################
 
 alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'

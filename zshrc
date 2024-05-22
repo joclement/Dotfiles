@@ -64,8 +64,8 @@ bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
 
 
-source $HOME/.shared_shell
-source $HOME/.autocompletion_zsh
+source $HOME/.shared_shell.sh
+source $HOME/.autocompletion.zsh
 
 #use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY

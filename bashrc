@@ -84,7 +84,7 @@ export SHELL
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-source $HOME/.shared_shell
+source $HOME/.shared_shell.sh
 
 #to include the particular bash aliases, if they exist
 if [ -f ~/.bash_aliases ]; then

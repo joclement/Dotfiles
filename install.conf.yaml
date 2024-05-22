@@ -7,7 +7,7 @@
 
 - link:
     ~/.antigen:
-    ~/.autocompletion_zsh:
+    ~/.autocompletion.zsh:
     ~/.bash_profile:
       force: true
       path: bash_profile
@@ -29,7 +29,7 @@
       path: config/zathura
     ~/.ctags.d:
     ~/.dircolors-solarized:
-    ~/.env:
+    ~/.env.sh:
     ~/.fzf:
     ~/.gitconfig:
     ~/.github_userconfig:
@@ -42,8 +42,8 @@
       force: true
       path: profile
     ~/.pyenv:
-    ~/.shared_aliases:
-    ~/.shared_shell:
+    ~/.shared_aliases.sh:
+    ~/.shared_shell.sh:
     ~/.tmux.conf:
     ~/.vim/after/ftplugin/perl.vim:
       create: true

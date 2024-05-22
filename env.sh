@@ -1,5 +1,3 @@
-# vi: ft=bash
-
 ###This file contains the environment variables used by bash and zsh
 
 # Functions to add a folder to the PATH environment variable:

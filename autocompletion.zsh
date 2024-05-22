@@ -1,5 +1,3 @@
-# vi: ft=bash
-
 #This file is to improve the autocompletion for the zsh shell
 
 #restrict autocompletion for vim
