@@ -8,4 +8,4 @@ if [ -f $HOME/.private ]; then
     source $HOME/.private.sh
 fi
 
-eval `dircolors ~/.dircolors-solarized/dircolors.ansi-dark`
+eval $(dircolors ~/.dircolors-solarized/dircolors.ansi-dark)

@@ -31,11 +31,10 @@ function pgrep {
 function pmake {
     ncpu=$(nproc)
     upper_limit=10
-    if (( ncpu > 10 ));
-    then
+    if ((ncpu > 10)); then
         ncpu=$upper_limit
-    fi;
-    nice -n19 make -j$ncpu "$@";
+    fi
+    nice -n19 make -j$ncpu "$@"
 }
 
 function mkcd {
@@ -54,8 +53,8 @@ function cless {
 
 function gitfixup {
     selected_commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
-                    | fzf \
-                    | cut -c -7)
+        | fzf \
+        | cut -c -7)
 
     git commit --fixup $selected_commit
     GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash ${selected_commit}~1
@@ -64,12 +63,12 @@ function gitfixup {
 function list_dirty_gits {
     is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
     find ./ -type d \
-            -name '.git' \
-            -exec sh -c "cd '{}/..' && $is_git_dirty || echo 'Dirty: {}'" \;
+        -name '.git' \
+        -exec sh -c "cd '{}/..' && $is_git_dirty || echo 'Dirty: {}'" \;
 }
 
 function git_determine_default_branch {
-    if git rev-parse --verify main 2>/dev/null; then
+    if git rev-parse --verify main 2> /dev/null; then
         echo "main"
     else
         echo "master"
@@ -81,14 +80,14 @@ function gprunesquashmerged {
     default_branch=$(git_determine_default_branch)
 
     git checkout -q $default_branch \
-    && git for-each-ref refs/heads/ "--format=%(refname:short)" \
-    | while read branch; do \
-        mergeBase=$(git merge-base $default_branch $branch) \
-        && [[ $(git cherry $default_branch \
-                $(git commit-tree $(git rev-parse "$branch^{tree}") \
-                -p $mergeBase -m _)) == "-"* ]] \
-        && git branch -D $branch; \
-    done
+        && git for-each-ref refs/heads/ "--format=%(refname:short)" \
+        | while read branch; do
+            mergeBase=$(git merge-base $default_branch $branch) \
+                && [[ $(git cherry $default_branch \
+                    $(git commit-tree $(git rev-parse "$branch^{tree}") \
+                        -p $mergeBase -m _)) == "-"* ]] \
+                && git branch -D $branch
+        done
 }
 
 function git_delete_branches_merged {
@@ -98,19 +97,19 @@ function git_delete_branches_merged {
     default_branch=$(git_determine_default_branch)
 
     local branches_to_delete
-    branches_to_delete=$( \
+    branches_to_delete=$(
         git branch --merged $default_branch \
-        | grep --invert-match "\\*\\|$default_branch" \
+            | grep --invert-match "\\*\\|$default_branch"
     )
     if test -e $EXCLUDE_BRANCHES_FILE; then
-        branches_to_delete=$( \
+        branches_to_delete=$(
             echo $branches_to_delete \
-            | grep --invert-match --file=$EXCLUDE_BRANCHES_FILE \
+                | grep --invert-match --file=$EXCLUDE_BRANCHES_FILE
         )
     fi
 
     echo $branches_to_delete \
-    | xargs --no-run-if-empty --max-args=1 git branch --delete
+        | xargs --no-run-if-empty --max-args=1 git branch --delete
 }
 
 function datetime_to_unix {
