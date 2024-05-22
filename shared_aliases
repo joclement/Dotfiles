@@ -70,12 +70,23 @@ function list_dirty_gits {
             -exec sh -c "cd '{}/..' && $is_git_dirty || echo 'Dirty: {}'" \;
 }
 
+function git_determine_default_branch {
+    if git rev-parse --verify main 2>/dev/null; then
+        echo "main"
+    else
+        echo "master"
+    fi
+}
+
 function gprunesquashmerged {
-    git checkout -q master \
+    local default_branch
+    default_branch=$(git_determine_default_branch)
+
+    git checkout -q $default_branch \
     && git for-each-ref refs/heads/ "--format=%(refname:short)" \
     | while read branch; do \
-        mergeBase=$(git merge-base master $branch) \
-        && [[ $(git cherry master \
+        mergeBase=$(git merge-base $default_branch $branch) \
+        && [[ $(git cherry $default_branch \
                 $(git commit-tree $(git rev-parse "$branch^{tree}") \
                 -p $mergeBase -m _)) == "-"* ]] \
         && git branch -D $branch; \
@@ -85,7 +96,8 @@ function gprunesquashmerged {
 function git_delete_branches_merged {
     local EXCLUDE_BRANCHES_FILE=$HOME/.git_exclude_delete_branches
 
-    local default_branch=$1
+    local default_branch
+    default_branch=$(git_determine_default_branch)
 
     local branches_to_delete
     branches_to_delete=$( \
@@ -101,14 +113,6 @@ function git_delete_branches_merged {
 
     echo $branches_to_delete \
     | xargs --no-run-if-empty --max-args=1 git branch --delete
-}
-
-function gdelmrgmain {
-    git_delete_branches_merged main
-}
-
-function gdelmrgmas {
-    git_delete_branches_merged master
 }
 
 datetime_to_unix() {
