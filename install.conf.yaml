@@ -77,7 +77,7 @@
     - sudo snap refresh
     - ./install-pyenv-dependencies.sh
     - description: Install package for fc-cache
-      command: sudo apt-get install -y fontconfig
+      command: sudo apt-get install --yes fontconfig
     - command: ./install-solarized.sh
     - ./install-nodejs.sh
     - command: ./configure_powerlevel10k.sh
