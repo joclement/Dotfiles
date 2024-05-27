@@ -74,6 +74,7 @@
 - shell:
     - git submodule update --recursive --init
     - sudo apt-get update
+    - sudo snap refresh
     - ./install-pyenv-dependencies.sh
     - description: Install package for fc-cache
       command: sudo apt-get install -y fontconfig
