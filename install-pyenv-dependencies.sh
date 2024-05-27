@@ -7,6 +7,7 @@ echo "Install pyenv dependencies"
 sudo apt-get install --yes \
     build-essential \
     curl \
+    git \
     libbz2-dev \
     libffi-dev \
     liblzma-dev \
