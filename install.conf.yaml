@@ -78,8 +78,8 @@
     - ./install-pyenv-dependencies.sh
     - description: Install package for fc-cache
       command: sudo apt-get install --yes fontconfig
-    - command: ./install-solarized.sh
+    - ./install-solarized.sh
     - ./install-nodejs.sh
-    - command: ./configure_powerlevel10k.sh
-    - command: echo 'Run `chsh -s $(which zsh)`'
-    - command: ./install-vim-plugins.sh
+    - ./configure_powerlevel10k.sh
+    - echo 'Run `chsh -s $(which zsh)`'
+    - ./install-vim-plugins.sh
