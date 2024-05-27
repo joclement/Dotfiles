@@ -2,6 +2,8 @@
 
 set -euo pipefail
 
+echo "Install pyenv dependencies"
+
 sudo apt-get install -y \
     build-essential \
     curl \
