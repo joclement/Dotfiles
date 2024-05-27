@@ -339,6 +339,9 @@ endfunction
 function! UpdateMakeSettings()
     set makeprg=nice\ -n\ 19\ make\ -j\ $MAKE_PARALLELIZATION\ -C\ $MY_BUILD_DIR
 endfunction
+
+autocmd BufRead requirements-dev.txt setlocal filetype=requirements
+
 " }}}
 
 " vim:foldmethod=marker foldlevel=0
