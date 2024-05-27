@@ -2,6 +2,9 @@
 - defaults:
     link:
       relink: true
+    shell:
+      stdout: true
+      stderr: true
 
 - clean: ['~', '~/.vim']
 
@@ -69,19 +72,14 @@
     - ~/.zfunc
 
 - shell:
-    - git submodule update --recursive --init
+    - git submodule update --recursive --init --jobs=8
     - sudo apt-get update
-    - ./install-pyenv-dependencies.sh
+    - sudo snap refresh
+    - ./install-python-build-dependencies.sh
     - description: Install package for fc-cache
-      command: sudo apt-get install -y fontconfig
-    - command: ./install-solarized.sh
-      stdout: true
-      stderr: true
+      command: sudo apt-get install --yes fontconfig
+    - ./install-solarized.sh
     - ./install-nodejs.sh
-    - command: ./configure_powerlevel10k.sh
-    - command: echo 'Run `chsh -s $(which zsh)`'
-      stdout: true
-      stderr: true
-    - command: ./install-vim-plugins.sh
-      stdout: true
-      stderr: true
+    - ./configure_powerlevel10k.sh
+    - echo 'Run `chsh -s $(which zsh)`'
+    - ./install-vim-plugins.sh
