@@ -4,7 +4,7 @@ set -euo pipefail
 
 echo "Install pyenv dependencies"
 
-sudo apt-get install -y \
+sudo apt-get install --yes \
     build-essential \
     curl \
     libbz2-dev \
