@@ -2,12 +2,7 @@
 
 set -euo pipefail
 
-sudo apt-get install -y curl
+sudo apt-get purge --yes nodejs
+sudo rm -f /etc/apt/sources.list.d/nodesource.list
 
-# editorconfig-checker-disable
-curl --verbose --silent --fail --show-error \
-    https://raw.githubusercontent.com/nodesource/distributions/66d777ee3fb7748b1c4b7d1d52511e6194fcda06/deb/setup_18.x \
-    --output /tmp/nodesource_setup.sh
-# editorconfig-checker-enable
-sudo bash /tmp/nodesource_setup.sh
-sudo apt-get install --yes nodejs
+sudo snap install --classic node
