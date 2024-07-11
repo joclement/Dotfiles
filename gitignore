@@ -52,5 +52,6 @@ node_modules/
 .cache/
 .git-commit-message
 UltiSnips/
-current_repo_gitlab_issues.json
+/current_repo_gitlab_issues.json
 .own-env
+/git-bisect-run.sh
