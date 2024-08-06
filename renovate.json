@@ -13,16 +13,16 @@
   },
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        ".*"
-      ],
-      "automerge": false
+      "automerge": false,
+      "matchPackageNames": [
+        "/.*/"
+      ]
     },
     {
-      "matchPackagePatterns": [
-        "black"
-      ],
-      "schedule": "every 30 day"
+      "schedule": "every 30 day",
+      "matchPackageNames": [
+        "/black/"
+      ]
     }
   ]
 }
