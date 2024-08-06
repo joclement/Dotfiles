@@ -66,6 +66,7 @@
     ~/.zsh-syntax-highlighting:
     ~/.zshenv:
     ~/.zshrc:
+    ~/CPPLINT.cfg:
 
 - create:
     - ~/.git-template

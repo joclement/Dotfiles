@@ -15,4 +15,4 @@ call SetTextWidth(80)
 
 setlocal matchpairs+=<:>
 
-let b:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy' ]}
+let b:ale_fixers = { 'cpp': [ 'clang-format', 'clangtidy', 'cpplint' ]}

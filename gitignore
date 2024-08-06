@@ -20,8 +20,9 @@ tags.lock
 tags.temp
 # Persistent undo
 [._]*.un~
-# Exclude local vimrc
+# Exclude local vim configuration
 .lvimrc
+.vim
 
 ### YouCompleteMe
 .ycm_extra_conf.py
