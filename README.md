@@ -22,7 +22,7 @@ This Dotfiles repository focuses on:
 
 I use these Dotfiles with Ubuntu. As most files are OS-agnostic these would work
 on other operating systems as well.
-As `apt` is used the installation will only work on Debian based systems.
+As `apt` and `snap` are used the installation will only work on Ubuntu.
 
 ### Installation
 
@@ -34,11 +34,12 @@ They have been tested and are working on my system, but you should save your
 Dotfiles and/or back up your system before installing these Dotfiles.
 
 After cloning this repository to a suitable location like `~/Dotfiles` just run
-`./install`.
+`./install.sh`.
 
 ### Licensing
 
-Nearly all files in this project are licensed under [the MIT license](LICENSE).
+Nearly all files in this project are licensed under
+[the MIT license](LICENSE.md).
 Exceptions are the used submodules.
 
 ### Acknowledgments
