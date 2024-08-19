@@ -38,7 +38,8 @@ After cloning this repository to a suitable location like `~/Dotfiles` just run
 
 ### Licensing
 
-Nearly all files in this project are licensed under [the MIT license](LICENSE).
+Nearly all files in this project are licensed under
+[the MIT license](LICENSE.md).
 Exceptions are the used submodules.
 
 ### Acknowledgments
