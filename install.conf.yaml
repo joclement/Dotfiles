@@ -46,6 +46,7 @@
       path: profile
     ~/.pyenv:
     ~/.shared_aliases.sh:
+    ~/.ruff.toml:
     ~/.shared_shell.sh:
     ~/.tmux.conf:
     ~/.vim/after/ftplugin/perl.vim:
