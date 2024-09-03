@@ -9,3 +9,5 @@ if executable('black')
 endif
 
 let b:ale_fixers = ['autoimport']
+
+let g:ale_python_flake8_options = '--ignore=E501'
