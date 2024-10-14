@@ -23,7 +23,7 @@
     rbcn = !(GIT_EDITOR=true git rbc)
     rbs = rebase --skip
     slog = log --stat
-    st = status -s
+    st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
 [checkout]
     ignoreSubmodules = dirty
