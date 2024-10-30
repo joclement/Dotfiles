@@ -42,7 +42,7 @@ repos:
     hooks:
       - id: shellcheck
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: a3498aba5e94c9f7c4acb529b5e7eb6df65fd053 # frozen: v3.29.1
+    rev: bfe422faef54a78ff8c0ce5dea0da053159c9f9d # frozen: v3.30.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
@@ -60,11 +60,11 @@ repos:
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: 09cbf7c4e29373d4d4f15c9d17ddfbcd2e962955 # frozen: v3.9.0-1
+    rev: f007dc66ff0428b2f0410a71aef99a243d9d6e91 # frozen: v3.10.0-1
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: aa1acdb72677dfbc5f507d2dfd45d8380bbcc2e0 # frozen: 0.29.3
+    rev: 37cd56d9d154dfb0648eaee8efc1040512700c47 # frozen: 0.29.4
     hooks:
       - id: check-github-workflows
       - id: check-renovate
