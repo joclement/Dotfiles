@@ -42,6 +42,7 @@ CONTRIBUTING.html
 
 ### Python
 .python-version
+__pycache__/
 
 ### Lua
 lua_modules

@@ -15,7 +15,7 @@
         | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
-    fpu = push --force-with-lease
+    fpu = push --force-with-lease --force-if-includes
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     last = slog -1 HEAD
