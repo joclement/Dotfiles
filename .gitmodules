@@ -118,3 +118,6 @@
 [submodule "vim/pack/plugins/opt/vim-shfmt"]
     path = vim/pack/plugins/opt/vim-shfmt
     url = https://github.com/z0mbix/vim-shfmt.git
+[submodule "vim/pack/plugins/start/vim-go"]
+    path = vim/pack/plugins/start/vim-go
+    url = https://github.com/fatih/vim-go.git
