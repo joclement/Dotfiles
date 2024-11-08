@@ -110,11 +110,14 @@
     path = vim/pack/plugins/start/tagbar
     url = https://github.com/preservim/tagbar.git
 [submodule "vim/pack/plugins/start/vim-colors-solarized"]
-  path = vim/pack/plugins/start/vim-colors-solarized
-  url = https://github.com/altercation/vim-colors-solarized.git
+    path = vim/pack/plugins/start/vim-colors-solarized
+    url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "vim/pack/plugins/start/codeium.vim"]
     path = vim/pack/plugins/start/codeium.vim
     url = https://github.com/Exafunction/codeium.vim.git
 [submodule "vim/pack/plugins/opt/vim-shfmt"]
     path = vim/pack/plugins/opt/vim-shfmt
     url = https://github.com/z0mbix/vim-shfmt.git
+[submodule "vim/pack/plugins/start/vim-go"]
+    path = vim/pack/plugins/start/vim-go
+    url = https://github.com/fatih/vim-go.git

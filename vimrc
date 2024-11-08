@@ -187,10 +187,10 @@ set hlsearch
 set incsearch
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
 
-"to search for visually selected text
+" to search for visually selected text
 vnoremap // y/<C-R>"<CR>
 
-"find word under cursor and replace it something
+" find word under cursor and replace it something
 nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
 
 if executable('ag')
