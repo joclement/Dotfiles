@@ -44,7 +44,6 @@
     ~/.profile:
       force: true
       path: profile
-    ~/.pyenv:
     ~/.shared_aliases.sh:
     ~/.ruff.toml:
     ~/.shared_shell.sh:
@@ -77,7 +76,6 @@
     - git submodule update --recursive --init --jobs=8
     - sudo apt-get update
     - sudo snap refresh
-    - ./install-python-build-dependencies.sh
     - description: Install package for fc-cache
       command: sudo apt-get install --yes fontconfig
     - ./install-solarized.sh
