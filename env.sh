@@ -1,5 +1,3 @@
-###This file contains the environment variables used by bash and zsh
-
 # NOTE: only add the directory if it is nowhere in PATH
 __pathaddend() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
