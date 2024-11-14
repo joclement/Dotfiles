@@ -48,9 +48,9 @@
     ~/.ruff.toml:
     ~/.shared_shell.sh:
     ~/.tmux.conf:
-    ~/.vim/after/ftplugin/perl.vim:
+    ~/.vim/after/ftplugin:
       create: true
-      path: vim/after/ftplugin/perl.vim
+      path: vim/after/ftplugin
     ~/.vim/pack:
       create: true
       path: vim/pack
