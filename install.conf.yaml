@@ -8,6 +8,9 @@
 
 - clean: ['~', '~/.vim']
 
+- create:
+    - ~/.vim
+
 - link:
     ~/.antigen:
     ~/.autocompletion.zsh:
@@ -52,13 +55,10 @@
       create: true
       path: vim/after/ftplugin
     ~/.vim/pack:
-      create: true
       path: vim/pack
     ~/.vim/coc-settings.json:
-      create: true
       path: vim/coc-settings.json
     ~/.vim/ftplugin:
-      create: true
       path: vim/ftplugin
     ~/.vimrc:
     ~/.yamllint:
