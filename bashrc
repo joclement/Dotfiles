@@ -12,10 +12,7 @@ esac
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
 shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
 
@@ -75,15 +72,7 @@ esac
 
 ########################OWN SETTINGS##################################
 
-#changes SHELL variable to bash, if using bash
-SHELL=$(which bash)
-export SHELL
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
+# shellcheck source=shared_shell.sh
 source "$HOME"/.shared_shell.sh
 
 # enable programmable completion features (you don't need to enable
@@ -97,10 +86,5 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# enable vim mode for bash
+# use vim mode
 set -o vi
-
-#to include private commands for bash, if they exist
-if [ -f "$HOME"/.private_bashrc ]; then
-    source "$HOME"/.private_bashrc
-fi
