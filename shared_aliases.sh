@@ -26,76 +26,76 @@ alias docker_kill_all='docker kill $(docker ps -q)'
 ################################ My alias functions ############################
 
 pgrep() {
-    find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
+  find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
 }
 
 # TODO do I really still need this function? I think this can also be done with
 # an environment variable.
 pmake() {
-    ncpu=$(nproc)
-    upper_limit=10
-    if ((ncpu > 10)); then
-        ncpu=$upper_limit
-    fi
-    nice -n19 make -j"$ncpu" "$@"
+  ncpu=$(nproc)
+  upper_limit=10
+  if ((ncpu > 10)); then
+    ncpu=$upper_limit
+  fi
+  nice -n19 make -j"$ncpu" "$@"
 }
 
 mkcd() {
-    mkdir "$1" && cd "$1" || exit
+  mkdir "$1" && cd "$1" || exit
 }
 
 md2html() {
-    markdownfile=$1
-    htmlfile=${markdownfile%".md"}".html"
-    pandoc \
-        --from gfm \
-        --to html \
-        --standalone "$markdownfile" \
-        --output "$htmlfile"
+  markdownfile=$1
+  htmlfile=${markdownfile%".md"}".html"
+  pandoc \
+    --from gfm \
+    --to html \
+    --standalone "$markdownfile" \
+    --output "$htmlfile"
 }
 
 cless() {
-    pygmentize -f terminal "$1" | less -R
+  pygmentize -f terminal "$1" | less -R
 }
 
 gitfixup() {
-    selected_commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
-        | fzf \
-        | cut -c -7)
+  selected_commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
+    | fzf \
+    | cut -c -7)
 
-    git commit --fixup "$selected_commit"
-    GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash "${selected_commit}"~1
+  git commit --fixup "$selected_commit"
+  GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash "${selected_commit}"~1
 }
 
 list_dirty_gits() {
-    is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
+  is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
 
-    # editorconfig-checker-disable
-    find ./ \
-        -type d \
-        -name '.git' \
-        -exec sh -c "cd '$1/..' && $is_git_dirty || echo 'Dirty: $1'" shell {} \;
-    # editorconfig-checker-enable
+  # editorconfig-checker-disable
+  find ./ \
+    -type d \
+    -name '.git' \
+    -exec sh -c "cd '$1/..' && $is_git_dirty || echo 'Dirty: $1'" shell {} \;
+  # editorconfig-checker-enable
 }
 
 gprunesquashmerged() {
-    local default_branch="master"
+  local default_branch="master"
 
-    git checkout -q "$default_branch" \
-        && git for-each-ref refs/heads/ "--format=%(refname:short)" \
-        | while read -r branch; do
-            mergeBase=$(git merge-base "$default_branch" "$branch") \
-                && [[ $(git cherry "$default_branch" \
-                    $(git commit-tree $(git rev-parse "$branch^{tree}") \
-                        -p "$mergeBase" -m _)) == "-"* ]] \
-                && git branch -D "$branch"
-        done
+  git checkout -q "$default_branch" \
+    && git for-each-ref refs/heads/ "--format=%(refname:short)" \
+    | while read -r branch; do
+      mergeBase=$(git merge-base "$default_branch" "$branch") \
+        && [[ $(git cherry "$default_branch" \
+          $(git commit-tree $(git rev-parse "$branch^{tree}") \
+            -p "$mergeBase" -m _)) == "-"* ]] \
+        && git branch -D "$branch"
+    done
 }
 
 datetime_to_unix() {
-    date -u -d "${1} ${2}" +%s
+  date -u -d "${1} ${2}" +%s
 }
 
 unix_to_datetime() {
-    date -u -d @"${1}" +'%F %T'
+  date -u -d @"${1}" +'%F %T'
 }

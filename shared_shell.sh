@@ -6,8 +6,8 @@ source "$HOME"/.shared_aliases.sh
 source "$HOME"/.env.sh
 
 if [ -f "$HOME"/.private.sh ]; then
-    # shellcheck source=/dev/null
-    source "$HOME"/.private.sh
+  # shellcheck source=/dev/null
+  source "$HOME"/.private.sh
 fi
 
 eval "$(dircolors ~/.dircolors-solarized/dircolors.ansi-dark)"
