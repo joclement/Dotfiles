@@ -78,7 +78,7 @@ bindkey -M vicmd v edit-command-line
 
 source "$HOME"/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# pip autocomplete
+# for autocomplete
 function _pip_completion {
   local words cword
   read -Ac words

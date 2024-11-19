@@ -96,7 +96,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# enable vim mode for bash
+# enable vim mode
 set -o vi
 
 #to include private commands for bash, if they exist
