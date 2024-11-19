@@ -43,6 +43,8 @@ CONTRIBUTING.html
 ### Python
 .python-version
 __pycache__/
+.ruff_cache/
+.pytest_cache/
 
 ### Lua
 lua_modules
@@ -56,4 +58,5 @@ node_modules/
 UltiSnips/
 /current_repo_gitlab_issues.json
 .own-env
+.envrc
 /git-bisect-run.sh
