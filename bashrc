@@ -83,6 +83,7 @@ export SHELL
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
+# shellcheck source=shared_shell.sh
 source "$HOME"/.shared_shell.sh
 
 # enable programmable completion features (you don't need to enable
