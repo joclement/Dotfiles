@@ -43,6 +43,8 @@ CONTRIBUTING.html
 ### Python
 .python-version
 __pycache__/
+.ruff_cache/
+.pytest_cache/
 
 ### Lua
 lua_modules
