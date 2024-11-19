@@ -10,7 +10,7 @@ fi
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
-#shows dots if waiting for autocompletion, ...
+# Shows dots if waiting for autocompletion, ...
 COMPLETION_WAITING_DOTS="true"
 
 # DISABLE AUTOCORRECTION
@@ -35,13 +35,13 @@ antigen use oh-my-zsh
 #specify bundles
 antigen bundles <<EOBUNDLES
 
-#for working with git
+# for working with git
 voronkovich/gitignore.plugin.zsh
 
 # to go to parent dirs quickly
 Tarrasch/zsh-bd
 
-#more autocompletion
+# more autocompletion
 zsh-users/zsh-completions src
 
 pip
@@ -57,7 +57,7 @@ antigen apply
 
 export SHELL=$(which zsh)
 
-#use vim mode for zsh
+# use vim mode
 bindkey -v
 # Better searching in command mode
 bindkey -M vicmd "k" up-line-or-beginning-search
@@ -67,13 +67,13 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 source "$HOME"/.shared_shell.sh
 source "$HOME"/.autocompletion.zsh
 
-#use history per tab and just merge after exit that shell
+# use history per tab and just merge after exit that shell
 setopt APPEND_HISTORY
 
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 
-#allow to open editor for a command line
+# allow to open editor for a command line
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
