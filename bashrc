@@ -72,9 +72,6 @@ esac
 
 ########################OWN SETTINGS##################################
 
-SHELL=$(which bash)
-export SHELL
-
 # shellcheck source=shared_shell.sh
 source "$HOME"/.shared_shell.sh
 

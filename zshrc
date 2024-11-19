@@ -53,8 +53,6 @@ antigen apply
 
 ##############################Further config####################################
 
-export SHELL=$(which zsh)
-
 # use vim mode
 bindkey -v
 # Better searching in command mode
