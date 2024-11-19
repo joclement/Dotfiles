@@ -89,5 +89,5 @@ if ! shopt -oq posix; then
     fi
 fi
 
-# enable vim mode
+# use vim mode
 set -o vi
