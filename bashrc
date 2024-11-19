@@ -75,7 +75,6 @@ esac
 
 ########################OWN SETTINGS##################################
 
-#changes SHELL variable to bash, if using bash
 SHELL=$(which bash)
 export SHELL
 

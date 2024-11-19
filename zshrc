@@ -29,10 +29,8 @@ fpath+=$HOME/.zfunc
 
 source ~/.antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-#specify bundles
 antigen bundles <<EOBUNDLES
 
 # for working with git
