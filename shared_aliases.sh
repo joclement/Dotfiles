@@ -68,7 +68,7 @@ gitfixup() {
 }
 
 list_dirty_gits() {
-  is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
+  local is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
 
   # editorconfig-checker-disable
   find ./ \
