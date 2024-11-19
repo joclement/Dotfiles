@@ -1,5 +1,4 @@
 # This file contains all the settings shared between different shells(bash, zsh)
-# It just sources(enables) the other shared files, if they exist
 
 # shellcheck source=shared_shell.sh
 source "$HOME"/.shared_aliases.sh
