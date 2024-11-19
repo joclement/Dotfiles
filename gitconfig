@@ -5,6 +5,7 @@
 [advice]
     skippedCherryPicks = false
     statusHints = false
+    forceDeleteBranch = false
 [alias]
     ap = add --patch
     br = branch
