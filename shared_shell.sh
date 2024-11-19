@@ -11,3 +11,6 @@ if [ -f "$HOME"/.private.sh ]; then
 fi
 
 eval "$(dircolors ~/.dircolors-solarized/dircolors.ansi-dark)"
+
+# shellcheck disable=SC2046,SC2086
+eval "$(direnv hook $(basename $SHELL))"

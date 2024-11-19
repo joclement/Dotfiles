@@ -83,3 +83,4 @@
     - ./configure_powerlevel10k.sh
     - echo 'Run `chsh -s $(which zsh)`'
     - ./install-vim-plugins.sh
+    - sudo apt-get install direnv
