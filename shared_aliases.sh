@@ -25,13 +25,13 @@ alias docker_kill_all='docker kill $(docker ps -q)'
 
 ################################ My alias functions ############################
 
-function pgrep {
+pgrep() {
     find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
 }
 
 # TODO do I really still need this function? I think this can also be done with
 # an environment variable.
-function pmake {
+pmake() {
     ncpu=$(nproc)
     upper_limit=10
     if ((ncpu > 10)); then
@@ -40,11 +40,11 @@ function pmake {
     nice -n19 make -j"$ncpu" "$@"
 }
 
-function mkcd {
+mkcd() {
     mkdir "$1" && cd "$1" || exit
 }
 
-function md2html {
+md2html() {
     markdownfile=$1
     htmlfile=${markdownfile%".md"}".html"
     pandoc \
@@ -54,11 +54,11 @@ function md2html {
         --output "$htmlfile"
 }
 
-function cless {
+cless() {
     pygmentize -f terminal "$1" | less -R
 }
 
-function gitfixup {
+gitfixup() {
     selected_commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
         | fzf \
         | cut -c -7)
@@ -67,7 +67,7 @@ function gitfixup {
     GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash "${selected_commit}"~1
 }
 
-function list_dirty_gits {
+list_dirty_gits() {
     is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
 
     # editorconfig-checker-disable
@@ -78,7 +78,7 @@ function list_dirty_gits {
     # editorconfig-checker-enable
 }
 
-function gprunesquashmerged {
+gprunesquashmerged() {
     local default_branch="master"
 
     git checkout -q "$default_branch" \
@@ -92,10 +92,10 @@ function gprunesquashmerged {
         done
 }
 
-function datetime_to_unix {
+datetime_to_unix() {
     date -u -d "${1} ${2}" +%s
 }
 
-function unix_to_datetime {
+unix_to_datetime() {
     date -u -d @"${1}" +'%F %T'
 }
