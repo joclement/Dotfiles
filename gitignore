@@ -45,6 +45,7 @@ CONTRIBUTING.html
 __pycache__/
 .ruff_cache/
 .pytest_cache/
+pyrightconfig.json
 
 ### Lua
 lua_modules
