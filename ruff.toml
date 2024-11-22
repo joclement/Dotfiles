@@ -1,2 +1,4 @@
 [lint]
+select = ["ALL"]
+preview = true
 ignore = ["E501"]
