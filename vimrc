@@ -105,6 +105,7 @@ let g:tex_flavor='latex'
 let g:codeium_filetypes_disabled_by_default = v:true
 
 let g:codeium_filetypes = {
+    \ "bash": v:true,
     \ "Dockerfile": v:true,
     \ "go": v:true,
     \ "perl": v:true,
