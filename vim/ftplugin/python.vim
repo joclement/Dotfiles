@@ -11,3 +11,5 @@ endif
 let b:ale_fixers = ['autoimport']
 
 let g:ale_python_flake8_options = '--ignore=E501,W503'
+
+let g:ale_python_auto_virtualenv = 1
