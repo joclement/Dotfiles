@@ -4,4 +4,6 @@ preview = true
 ignore = ["CPY001", "E501", "D103", "D211", "D213", "FIX001", "TD001", "TD003"]
 
 [per-file-ignores]
-"test_*.py" = ["ANN001", "ANN201", "D100", "INP001", "S101", "S404", "S603", "T201"]
+"test_*.py" = [
+    "ANN001", "ANN201", "D100", "INP001", "S101", "S404", "S603", "T201"
+]
