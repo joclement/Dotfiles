@@ -73,7 +73,7 @@
     - ~/.zfunc
 
 - shell:
-    - git submodule update --recursive --init --jobs=8
+    - git submodule update --recursive --init --jobs=$(nproc)
     - sudo apt-get update
     - sudo snap refresh
     - description: Install package for fc-cache
