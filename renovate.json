@@ -14,14 +14,9 @@
   "packageRules": [
     {
       "automerge": false,
-      "matchPackageNames": [
-        "/.*/"
-      ]
-    },
-    {
       "schedule": "every 30 day",
       "matchPackageNames": [
-        "/black/"
+        "/.*/"
       ]
     }
   ]
