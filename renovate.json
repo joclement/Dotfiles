@@ -14,15 +14,14 @@
   "packageRules": [
     {
       "automerge": false,
+      "schedule": "every 30 day",
       "matchPackageNames": [
         "/.*/"
       ]
     },
     {
-      "schedule": "every 30 day",
-      "matchPackageNames": [
-        "/black/"
-      ]
+      "matchPackageNames": ["/fzf.vim/"],
+      "enabled": false
     }
   ]
 }
