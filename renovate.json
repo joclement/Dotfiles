@@ -18,6 +18,10 @@
       "matchPackageNames": [
         "/.*/"
       ]
+    },
+    {
+      "matchPackageNames": ["/fzf.vim/"],
+      "enabled": false
     }
   ]
 }
