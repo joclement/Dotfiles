@@ -73,7 +73,7 @@
     - ~/.zfunc
 
 - shell:
-    - git submodule update --recursive --init --jobs=8
+    - git submodule update --recursive --init --jobs=$(nproc)
     - sudo apt-get update
     - sudo snap refresh
     - description: Install package for fc-cache
@@ -83,4 +83,4 @@
     - ./configure_powerlevel10k.sh
     - echo 'Run `chsh -s $(which zsh)`'
     - ./install-vim-plugins.sh
-    - sudo apt-get install direnv
+    - sudo apt-get install --yes direnv
