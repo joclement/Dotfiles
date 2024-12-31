@@ -1,19 +1,18 @@
-# NOTE: only add the directory if it is nowhere in PATH
-__path_append() {
+__path_append_if_dir_exists() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="$PATH:$1"
   fi
 }
 
-__path_append "$HOME"/bin
+__path_append_if_dir_exists "$HOME"/bin
 
-__path_append "$HOME"/.local/bin
+__path_append_if_dir_exists "$HOME"/.local/bin
 
-__path_append "$HOME"/.poetry/bin
+__path_append_if_dir_exists "$HOME"/.poetry/bin
 
-__path_append "$HOME"/.fzf/bin
+__path_append_if_dir_exists "$HOME"/.fzf/bin
 
-unset -f __path_append
+unset -f __path_append_if_dir_exists
 
 CARGO_ENV="$HOME"/.cargo/env
 if [ -f "$CARGO_ENV" ]; then
