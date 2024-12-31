@@ -11,14 +11,14 @@ __path_append "$HOME"/.local/bin
 
 __path_append "$HOME/.poetry/bin"
 
+__path_append "$HOME/.fzf/bin"
+
+unset -f __path_append
+
 if [ -f "$HOME/.cargo/env" ]; then
   # shellcheck source=/dev/null
   source "$HOME"/.cargo/env
 fi
-
-__path_append "$HOME/.fzf/bin"
-
-unset -f __path_append
 
 # ---------------------------------------------------------------------
 
