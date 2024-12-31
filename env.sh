@@ -5,28 +5,18 @@ __path_append() {
   fi
 }
 
-if [ -d "$HOME/bin" ]; then
-  __path_append "$HOME"/bin
-fi
+__path_append "$HOME"/bin
 
-if [ -d "$HOME/.local/bin" ]; then
-  __path_append "$HOME"/.local/bin
-fi
+__path_append "$HOME"/.local/bin
 
-POETRY_HOME="$HOME/.poetry/bin"
-if [ -d "$POETRY_HOME" ]; then
-  __path_append "$POETRY_HOME"
-fi
+__path_append "$HOME/.poetry/bin"
 
 if [ -f "$HOME/.cargo/env" ]; then
   # shellcheck source=/dev/null
   source "$HOME"/.cargo/env
 fi
 
-FZF_BIN_DIR="$HOME/.fzf/bin"
-if [ -d "$FZF_BIN_DIR" ]; then
-  __path_append "$FZF_BIN_DIR"
-fi
+__path_append "$HOME/.fzf/bin"
 
 unset -f __path_append
 
