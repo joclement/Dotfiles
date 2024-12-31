@@ -23,6 +23,11 @@ if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME"/.cargo/env
 fi
 
+FZF_BIN_DIR="$HOME/.fzf/bin"
+if [ -d "$FZF_BIN_DIR" ]; then
+  __path_append "$FZF_BIN_DIR"
+fi
+
 unset -f __path_append
 
 # ---------------------------------------------------------------------
