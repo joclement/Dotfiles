@@ -59,6 +59,7 @@
 [pull]
     rebase = true
     prune = true
+    tags = true
 [push]
     default = simple
     followTags = true
