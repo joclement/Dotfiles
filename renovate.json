@@ -18,11 +18,6 @@
       "matchPackageNames": [
         "/.*/"
       ]
-    },
-    {
-      "matchPackageNames": ["/fzf.vim/"],
-      "description": "The new version requires fzf version 0.57 or higher",
-      "enabled": false
     }
   ]
 }

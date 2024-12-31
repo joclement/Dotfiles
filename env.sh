@@ -1,29 +1,24 @@
-# NOTE: only add the directory if it is nowhere in PATH
-__path_append() {
+__path_append_if_dir_exists() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="$PATH:$1"
   fi
 }
 
-if [ -d "$HOME/bin" ]; then
-  __path_append "$HOME"/bin
-fi
+__path_append_if_dir_exists "$HOME"/bin
 
-if [ -d "$HOME/.local/bin" ]; then
-  __path_append "$HOME"/.local/bin
-fi
+__path_append_if_dir_exists "$HOME"/.local/bin
 
-POETRY_HOME="$HOME/.poetry/bin"
-if [ -d "$POETRY_HOME" ]; then
-  __path_append "$POETRY_HOME"
-fi
+__path_append_if_dir_exists "$HOME"/.poetry/bin
 
-if [ -f "$HOME/.cargo/env" ]; then
+__path_append_if_dir_exists "$HOME"/.fzf/bin
+
+unset -f __path_append_if_dir_exists
+
+CARGO_ENV="$HOME"/.cargo/env
+if [ -f "$CARGO_ENV" ]; then
   # shellcheck source=/dev/null
-  source "$HOME"/.cargo/env
+  source "$CARGO_ENV"
 fi
-
-unset -f __path_append
 
 # ---------------------------------------------------------------------
 
