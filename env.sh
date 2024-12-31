@@ -15,9 +15,10 @@ __path_append "$HOME"/.fzf/bin
 
 unset -f __path_append
 
-if [ -f "$HOME/.cargo/env" ]; then
+CARGO_ENV="$HOME"/.cargo/env
+if [ -f "$CARGO_ENV" ]; then
   # shellcheck source=/dev/null
-  source "$HOME"/.cargo/env
+  source "$CARGO_ENV"
 fi
 
 # ---------------------------------------------------------------------
