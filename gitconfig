@@ -35,7 +35,7 @@
     verbose = true
 [core]
     excludesfile = ~/.gitignore
-    whitespace = trailing-space,space-before-tab
+    whitespace = trailing-space,space-before-tab,cr-at-eol
 [credential]
     helper = cache
 [diff]
