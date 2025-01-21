@@ -29,17 +29,6 @@ pgrep() {
   find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
 }
 
-# TODO do I really still need this function? I think this can also be done with
-# an environment variable.
-pmake() {
-  ncpu=$(nproc)
-  upper_limit=10
-  if ((ncpu > 10)); then
-    ncpu=$upper_limit
-  fi
-  nice -n19 make -j"$ncpu" "$@"
-}
-
 mkcd() {
   mkdir "$1" && cd "$1" || exit
 }
