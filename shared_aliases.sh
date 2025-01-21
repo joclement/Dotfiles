@@ -79,7 +79,8 @@ list_dirty_gits() {
 }
 
 gprunesquashmerged() {
-  local default_branch="master"
+  local default_branch
+  default_branch=$(git default-branch)
 
   git checkout -q "$default_branch" \
     && git for-each-ref refs/heads/ "--format=%(refname:short)" \
