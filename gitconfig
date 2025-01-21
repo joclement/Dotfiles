@@ -16,11 +16,16 @@
         | sed 's@^refs/remotes/origin/@@')
     co = checkout
     dca = diff --cached
+    default-branch = !git show-ref --verify --quiet refs/heads/main \
+        && echo main || echo master
     fpu = push --force-with-lease --force-if-includes
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     last = slog -1 HEAD
     rbc = rebase --continue
+    rbim = "!f() { \
+                    branch=$(git default-branch); git rebase -i \"$branch\"; \
+                 }; f"
     rbcn = !(GIT_EDITOR=true git rbc)
     rbs = rebase --skip
     slog = log --stat
