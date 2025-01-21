@@ -1,4 +1,4 @@
-# shellcheck disable=SC2046
+# shellcheck disable=SC2046 shell=bash
 
 ################################### My aliases #################################
 
