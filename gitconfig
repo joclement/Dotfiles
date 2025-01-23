@@ -21,6 +21,9 @@
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
     rbc = rebase --continue
+    rbm = "!f() { \
+                    branch=$(git default-branch); git rebase \"$branch\"; \
+                 }; f"
     rbim = "!f() { \
                     branch=$(git default-branch); git rebase -i \"$branch\"; \
                  }; f"
