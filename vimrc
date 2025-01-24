@@ -28,7 +28,7 @@ let g:netrw_fastbrowse = 2
 
 " NerdTree {{{
 map <C-e> :NERDTreeMirrorToggle<CR>
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeRespectWildIgnore=1
 " }}}
 
 " }}}

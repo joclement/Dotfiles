@@ -58,6 +58,8 @@ bindkey -v
 # Better searching in command mode
 bindkey -M vicmd "k" up-line-or-beginning-search
 bindkey -M vicmd "j" down-line-or-beginning-search
+# Use regex for searching
+bindkey '^R' history-incremental-pattern-search-backward
 
 
 source "$HOME"/.shared_shell.sh

@@ -12,15 +12,21 @@
     ci = commit --signoff
     cia = ci --amend
     cian = cia --no-edit
-    cm = !git checkout $(git symbolic-ref refs/remotes/origin/HEAD \
-        | sed 's@^refs/remotes/origin/@@')
+    cm = !git checkout $(git default-branch)
     co = checkout
     dca = diff --cached
+    default-branch = !git show-ref --verify --quiet refs/heads/main \
+        && echo main || echo master
     fpu = push --force-with-lease --force-if-includes
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
-    last = slog -1 HEAD
     rbc = rebase --continue
+    rbm = "!f() { \
+                    branch=$(git default-branch); git rebase \"$branch\"; \
+                 }; f"
+    rbim = "!f() { \
+                    branch=$(git default-branch); git rebase -i \"$branch\"; \
+                 }; f"
     rbcn = !(GIT_EDITOR=true git rbc)
     rbs = rebase --skip
     slog = log --stat
@@ -42,7 +48,7 @@
     ignoreSubmodules = dirty
     tool = vimdiff
 [fetch]
-    parallel = 8
+    parallel = 0
     prune = true
 [filter "lfs"]
     clean = git-lfs clean -- %f

@@ -1,4 +1,4 @@
-# shellcheck disable=SC2046
+# shellcheck disable=SC2046 shell=bash
 
 ################################### My aliases #################################
 
@@ -27,17 +27,6 @@ alias docker_kill_all='docker kill $(docker ps -q)'
 
 pgrep() {
   find "$2" -type f | parallel -k -j150% -n 1000 -m grep -H -n "$1" {}
-}
-
-# TODO do I really still need this function? I think this can also be done with
-# an environment variable.
-pmake() {
-  ncpu=$(nproc)
-  upper_limit=10
-  if ((ncpu > 10)); then
-    ncpu=$upper_limit
-  fi
-  nice -n19 make -j"$ncpu" "$@"
 }
 
 mkcd() {
@@ -79,7 +68,8 @@ list_dirty_gits() {
 }
 
 gprunesquashmerged() {
-  local default_branch="master"
+  local default_branch
+  default_branch=$(git default-branch)
 
   git checkout -q "$default_branch" \
     && git for-each-ref refs/heads/ "--format=%(refname:short)" \
