@@ -69,8 +69,8 @@
     ~/CPPLINT.cfg:
 
 - create:
-    - ~/.git-template
-    - ~/.zfunc
+    ~/.git-template:
+    ~/.zfunc:
 
 - shell:
     - git submodule update --recursive --init --jobs=$(nproc)
