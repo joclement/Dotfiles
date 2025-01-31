@@ -71,6 +71,7 @@
 - create:
     ~/.git-template:
     ~/.zfunc:
+      mode: 755
 
 - shell:
     - git submodule update --recursive --init --jobs=$(nproc)
