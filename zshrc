@@ -20,9 +20,6 @@ if [ -f "$HOME"/.private_zshrc_begin ]; then
     source "$HOME"/.private_zshrc_begin
 fi
 
-# for custom autocompletion
-fpath+=$HOME/.zfunc
-
 ###############################antigen stuff####################################
 
 source ~/.antigen/antigen.zsh
