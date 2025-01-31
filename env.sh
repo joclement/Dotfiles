@@ -1,5 +1,5 @@
 __path_append_if_dir_exists() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+  if [[ -d $1 ]] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="$PATH:$1"
   fi
 }
