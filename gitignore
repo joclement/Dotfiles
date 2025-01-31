@@ -47,6 +47,7 @@ __pycache__/
 .pytest_cache/
 pyrightconfig.json
 *.egg-info/
+dist/
 
 ### Lua
 lua_modules
