@@ -1,5 +1,5 @@
 __path_append_if_dir_exists() {
-  if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+  if [[ -d $1 ]] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="$PATH:$1"
   fi
 }
@@ -11,8 +11,6 @@ __path_append_if_dir_exists "$HOME"/.local/bin
 __path_append_if_dir_exists "$HOME"/.poetry/bin
 
 __path_append_if_dir_exists "$HOME"/.fzf/bin
-
-unset -f __path_append_if_dir_exists
 
 CARGO_ENV="$HOME"/.cargo/env
 if [ -f "$CARGO_ENV" ]; then
@@ -32,3 +30,7 @@ export HISTIGNORE='*sudo -S*'
 # ---------------------------------------------------------------------
 
 export MAKE_PARALLELIZATION=8
+
+# ---------------------------------------------------------------------
+
+export UV_PYTHON_DOWNLOADS=never

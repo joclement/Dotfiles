@@ -7,13 +7,11 @@ if [[ -r "$P10K_INSTANT_PROMPT" ]]; then
   source "$P10K_INSTANT_PROMPT"
 fi
 
-# Uncomment the following line to use case-sensitive completion.
+# For completion
 CASE_SENSITIVE="true"
 
-# Shows dots if waiting for autocompletion, ...
 COMPLETION_WAITING_DOTS="true"
 
-# DISABLE AUTOCORRECTION
 DISABLE_CORRECTION="true"
 
 export TERM="xterm-256color"
@@ -21,9 +19,6 @@ export TERM="xterm-256color"
 if [ -f "$HOME"/.private_zshrc_begin ]; then
     source "$HOME"/.private_zshrc_begin
 fi
-
-# for custom autocompletion
-fpath+=$HOME/.zfunc
 
 ###############################antigen stuff####################################
 
@@ -33,7 +28,6 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 
-# for working with git
 voronkovich/gitignore.plugin.zsh
 
 # to go to parent dirs quickly
