@@ -12,8 +12,6 @@ __path_append_if_dir_exists "$HOME"/.poetry/bin
 
 __path_append_if_dir_exists "$HOME"/.fzf/bin
 
-unset -f __path_append_if_dir_exists
-
 CARGO_ENV="$HOME"/.cargo/env
 if [ -f "$CARGO_ENV" ]; then
   # shellcheck source=/dev/null
