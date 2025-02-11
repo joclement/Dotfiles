@@ -72,7 +72,6 @@ let g:coc_global_extensions = [
   \ 'coc-jedi',
   \ 'coc-json',
   \ 'coc-lua',
-  \ 'coc-marketplace',
   \ 'coc-perl',
   \ 'coc-prettier',
   \ 'coc-pyright',
