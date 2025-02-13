@@ -227,13 +227,9 @@ endfunction
 nmap <silent> <F8> :call ToggleSpell()<CR>
 " }}}
 
-" Highlight tabs {{{
-highlight Tabs ctermbg=red guibg=red
-2match Tabs /\t/
-autocmd BufWinEnter * 2match Tabs /\t/
-autocmd InsertEnter * call clearmatches()
-autocmd InsertLeave * 2match Tabs /\t/
-autocmd BufWinLeave * call clearmatches()
+" Highlight spacing characters and too long lines {{{
+set list
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 " }}}
 
 " trailing whitespace {{{
