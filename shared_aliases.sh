@@ -8,7 +8,7 @@ alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
 alias grep='grep \
     -I \
     --color=auto \
-    --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache} \
+    --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache,.tox} \
     --exclude=tags'
 # use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'

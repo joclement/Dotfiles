@@ -200,6 +200,7 @@ if executable('ag')
                 \ --ignore-dir=.mypy_cache\
                 \ --ignore-dir=.nox\
                 \ --ignore-dir=.pytest_cache\
+                \ --ignore-dir=.tox\
                 \ --ignore=tags
 else
     set grepprg=grep\ -n\ $*\ /dev/null\
