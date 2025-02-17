@@ -9,6 +9,7 @@
 - clean: ['~', '~/.vim']
 
 - create:
+    - ~/.git-template
     - ~/.vim
 
 - link:
@@ -67,9 +68,6 @@
     ~/.zshenv:
     ~/.zshrc:
     ~/CPPLINT.cfg:
-
-- create:
-    ~/.git-template:
 
 - shell:
     - git submodule update --recursive --init --jobs=$(nproc)
