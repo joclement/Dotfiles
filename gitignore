@@ -41,6 +41,7 @@ CHANGELOG.html
 CONTRIBUTING.html
 
 ### Python
+.coverage
 .python-version
 __pycache__/
 .ruff_cache/
@@ -48,6 +49,7 @@ __pycache__/
 pyrightconfig.json
 *.egg-info/
 dist/
+.tox/
 
 ### Lua
 lua_modules
