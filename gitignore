@@ -31,6 +31,8 @@ CHANGELOG.html
 CONTRIBUTING.html
 README.html
 
+### Python
+.coverage
 *.egg-info/
 .pytest_cache/
 .python-version
@@ -39,6 +41,7 @@ README.html
 __pycache__/
 dist/
 pyrightconfig.json
+.tox/
 
 # Other
 .cache/
