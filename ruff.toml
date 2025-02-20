@@ -20,7 +20,7 @@ ignore = [
     "TD003",
 ]
 
-[per-file-ignores]
+[lint.per-file-ignores]
 "test_*.py" = [
     "ANN001",
     "ANN201",

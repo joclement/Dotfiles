@@ -55,8 +55,6 @@
     process = git-lfs filter-process
     required = true
     smudge = git-lfs smudge -- %f
-[format]
-    signOff = true
 [init]
     defaultBranch = main
     templateDir = ~/.git-template
