@@ -27,26 +27,26 @@ GPATH
 GRTAGS
 GTAGS
 
-README.html
 CHANGELOG.html
 CONTRIBUTING.html
+README.html
 
-.python-version
-__pycache__/
-.ruff_cache/
-.pytest_cache/
-pyrightconfig.json
 *.egg-info/
-dist/
+.pytest_cache/
+.python-version
+.ruff_cache/
 .venv
+__pycache__/
+dist/
+pyrightconfig.json
 
 # Other
 .cache/
-.git-commit-message
-UltiSnips/
-/current_repo_gitlab_issues.json
-.own-env
 .envrc
+.git-commit-message
+.own-env
+/current_repo_gitlab_issues.json
 /git-bisect-run.sh
-node_modules/
+UltiSnips/
 lua_modules
+node_modules/
