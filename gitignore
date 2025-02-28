@@ -11,6 +11,10 @@
 # Session
 Session.vim
 
+# Exclude local vim configuration
+.lvimrc
+.vim
+
 # Temporary
 .netrwhist
 *~
@@ -20,17 +24,11 @@ tags.lock
 tags.temp
 # Persistent undo
 [._]*.un~
-# Exclude local vim configuration
-.lvimrc
-.vim
 
 ### Gtags
 GPATH
 GRTAGS
 GTAGS
-
-### virtual environment
-.venv
 
 ### Markdown HTML files
 README.html
@@ -45,6 +43,7 @@ __pycache__/
 pyrightconfig.json
 *.egg-info/
 dist/
+.venv
 
 ### Lua
 lua_modules
