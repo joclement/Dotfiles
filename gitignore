@@ -1,6 +1,6 @@
-#My general gitignore
+# My general gitignore
 
-### Vim
+# Vim
 # Swap
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
@@ -8,33 +8,29 @@
 [._]ss[a-gi-z]
 [._]sw[a-p]
 
-# Session
 Session.vim
 
-# Exclude local vim configuration
 .lvimrc
 
 # Temporary
 .netrwhist
 *~
-# Auto-generated tag files
+
 tags
 tags.lock
 tags.temp
+
 # Persistent undo
 [._]*.un~
 
-### Gtags
 GPATH
 GRTAGS
 GTAGS
 
-### Markdown HTML files
 README.html
 CHANGELOG.html
 CONTRIBUTING.html
 
-### Python
 .python-version
 __pycache__/
 .ruff_cache/
@@ -44,13 +40,7 @@ pyrightconfig.json
 dist/
 .venv
 
-### Lua
-lua_modules
-
-### Node.js
-node_modules/
-
-### Other
+# Other
 .cache/
 .git-commit-message
 UltiSnips/
@@ -58,3 +48,5 @@ UltiSnips/
 .own-env
 .envrc
 /git-bisect-run.sh
+node_modules/
+lua_modules
