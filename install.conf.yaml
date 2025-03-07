@@ -48,6 +48,7 @@
     ~/.profile:
       force: true
       path: profile
+    ~/.pylintrc:
     ~/.shared_aliases.sh:
     ~/.ruff.toml:
     ~/.shared_shell.sh:

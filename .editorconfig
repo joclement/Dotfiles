@@ -20,6 +20,9 @@ indent_size = 2
 [autocompletion_zsh]
 max_line_length = unset
 
+[pylintrc]
+max_line_length = unset
+
 [vim/autoload/plug.vim]
 indent_size = unset
 max_line_length = unset

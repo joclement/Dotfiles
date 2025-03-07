@@ -1,0 +1,3 @@
+[MASTER]
+ignore=.venv
+init-hook="import sys; from pathlib import Path; sys.path.append(str(next(Path.cwd().glob('.venv/lib/*/site-packages'))))"
