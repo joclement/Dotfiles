@@ -10,14 +10,5 @@
   ],
   "git-submodules": {
     "enabled": true
-  },
-  "packageRules": [
-    {
-      "automerge": false,
-      "schedule": "every 30 day",
-      "matchPackageNames": [
-        "/.*/"
-      ]
-    }
-  ]
+  }
 }
