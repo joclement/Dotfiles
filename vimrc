@@ -307,8 +307,8 @@ set foldnestmax=5
 
 " misc {{{
 set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp
-            \,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
-                        \,*.toc,*.pyc
+               \,*.jpg,*.png,*.xpm,*.gif,*.h5,*.pdf,*.aux,*.ods,*.bbl
+               \,*.toc,*.pyc
 
 set backspace=2
 
