@@ -47,6 +47,7 @@ pyrightconfig.json
 .cache/
 .envrc
 .git-commit-message
+.key
 .own-env
 /current_repo_gitlab_issues.json
 /git-bisect-run.sh
