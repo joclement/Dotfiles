@@ -20,15 +20,16 @@
     fpu = push --force-with-lease --force-if-includes
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
-    rbc = rebase --continue
+    rb = rebase
+    rbc = rb --continue
     rbm = "!f() { \
-                    branch=$(git default-branch); git rebase \"$branch\"; \
+                    branch=$(git default-branch); git rb \"$branch\"; \
                  }; f"
     rbim = "!f() { \
-                    branch=$(git default-branch); git rebase -i \"$branch\"; \
+                    branch=$(git default-branch); git rb -i \"$branch\"; \
                  }; f"
     rbcn = !(GIT_EDITOR=true git rbc)
-    rbs = rebase --skip
+    rbs = rb --skip
     slog = log --stat
     st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
