@@ -34,7 +34,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/google/yamlfmt
-    rev: 000ae56472e8e0785d5554055f346ae64b6ef2b9 # frozen: v0.15.0
+    rev: ac76bb931851dda64a55ef746ca9b8bb41634b98  # frozen: v0.16.0
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -42,7 +42,7 @@ repos:
     hooks:
       - id: shellcheck
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: c6119812f7c21e6b2b01583025e2664945c550a3 # frozen: v4.1.1
+    rev: e0b1c7743d5ea0bcba82e4ff515ce2caf5e87865  # frozen: v4.5.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
@@ -56,15 +56,15 @@ repos:
             ^.git/COMMIT_EDITMSG$
           )
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: c764d820bfc7d772ae9cc86b4696c375aee944a4 # frozen: 3.2.0
+    rev: 3bea62898235acc3f05c1d9c33023345f6cd3c6f  # frozen: 3.2.1
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: d2cee4b6903c30e2b0bdafe30e583d3a6cda80db # frozen: v3.10.0-2
+    rev: 119ed76a0da67a4a09fff7ab55c42f5519680289  # frozen: v3.11.0-1
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: a20fe80ebdd4aec6791598c9ff559985580f91ea # frozen: 0.31.1
+    rev: a167de9d5f4e87e1cdb16cb560aa704b79b6f655  # frozen: 0.32.1
     hooks:
       - id: check-github-workflows
       - id: check-renovate
