@@ -1,4 +1,4 @@
 {
   "diagnostic.displayByAle": true,
-  "perl.navigator.enable": true
+  "perl.enable": true
 }
