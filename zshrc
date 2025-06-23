@@ -28,8 +28,6 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 
-voronkovich/gitignore.plugin.zsh
-
 # to go to parent dirs quickly
 Tarrasch/zsh-bd
 
