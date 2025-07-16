@@ -141,7 +141,7 @@ function! SetTextWidth(myTextwidth)
     highlight ColorColumn ctermbg=black
 endfunction
 
-call SetTextWidth(80)
+call SetTextWidth(90)
 " }}}
 
 " function jump to last pos open {{{
