@@ -86,10 +86,6 @@ datetime_to_unix() {
   date -u -d "${1} ${2}" +%s
 }
 
-unix_to_datetime() {
-  date -u -d @"${1}" +'%F %T'
-}
-
 get_gitlab_link_for_commit_id() {
   local ref=${1}
   local commit_id
