@@ -15,5 +15,3 @@ eval "$(dircolors ~/.dircolors-solarized/dircolors.ansi-dark)"
 
 export DIRENV_LOG_FORMAT=""
 eval "$(direnv hook $(basename $SHELL))"
-
-eval "$(uv generate-shell-completion $(basename $SHELL))"
