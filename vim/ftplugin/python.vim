@@ -1,4 +1,4 @@
-call SetTextWidth(88)
+call SetTextWidth(0)
 
 let g:python_highlight_string_formatting = 1
 let g:python_highlight_string_format = 1
