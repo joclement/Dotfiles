@@ -67,7 +67,7 @@ list_dirty_gits() {
   # editorconfig-checker-enable
 }
 
-gprunesquashmerged() {
+git_delete_squash_merged_branches() {
   local default_branch
   default_branch=$(git default-branch)
 
