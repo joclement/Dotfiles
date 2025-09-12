@@ -2,15 +2,15 @@
 
 ################################### My aliases #################################
 
-alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
-alias pingTest='ping 9.9.9.9'
-alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
+alias kill_firefox='\
+    pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
+alias ping_test='ping 9.9.9.9'
+alias test_hdmi='speaker-test -c 2 -r 48000 -D hw:0,3'
 alias grep='grep \
     -I \
     --color=auto \
     --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache,.tox} \
     --exclude=tags'
-# use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'
 alias used_ports='sudo lsof -i -P -n | grep LISTEN'
 alias vless='vim -R -'
@@ -65,21 +65,6 @@ list_dirty_gits() {
     -name '.git' \
     -exec sh -c "cd '$1/..' && $is_git_dirty || echo 'Dirty: $1'" shell {} \;
   # editorconfig-checker-enable
-}
-
-git_delete_squash_merged_branches() {
-  local default_branch
-  default_branch=$(git default-branch)
-
-  git checkout -q "$default_branch" \
-    && git for-each-ref refs/heads/ "--format=%(refname:short)" \
-    | while read -r branch; do
-      mergeBase=$(git merge-base "$default_branch" "$branch") \
-        && [[ $(git cherry "$default_branch" \
-          $(git commit-tree $(git rev-parse "$branch^{tree}") \
-            -p "$mergeBase" -m _)) == "-"* ]] \
-        && git branch -D "$branch"
-    done
 }
 
 datetime_to_unix() {
