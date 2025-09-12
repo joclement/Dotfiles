@@ -2,9 +2,10 @@
 
 ################################### My aliases #################################
 
-alias kfi='pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
-alias pingTest='ping 9.9.9.9'
-alias testHDMI='speaker-test -c 2 -r 48000 -D hw:0,3'
+alias kill_firefox='\
+    pkill -f /usr/lib/firefox/firefox && (firefox &> /dev/null &)'
+alias ping_test='ping 9.9.9.9'
+alias test_hdmi='speaker-test -c 2 -r 48000 -D hw:0,3'
 alias grep='grep \
     -I \
     --color=auto \
