@@ -10,7 +10,6 @@ alias grep='grep \
     --color=auto \
     --exclude-dir={.git,build,.mypy_cache,.nox,.pytest_cache,.tox} \
     --exclude=tags'
-# use sudo to get all open ports
 alias open_ports='netstat -tulpn | grep LISTEN'
 alias used_ports='sudo lsof -i -P -n | grep LISTEN'
 alias vless='vim -R -'
