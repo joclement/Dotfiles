@@ -67,21 +67,6 @@ list_dirty_gits() {
   # editorconfig-checker-enable
 }
 
-git_delete_squash_merged_branches() {
-  local default_branch
-  default_branch=$(git default-branch)
-
-  git checkout -q "$default_branch" \
-    && git for-each-ref refs/heads/ "--format=%(refname:short)" \
-    | while read -r branch; do
-      mergeBase=$(git merge-base "$default_branch" "$branch") \
-        && [[ $(git cherry "$default_branch" \
-          $(git commit-tree $(git rev-parse "$branch^{tree}") \
-            -p "$mergeBase" -m _)) == "-"* ]] \
-        && git branch -D "$branch"
-    done
-}
-
 datetime_to_unix() {
   date -u -d "${1} ${2}" +%s
 }
