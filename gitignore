@@ -55,3 +55,4 @@ UltiSnips/
 lua_modules
 node_modules/
 .~lock.*.ods#
+.coverage.*
