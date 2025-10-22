@@ -1,5 +1,7 @@
 #This file is to improve the autocompletion for the zsh shell
 
+autoload -U compinit; compinit
+
 # editorconfig-checker-disable
 
 #restrict autocompletion for vim
@@ -18,3 +20,9 @@ zstyle ':completion:*:*:op:*' \
 
 zstyle ':completion:*:*:md2html:*' file-patterns '*.md'
 zstyle ':completion:*:*:markdown:*' file-patterns '*.md'
+
+if [ -x "$(command -v glab)" ]; then
+    # shellcheck source=/dev/null
+    source <(glab completion -s zsh)
+    compdef _glab glab
+fi
