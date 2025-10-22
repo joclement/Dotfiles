@@ -4,8 +4,7 @@ autoload -U compinit; compinit
 
 # editorconfig-checker-disable
 
-#restrict autocompletion for vim
-#do not autcomplete the named filetypes
+# do not autocomplete the named filetypes for vim
 zstyle ':completion:*:*:vim:*' \
        file-patterns \
        '^*.(class|zip|doc|aux|xls|fls|blg|fdb_latexmk|eps|log|pdf|jpeg|png|ods|bbl|h5|jpg|swp|class|obj|obj|o|a|toc):source-files' \
