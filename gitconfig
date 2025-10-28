@@ -17,6 +17,13 @@
     dca = diff --cached
     default-branch = !git show-ref --verify --quiet refs/heads/main \
         && echo main || echo master
+    fixup = "!f() { \
+                    commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
+                             | fzf \
+                             | cut -c -7); \
+                    git commit --fixup \"$commit\"; \
+                    GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash \"$commit\"~1; \
+                  }; f"
     fpu = push --force-with-lease --force-if-includes
     fpus = fpu --push-option=ci.skip
     glog = log --pretty=format:\"%h %s\" --graph
