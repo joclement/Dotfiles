@@ -47,15 +47,6 @@ cless() {
   pygmentize -f terminal "$1" | less -R
 }
 
-gitfixup() {
-  selected_commit=$(git log -n 30 --pretty=format:'%h %s' --no-merges \
-    | fzf \
-    | cut -c -7)
-
-  git commit --fixup "$selected_commit"
-  GIT_SEQUENCE_EDITOR=true git rebase -i --autosquash "${selected_commit}"~1
-}
-
 list_dirty_gits() {
   local is_git_dirty="git diff --quiet --ignore-submodules --exit-code"
 
@@ -68,7 +59,7 @@ list_dirty_gits() {
 }
 
 datetime_to_unix() {
-  date -u -d "${1} ${2}" +%s
+  date -u -d "${1}" +%s
 }
 
 get_gitlab_link_for_commit_id() {
