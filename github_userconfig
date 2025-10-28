@@ -2,3 +2,5 @@
 
 [user]
   email = 7713214+joclement@users.noreply.github.com
+[alias]
+  pupr = !git push -u origin HEAD && gh pr create --fill && gh pr merge --auto --merge
