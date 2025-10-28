@@ -59,7 +59,7 @@ list_dirty_gits() {
 }
 
 datetime_to_unix() {
-  date -u -d "${1} ${2}" +%s
+  date -u -d "${1}" +%s
 }
 
 get_gitlab_link_for_commit_id() {
