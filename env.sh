@@ -32,3 +32,7 @@ export HISTIGNORE='*sudo -S*'
 # ---------------------------------------------------------------------
 
 export MAKE_PARALLELIZATION=8
+
+# ---------------------------------------------------------------------
+
+export FZF_DEFAULT_OPTS="--walker-skip=.git,.venv,__pycache__"
