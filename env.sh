@@ -32,8 +32,3 @@ export HISTIGNORE='*sudo -S*'
 # ---------------------------------------------------------------------
 
 export MAKE_PARALLELIZATION=8
-
-# ---------------------------------------------------------------------
-
-export UV_PYTHON_DOWNLOADS=never
-export UV_PYTHON_PREFERENCE=system
