@@ -24,7 +24,7 @@
     rbc = rb --continue
     rbm = "!f() { \
                     branch=$(git default-branch); git rb \"$branch\"; \
-                 }; f"
+                }; f"
     rbim = "!f() { \
                     branch=$(git default-branch); git rb -i \"$branch\"; \
                  }; f"
