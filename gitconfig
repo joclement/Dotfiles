@@ -68,6 +68,7 @@
     templateDir = ~/.git-template
 [log]
     abbrevCommit = true
+    follow = true
 [merge]
     tool = vimdiff
 [pull]

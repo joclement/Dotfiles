@@ -35,5 +35,4 @@ export MAKE_PARALLELIZATION=8
 
 # ---------------------------------------------------------------------
 
-export UV_PYTHON_DOWNLOADS=never
-export UV_PYTHON_PREFERENCE=system
+export FZF_DEFAULT_OPTS="--walker-skip=.git,.venv,__pycache__"
