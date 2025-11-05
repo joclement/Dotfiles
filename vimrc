@@ -122,6 +122,10 @@ let g:codeium_filetypes = {
 let g:tagbar_help_visibility = 1"
 " }}}
 
+" gutentags {{{
+let g:gutentags_project_root = ['.root']
+" }}}
+
 " }}}
 
 " colorscheme {{{
