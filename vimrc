@@ -7,6 +7,12 @@ filetype plugin indent on
 
 " plugin settings {{{
 
+" load help pages {{{
+if has('packages')
+  silent! helptags ALL
+endif
+" }}}
+
 " fzf {{{
 set runtimepath+=~/.fzf
 " }}}
