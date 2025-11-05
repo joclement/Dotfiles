@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 __path_append_if_dir_exists() {
   if [[ -d $1 ]] && [[ ":$PATH:" != *":$1:"* ]]; then
     PATH="$PATH:$1"
@@ -35,4 +37,18 @@ export MAKE_PARALLELIZATION=8
 
 # ---------------------------------------------------------------------
 
-export FZF_DEFAULT_OPTS="--walker-skip=.git,.venv,__pycache__"
+FZF_SKIP_DIRS=(
+  .git
+  .mypy_cache
+  .nox
+  .pytest_cache
+  .tox
+  .venv
+  __pycache__
+  build
+)
+FZF_DEFAULT_OPTS="--walker-skip=$(
+  IFS=,
+  echo "${FZF_SKIP_DIRS[*]}"
+)"
+export FZF_DEFAULT_OPTS
