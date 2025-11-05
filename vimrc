@@ -118,6 +118,10 @@ let g:codeium_filetypes = {
     \ }
 " }}}
 
+" tagbar {{{
+let g:tagbar_help_visibility = 1"
+" }}}
+
 " }}}
 
 " colorscheme {{{
