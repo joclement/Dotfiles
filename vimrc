@@ -7,6 +7,12 @@ filetype plugin indent on
 
 " plugin settings {{{
 
+" load help pages {{{
+if has('packages')
+  silent! helptags ALL
+endif
+" }}}
+
 " fzf {{{
 set runtimepath+=~/.fzf
 " }}}
@@ -110,6 +116,14 @@ let g:codeium_filetypes = {
     \ "perl": v:true,
     \ "python": v:true,
     \ }
+" }}}
+
+" tagbar {{{
+let g:tagbar_help_visibility = 1"
+" }}}
+
+" gutentags {{{
+let g:gutentags_project_root = ['.root']
 " }}}
 
 " }}}
