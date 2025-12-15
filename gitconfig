@@ -52,7 +52,7 @@
     whitespace = trailing-space,space-before-tab,cr-at-eol
     pager = delta
 [credential]
-    helper = cache
+    helper = cache --timeout=86400
 [diff]
     ignoreSubmodules = dirty
     tool = vimdiff
