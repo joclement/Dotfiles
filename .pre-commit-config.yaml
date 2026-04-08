@@ -26,7 +26,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/codespell-project/codespell
-    rev: 63c8f8312b7559622c0d82815639671ae42132ac # frozen: v2.4.1
+    rev: 2ccb47ff45ad361a21071a7eedda4c37e6ae8c5a # frozen: v2.4.2
     hooks:
       - id: codespell
         exclude: |
@@ -34,7 +34,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/google/yamlfmt
-    rev: 884e367e8fae92b238653fd950a54d235d418e4e # frozen: v0.20.0
+    rev: b5ca1890231d5e1e5181fef75a1be609d1e25029 # frozen: v0.21.0
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -42,13 +42,13 @@ repos:
     hooks:
       - id: shellcheck
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: 2e4f4b26b5b0a0c0ebc660c1f78aca1e28d912bd # frozen: v4.11.1
+    rev: 4fbeae7861663ecf4b4989211eba41c1a3fb1227 # frozen: v4.13.9
     hooks:
       - id: commitizen
       - id: commitizen-branch
         stages: [manual, pre-push]
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: a30f0d816e5062a67d87c8de753cfe499672b959 # frozen: v1.5.5
+    rev: ad1b27d73581aa16cca06fc4a0761fc563ffe8e8 # frozen: v1.5.6
     hooks:
       - id: remove-tabs
         exclude: |
@@ -56,15 +56,15 @@ repos:
             ^.git/COMMIT_EDITMSG$
           )
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 11ea70506fd878d26129b2b87746fd1a1f6b561b # frozen: 3.6.0
+    rev: bebfac867564fbd992e5b45379b4b0568d5cb85b # frozen: 3.6.1
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: 2a30809d16bc7a60d9b97353c797f42b510d3368 # frozen: v3.12.0-2
+    rev: e26a818fd47b4f33cefa99035d1265b0849f4b47 # frozen: v3.13.0-1
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: b035497fb64e3f9faa91e833331688cc185891e6 # frozen: 0.36.0
+    rev: ed81924a8b1cecdaa570b072528fa80c9c4d6ccd # frozen: 0.37.1
     hooks:
       - id: check-github-workflows
       - id: check-renovate
