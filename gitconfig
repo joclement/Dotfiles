@@ -8,6 +8,10 @@
     forceDeleteBranch = false
 [alias]
     ap = add --patch
+    arm = "!f() { \
+                  branch=$(git default-branch); \
+                  git absorb --and-rebase --base \"$branch\"; \
+                }; f"
     br = branch
     ci = commit
     cia = ci --amend
