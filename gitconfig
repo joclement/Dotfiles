@@ -44,6 +44,9 @@
     slog = log --stat
     st = status
     unpushed = log @{u}.. --pretty=format:'%h %an %s'
+    drop-stash-pop-conflicts = "\
+        !git diff --name-only -z --diff-filter=U | \
+        xargs -0 -r git restore --source=HEAD --staged --worktree --"
 [checkout]
     ignoreSubmodules = dirty
 [color]
