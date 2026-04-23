@@ -1,4 +1,4 @@
-#This file is to improve the autocompletion for the zsh shell
+# This file is to improve the autocompletion for the zsh shell
 
 autoload -U compinit; compinit
 
