@@ -1,5 +1,6 @@
-#This file is to improve the autocompletion for the zsh shell
+# This file is to improve the autocompletion for the zsh shell
 
+fpath+=~/.zfunc
 autoload -U compinit; compinit
 
 # editorconfig-checker-disable
