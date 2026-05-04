@@ -355,6 +355,7 @@ function! UpdateMakeSettings()
 endfunction
 
 autocmd BufRead requirements-dev.txt setlocal filetype=requirements
+autocmd BufRead .sqlfluff setlocal filetype=toml
 
 " }}}
 
