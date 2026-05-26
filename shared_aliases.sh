@@ -23,6 +23,10 @@ alias .....='cd ../../../..'
 
 alias docker_kill_all='docker kill $(docker ps -q)'
 
+if [ -e /usr/bin/batcat ]; then
+  alias cat='/usr/bin/batcat'
+fi
+
 ################################ My alias functions ############################
 
 pgrep() {
