@@ -34,8 +34,6 @@ antigen bundles <<EOBUNDLES
 # more autocompletion
 zsh-users/zsh-completions src
 
-pip
-
 EOBUNDLES
 # TODO find way to add plugin based on version
 
