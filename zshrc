@@ -31,9 +31,6 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 
-# to go to parent dirs quickly
-Tarrasch/zsh-bd
-
 # more autocompletion
 zsh-users/zsh-completions src
 
