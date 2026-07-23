@@ -37,6 +37,10 @@ mkcd() {
   mkdir "$1" && cd "$1" || exit
 }
 
+gpd() {
+  cd $(bd -s "$1") || exit
+}
+
 md2html() {
   markdownfile=$1
   htmlfile=${markdownfile%".md"}".html"
