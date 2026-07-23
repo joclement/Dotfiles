@@ -106,18 +106,6 @@ let g:gundo_prefer_python3 = 1
 let g:tex_flavor='latex'
 " }}}
 
-" codeium {{{
-let g:codeium_filetypes_disabled_by_default = v:true
-
-let g:codeium_filetypes = {
-    \ "bash": v:true,
-    \ "Dockerfile": v:true,
-    \ "go": v:true,
-    \ "perl": v:true,
-    \ "python": v:true,
-    \ }
-" }}}
-
 " tagbar {{{
 let g:tagbar_help_visibility = 1"
 " }}}
