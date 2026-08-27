@@ -37,18 +37,6 @@ export MAKE_PARALLELIZATION=8
 
 # ---------------------------------------------------------------------
 
-FZF_SKIP_DIRS=(
-  .git
-  .mypy_cache
-  .nox
-  .pytest_cache
-  .tox
-  .venv
-  __pycache__
-  build
-)
-FZF_DEFAULT_OPTS="--walker-skip=$(
-  IFS=,
-  echo "${FZF_SKIP_DIRS[*]}"
-)"
-export FZF_DEFAULT_OPTS
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git" --no-require-git'
+# TODO: do I need this overwrite?
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
