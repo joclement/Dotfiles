@@ -1,3 +1,4 @@
+# shellcheck source=shared_shell.sh
 source "$HOME"/.shared_shell.sh
 if [[ -n "$ABORT_INIT" ]]; then
   return
