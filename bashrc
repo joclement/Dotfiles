@@ -4,6 +4,12 @@ case $- in
     *) return;;
 esac
 
+# shellcheck source=shared_shell.sh
+source "$HOME"/.shared_shell.sh
+if [[ -n "$ABORT_INIT" ]]; then
+  return
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -67,9 +73,6 @@ case "$TERM" in
 esac
 
 ########################OWN SETTINGS##################################
-
-# shellcheck source=shared_shell.sh
-source "$HOME"/.shared_shell.sh
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

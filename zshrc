@@ -1,6 +1,4 @@
-if [ -f "$HOME"/.private_zshrc_begin ]; then
-    source "$HOME"/.private_zshrc_begin
-fi
+source "$HOME"/.shared_shell.sh
 if [[ -n "$ABORT_INIT" ]]; then
   return
 fi
@@ -52,7 +50,6 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 bindkey '^R' history-incremental-pattern-search-backward
 
 
-source "$HOME"/.shared_shell.sh
 source "$HOME"/.autocompletion.zsh
 
 setopt APPEND_HISTORY
