@@ -1,4 +1,6 @@
 # This file contains all the settings shared between different shells(bash, zsh)
+
+# shellcheck shell=bash
 # shellcheck disable=SC2046,SC2086
 
 # shellcheck source=shared_aliases.sh
