@@ -38,5 +38,3 @@ export MAKE_PARALLELIZATION=8
 # ---------------------------------------------------------------------
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git" --no-require-git'
-# TODO: do I need this overwrite?
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
