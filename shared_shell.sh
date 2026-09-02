@@ -1,7 +1,7 @@
 # This file contains all the settings shared between different shells(bash, zsh)
 # shellcheck disable=SC2046,SC2086
 
-# shellcheck source=shared_shell.sh
+# shellcheck source=shared_aliases.sh
 source "$HOME"/.shared_aliases.sh
 # shellcheck source=env.sh
 source "$HOME"/.env.sh
