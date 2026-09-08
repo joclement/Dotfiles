@@ -47,6 +47,25 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
+" ALE {{{
+" Must be set before ALE loads (packpath start plugins load after vimrc).
+let g:ale_completion_enabled = 1
+
+set encoding=utf-8
+set nobackup
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
+
+nmap <silent> gd <Plug>(ale_go_to_definition)
+nmap <silent> gy <Plug>(ale_go_to_type_definition)
+nmap <silent> gi <Plug>(ale_go_to_implementation)
+nmap <silent> gr <Plug>(ale_find_references)
+nmap <silent> K <Plug>(ale_hover)
+nmap <silent> <Leader>rn <Plug>(ale_rename)
+nmap <silent> <Leader>ca <Plug>(ale_code_action)
+" }}}
+
 " lvimrc {{{
 let g:localvimrc_persistent = 1
 " }}}
