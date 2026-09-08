@@ -58,8 +58,6 @@
       path: vim/after/ftplugin
     ~/.vim/pack:
       path: vim/pack
-    ~/.vim/coc-settings.json:
-      path: vim/coc-settings.json
     ~/.vim/ftplugin:
       path: vim/ftplugin
     ~/.vimrc:
