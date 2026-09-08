@@ -87,9 +87,6 @@
 [submodule "vim/pack/plugins/start/vim-gutentags"]
     path = vim/pack/plugins/start/vim-gutentags
     url = https://github.com/ludovicchabant/vim-gutentags.git
-[submodule "vim/pack/plugins/start/black"]
-    path = vim/pack/plugins/start/black
-    url = https://github.com/psf/black.git
 [submodule "vim/pack/plugins/start/vim-airline"]
     path = vim/pack/plugins/start/vim-airline
     url = https://github.com/vim-airline/vim-airline.git
