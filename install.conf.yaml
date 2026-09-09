@@ -58,8 +58,6 @@
       path: vim/after/ftplugin
     ~/.vim/pack:
       path: vim/pack
-    ~/.vim/coc-settings.json:
-      path: vim/coc-settings.json
     ~/.vim/ftplugin:
       path: vim/ftplugin
     ~/.vimrc:
@@ -82,3 +80,4 @@
     - echo 'Run `chsh -s $(which zsh)`'
     - ./install-vim-plugins.sh
     - sudo apt-get install --yes direnv
+    - rm -fr ~/.config/coc

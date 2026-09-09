@@ -47,51 +47,23 @@ endfunction
 command! Cw call DispatchCw()
 " }}}
 
-" CoC {{{
-" Based on https://github.com/neoclide/coc.nvim#example-vim-configuration
-set encoding=utf-8
+" ALE {{{
+" Must be set before ALE loads (packpath start plugins load after vimrc).
+let g:ale_completion_enabled = 1
 
+set encoding=utf-8
 set nobackup
 set nowritebackup
-
 set updatetime=300
-
 set signcolumn=yes
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-let g:coc_global_extensions = [
-  \ 'coc-clangd',
-  \ 'coc-docker',
-  \ 'coc-emoji',
-  \ 'coc-go',
-  \ 'coc-git',
-  \ 'coc-jedi',
-  \ 'coc-json',
-  \ 'coc-lua',
-  \ 'coc-perl',
-  \ 'coc-prettier',
-  \ 'coc-pyright',
-  \ 'coc-snippets',
-  \ 'coc-stylelint',
-  \ 'coc-ultisnips',
-  \ 'coc-vimlsp',
-  \ 'coc-yaml'
-  \ ]
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd <Plug>(ale_go_to_definition)
+nmap <silent> gy <Plug>(ale_go_to_type_definition)
+nmap <silent> gi <Plug>(ale_go_to_implementation)
+nmap <silent> gr <Plug>(ale_find_references)
+nmap <silent> K <Plug>(ale_hover)
+nmap <silent> <Leader>rn <Plug>(ale_rename)
+nmap <silent> <Leader>ca <Plug>(ale_code_action)
 " }}}
 
 " lvimrc {{{
