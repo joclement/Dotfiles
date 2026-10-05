@@ -26,7 +26,7 @@ repos:
             ^vim/autoload/plug\.vim$
           )
   - repo: https://github.com/codespell-project/codespell
-    rev: 2ccb47ff45ad361a21071a7eedda4c37e6ae8c5a # frozen: v2.4.2
+    rev: 57b21406f092110c18776e39b0bda50d37c945c8 # frozen: v2.4.3
     hooks:
       - id: codespell
         exclude: |
@@ -38,11 +38,11 @@ repos:
     hooks:
       - id: yamlfmt
   - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: 745eface02aef23e168a8afb6b5737818efbea95 # frozen: v0.11.0.1
+    rev: a6564f5d57444e123433a5c9af733e3975c77229 # frozen: v0.11.0.1-1
     hooks:
       - id: shellcheck
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: a6859a7b8182086a5e013deab8fefc0597b502e9 # frozen: v4.16.4
+    rev: 0c19a2b41e5514bc74f36c3eed4de554f989b666 # frozen: v4.19.1
     hooks:
       - id: commitizen
       - id: commitizen-branch
@@ -56,15 +56,15 @@ repos:
             ^.git/COMMIT_EDITMSG$
           )
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: bebfac867564fbd992e5b45379b4b0568d5cb85b # frozen: 3.6.1
+    rev: e8b4e28241a9ae8296ba6e4a491b5da4eda73283 # frozen: 3.11.1
     hooks:
       - id: editorconfig-checker
   - repo: https://github.com/scop/pre-commit-shfmt
-    rev: 05c1426671b9237fb5e1444dd63aa5731bec0dfb # frozen: v3.13.1-1
+    rev: 479be5958357ba5ab65ce47172117348516860e9 # frozen: v3.14.1-1
     hooks:
       - id: shfmt
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 1a4bb160cab6417b3045e1b37b6b72449243e658 # frozen: 0.37.4
+    rev: 4f85d46a92dc17713078e5de73f8a13190edf6fc # frozen: 0.38.2
     hooks:
       - id: check-github-workflows
       - id: check-renovate
